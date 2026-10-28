@@ -1,0 +1,52 @@
+{
+  "tol_rel": 1e-06,
+  "cupy_available": false,
+  "file_hashes": {
+    "fastcore2.py": {
+      "sha256": "e213e52c2816492368117981592a1f98989d1f16edb11b10a7325fbdf1610ff5",
+      "matches_snapshot": true
+    },
+    "compress/fast_kernels.py": {
+      "sha256": "93435ed23590beff0137c66ae1d80c7620526825a0b1f4b288051548ac76b438",
+      "matches_snapshot": true
+    }
+  },
+  "wall_sec": 0.06427335739135742,
+  "import_without_enable_leaves_kernels": true,
+  "gpu_env": "",
+  "cpu_kernels_untouched": true,
+  "cpu_fallback_vs_fast_kernels": [
+    {
+      "name": "X",
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    {
+      "name": "B",
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    },
+    {
+      "name": "P",
+      "max_abs": 0.0,
+      "max_rel": 0.0
+    }
+  ],
+  "cpu_fallback_ok": true,
+  "delay_cpu_fallback": {
+    "max_abs": 0.0,
+    "max_rel": 0.0
+  },
+  "delay_cpu_fallback_ok": true,
+  "gpu_vs_cpu_experiments": {
+    "ran": false,
+    "reason": "no CuPy / no GPU device \u2014 skip GPU vs CPU experiment compare",
+    "myelin_real_rep": null,
+    "best_fly": null,
+    "max_abs": null,
+    "max_rel": null,
+    "pass": null
+  },
+  "all_ok": true,
+  "cpu_box_checks_ok": true
+}

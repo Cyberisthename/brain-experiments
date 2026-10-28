@@ -98,6 +98,30 @@ regions/                # grafts, EMPN, myelin, hybrids, compass, worms, …
 
 Shell helpers (`run_*.sh`) queue long jobs; see `.gitignore` for excluded artifacts.
 
+
+
+## Free GPU (Google Colab T4)
+
+Opt-in CuPy backend: [`gpu_core.py`](gpu_core.py) (CSR matvec + batched seeds + ridge on GPU, float64). Falls back to CPU when CuPy is missing. **Does not change defaults** and is not imported by running experiments (`mega_franken`, `trained_bridges`).
+
+1. Open the notebook in Colab:  
+   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Cyberisthename/brain-experiments/blob/main/notebooks/colab_gpu_runner.ipynb)  
+   Direct link: https://colab.research.google.com/github/Cyberisthename/brain-experiments/blob/main/notebooks/colab_gpu_runner.ipynb
+2. **Runtime → Change runtime type → T4 GPU**, then **Run all**.
+3. Self-check: `python3 verify_gpu_core.py` (on GPU, compares 1 seed of `myelin_real_rep` + `best_fly`; on CPU-only boxes it only checks that the CPU path is unchanged).
+4. Data: small module `.npz` files are **not** in git. Prefer `python3 scripts/colab_prepare_data.py --download-hf` (rebuild human from HuggingFace). Upload by hand if needed (~1 MB):
+   - `regions/frankenstein/data/fly_cx_module.npz`
+   - `regions/frankenstein/data/mouse_module.npz`
+   - `regions/frankenstein/data/human_module.npz`
+   - `regions/hybrid_human/data/human_myelin.npz`
+
+Enable locally (when a CUDA GPU + `cupy-cuda12x` exist):
+
+```bash
+export FLYBRAIN_GPU=1
+python3 -c "import gpu_core as G; print(G.enable(), G.using_gpu())"
+```
+
 ## License / credit
 
 Upstream connectomes retain their own licenses (FlyWire / Shiu model; MICrONS / Zenodo; H01 CC BY 4.0; Witvliet 2021; Fish1 authors). Experiment code here is research scaffolding unless otherwise noted.
