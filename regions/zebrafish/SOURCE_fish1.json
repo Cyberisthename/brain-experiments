@@ -1,0 +1,30 @@
+{
+  "dataset": "Fish1",
+  "citation": "Petkova, M. D., Januszewski, M., et al. (2025). A connectomic resource for neural cataloguing and circuit dissection of the larval zebrafish brain. bioRxiv. https://doi.org/10.1101/2025.06.10.658982",
+  "release_page": "https://fish1-release.storage.googleapis.com/index.html",
+  "datastack": "fish1_v250915",
+  "status": "BLOCKED_NO_AUTH",
+  "checked_at_utc": "2026-10-28T14:50:00Z",
+  "attempted_access": [
+    {
+      "method": "caveclient.CAVEclient('fish1_v250915') with no token / empty env",
+      "result": "AuthException",
+      "detail": "You have not setup a token to access https://global.daf-apis.com/info/api/v2/datastack/full/fish1_v250915 with the current auth configuration. Docs: https://caveconnectome.github.io/CAVEclient/tutorials/authentication/ ; client.auth.get_new_token() after CAVEclient(server_address='https://global.daf-apis.com')."
+    },
+    {
+      "method": "public flat edge-list search (GCS release index, VAST page, zebrafishconnectome.vercel.app, Zenodo, FishExplorer downloads)",
+      "result": "NO public pre/post synapse flatfile found",
+      "detail": "VAST downloads are EM volume + segmentation (.vsvi), not synapse tables. Companion portal reports Materialization/Connectivity unavailable without CAVE_TOKEN. Bulk full-table dump discouraged; API is query-oriented."
+    }
+  ],
+  "what_would_be_needed": {
+    "auth": "Google-account CAVE token for DAF / fish1_v250915 (same family as H01). Token must NOT be written into chat, git, or pushed files; store only in local env / vault.",
+    "tables": ["somas (lore_id, root_id, cell_type exc/inh/na, position)", "synapses_axde_label (pre_pt_root_id, post_pt_root_id, E/I tag)"],
+    "module_plan_if_unlocked": "Pull a connected ~2k–7k neuron hindbrain or tectum subgraph with E/I tags → CSR matching human/mouse/fly npz schema; run FISH vs ER/SHUF/DENS ± FIXED delays; FRANKEN+FISH vs FRANKEN+same-size random graft."
+  },
+  "myelin_annotations": "Not checked (requires same CAVE access). Fish1 is chemical-synapse + molecular E/I; myelinated projectome is a different product (Hildebrand 2017) without synapse edges.",
+  "module_built": false,
+  "edges_downloaded": false,
+  "synthetic_fallback": false,
+  "notes": "Per task rules: stop and report when login required. No synthetic fish module invented."
+}
