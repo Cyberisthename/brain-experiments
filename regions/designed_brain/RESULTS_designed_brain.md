@@ -64,3 +64,11 @@ Composite z (tune): μ_xor=0.3348, σ_xor=0.2886, μ_narma=0.3776, σ_narma=0.05
 **Primary NOT SUPPORTED.** DESIGN comp=-0.7153921302954109, ER=0.9933256433223437, TEAM_ER=0.721061354633424; XOR DESIGN=0.20100000569119816 vs FLY_CX=0.6560725114292981; NARMA DESIGN=0.4278604850120174 vs HUMAN=0.39607197071518857.
  Limits: synthetic SBM ≠ biology; myelin rule is layer-conditional sampling from H01, not axon geometry; DESIGN adjacency frozen across seeds (Win/task RNG vary); TEAM_ER is larger (two blocks).
 
+
+## Push / artifacts
+
+- **Verdict:** NOT SUPPORTED (all four primary H1–H4 fail Bonferroni)
+- **Figure:** `regions/designed_brain/figs/designed_brain.png` (local; PNG not pushed)
+- **Runtime:** ~10.7 min wall (tune+eval, WORKERS=2) — done 2026-10-28 19:52 America/New_York (EDT)
+- **GitHub SHA (results commit):** `404d10ec73f7a7a4ca007a6da21a92ae1d2b478b` on `Cyberisthename/brain-experiments` main
+  (code/prereg also in `9515fc83…`, meta in `d59b0db9…`)
