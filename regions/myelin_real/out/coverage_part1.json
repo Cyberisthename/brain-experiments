@@ -1,0 +1,10 @@
+{
+  "n_neurons": 2087,
+  "n_with_any_annotation": 2087,
+  "n_with_axon_annotation": 2086,
+  "n_with_myelinated_axon": 1588,
+  "n_usable_ge100_axon_total": 1947,
+  "myelin_frac_mean": 0.0745860404891415,
+  "myelin_frac_median": 0.022293219737309196,
+  "gate": "PASS"
+}
