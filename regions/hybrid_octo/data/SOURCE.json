@@ -1,0 +1,61 @@
+{
+  "status": "NO_USABLE_NEURON_EDGES",
+  "queried": "2026-10-27",
+  "request": "octopus / cephalopod optic lobe connectome with neuron-level edges, public, no login",
+  "verdict": "No usable neuron-level synapse/edge list. Lichtman VL portal = EM+seg Neuroglancer only. Optic lobe still has no public edges either. Do not build octo_module.npz.",
+  "checked": [
+    {
+      "name": "Macroscale Connectivity in the Octopus brain (bioRxiv 2025)",
+      "doi": "10.1101/2025.05.28.656524",
+      "what": "32 brain regions, 249 directed edges \u2014 region-level only, optic lobe is ONE node"
+    },
+    {
+      "name": "Octopus vulgaris vertical lobe EM (eLife 84257 / Bidel et al.)",
+      "url": "https://lichtman.rc.fas.harvard.edu/octopus_connectomes",
+      "what": "Small VL EM volume + Neuroglancer segmentation; NOT optic lobe; no public flat edge-list download found (viewer / CAVE-style, not no-login nnz dump)"
+    },
+    {
+      "name": "Pygmy squid Idiosepius hallami optic lobe FIBSEM (ESRF / Cambridge thesis 2024)",
+      "doi_data": "10.15151/esrf-es-1084471100",
+      "what": "EM volumes / in-progress connectome; manually traced fragments in thesis; no released neuron edge list"
+    },
+    {
+      "name": "Whole-animal X-ray histotomography (cephalopod.team)",
+      "what": "0.7 \u00b5m anatomy, nerve pathways; NOT synaptic edges"
+    },
+    {
+      "name": "Pungor & Niell optic lobe calcium imaging (Dryad)",
+      "doi": "10.5061/dryad.c2fqz61f2",
+      "what": "Functional Ca2+ movies only \u2014 no connectome edges"
+    },
+    {
+      "name": "Octopus bimaculoides optic lobe scRNA-seq (GEO GSE212528)",
+      "what": "Cell-type atlas only \u2014 no edges"
+    },
+    {
+      "name": "KESM optic lobe imaging poster (BMC Neurosci 2010)",
+      "what": "Submicron images / tracing pilot; no downloadable connectome"
+    }
+  ],
+  "note": "User wishlist 'Octopus Optic Lobe Fragment' is aspirational \u2014 not a public edge dump as of 2026-10-27.",
+  "lichtman_vertical_lobe": {
+    "paper": "Bidel, Meirovitch et al. eLife 2023;12:e84257 (PMC10325715)",
+    "title": "Connectomics of the Octopus vulgaris vertical lobe...",
+    "portal": "https://lichtman.rc.fas.harvard.edu/octopus_connectomes",
+    "gcs": "gs://octopus-connectomes/vertical_lobe/",
+    "region": "vertical lobe (memory), NOT optic lobe",
+    "volume": "260\u00d7390\u00d727 \u00b5m, 892 sections, 4 nm/px (viewed at 8 nm in NG)",
+    "what_is_public": [
+      "Neuroglancer redirect from portal",
+      "precomputed EM: gs://octopus-connectomes/vertical_lobe/img",
+      "precomputed segmentation: gs://octopus-connectomes/vertical_lobe/sgm (info+chunks only)"
+    ],
+    "what_is_NOT_public": [
+      "No synapses/ graphs/ annotations/ connectivity/ skeletons prefixes in the bucket (empty/absent)",
+      "No CSV/TSV/NPZ/edge-list download on portal or eLife supplements (figures/PDF/videos only)",
+      "Paper's 13,434 postsynaptic + 2,472 presynaptic annotations on 516 reconstructed processes are described in-text/figures, not released as a neuron\u00d7neuron edge table"
+    ],
+    "usable_for_octo_module_npz": false,
+    "checked": "2026-10-27 via portal HTML + GCS XML listing + PMC/eLife pages"
+  }
+}

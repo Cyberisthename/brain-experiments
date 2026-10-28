@@ -1,0 +1,115 @@
+{
+  "project": "fly-human hybrid graft (data prep only; no runs started)",
+  "mirror_of": "/workspace/flybrain/regions/hybrid (mouse MICrONS)",
+  "license": "H01 CC BY 4.0; HF derived edges Apache-2.0 repo wrapping H01",
+  "official_h01": {
+    "landing": "https://h01-release.storage.googleapis.com/landing.html",
+    "data_page": "https://h01-release.storage.googleapis.com/data.html",
+    "paper": "Shapson-Coe et al. Science 2024; doi:10.1126/science.adk4858",
+    "bucket": "gs://h01-release",
+    "somas_csv": "https://storage.googleapis.com/h01-release/data/20210601/c3/tables/somas.csv",
+    "synapse_export_prefix": "https://storage.googleapis.com/h01-release/data/20210729/c3/synapses/exported/export",
+    "synapse_version_note": "Use 20210729 (final ~150.5M synapses matching paper Table S14), NOT 20210601 raw detections",
+    "proofread_cells": "gs://h01-release/data/20210601/proofread_104 (~104 manually proofread cells)",
+    "layers_volume": "gs://h01-release/data/20210601/layers",
+    "cave_token_required": false,
+    "cave_note": "Newer CAVE materializations exist (navis/caveclient) but require Google auth; this build uses only public HTTPS GCS + derived HF edge list."
+  },
+  "urls_actually_used": [
+    "https://storage.googleapis.com/h01-release/data/20210601/c3/tables/somas.csv",
+    "https://storage.googleapis.com/h01-release/data/20210601/c3/tables/segments/counts000000000000.csv.gz (schema probe only; not used in module)",
+    "https://huggingface.co/NathanRoll/h01-cortex-snn/resolve/main/edges.npz",
+    "https://huggingface.co/NathanRoll/h01-cortex-snn/resolve/main/metadata.npz",
+    "https://huggingface.co/NathanRoll/h01-cortex-snn/resolve/main/somas_filtered.csv",
+    "https://huggingface.co/NathanRoll/h01-cortex-snn/resolve/main/layer_stats.json",
+    "https://huggingface.co/NathanRoll/h01-cortex-snn/resolve/main/config.json",
+    "https://huggingface.co/NathanRoll/h01-cortex-snn/resolve/main/README.md"
+  ],
+  "derived_edge_list": {
+    "repo": "https://huggingface.co/NathanRoll/h01-cortex-snn",
+    "claim": "Built from all 166 Avro shards of gs://h01-release/data/20210729/c3/synapses/exported/, min_confidence=0.50, soma-resident neurons only",
+    "n_neurons_full": 16087,
+    "n_edges_raw": 116611,
+    "n_aggregated_pairs": 76903,
+    "verification": "16010/16087 HF segment_ids match official somas.csv c3_rep_manual; soma0 c3_rep_manual present",
+    "why_not_stream_all_avro": "166 shards x ~198MB Avro \u2248 33GB; JSON twins \u2248 126GB. Disk-safe path: use condensed local-connectome edge list already filtered to soma neurons."
+  },
+  "module_file": "/workspace/flybrain/regions/hybrid_human/data/human_module.npz",
+  "module_stats": {
+    "n_neurons": 2087,
+    "n_edges_nnz": 14863,
+    "density": 0.003412412936174355,
+    "n_E": 1736,
+    "n_I": 351,
+    "layer_counts": {
+      "L2/3": 995,
+      "L4": 492,
+      "L5": 350,
+      "L6": 250
+    },
+    "cell_type_counts": {
+      "INTERNEURON": 351,
+      "SPINY_ATYPICAL": 146,
+      "PYRAMIDAL": 1543,
+      "SPINY_STELLATE": 47
+    },
+    "n_proofread_104_overlap": 8,
+    "weight_rule": "synapse_count * pre_sign; pre_sign from cell type (INTERNEURON=-1; PYRAMIDAL/SPINY_*=+1)",
+    "layer_map": "Layer2+Layer3\u2192L2/3; Layer4\u2192L4; Layer5\u2192L5; Layer6\u2192L6",
+    "selection": {
+      "scheme": "layer_stratified_high_degree",
+      "quotas": {
+        "Layer 2": 550,
+        "Layer 3": 450,
+        "Layer 4": 500,
+        "Layer 5": 350,
+        "Layer 6": 250
+      },
+      "actual_n": 2087,
+      "n_proofread_104_overlap": 8,
+      "within_degree_min": 1,
+      "within_degree_median": 23.0,
+      "within_degree_max": 170,
+      "within_degree_mean": 26.666986104456157,
+      "n_E": 1736,
+      "n_I": 351,
+      "n_nnz": 14863,
+      "layer_counts": {
+        "L2/3": 995,
+        "L4": 492,
+        "L5": 350,
+        "L6": 250
+      },
+      "cell_type_counts": {
+        "INTERNEURON": 351,
+        "SPINY_ATYPICAL": 146,
+        "PYRAMIDAL": 1543,
+        "SPINY_STELLATE": 47
+      },
+      "note": "Stratified so L4/L5 remain usable for layered fly bridge (densest-only cut starved L4)."
+    }
+  },
+  "reliability_vs_microns": {
+    "mouse_microns_module": "1871 proofread roots (axon+dendrite proofread status), Zenodo condensed connectome v1412",
+    "human_h01_module": "2087 auto-segmented soma-linked cortical neurons; only 8 overlap the public 104 proofread set",
+    "verdict": "Far less reliable than MICrONS proofread subset. H01 public proofread set is ~104 cells (too small for 1-3k module). Connectivity is ML-predicted synapses on conservative c3 agglomeration; merge/split errors remain.",
+    "slab_caveat": "H01 is ~170\u00b5m thick; most dendrites leave the volume \u2014 degrees are lower bounds (paper)."
+  },
+  "feasibility": {
+    "status": "FEASIBLE for data prep / smoke tests; NOT equivalent reliability to mouse hybrid",
+    "blocking_for_news_claims": [
+      "Almost no proofread neurons in the 2k module (8/2087)",
+      "Auto synapses + auto cell types",
+      "Incomplete arbors due to thin slab",
+      "Full raw Avro rebuild is 33GB \u2014 optional later if disk allows"
+    ],
+    "ready_for_code_path": "human_module.npz matches mouse_module.npz schema (W_*, root_id, sign, layer, cell_type)"
+  },
+  "download_date": "2026-10-27",
+  "file_hashes": {
+    "somas.csv_sha256": "cc38c8670bbeb3d61f58af44a529392111a59196ca0b9e0f74849b0afe1ffaff",
+    "hf_edges.npz_sha256": "d685966d1818b32c89f6bd53c0a56a39c4e046899935c9318b250525d2cbd572",
+    "hf_metadata.npz_sha256": "ce26bffbb2107bb4c6805d0f52a313d59a6b6b52452807907ef3d9f260e87743",
+    "human_module.npz_sha256": "96af1af6516c4121f53cadd0945d902b7c688434f56a35e0d5a8cfc44144081a"
+  }
+}
