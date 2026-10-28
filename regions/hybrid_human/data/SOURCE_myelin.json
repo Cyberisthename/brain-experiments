@@ -1,0 +1,39 @@
+{
+  "project": "H01 real myelination fractions for human_module neurons",
+  "created": "2026-10-28T12:35:26Z",
+  "annotation_info": "https://storage.googleapis.com/h01-release/data/20210601/c3/subcompartments/annotations/info",
+  "annotation_layer": "gs://h01-release/data/20210601/c3/subcompartments/annotations",
+  "segmentation_layer": "gs://h01-release/data/20210601/c3/subcompartments",
+  "relationship": "skeleton_id (= c3 segment id = human_module root_id)",
+  "class_label_enums": {
+    "0": "axon",
+    "1": "dendrite",
+    "2": "astrocyte",
+    "3": "soma",
+    "4": "cilium",
+    "5": "AIS",
+    "1000": "myelinated_axon",
+    "1001": "myelinated_axon",
+    "1002": "myelinated_fragment",
+    "1003": "myelinated_fragment"
+  },
+  "myelin_frac_definition": "n_myelinated_axon / (n_axon + n_myelinated_axon); NaN if no axon points",
+  "access": "HTTPS Range requests to storage.googleapis.com; no login",
+  "module": "/workspace/flybrain/regions/hybrid_human/data/human_module.npz",
+  "coverage": {
+    "n_neurons": 2087,
+    "n_with_any_annotation": 2087,
+    "n_with_axon_annotation": 2086,
+    "n_with_myelinated_axon": 1588,
+    "n_with_finite_myelin_frac": 2086,
+    "myelin_frac_mean_over_with_axon": 0.0745860404891415,
+    "myelin_frac_median_over_with_axon": 0.022293219737309196,
+    "total_axon_points": 1496160,
+    "total_myelinated_axon_points": 119520,
+    "total_annotations": 18241591,
+    "n_errors": 0,
+    "elapsed_sec": 750.203536272049
+  },
+  "errors_sample": [],
+  "license": "H01 CC BY 4.0 (Shapson-Coe et al. Science 2024)"
+}
