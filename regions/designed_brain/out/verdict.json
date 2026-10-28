@@ -1,0 +1,161 @@
+{
+  "verdict": "NOT SUPPORTED",
+  "tests": {
+    "H1 DESIGN>ER composite": {
+      "n": 24,
+      "mean_a": -0.7153921302954109,
+      "mean_b": 0.9933256433223437,
+      "mean_d": -1.7087177736177548,
+      "sd_d": 0.264977624895311,
+      "d_z": -6.448536076556825,
+      "p_raw": 1.0,
+      "ci_lo": -1.8206080115633174,
+      "ci_hi": -1.5968275356721922,
+      "mean_ok": false,
+      "p_bonf": 1.0
+    },
+    "H2 DESIGN>TEAM_ER composite": {
+      "n": 24,
+      "mean_a": -0.7153921302954109,
+      "mean_b": 0.721061354633424,
+      "mean_d": -1.436453484928835,
+      "sd_d": 0.3283898495631085,
+      "d_z": -4.374232293841907,
+      "p_raw": 1.0,
+      "ci_lo": -1.57512035697526,
+      "ci_hi": -1.29778661288241,
+      "mean_ok": false,
+      "p_bonf": 1.0
+    },
+    "H3 XOR non-inf vs FLY_CX (m=0.05)": {
+      "n": 24,
+      "mean_a": 0.25100000569119824,
+      "mean_b": 0.6560725114292981,
+      "mean_d": -0.4050725057381,
+      "sd_d": 0.11123719345730225,
+      "d_z": -3.641520368756739,
+      "p_raw": 1.0,
+      "ci_lo": -0.4520438530329952,
+      "ci_hi": -0.3581011584432048,
+      "mean_ok": false,
+      "p_bonf": 1.0
+    },
+    "H4 NARMA non-inf vs HUMAN (m=0.03)": {
+      "n": 24,
+      "mean_a": 0.42607197071518854,
+      "mean_b": 0.4278604850120174,
+      "mean_d": -0.0017885142968289275,
+      "sd_d": 0.0167318956042279,
+      "d_z": -0.10689250872309988,
+      "p_raw": 0.6158518195152283,
+      "ci_lo": -0.008853774169910764,
+      "ci_hi": 0.005276745576252909,
+      "mean_ok": false,
+      "p_bonf": 1.0
+    }
+  },
+  "means": {
+    "DESIGN": {
+      "xor": 0.20100000569119816,
+      "narma": 0.4278604850120174,
+      "comp": -0.7153921302954109,
+      "mc": 19.859898515639347,
+      "pc": 0.8883831830257227,
+      "N": 4000
+    },
+    "DESIGN_EI_ONLY": {
+      "xor": 0.8400557442431064,
+      "narma": 0.3884451372533165,
+      "comp": 0.7708386783144006,
+      "mc": 17.482136029463348,
+      "pc": 0.8781859535800708,
+      "N": 4000
+    },
+    "DESIGN_MYELIN_ONLY": {
+      "xor": 0.13361925075708012,
+      "narma": 0.3062243043309693,
+      "comp": 0.337278108207769,
+      "mc": 21.816367240844954,
+      "pc": 0.9069141312504755,
+      "N": 4000
+    },
+    "FLY_CX": {
+      "xor": 0.6560725114292981,
+      "narma": 0.44656881729325315,
+      "comp": -0.10675400951469693,
+      "mc": 17.84800334013825,
+      "pc": 0.8525206603000086,
+      "N": 2875
+    },
+    "HUMAN": {
+      "xor": 0.1211980158447535,
+      "narma": 0.39607197071518857,
+      "comp": -0.5480471380292128,
+      "mc": 18.672497110992783,
+      "pc": 0.858986856759287,
+      "N": 2087
+    },
+    "TEAM_ER": {
+      "xor": 0.2746119097979105,
+      "narma": 0.2917157932919641,
+      "comp": 0.721061354633424,
+      "mc": 20.745480438957035,
+      "pc": 0.9025761984682424,
+      "N": 4962
+    },
+    "ER": {
+      "xor": 0.6373535837773372,
+      "narma": 0.32877144876060566,
+      "comp": 0.9933256433223437,
+      "mc": 18.91175760591283,
+      "pc": 0.9111509488383929,
+      "N": 4000
+    },
+    "DENS": {
+      "xor": 0.16020924300818298,
+      "narma": 0.3768867231426012,
+      "comp": -0.296004013190105,
+      "mc": 19.4199848847836,
+      "pc": 0.9472623426693166,
+      "N": 4000
+    },
+    "SHUF": {
+      "xor": 0.15929254192811487,
+      "narma": 0.3951174987347797,
+      "comp": -0.4728645900025441,
+      "mc": 19.157794261795967,
+      "pc": 0.9484448675627023,
+      "N": 4000
+    }
+  },
+  "design_meta": {
+    "N": 4000,
+    "nnz": 570086,
+    "frac_E": 0.59175,
+    "spectral_frac": 0.03125,
+    "dens": {
+      "1->1": 0.03885880278037141,
+      "1->-1": 0.03148563776994593,
+      "-1->1": 0.025838593792407914,
+      "-1->-1": 0.05329380104015534
+    },
+    "layer_counts": {
+      "L2/3": 2800,
+      "L4": 560,
+      "L5": 400,
+      "L6": 240
+    },
+    "mf_mean": 0.0670882630244726,
+    "graph_seed": 7,
+    "plain_words": "A synthetic 4000-neuron directed network whose excitatory/inhibitory labels and four E/I connection-class densities+weight magnitudes are matched to FlyWire CX statistics (stochastic block model; no copied edges). Neurons get cortical-like layers; each neuron's myelin fraction is drawn from the real H01 distribution for that layer, then edge delays follow the same myelin\u2192delay map used in the human patch (more myelin \u2192 shorter delay). Weak spectral tempering keeps the bulk of large eigenvalues from filling like an ER graph."
+  },
+  "zparams": {
+    "mu_xor": 0.33479904099080016,
+    "sd_xor": 0.2885679007197025,
+    "mu_narma": 0.37756351778706587,
+    "sd_narma": 0.05200703289611743,
+    "n_xor": 27,
+    "n_narma": 27,
+    "source": "tune seeds \u00d7 all arms, locked before eval"
+  }
+}
