@@ -1,0 +1,29 @@
+{
+  "alphas": {
+    "REAL_NOD": 1e-08,
+    "REAL_DEL": 1e-08,
+    "ER_NOD": 1e-08,
+    "ER_DEL": 1e-08,
+    "SHUF_NOD": 1e-08,
+    "SHUF_DEL": 1e-08,
+    "DENS_NOD": 1e-08,
+    "DENS_DEL": 1e-08
+  },
+  "grid": [
+    1e-08,
+    1e-06,
+    0.0001,
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "tune_seeds": [
+    90,
+    91,
+    92
+  ],
+  "criterion": "argmin mean SEQ NRMSE",
+  "locked_at": "2026-10-28T14:50:35Z",
+  "fairness": "zero in-edges onto drive ports in all arms"
+}
