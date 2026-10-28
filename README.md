@@ -2,18 +2,18 @@
 
 Preregistered reservoir-computing experiments on real connectomes: FlyWire central complex (CX), grafts from mouse MICrONS and human H01 cortex, plus C. elegans, zebrafish (Fish1), and zebra finch Area X probes.
 
-**Status:** active research scratchpad. Mature developmental and myelin-replication arms may still be running locally. Headline numbers below come only from committed `RESULTS*.md` files.
+**Status:** active research scratchpad. Headline numbers below come only from committed `RESULTS*.md` files. See also `ANALYSIS_cross_species.md` for an evidence-only cross-species write-up.
 
 ## Honest results summary (current)
 
 - **Delays roughly triple memory for every wiring type.** Fixed / myelin-style delays lift MC from ~6 to ~15–17 on fly/Frankenstein-sized nets; the same boost appears on ER / shuffle / density-matched controls. Delays are the main win so far, not species-specific wiring.
-- **Real H01 myelin placement beat shuffled myelin on NARMA in the human patch** (`regions/myelin_real/`, HUMAN_LAYERED NARMA: p_bonf ≈ 0.002). That contrast did **not** transfer to the Frankenstein graft in the same run. **Replication with more seeds is pending** (`regions/myelin_real_rep/`).
+- **Real H01 myelin placement beat shuffled myelin on NARMA in the human patch** (`regions/myelin_real/`, HUMAN_LAYERED NARMA: p_bonf ≈ 0.002). That contrast did **not** transfer to the Frankenstein graft in the same run. **Replication held:** 24 new seeds, REAL NARMA **0.393** vs SHUF **0.557**, p_one_sided ≈ **2×10⁻⁹**, `claim_ok=True` (`regions/myelin_real_rep/`). LAYER_SHUF is in between (0.441); EI_SHUF ≈ SHUF.
 - **Frankenstein’s gains are mostly explained by size.** Best-of fly (Frankenstein + real myelin) beats plain fly+delays on pattern completion in raw means, but size-/recipe-matched ER/shuffle controls match or beat it after Bonferroni (`regions/best_fly/`).
 - **Earlier few-shot “real wiring learns from fewer examples” advantage was a ridge-α artifact** and was corrected: with per-arm tuned α, real vs random few-shot MC ties (`regions/fewshot_delay/`).
 - **Compass / path-integration test was null**; all arms (fly and controls) were near-failing (~1.2 rad RMSE ≈ 70°), so the task did not discriminate wiring (`regions/compass/`).
 - **Zebra finch Area X song-sequence test was null after Bonferroni** (0/9 REAL_DEL vs delay-matched controls). Density/ER controls beat REAL on sequence NRMSE; delays still help (`regions/finch/`).
 
-Level framing: we are at **Level 1** (useful engineering / scaling evidence). The myelin-placement NARMA result is the main candidate thread toward Level 2, pending replication.
+Level framing: we are at **Level 1** for generic wiring/composition. The myelin-placement NARMA result is the main **Level-2 candidate** and is now **replicated** on new seeds (`myelin_real_rep`). Cross-species stitching still fails size-/delay-matched controls (`ANALYSIS_cross_species.md`).
 
 ## Core setup (rounds 1–3)
 
@@ -49,7 +49,10 @@ Short Adam + truncated BPTT. Fly stays more robust after training; on T0 both fl
 | Synthetic hippocampus | `regions/hippo/` | Extra neurons help NARMA/T0, but **random module ≈ hippocampus**. |
 | EMPN organ-fix maze (v2b) | `regions/empn/` | Extra organs **do not** beat same-size RANDMOD after Bonferroni. |
 | Myelination (synthetic delays) | `regions/myelin/` | FIXED delays MC **45.1** > ADAPT **43.0** > NODELAY **40.4** > ADAPT-SHUF **37.7**. |
-| **Real H01 myelin placement** | `regions/myelin_real/` | HUMAN_LAYERED: REAL beats SHUF on NARMA (p_bonf≈0.002). FRANKEN: no REAL vs SHUF win. Replication pending. |
+| **Real H01 myelin placement** | `regions/myelin_real/` | HUMAN_LAYERED: REAL beats SHUF on NARMA (p_bonf≈0.002). FRANKEN: no REAL vs SHUF win. |
+| **Myelin REAL vs SHUF replication** | `regions/myelin_real_rep/` | **REPLICATED.** REAL 0.393 vs SHUF 0.557 NARMA (n=24, p≈2e-9). LAYER/EI shuffles show placement matters. |
+| **Developmental maturation** | `regions/mature/` | Hebb/prune/full maturation; many Bonf survivors on ΔΔ — see RESULTS; absolute scores often degrade. |
+| **Cross-species analysis** | `ANALYSIS_cross_species.md` | Size/spectrum, delays, weak bridges (σ=0.05), myelin win, consistent nulls, next tests. |
 | **Smartest fly (best-of)** | `regions/best_fly/` | Delays dominate; BEST ≈ Frankenstein+real myelin; ER_BEST raw-best; no BEST vs control contrast survives Bonferroni. |
 | **Few-shot + matched delays** | `regions/fewshot_delay/` | Per-arm ridge α removes earlier “few-shot real>random” claim. Delays still help all wirings. |
 | **Fly compass / heading** | `regions/compass/` | Null: 0/9 primary contrasts; all arms ~1.2 rad RMSE (task too hard / wrong readout). |

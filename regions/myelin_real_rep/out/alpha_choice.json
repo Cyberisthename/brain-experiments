@@ -1,0 +1,35 @@
+{
+  "alphas": {
+    "NODELAY|0.1": 1e-06,
+    "NODELAY|0.2": 1e-08,
+    "NODELAY|0.3": 1e-08,
+    "REAL_MYELIN|0.1": 1e-08,
+    "REAL_MYELIN|0.2": 1e-08,
+    "REAL_MYELIN|0.3": 1e-08,
+    "SHUF_MYELIN|0.1": 1e-08,
+    "SHUF_MYELIN|0.2": 1e-08,
+    "SHUF_MYELIN|0.3": 1e-08,
+    "LAYER_SHUF|0.1": 1e-08,
+    "LAYER_SHUF|0.2": 1e-08,
+    "LAYER_SHUF|0.3": 1e-08,
+    "EI_SHUF|0.1": 1e-08,
+    "EI_SHUF|0.2": 1e-08,
+    "EI_SHUF|0.3": 1e-08
+  },
+  "grid": [
+    1e-08,
+    1e-06,
+    0.0001,
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "tune_seeds": [
+    90,
+    91,
+    92
+  ],
+  "criterion": "argmin mean NARMA on tune seeds; shuffle_id=0 for shuffle arms",
+  "locked_at": "2026-10-28T14:53:27Z"
+}
