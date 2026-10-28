@@ -1,27 +1,29 @@
 """H01 myelin REAL vs SHUF replication. Prereg: PREREGISTRATION_myelin_real_rep.md."""
 from __future__ import annotations
 import os, sys, json, time, math
+from pathlib import Path
 for v in ["OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"]:
     os.environ[v] = "1"
-sys.path.insert(0, "/workspace/flybrain/compress")
-sys.path.insert(0, "/workspace/flybrain/regions/empn")
-sys.path.insert(0, "/workspace/flybrain/regions/hybrid_human")
-sys.path.insert(0, "/workspace/flybrain/regions/myelin_real")
-sys.path.insert(0, "/workspace/flybrain")
+H = Path(__file__).resolve().parent
+_ROOT = H.parents[1]
+sys.path.insert(0, str(_ROOT / "compress"))
+sys.path.insert(0, str(_ROOT / "regions" / "empn"))
+sys.path.insert(0, str(_ROOT / "regions" / "hybrid_human"))
+sys.path.insert(0, str(_ROOT / "regions" / "myelin_real"))
+sys.path.insert(0, str(_ROOT))
 import numpy as np
 import scipy.sparse as sp
 from multiprocessing import Pool
-from pathlib import Path
 import hybrid_human as HH
 import fast_kernels as K
 import myelin_real as MR  # DelayReservoirFast, run_delay_reservoir, masked_win
 
-H = Path(__file__).resolve().parent
 OUT = H / "out"; OUT.mkdir(exist_ok=True)
 JF = OUT / "runs.jsonl"
-MYELIN = Path("/workspace/flybrain/regions/hybrid_human/data/human_myelin.npz")
-HUMAN = Path("/workspace/flybrain/regions/hybrid_human/data/human_module.npz")
-SRC_MY = Path("/workspace/flybrain/regions/hybrid_human/data/SOURCE_myelin.json")
+_DATA = _ROOT / "regions" / "hybrid_human" / "data"
+MYELIN = _DATA / "human_myelin.npz"
+HUMAN = _DATA / "human_module.npz"
+SRC_MY = _DATA / "SOURCE_myelin.json"
 
 EVAL_SEEDS = list(range(100, 124))  # 24 new
 TUNE_SEEDS = [90, 91, 92]
@@ -36,6 +38,16 @@ SHUF_ARMS = {"SHUF_MYELIN", "LAYER_SHUF", "EI_SHUF"}
 N_SHUF = 3
 TASKS = ["MC", "NARMA", "PC_HARD"]
 NET = "HUMAN_LAYERED"
+
+# Short end-to-end smoke (Kaggle/CI): MYELIN_SMOKE=1
+if os.environ.get("MYELIN_SMOKE") == "1":
+    EVAL_SEEDS = [100]
+    TUNE_SEEDS = [90]
+    LEAKS = [0.2]
+    ARMS = ["NODELAY", "REAL_MYELIN"]
+    N_SHUF = 1
+    TASKS = ["NARMA"]
+    ALPHA_GRID = [1e-4, 1e-2]  # smaller tune grid for smoke
 
 
 def load_maps():

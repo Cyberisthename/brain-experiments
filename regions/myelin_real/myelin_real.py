@@ -1,23 +1,24 @@
 """Real H01 myelin → delays on human-pre edges. Prereg: PREREGISTRATION_myelin_real.md."""
 from __future__ import annotations
 import os, sys, json, time
+from pathlib import Path
 for v in ["OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"]:
     os.environ[v] = "1"
-sys.path.insert(0, "/workspace/flybrain/compress")
-sys.path.insert(0, "/workspace/flybrain/regions/empn")
-sys.path.insert(0, "/workspace/flybrain/regions/hybrid_human")
-sys.path.insert(0, "/workspace/flybrain/regions/frankenstein")
-sys.path.insert(0, "/workspace/flybrain")
+H = Path(__file__).resolve().parent
+_ROOT = H.parents[1]
+sys.path.insert(0, str(_ROOT / "compress"))
+sys.path.insert(0, str(_ROOT / "regions" / "empn"))
+sys.path.insert(0, str(_ROOT / "regions" / "hybrid_human"))
+sys.path.insert(0, str(_ROOT / "regions" / "frankenstein"))
+sys.path.insert(0, str(_ROOT))
 import numpy as np
 import scipy.sparse as sp
 from multiprocessing import Pool
-from pathlib import Path
 import fast_kernels as K
 
-H = Path(__file__).resolve().parent
 OUT = H / "out"; OUT.mkdir(exist_ok=True)
 JF = OUT / "runs.jsonl"
-MYELIN = Path("/workspace/flybrain/regions/hybrid_human/data/human_myelin.npz")
+MYELIN = _ROOT / "regions" / "hybrid_human" / "data" / "human_myelin.npz"
 SEEDS = list(range(8))
 ARMS = ["NODELAY", "REAL_MYELIN", "SHUF_MYELIN", "ADAPT"]
 NETS = ["HUMAN_LAYERED", "FRANKEN"]
@@ -314,7 +315,7 @@ def _job(args):
 
 def main():
     # coverage gate
-    src = Path("/workspace/flybrain/regions/hybrid_human/data/SOURCE_myelin.json")
+    src = _ROOT / "regions" / "hybrid_human" / "data" / "SOURCE_myelin.json"
     if not MYELIN.exists() or not src.exists():
         print("MISSING myelin artifacts — run extract first", flush=True)
         sys.exit(2)
