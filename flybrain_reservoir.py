@@ -7,12 +7,17 @@ from scipy.sparse.linalg import eigs
 from scipy.stats import mannwhitneyu
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-REPO = os.environ.get("CHATBOT_REPO", "/workspace/chatbot-site-src")
 SEEDS = list(range(12))
 LEAK, RHO = 0.5, 0.95
 
-# ---- user's benchmark functions (imported, not copied) ----
-spec = importlib.util.spec_from_file_location("bench", os.path.join(REPO, "scripts", "braid_vs_gd_benchmark.py"))
+# ---- vendored braid benchmark (repo-relative; was chatbot-site-src) ----
+_bench_path = os.path.join(HERE, "vendor", "braid_vs_gd_benchmark.py")
+if not os.path.isfile(_bench_path):
+    raise FileNotFoundError(
+        f"missing vendored braid benchmark at {_bench_path} "
+        "(expected vendor/braid_vs_gd_benchmark.py in the repo)"
+    )
+spec = importlib.util.spec_from_file_location("bench", _bench_path)
 bench = importlib.util.module_from_spec(spec); spec.loader.exec_module(bench)
 
 def load_cx():
