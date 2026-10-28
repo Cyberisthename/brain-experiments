@@ -1,0 +1,25 @@
+{
+  "source": "Zenodo 10.5281/zenodo.16744240 microns_mm3_connectome_v1412.h5 (condensed)",
+  "underlying": "MICrONS minnie65_public materialization v1412 (proofreading_status_and_strategy + synapses_pni_2 + aibs_metamodel_mtypes)",
+  "materialization": 1412,
+  "datastack": "minnie65_public",
+  "download_date": "2026-10-27",
+  "cave_token_required": false,
+  "n_vertices_file": 50948,
+  "n_proofread_module": 1871,
+  "n_edges_condensed": 97585,
+  "n_E": 1680,
+  "n_I": 191,
+  "criteria": "status_axon=t & status_dendrite=t in Zenodo file, union GCS proofread root ids present; drop status_axon=f",
+  "weight": "synapse_count * pre_sign (EXC=+1, INH=-1 from synapse_class)",
+  "layer_counts": {
+    "L2/3": 557,
+    "L4": 542,
+    "L6": 392,
+    "L5": 301,
+    "unk": 79
+  },
+  "note": "CAVE minnie65_public requires a free API token even for public data; used credential-free Zenodo static export instead.",
+  "access_path": "No CAVE token / no Google sign-in. Used credential-free Zenodo static export (10.5281/zenodo.16744240, Reimann 2025, based on MICrONS Consortium Nature 2025 minnie65 materialization v1412) plus GCS static annotation CSVs at gs://mat_dbs/public/minnie65_phase3_v1/v1412/ (proofreading_status_and_strategy, aibs_metamodel_mtypes). BossDB synapse_graph CSV (47GB v117) not needed.",
+  "cave_blocked_reason": "CAVE auth requires Google account; phone verification unavailable to user"
+}

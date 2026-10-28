@@ -1,0 +1,28 @@
+{
+  "ok": false,
+  "error": null,
+  "datastack": null,
+  "attempts": [
+    {
+      "name": "minnie65_public",
+      "ok": false,
+      "error": "You have not setup a token to access\nhttps://global.daf-apis.com/info/api/v2/datastack/full/minnie65_public\nwith the current auth configuration.\n\nRead the documentation at \nhttps://caveconnectome.github.io/CAVEclient/tutorials/authentication/\nor follow instructions under \nclient.auth.get_new_token() for how to set a valid API token.\nafter initializing a global client with\nclient=CAVEclient(server_"
+    },
+    {
+      "name": "minnie65_public_v117",
+      "ok": false,
+      "error": "You have not setup a token to access\nhttps://global.daf-apis.com/info/api/v2/datastack/full/minnie65_public_v117\nwith the current auth configuration.\n\nRead the documentation at \nhttps://caveconnectome.github.io/CAVEclient/tutorials/authentication/\nor follow instructions under \nclient.auth.get_new_token() for how to set a valid API token.\nafter initializing a global client with\nclient=CAVEclient(se"
+    },
+    {
+      "name": "minnie65_phase3_v1",
+      "ok": false,
+      "error": "You have not setup a token to access\nhttps://global.daf-apis.com/info/api/v2/datastack/full/minnie65_phase3_v1\nwith the current auth configuration.\n\nRead the documentation at \nhttps://caveconnectome.github.io/CAVEclient/tutorials/authentication/\nor follow instructions under \nclient.auth.get_new_token() for how to set a valid API token.\nafter initializing a global client with\nclient=CAVEclient(serv"
+    },
+    {
+      "name": "minnie65_public_v343",
+      "ok": false,
+      "error": "You have not setup a token to access\nhttps://global.daf-apis.com/info/api/v2/datastack/full/minnie65_public_v343\nwith the current auth configuration.\n\nRead the documentation at \nhttps://caveconnectome.github.io/CAVEclient/tutorials/authentication/\nor follow instructions under \nclient.auth.get_new_token() for how to set a valid API token.\nafter initializing a global client with\nclient=CAVEclient(se"
+    }
+  ],
+  "caveclient_ver": "8.2.1"
+}
