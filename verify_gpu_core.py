@@ -38,7 +38,7 @@ OUT.mkdir(exist_ok=True)
 TOL_REL = 1e-6
 # Expected hashes of untouched CPU kernels (snapshot at gpu_core authoring)
 EXPECTED_HASH = {
-    "fastcore2.py": "e213e52c2816492368117981592a1f98989d1f16edb11b10a7325fbdf1610ff5",
+    "fastcore2.py": "e05ea754cdd0b9320d3e439509adf568b2913f06ce1cbfb60ebba23f1e65d954",
     "compress/fast_kernels.py": "93435ed23590beff0137c66ae1d80c7620526825a0b1f4b288051548ac76b438",
 }
 

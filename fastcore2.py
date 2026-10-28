@@ -24,13 +24,14 @@ import scipy.sparse as sp
 # Re-use existing kernels (dual ridge, radius cache, single CSR loop, …)
 import sys
 
-sys.path.insert(0, "/workspace/flybrain/compress")
+_ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(_ROOT / "compress"))
 import fast_kernels as K  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
-CACHE_DIR = Path(os.environ.get("FASTCORE2_CACHE", "/workspace/flybrain/.cache/fastcore2"))
+CACHE_DIR = Path(os.environ.get("FASTCORE2_CACHE", str(_ROOT / ".cache" / "fastcore2")))
 CACHE_DIR.mkdir(parents=True, exist_ok=True)
 GRAPH_DIR = CACHE_DIR / "control_graphs"
 GRAPH_DIR.mkdir(parents=True, exist_ok=True)
