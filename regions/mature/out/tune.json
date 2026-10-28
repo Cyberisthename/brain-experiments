@@ -1,0 +1,14 @@
+{
+  "eta": 3e-05,
+  "prune_frac": 0.02,
+  "prune_every": 1000,
+  "delay_ema": 0.1,
+  "dmax": 5,
+  "tune_seeds": [
+    90,
+    91,
+    92
+  ],
+  "tune_score": 6.044865401527733,
+  "tuned_at": "2026-10-28T12:14:02Z"
+}
