@@ -1,0 +1,6 @@
+{
+  "fly_cx": {"file": "fly_cx_module.npz", "from": "empn/out/circuit.npz CX subgraph", "cx_layer_proxy": true},
+  "mouse": {"file": "mouse_module.npz", "from": "regions/hybrid/data (MICrONS Zenodo v1412)"},
+  "human": {"file": "human_module.npz", "from": "regions/hybrid_human/data (H01 HF edges)"},
+  "octopus": "NOT INCLUDED — see regions/hybrid_octo/data/SOURCE.json"
+}
