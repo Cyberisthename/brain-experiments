@@ -1,0 +1,30 @@
+# Large connectome downloads (fetch separately; see README)
+**/data/**
+!**/data/SOURCE.json
+
+# Per-run dumps and caches
+**/out/**
+!**/out/DIAGNOSIS*.md
+out2/
+out3/
+__pycache__/
+*.pyc
+.venv*/
+*.egg-info/
+
+# Binary / huge artifacts
+*.npz
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.npy
+*.npz
+*.jsonl
+*.csv
+!**/data_probe.json
+
+# Logs / runtime markers
+*.log
+*.done
+queue.done
