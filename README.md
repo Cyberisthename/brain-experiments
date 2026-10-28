@@ -2,7 +2,7 @@
 
 Preregistered reservoir-computing experiments on real connectomes: FlyWire central complex (CX), grafts from mouse MICrONS and human H01 cortex, plus C. elegans, zebrafish (Fish1), and zebra finch Area X probes.
 
-**Status:** active research scratchpad. Some arms (mature, finch song, myelin replication) may still be running locally. Headline numbers below come only from committed `RESULTS*.md` files.
+**Status:** active research scratchpad. Mature developmental and myelin-replication arms may still be running locally. Headline numbers below come only from committed `RESULTS*.md` files.
 
 ## Honest results summary (current)
 
@@ -11,6 +11,7 @@ Preregistered reservoir-computing experiments on real connectomes: FlyWire centr
 - **Frankenstein’s gains are mostly explained by size.** Best-of fly (Frankenstein + real myelin) beats plain fly+delays on pattern completion in raw means, but size-/recipe-matched ER/shuffle controls match or beat it after Bonferroni (`regions/best_fly/`).
 - **Earlier few-shot “real wiring learns from fewer examples” advantage was a ridge-α artifact** and was corrected: with per-arm tuned α, real vs random few-shot MC ties (`regions/fewshot_delay/`).
 - **Compass / path-integration test was null**; all arms (fly and controls) were near-failing (~1.2 rad RMSE ≈ 70°), so the task did not discriminate wiring (`regions/compass/`).
+- **Zebra finch Area X song-sequence test was null after Bonferroni** (0/9 REAL_DEL vs delay-matched controls). Density/ER controls beat REAL on sequence NRMSE; delays still help (`regions/finch/`).
 
 Level framing: we are at **Level 1** (useful engineering / scaling evidence). The myelin-placement NARMA result is the main candidate thread toward Level 2, pending replication.
 
@@ -54,7 +55,7 @@ Short Adam + truncated BPTT. Fly stays more robust after training; on T0 both fl
 | **Fly compass / heading** | `regions/compass/` | Null: 0/9 primary contrasts; all arms ~1.2 rad RMSE (task too hard / wrong readout). |
 | **C. elegans (8 worms)** | `regions/celegans/` | Individual-variation Witvliet graphs; see RESULTS for real-vs-random across worms/ages. |
 | Zebrafish Fish1 | `regions/zebrafish/` | **Blocked:** needs CAVE/DAF auth; no public synapse table. Provenance in `SOURCES.md`. No invented graph. |
-| Zebra finch Area X | `regions/finch/` | Sources documented; full song-learning run may still be in progress. |
+| **Zebra finch Area X** | `regions/finch/` | Null after Bonferroni (0/9). ER/DENS beat REAL on SEQ NRMSE; delays help all arms. |
 | Fly–mouse / human hybrids | `regions/hybrid/`, `hybrid_human/` | Modules built; see earlier RESULTS / diagnoses. |
 | Frankenstein (fly+mouse+human) | `regions/frankenstein/` | Cross-species graft; size explains much of the gain once delays are matched. |
 
