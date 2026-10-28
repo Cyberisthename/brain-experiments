@@ -1,14 +1,34 @@
 """Compression test. See PREREGISTRATION_compress.md. Resumable: out/jobs.jsonl"""
 import os, sys, json, time
+from pathlib import Path
 for v in ["OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"]: os.environ[v] = "1"
-sys.path.insert(0, "/workspace/flybrain")
+H = os.path.dirname(os.path.abspath(__file__))
+_ROOT = str(Path(H).resolve().parent)
+if _ROOT not in sys.path:
+    sys.path.insert(0, _ROOT)
 import numpy as np, pandas as pd, scipy.sparse as sp
 from scipy.sparse.linalg import eigs, svds
 from scipy.cluster.vq import kmeans2
 from multiprocessing import Pool
 import flybrain_reservoir as F
-H = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.join(H, "out"); JF = os.path.join(OUT, "jobs.jsonl")
-RG = "/workspace/flybrain/regions/out/graphs"; REAL = sp.load_npz(f"{RG}/0_REAL_0.npz").tocsr(); N = REAL.shape[0]
+OUT = os.path.join(H, "out"); JF = os.path.join(OUT, "jobs.jsonl")
+RG = os.path.join(_ROOT, "regions", "out", "graphs")
+REAL = None
+N = None
+
+def _ensure_real():
+    """Lazy-load REAL graph so importing compress does not require the npz until used."""
+    global REAL, N
+    if REAL is not None:
+        return REAL
+    path = os.path.join(RG, "0_REAL_0.npz")
+    if not os.path.exists(path):
+        raise FileNotFoundError(
+            f"missing {path}; run scripts/kaggle_setup.py or place 0_REAL_0.npz under regions/out/graphs/"
+        )
+    REAL = sp.load_npz(path).tocsr()
+    N = REAL.shape[0]
+    return REAL
 LEAKS = [0.2, 0.5, 0.9]; RHOS = [0.7, 0.95, 1.1]; TUNE = [900, 901]; TEST = list(range(8))
 WIRES = ["REAL", "ER", "DEG"]; METH = [("FULL", 1.0)] + [(m, f) for m in ["RANDP", "MAGP", "LOWRANK", "CONSOL"] for f in [0.5, 0.25, 0.1]]
 
@@ -16,12 +36,14 @@ def radius(W):
     if sp.issparse(W): return abs(eigs(W, k=1, which="LM", return_eigenvectors=False, maxiter=20000, tol=1e-6)[0])
     return np.max(np.abs(np.linalg.eigvals(W)))
 def base(w, s):
-    if w == "REAL": return REAL
+    R = _ensure_real()
+    if w == "REAL": return R
     if w == "DEG": return sp.load_npz(f"{RG}/0_SHUF_{s}.npz").tocsr()
-    g = np.random.default_rng(3000 + s); c = REAL.tocoo(); E = c.nnz
+    g = np.random.default_rng(3000 + s); c = R.tocoo(); E = c.nnz
     k = np.unique(g.integers(0, N * N, int(E * 1.1))); k = g.permutation(k[(k // N) != (k % N)])[:E]
     W = sp.csr_matrix((g.permutation(c.data), (k // N, k % N)), shape=(N, N)); return W / radius(W)
 def compress(W, m, f, s):
+    _ensure_real()
     g = np.random.default_rng(4000 + s); k = int(round(f * N))
     if m == "FULL": return W
     if m in ("RANDP", "MAGP"):

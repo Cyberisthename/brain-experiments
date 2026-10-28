@@ -1,16 +1,19 @@
 """Fly CX + mouse + human frankenstein graft. Prereg: PREREGISTRATION_frankenstein.md.
-No octopus (no public neuron edges). Block ρ=1, bridges σ=0.05, global ρ=0.9.
+Octopus: SYNTHETIC VL arms only (no public neuron edges). Default ARMS unchanged. Block ρ=1, bridges σ=0.05, global ρ=0.9.
 """
 from __future__ import annotations
 import os, sys, json, time
 for v in ["OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"]:
     os.environ[v] = "1"
-sys.path.insert(0, "/workspace/flybrain/regions/empn")
-sys.path.insert(0, "/workspace/flybrain/compress")
+from pathlib import Path
+_HERE = Path(__file__).resolve().parent
+_ROOT = _HERE.parents[1]
+sys.path.insert(0, str(_ROOT / "regions" / "empn"))
+sys.path.insert(0, str(_ROOT / "compress"))
 import numpy as np, scipy.sparse as sp
 from multiprocessing import Pool
-from pathlib import Path
 import compress as C
+import fast_kernels as K  # mouse does not import this
 
 H = Path(__file__).resolve().parent
 OUT = H / "out"; OUT.mkdir(exist_ok=True)
@@ -27,17 +30,25 @@ RHO = 0.9
 HEBB_ETA = 1e-4
 BRIDGE_SIGMA = 0.05
 BLOCKS = ("mouse", "human", "fly_cx")  # order in block-diag
+BLOCKS_OCTO = ("mouse", "human", "octo", "fly_cx")  # + SYNTHETIC octo VL
+BLOCKS_OCTO_RAND = ("mouse", "human", "octo_rand", "fly_cx")
 
 
 def load_mod(name):
-    fname = {"mouse": "mouse_module.npz", "human": "human_module.npz", "fly_cx": "fly_cx_module.npz"}[name]
+    fname = {
+        "mouse": "mouse_module.npz",
+        "human": "human_module.npz",
+        "fly_cx": "fly_cx_module.npz",
+        "octo": "octo_vl_synthetic.npz",       # SYNTHETIC VL rules; not real edges
+        "octo_rand": "octo_vl_random.npz",     # matched N/nnz/E-I random control
+    }[name]
     z = np.load(DATA / fname, allow_pickle=True)
     W = sp.csr_matrix((z["W_data"], z["W_indices"], z["W_indptr"]), shape=tuple(z["W_shape"]))
     return W, z["sign"].astype(np.int8), z["layer"].astype(str), z["cell_type"].astype(str)
 
 
 def scale(W, rho=RHO):
-    r = float(C.radius(W))
+    r = float(K.radius_cached(W))
     return W * (rho / (r + 1e-12))
 
 
@@ -163,8 +174,16 @@ def kinds_for_arm(arm):
     base = arm.replace("+HEBB", "")
     if base == "FLY_CX":
         return None
+    if base == "OCTO_SYNTH":
+        return None
+    if base == "OCTO_RAND":
+        return None
     if base == "FRANKEN":
         return {n: "real" for n in BLOCKS}
+    if base == "FRANKEN_OCTO":
+        return {n: "real" for n in BLOCKS_OCTO}
+    if base == "FRANKEN_OCTO_RAND":
+        return {n: "real" for n in BLOCKS_OCTO_RAND}
     if base == "ER":
         return {n: "er" for n in BLOCKS}
     if base == "SHUF":
@@ -201,8 +220,8 @@ def tune_best_of():
                     x = 0.8 * x + 0.2 * np.tanh(Wm @ x + Win[:, 0] * u[i] + b)
                     X[i] = x
                 Y = np.stack([np.roll(u, k) for k in range(1, D + 1)], 1)
-                B = F.ridge(X[wash:wash + tr], Y[wash:wash + tr], 1e-6)
-                P = F.pred(X[wash + tr:], B); Yt = Y[wash + tr:]
+                B = K.ridge(X[wash:wash + tr], Y[wash:wash + tr], 1e-6)
+                P = K.pred(X[wash + tr:], B); Yt = Y[wash + tr:]
                 val = float(sum(np.nan_to_num(np.corrcoef(P[:, k], Yt[:, k])[0, 1]) ** 2 for k in range(D)))
                 scores[kind].append(val)
         mean_r = float(np.mean(scores["real"]))
@@ -218,19 +237,28 @@ def build_arm(arm, seed, g=None):
     if g is None:
         g = np.random.default_rng(seed + 7)
     base = arm.replace("+HEBB", "")
-    if base == "FLY_CX":
-        Wm, sign, layer, ct = make_block("fly_cx", "real", seed)
+    if base in ("FLY_CX", "OCTO_SYNTH", "OCTO_RAND"):
+        mod = {"FLY_CX": "fly_cx", "OCTO_SYNTH": "octo", "OCTO_RAND": "octo_rand"}[base]
+        Wm, sign, layer, ct = make_block(mod, "real", seed)
         W = scale(Wm, RHO)
         L4, L5, _ = layer_sets(layer, Wm.shape[0])
-        return W, dict(names=["fly_cx"], sizes=[Wm.shape[0]], offsets=[0, Wm.shape[0]],
+        return W, dict(names=[mod], sizes=[Wm.shape[0]], offsets=[0, Wm.shape[0]],
                        N=Wm.shape[0], drive=L4, bridge={}, fly_offset=0,
-                       kinds={"fly_cx": "real"}, hebb=arm.endswith("+HEBB"))
+                       kinds={mod: "real"}, hebb=arm.endswith("+HEBB"),
+                       synthetic_octo=(mod in ("octo", "octo_rand")))
     kinds = kinds_for_arm(arm)
     if kinds == "BEST_OF":
         choices = tune_best_of()
         kinds = {n: choices[n]["pick"] for n in BLOCKS}
+        block_names = list(BLOCKS)
+    elif base == "FRANKEN_OCTO":
+        block_names = list(BLOCKS_OCTO)
+    elif base == "FRANKEN_OCTO_RAND":
+        block_names = list(BLOCKS_OCTO_RAND)
+    else:
+        block_names = list(BLOCKS)
     blocks = []
-    for name in BLOCKS:
+    for name in block_names:
         Wm, sign, layer, ct = make_block(name, kinds[name], seed)
         blocks.append((name, Wm, layer))
     W, info = graft_blocks(blocks, seed, g)
@@ -238,6 +266,7 @@ def build_arm(arm, seed, g=None):
     info["hebb"] = arm.endswith("+HEBB")
     # stash mouse+human offsets for hebb
     info["plastic"] = [n for n in ("mouse", "human") if n in info["names"]]
+    info["synthetic_octo"] = any(n in ("octo", "octo_rand") for n in info["names"])
     return W, info
 
 
@@ -253,12 +282,7 @@ def masked_win(n, d, in_idx, rng, scale=0.5):
 
 
 def oja_update_csr(Wm, h_pre, h_post, eta):
-    if eta <= 0 or Wm.nnz == 0:
-        return
-    rows = np.repeat(np.arange(Wm.shape[0]), np.diff(Wm.indptr))
-    cols = Wm.indices
-    data = Wm.data
-    data += eta * h_post[rows] * (h_pre[cols] - h_post[rows] * data)
+    K.oja_update_csr_fast(Wm, h_pre, h_post, eta)
 
 
 def hebb_warmup(W, info, Win, b, U, leak, until):
@@ -281,14 +305,7 @@ def hebb_warmup(W, info, Win, b, U, leak, until):
 
 
 def run_reservoir(W, Win, b, U, leak):
-    n = W.shape[0]
-    X = np.empty((len(U), n))
-    x = np.zeros(n)
-    for i, u in enumerate(U):
-        drive = Win[:, 0] * u if np.ndim(u) == 0 else Win @ np.asarray(u, float)
-        x = (1 - leak) * x + leak * np.tanh(W @ x + drive + b)
-        X[i] = x
-    return X
+    return K.run_reservoir_csr(W, Win, b, U, leak)
 
 
 def mc_task(W, leak, rng, in_idx, hebb=False, info=None):
@@ -301,8 +318,8 @@ def mc_task(W, leak, rng, in_idx, hebb=False, info=None):
         W = hebb_warmup(W, info, Win, b, u, leak, wash + tr)
     X = run_reservoir(W, Win, b, u, leak)
     Y = np.stack([np.roll(u, k) for k in range(1, D + 1)], 1)
-    B = F.ridge(X[wash:wash + tr], Y[wash:wash + tr], 1e-6)
-    P = F.pred(X[wash + tr:], B); Yt = Y[wash + tr:]
+    B = K.ridge(X[wash:wash + tr], Y[wash:wash + tr], 1e-6)
+    P = K.pred(X[wash + tr:], B); Yt = Y[wash + tr:]
     return float(sum(np.nan_to_num(np.corrcoef(P[:, k], Yt[:, k])[0, 1]) ** 2 for k in range(D)))
 
 
@@ -314,12 +331,14 @@ def t0_task(W, leak, rng, in_idx, hebb=False, info=None):
     Win, b = masked_win(W.shape[0], n_in, in_idx, rng)
     if hebb and info:
         W = hebb_warmup(W, info, Win, b, Xin[:ntr, 0], leak, ntr)
-    S = np.zeros((len(Xin), W.shape[0]))
-    d = Xin @ Win.T + b
+    ST = np.zeros((W.shape[0], len(Xin)))
+    dT = (Xin @ Win.T + b).T
+    Wc = W.tocsr()
     for _ in range(10):
-        S = (1 - leak) * S + leak * np.tanh((W @ S.T).T + d)
-    B = F.ridge(S[:ntr], Y[:ntr], 1e-4)
-    return float(np.mean((F.pred(S[ntr:], B) - Y[ntr:]) ** 2))
+        ST = (1 - leak) * ST + leak * np.tanh(Wc @ ST + dT)
+    S = ST.T
+    B = K.ridge(S[:ntr], Y[:ntr], 1e-4)
+    return float(np.mean((K.pred(S[ntr:], B) - Y[ntr:]) ** 2))
 
 
 def run_one(arm, seed, task):
@@ -342,17 +361,21 @@ def _job(args):
 
 def main():
     jobs = [(a, s, t) for a in ARMS for s in SEEDS for t in TASKS]
-    # resume
+    # resume from runs.jsonl AND skip anything already in runs_fast.jsonl (fast pass)
     done = set()
-    if JF.exists():
-        for line in JF.open():
-            try:
-                r = json.loads(line); done.add((r["arm"], r["seed"], r["task"]))
-            except Exception:
-                pass
+    for path in (JF, OUT / "runs_fast.jsonl"):
+        if path.exists():
+            for line in path.open():
+                try:
+                    r = json.loads(line)
+                    if "error" in r:
+                        continue
+                    done.add((r["arm"], r["seed"], r["task"]))
+                except Exception:
+                    pass
     jobs = [j for j in jobs if j not in done]
     print(f"frankenstein jobs {len(jobs)} (skip {len(done)})", flush=True)
-    workers = int(os.environ.get("WORKERS", "2"))
+    workers = int(os.environ.get("WORKERS", "6"))
     with JF.open("a") as f:
         if workers <= 1 or len(jobs) <= 1:
             for j in jobs:

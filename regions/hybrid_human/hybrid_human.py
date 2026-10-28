@@ -4,16 +4,19 @@ Mirrors hybrid.py arms/scaling; compress tasks only (no maze in this prereg).
 """
 from __future__ import annotations
 import os, sys, json, time
+from pathlib import Path
 for v in ["OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"]:
     os.environ[v] = "1"
-sys.path.insert(0, "/workspace/flybrain/regions/empn")
-sys.path.insert(0, "/workspace/flybrain/compress")
+_HERE = Path(__file__).resolve().parent
+_ROOT = _HERE.parents[1]
+sys.path.insert(0, str(_ROOT / "regions" / "empn"))
+sys.path.insert(0, str(_ROOT / "compress"))
 import numpy as np, scipy.sparse as sp
 from multiprocessing import Pool
-from pathlib import Path
 import compress as C
 import empn as E
 import empn_v2 as V
+import fast_kernels as K  # mouse does not import this
 
 H = Path(__file__).resolve().parent
 OUT = H / "out"; OUT.mkdir(exist_ok=True)
@@ -39,7 +42,7 @@ def load_module():
 
 
 def scale(W, rho=RHO):
-    r = float(C.radius(W))
+    r = float(K.radius_cached(W))
     return W * (rho / (r + 1e-12))
 
 
@@ -179,14 +182,7 @@ def build_arm(arm, seed, g=None):
 
 def oja_update_csr(Wm, h_pre, h_post, eta):
     """In-place Oja on existing CSR edges: W @ h convention, edge (row i, col j) = j→i."""
-    if eta <= 0 or Wm.nnz == 0:
-        return
-    rows = np.repeat(np.arange(Wm.shape[0]), np.diff(Wm.indptr))
-    cols = Wm.indices
-    data = Wm.data
-    post = h_post[rows]
-    pre = h_pre[cols]
-    data += eta * post * (pre - post * data)
+    K.oja_update_csr_fast(Wm, h_pre, h_post, eta)
 
 
 def masked_win(n, d, in_idx, rng, scale=0.5):
@@ -205,9 +201,7 @@ def extract_Wm(W, Nm):
 
 
 def put_Wm(W, Wm):
-    W = W.tolil()
-    W[:Wm.shape[0], :Wm.shape[0]] = Wm
-    return W.tocsr()
+    return K.put_Wm_fast(W, Wm)
 
 
 def oja_warmup_module(Wm, Win_m, b_m, U, leak, eta, until):
@@ -226,14 +220,7 @@ def oja_warmup_module(Wm, Win_m, b_m, U, leak, eta, until):
 
 def run_reservoir(W, Win, b, U, leak):
     """U: (T,) or (T,d). Frozen W."""
-    n = W.shape[0]
-    X = np.empty((len(U), n))
-    x = np.zeros(n)
-    for i, u in enumerate(U):
-        drive = Win[:, 0] * u if np.ndim(u) == 0 else Win @ np.asarray(u, float)
-        x = (1 - leak) * x + leak * np.tanh(W @ x + drive + b)
-        X[i] = x
-    return X
+    return K.run_reservoir_csr(W, Win, b, U, leak)
 
 
 def mc_layered(W, leak, rng, in_idx, hebb=False, Nm=None):
@@ -247,8 +234,8 @@ def mc_layered(W, leak, rng, in_idx, hebb=False, Nm=None):
     X = run_reservoir(W, Win, b, u, leak)
     import flybrain_reservoir as F
     Y = np.stack([np.roll(u, k) for k in range(1, D + 1)], 1)
-    B = F.ridge(X[wash:wash + tr], Y[wash:wash + tr], 1e-6)
-    P = F.pred(X[wash + tr:], B); Yt = Y[wash + tr:]
+    B = K.ridge(X[wash:wash + tr], Y[wash:wash + tr], 1e-6)
+    P = K.pred(X[wash + tr:], B); Yt = Y[wash + tr:]
     val = float(sum(np.nan_to_num(np.corrcoef(P[:, k], Yt[:, k])[0, 1]) ** 2 for k in range(D)))
     return val, W
 
@@ -265,8 +252,8 @@ def narma_layered(W, leak, rng, in_idx, hebb=False, Nm=None):
         W = put_Wm(W, Wm)
     X = run_reservoir(W, Win, b, u, leak)
     import flybrain_reservoir as F
-    B = F.ridge(X[wash:wash + tr], y[wash:wash + tr], 1e-6)
-    p = F.pred(X[wash + tr:], B)
+    B = K.ridge(X[wash:wash + tr], y[wash:wash + tr], 1e-6)
+    p = K.pred(X[wash + tr:], B)
     v = float(np.sqrt(np.mean((p - y[wash + tr:]) ** 2)) / np.std(y[wash + tr:]))
     return (v if np.isfinite(v) else 1e9), W
 
@@ -282,12 +269,15 @@ def t0_layered(W, leak, rng, in_idx, hebb=False, Nm=None):
         u = Xin[:ntr, 0]
         Wm = oja_warmup_module(extract_Wm(W, Nm), Win[:Nm, :1], b[:Nm], u, leak, HEBB_ETA, ntr)
         W = put_Wm(W, Wm)
-    S = np.zeros((len(Xin), W.shape[0]))
-    d = Xin @ Win.T + b
+    # Column-major state (n, batch) for CSR matvecs; numerically same as row form
+    ST = np.zeros((W.shape[0], len(Xin)))
+    dT = (Xin @ Win.T + b).T  # (n, batch)
+    Wc = W.tocsr()
     for _ in range(10):
-        S = (1 - leak) * S + leak * np.tanh((W @ S.T).T + d)
-    B = F.ridge(S[:ntr], Y[:ntr], 1e-4)
-    return float(np.mean((F.pred(S[ntr:], B) - Y[ntr:]) ** 2)), W
+        ST = (1 - leak) * ST + leak * np.tanh(Wc @ ST + dT)
+    S = ST.T
+    B = K.ridge(S[:ntr], Y[:ntr], 1e-4)
+    return float(np.mean((K.pred(S[ntr:], B) - Y[ntr:]) ** 2)), W
 
 
 def pc_task(W, leak, rng, in_idx=None, hebb=False, Nm=None):
@@ -314,6 +304,12 @@ def compress_one(arm, seed, task):
         # FLY: full input (no mouse gateway)
         if task == "PC":
             val, _ = pc_task(W, 0.2, g, in_idx=None)
+        elif task == "MC":
+            val, _ = mc_layered(W, 0.2, g, in_idx=np.arange(W.shape[0]), hebb=False, Nm=None)
+        elif task == "NARMA":
+            val, _ = narma_layered(W, 0.2, g, in_idx=np.arange(W.shape[0]), hebb=False, Nm=None)
+        elif task == "T0":
+            val, _ = t0_layered(W, 0.2, g, in_idx=np.arange(W.shape[0]), hebb=False, Nm=None)
         else:
             val, _ = C.TASK[task](W, 0.2, g, True)
         return dict(arm=arm, seed=seed, task=task, value=float(val), n=int(W.shape[0]),
@@ -338,6 +334,12 @@ def compress_one(arm, seed, task):
         # legacy HYBRID/ER/SHUF keep prior compress path (unmasked C.TASK) except PC
         if task == "PC":
             val, _ = pc_task(W, leak, g, in_idx=in_idx)
+        elif task == "MC":
+            val, _ = mc_layered(W, leak, g, in_idx, hebb=False, Nm=None)
+        elif task == "NARMA":
+            val, _ = narma_layered(W, leak, g, in_idx, hebb=False, Nm=None)
+        elif task == "T0":
+            val, _ = t0_layered(W, leak, g, in_idx, hebb=False, Nm=None)
         else:
             val, _ = C.TASK[task](W, leak, g, True)
     return dict(arm=arm, seed=seed, task=task, value=float(val), n=int(W.shape[0]),
@@ -474,7 +476,7 @@ def main():
             done.add((r["arm"], r["seed"], r["task"]))
     jobs = [j for j in jobs if j not in done]
     print(f"hybrid_human jobs {len(jobs)} skip={len(done)} arms={ARMS}", flush=True)
-    workers = int(os.environ.get("WORKERS", "4"))
+    workers = int(os.environ.get("WORKERS", "7"))
     with Pool(workers) as P:
         for r in P.imap_unordered(one, jobs):
             with open(JF, "a") as f:

@@ -57,9 +57,26 @@ class Fly:
         return np.concatenate([f, [1.0]])
 
 import pandas as _pd
-_ct = _pd.read_csv("/workspace/flybrain/data/ann.tsv", sep="\t", low_memory=False, usecols=["root_id", "cell_type"]).drop_duplicates("root_id").set_index("root_id").cell_type.astype(str)
-_cts = _ct.reindex(META["root_id"]).values
-CXT = {"EPG": np.where(np.isin(_cts, ["EPG", "PEG", "EPGt"]) & (GRP == "CX"))[0], "FBT": np.where(_pd.Series(_cts).str.match(r"^FB\d").values & (GRP == "CX"))[0], "RCX": IX["CX"]}
+_ct = None
+_cts = None
+CXT = None
+
+def _ann_path():
+    # regions/empn -> repo root (parents[1])
+    return os.path.join(H, os.pardir, os.pardir, "data", "ann.tsv")
+
+def _ensure_cxt():
+    """Lazy-load cell-type map (ann.tsv ~31MB). Graft/W0 path does not need it."""
+    global _ct, _cts, CXT
+    if CXT is not None:
+        return CXT
+    path = os.path.abspath(_ann_path())
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"missing {path} (needed for TBU cell-type targets)")
+    _ct = _pd.read_csv(path, sep="\t", low_memory=False, usecols=["root_id", "cell_type"]).drop_duplicates("root_id").set_index("root_id").cell_type.astype(str)
+    _cts = _ct.reindex(META["root_id"]).values
+    CXT = {"EPG": np.where(np.isin(_cts, ["EPG", "PEG", "EPGt"]) & (GRP == "CX"))[0], "FBT": np.where(_pd.Series(_cts).str.match(r"^FB\d").values & (GRP == "CX"))[0], "RCX": IX["CX"]}
+    return CXT
 class TBU:  # plastic hippocampus: EC(pos) -> DG kWTA -> CA3 (plastic mossy + plastic sparse recurrents, covariance+BCM) -> CA1 (contrastive delta) -> CX targets
     def __init__(s, g, plastic=True, tgt="EPG", eta=15.0, ecode=None):
         s.g, s.pl, s.eta = g, plastic, eta; P = S * S
@@ -72,7 +89,7 @@ class TBU:  # plastic hippocampus: EC(pos) -> DG kWTA -> CA3 (plastic mossy + pl
         s.Wec1 = (g.standard_normal((400, s.ec.shape[1])) / 2 * (1 if ecode is None else np.sqrt(P / s.ec.shape[1]))) @ s.ec.T; s.W31 = g.standard_normal((400, 400)) * s.Rm / 20
         s.n0 = {k: np.abs(getattr(s, k)).sum(1) + 1e-9 for k in ("R", "MF", "W31")}; s.theta = np.full(400, 0.05)
         s.init = {k: getattr(s, k).copy() for k in ("R", "MF", "W31")}; s.tmpl = np.tanh(s.Wec1.T); s.out = np.zeros((NN, 400))
-        tp = CXT[tgt]
+        tp = _ensure_cxt()[tgt]
         for i in range(400): s.out[g.choice(tp, 30, replace=len(tp) < 30), i] = g.choice([-1, 1], 30) * 0.2
         s.out = sp.csr_matrix(s.out)
     def dg(s, p, kk=40):
