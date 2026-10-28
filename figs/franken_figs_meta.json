@@ -1,0 +1,109 @@
+{
+  "paths": {
+    "matrix": "/workspace/flybrain/figs/franken_matrix.png",
+    "diagram": "/workspace/flybrain/figs/franken_diagram.png",
+    "eigs": "/workspace/flybrain/figs/franken_eigs.png"
+  },
+  "sizes": {
+    "mouse": 1871,
+    "human": 2087,
+    "fly_cx": 2875
+  },
+  "layers": {
+    "mouse": {
+      "L2/3": 557,
+      "L4": 542,
+      "L5": 301,
+      "L6": 392,
+      "unk": 79
+    },
+    "human": {
+      "L2/3": 995,
+      "L4": 492,
+      "L5": 350,
+      "L6": 250
+    },
+    "fly_cx": {
+      "L2/3": 2175,
+      "L4": 400,
+      "L5": 300
+    }
+  },
+  "signs": {
+    "mouse": {
+      "exc": 1680,
+      "inh": 191
+    },
+    "human": {
+      "exc": 1736,
+      "inh": 351
+    },
+    "fly_cx": {
+      "exc": 1701,
+      "inh": 1174
+    }
+  },
+  "nnz": {
+    "mouse": 97585,
+    "human": 14863,
+    "fly_cx": 300234
+  },
+  "N_total": 6833,
+  "offsets": [
+    0,
+    1871,
+    3958,
+    6833
+  ],
+  "bridge": {
+    "mouse": {
+      "n_in": 2168,
+      "n_out": 1204,
+      "L4_n": 542,
+      "L5_n": 301,
+      "L4_fallback": false,
+      "offset": 0
+    },
+    "human": {
+      "n_in": 1968,
+      "n_out": 1400,
+      "L4_n": 492,
+      "L5_n": 350,
+      "L4_fallback": false,
+      "offset": 1871
+    }
+  },
+  "bridge_sigma": 0.05,
+  "rho": 0.9,
+  "eigs": [
+    {
+      "label": "FRANKEN",
+      "N": 6833,
+      "radius_raw": 0.9000000090479474,
+      "frac_gt_0_5": 0.004829503878237963,
+      "mean_abs": 0.06617357928207736,
+      "n_gt": 33
+    },
+    {
+      "label": "ER",
+      "N": 6833,
+      "radius_raw": 0.9000447632552169,
+      "frac_gt_0_5": 0.24528025757354016,
+      "mean_abs": 0.33386245642689244,
+      "n_gt": 1676
+    },
+    {
+      "label": "FLY_CX",
+      "N": 2875,
+      "radius_raw": 0.9000000004799577,
+      "frac_gt_0_5": 0.006260869565217392,
+      "mean_abs": 0.037169284088914394,
+      "n_gt": 18
+    }
+  ],
+  "franken_nnz": 419403,
+  "er_nnz": 412548,
+  "heatmap_bins": 420,
+  "dens_frank_max": 0.27202463471266763,
+  "dens_er_max": 0.10200923801725037
+}
