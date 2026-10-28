@@ -1,0 +1,21 @@
+{
+  "N": 4000,
+  "nnz": 570086,
+  "frac_E": 0.59175,
+  "spectral_frac": 0.03125,
+  "dens": {
+    "1->1": 0.03885880278037141,
+    "1->-1": 0.03148563776994593,
+    "-1->1": 0.025838593792407914,
+    "-1->-1": 0.05329380104015534
+  },
+  "layer_counts": {
+    "L2/3": 2800,
+    "L4": 560,
+    "L5": 400,
+    "L6": 240
+  },
+  "mf_mean": 0.0670882630244726,
+  "graph_seed": 7,
+  "plain_words": "A synthetic 4000-neuron directed network whose excitatory/inhibitory labels and four E/I connection-class densities+weight magnitudes are matched to FlyWire CX statistics (stochastic block model; no copied edges). Neurons get cortical-like layers; each neuron's myelin fraction is drawn from the real H01 distribution for that layer, then edge delays follow the same myelin\u2192delay map used in the human patch (more myelin \u2192 shorter delay). Weak spectral tempering keeps the bulk of large eigenvalues from filling like an ER graph."
+}
