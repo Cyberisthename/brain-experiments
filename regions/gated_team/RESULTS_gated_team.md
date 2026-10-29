@@ -98,4 +98,5 @@ Composite z locked from tune: μ_xor=0.8151, σ_xor=0.2495, μ_narma=0.2978, σ_
 ## Runtime
 
 - Tune+eval wall: 2026-10-29 07:50:43 EDT → 2026-10-29 08:22:10 EDT (America/New_York); WORKERS=2.
+- Jobs: 768 (8 arms × 24 seeds × 4 tasks). Figure: `figs/gated_team.png` (also `figs/gated_team.svg`).
 
