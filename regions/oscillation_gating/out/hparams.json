@@ -1,0 +1,13 @@
+{
+  "lr": 0.005,
+  "leak": 0.5,
+  "epochs": 25,
+  "steps_per_epoch": 2,
+  "batch_xor": 64,
+  "batch_char": 48,
+  "seq_xor": 24,
+  "seq_char": 48,
+  "char_train_chars": 30000,
+  "wd": 0.0,
+  "emb_dim": 24
+}

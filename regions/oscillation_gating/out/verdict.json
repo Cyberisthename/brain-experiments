@@ -1,0 +1,42 @@
+{
+  "experiment": "oscillation_gating",
+  "scope": "fast_pilot",
+  "seeds": [
+    1100,
+    1101,
+    1102,
+    1103,
+    1104,
+    1105
+  ],
+  "tasks": [
+    "XOR",
+    "CHAR"
+  ],
+  "means": {
+    "COHERENT": {
+      "XOR": 0.514,
+      "CHAR": 2.578
+    },
+    "INCOHERENT": {
+      "XOR": 0.521,
+      "CHAR": 2.577
+    },
+    "NO_GATE": {
+      "XOR": 0.526,
+      "CHAR": 2.577
+    },
+    "HUB": {
+      "XOR": 0.516,
+      "CHAR": 2.578
+    },
+    "RAND_MATCH": {
+      "XOR": 0.495,
+      "CHAR": 2.568
+    }
+  },
+  "primary_passes": 0,
+  "primary_total": 6,
+  "ctc_coherent_beats_incoherent": false,
+  "verdict": "NOT SUPPORTED (pilot)"
+}
