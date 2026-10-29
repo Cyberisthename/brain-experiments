@@ -24,7 +24,7 @@ We kept the real human+fly layered graph fixed and only changed **which neuron g
 | `NODELAY` | 0.584±0.011 | 6.464±0.225 | 0.859±0.009 | — |
 | `RULE_LAYER` | 0.512±0.017 | 18.155±0.285 | 0.899±0.007 | 0.293 |
 | `RULE_DEGREE` | 0.564±0.011 | 17.152±0.217 | 0.889±0.008 | -0.027 |
-| `RULE_EI_LAYER` | 0.478±0.020 | 18.290±0.228 | 0.898±0.007 | 0.50 |
+| `RULE_EI_LAYER` | 0.478±0.020 | 18.290±0.228 | 0.898±0.007 | 0.496 |
 | `RULE_FF_DEPTH` | 0.460±0.017 | 18.515±0.244 | 0.884±0.008 | 0.608 |
 
 REAL−SHUF gap (SHUF−REAL on NARMA) = 0.1645
