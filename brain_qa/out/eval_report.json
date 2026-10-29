@@ -1,0 +1,425 @@
+{
+  "n": 15,
+  "extractive_any_match_accuracy": 0.9333,
+  "preferred_path_in_top5_rate": 0.8667,
+  "rows": [
+    {
+      "id": 1,
+      "q": "what was real vs shuffled myelin NARMA?",
+      "ok": true,
+      "path_ok": true,
+      "matched_any": [
+        "REAL",
+        "SHUF"
+      ],
+      "citations": [
+        "regions/myelin_real_rep/PREREGISTRATION_myelin_real_rep.md",
+        "regions/hippo/RESULTS_hippo.md",
+        "regions/zebrafish/RESULTS_zebrafish.md"
+      ],
+      "numbers": [
+        "01",
+        "2",
+        "2026",
+        "10",
+        "28",
+        "0.497",
+        "0.627",
+        "0.002",
+        "6",
+        "24",
+        "3",
+        "000",
+        "0",
+        "75.8%",
+        "72.6%"
+      ]
+    },
+    {
+      "id": 2,
+      "q": "which myelin rule recovered most of real myelin's advantage?",
+      "ok": false,
+      "path_ok": true,
+      "matched_any": [],
+      "citations": [
+        "regions/myelin_mechanism/RESULTS_myelin_mechanism.md",
+        "regions/designed_brain/PREREG_designed_brain.md",
+        "regions/fewshot_delay/PREREGISTRATION_fewshot_delay.md"
+      ],
+      "numbers": [
+        "2026",
+        "10",
+        "29",
+        "08",
+        "01",
+        "497",
+        "800",
+        "823",
+        "0.2",
+        "1",
+        "5"
+      ]
+    },
+    {
+      "id": 3,
+      "q": "did macaque wiring beat random?",
+      "ok": true,
+      "path_ok": true,
+      "matched_any": [
+        "macaque"
+      ],
+      "citations": [
+        "regions/macaque/PREREG_macaque.md",
+        "regions/macaque/SOURCES.md",
+        "regions/RESULTS_regions.md"
+      ],
+      "numbers": [
+        "2026",
+        "10",
+        "29",
+        "07",
+        "39",
+        "001875",
+        "11.5",
+        "2000"
+      ]
+    },
+    {
+      "id": 4,
+      "q": "fly excitatory inhibitory XOR result",
+      "ok": true,
+      "path_ok": false,
+      "matched_any": [
+        "XOR",
+        "EI",
+        "fly",
+        "CX"
+      ],
+      "citations": [
+        "PREREGISTRATION.md",
+        "regions/hybrid/PREREGISTRATION_hybrid.md",
+        "RESULTS.md"
+      ],
+      "numbers": [
+        "2875",
+        "300",
+        "234",
+        "163",
+        "416",
+        "136",
+        "818",
+        "139",
+        "10.5281",
+        "16744240",
+        "1412",
+        "1871",
+        "1680",
+        "191",
+        "2"
+      ]
+    },
+    {
+      "id": 5,
+      "q": "what is DESIGN_EI_ONLY?",
+      "ok": true,
+      "path_ok": false,
+      "matched_any": [
+        "DESIGN_EI_ONLY"
+      ],
+      "citations": [
+        "regions/team_franken/RESULTS_team_franken.md",
+        "regions/hippo_plastic/PREREGISTRATION_hippo_plastic.md",
+        "regions/finch/SOURCES.md"
+      ],
+      "numbers": [
+        "0.12815010018212378",
+        "0.288148371993919",
+        "0.47195083216778344",
+        "0.5384613668637179",
+        "0.46430405650824147",
+        "0.6361435757187517",
+        "3",
+        "1",
+        "8"
+      ]
+    },
+    {
+      "id": 6,
+      "q": "plasticity experiment outcome",
+      "ok": true,
+      "path_ok": true,
+      "matched_any": [
+        "plasticity",
+        "p",
+        "1"
+      ],
+      "citations": [
+        "regions/hybrid/RESULTS_hybrid.md",
+        "regions/plasticity/RESULTS_plasticity.md",
+        "regions/hippo_plastic/PREREGISTRATION_hippo_plastic.md"
+      ],
+      "numbers": [
+        "2",
+        "0",
+        "8",
+        "4",
+        "5",
+        "3",
+        "1"
+      ]
+    },
+    {
+      "id": 7,
+      "q": "gated frankenstein specialist readout result",
+      "ok": true,
+      "path_ok": true,
+      "matched_any": [
+        "gated",
+        "Frankenstein"
+      ],
+      "citations": [
+        "regions/robust/PREREGISTRATION_robust.md",
+        "regions/gated_team/PREREG_gated_team.md",
+        "regions/gated_team/RESULTS_gated_team.md"
+      ],
+      "numbers": [
+        "2026",
+        "10",
+        "28",
+        "4962"
+      ]
+    },
+    {
+      "id": 8,
+      "q": "EBRAINS macaque what data?",
+      "ok": true,
+      "path_ok": true,
+      "matched_any": [
+        "atlas",
+        "wiring",
+        "EBRAINS",
+        "no"
+      ],
+      "citations": [
+        "regions/macaque/SOURCES.md",
+        "regions/macaque/PREREG_macaque.md",
+        "regions/macaque/RESULTS_macaque.md"
+      ],
+      "numbers": [
+        "11",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "id": 9,
+      "q": "RULE_FF_DEPTH NARMA mean",
+      "ok": true,
+      "path_ok": true,
+      "matched_any": [
+        "0.4599",
+        "RULE_FF_DEPTH"
+      ],
+      "citations": [
+        "regions/myelin_mechanism/RESULTS_myelin_mechanism.md",
+        "regions/myelin_mechanism/PREREG_myelin_mechanism.md",
+        "regions/myelin_mechanism/RESULTS_myelin_mechanism.md"
+      ],
+      "numbers": [
+        "0.5118",
+        "0.0481",
+        "0.04291",
+        "0.1717",
+        "0.293",
+        "0.5644",
+        "0.0045",
+        "0.07554",
+        "0.3021",
+        "0.027",
+        "0.4784",
+        "0.0816",
+        "0.0007292",
+        "0.002917",
+        "0.496"
+      ]
+    },
+    {
+      "id": 10,
+      "q": "human myelin REAL NARMA from myelin_real_rep",
+      "ok": true,
+      "path_ok": true,
+      "matched_any": [
+        "0.393",
+        "REAL",
+        "NARMA"
+      ],
+      "citations": [
+        "regions/myelin_real_rep/PREREGISTRATION_myelin_real_rep.md",
+        "regions/team_franken/PREREG_team_franken.md",
+        "ANALYSIS_cross_species.md"
+      ],
+      "numbers": [
+        "01",
+        "2",
+        "2026",
+        "10",
+        "28",
+        "0.497",
+        "0.627",
+        "0.002",
+        "6",
+        "24",
+        "17",
+        "56",
+        "0.66",
+        "0.393",
+        "0.557"
+      ]
+    },
+    {
+      "id": 11,
+      "q": "celegans sources connectome",
+      "ok": true,
+      "path_ok": true,
+      "matched_any": [
+        "celegans"
+      ],
+      "citations": [
+        "regions/celegans/SOURCES.md",
+        "regions/finch/SOURCES.md",
+        "regions/zebrafish/SOURCES.md"
+      ],
+      "numbers": [
+        "2021",
+        "2026",
+        "10",
+        "28",
+        "1",
+        "0251",
+        "0126",
+        "2025"
+      ]
+    },
+    {
+      "id": 12,
+      "q": "finch songbird wiring experiment",
+      "ok": true,
+      "path_ok": true,
+      "matched_any": [
+        "finch",
+        "song",
+        "HVC"
+      ],
+      "citations": [
+        "regions/finch/PREREGISTRATION_finch.md",
+        "regions/finch/SOURCES.md",
+        "regions/mega_franken/PREREGISTRATION_mega_franken.md"
+      ],
+      "numbers": [
+        "2025",
+        "2026",
+        "10",
+        "28",
+        "1",
+        "0251",
+        "0126"
+      ]
+    },
+    {
+      "id": 13,
+      "q": "Bonferroni primary for myelin mechanism",
+      "ok": true,
+      "path_ok": true,
+      "matched_any": [
+        "Bonferroni",
+        "SHUF",
+        "RULE"
+      ],
+      "citations": [
+        "regions/fewshot_delay/PREREGISTRATION_fewshot_delay.md",
+        "regions/myelin_mechanism/RESULTS_myelin_mechanism.md",
+        "regions/zebrafish/PREREGISTRATION_zebrafish.md"
+      ],
+      "numbers": [
+        "6",
+        "0",
+        "90",
+        "2026",
+        "10",
+        "29",
+        "08",
+        "01",
+        "497",
+        "800",
+        "823",
+        "0.2"
+      ]
+    },
+    {
+      "id": 14,
+      "q": "xor_cx EI_SHUF compared to CX",
+      "ok": true,
+      "path_ok": true,
+      "matched_any": [
+        "EI_SHUF",
+        "XOR"
+      ],
+      "citations": [
+        "regions/xor_cx/RESULTS_xor_cx.md",
+        "regions/ei_cross_species/PREREG_ei_cross_species.md",
+        "regions/team_franken/RESULTS_team_franken.md"
+      ],
+      "numbers": [
+        "2026",
+        "10",
+        "28",
+        "16",
+        "23",
+        "528",
+        "300",
+        "323",
+        "24",
+        "90",
+        "92",
+        "5",
+        "1e-08",
+        "0.0001",
+        "0.01"
+      ]
+    },
+    {
+      "id": 15,
+      "q": "neuromod real dopamine serotonin test",
+      "ok": true,
+      "path_ok": true,
+      "matched_any": [
+        "dopamine",
+        "serotonin",
+        "neuromod"
+      ],
+      "citations": [
+        "regions/neuromod_real/PREREG_neuromod_real.md",
+        "regions/neuromod_real/PREREG_neuromod_real.md",
+        "regions/gated_team/RESULTS_gated_team.md"
+      ],
+      "numbers": [
+        "2026",
+        "10",
+        "29",
+        "08",
+        "5",
+        "1",
+        "83",
+        "2776",
+        "60",
+        "5764",
+        "36",
+        "927",
+        "9679",
+        "16",
+        "47"
+      ]
+    }
+  ],
+  "notes": "Accuracy = fraction of questions where at least one expected token/number appears in the extractive answer or citation paths. Not generative EM. distilgpt2 generative head not used: too weak for reliable numeric answers; extractive default kept after protocol."
+}
