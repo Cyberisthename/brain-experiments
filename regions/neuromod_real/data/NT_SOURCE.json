@@ -1,0 +1,20 @@
+{
+  "source_file": "/workspace/flybrain/data/ann.tsv",
+  "source_repo": "https://github.com/flyconnectome/flywire_annotations",
+  "source_commit_cited_in_prereg": "1a83b2776d60d5764cef36b927f5f9679c16c47a2",
+  "supplemental": "Supplemental_file1_neuron_annotations.tsv (copied as data/ann.tsv)",
+  "top_nt_method": "FlyWire Codex ML-predicted primary neurotransmitter per neuron (Eckstein et al. 2024; columns top_nt, top_nt_conf)",
+  "materialization": "aligned with FlyWire / Shiu Connectivity_783 (v783)",
+  "n_cx": 2875,
+  "matched": 2874,
+  "counts": {
+    "ACh": 1697,
+    "GABA": 336,
+    "Glu": 632,
+    "DA": 61,
+    "5HT": 147,
+    "OA": 1,
+    "UNK": 1
+  },
+  "n_mod": 209
+}

@@ -1,0 +1,19 @@
+{
+  "supported": false,
+  "n_pass": 1,
+  "primary": [
+    {
+      "name": "H1",
+      "pass_": false
+    },
+    {
+      "name": "H2",
+      "pass_": false
+    },
+    {
+      "name": "H3",
+      "pass_": true
+    }
+  ],
+  "fig": "/workspace/flybrain/regions/neuromod_real/figs/neuromod_real.png"
+}
