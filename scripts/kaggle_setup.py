@@ -27,6 +27,13 @@ NEEDED = [
     "regions/out/graphs/0_REAL_0.npz",
     "regions/empn/out/circuit.npz",
     "regions/empn/out/circuit_meta.npz",
+    # ei_cross_species (v3)
+    "regions/ei_cross_species/data/mouse_module.npz",
+    "regions/ei_cross_species/data/human_module.npz",
+    "regions/ei_cross_species/data/areax_module.npz",
+    "regions/ei_cross_species/data/fly_cx_module.npz",
+    "regions/hybrid/data/mouse_module.npz",
+    "regions/finch/data/areax_module.npz",
 ]
 
 # Optional extras (report only; do not fail the run)
@@ -34,6 +41,11 @@ OPTIONAL = [
     "regions/hybrid_human/data/SOURCE.json",
     "regions/mega_franken/data/human_myelin.npz",
     "regions/trained_bridges/data/human_myelin.npz",
+    # elegans shipped only to document E/I skip
+    "regions/ei_cross_species/data/COOK_H.npz",
+    "regions/ei_cross_species/data/W5.npz",
+    "regions/celegans/data/COOK_H.npz",
+    "regions/celegans/data/W5.npz",
 ]
 
 
@@ -99,7 +111,7 @@ def main() -> int:
 
     print(f"summary ok={len(ok)} miss={len(miss)}")
     if miss:
-        print("MISSING required files — attach dataset brain-data / kaggle_data_v2 or rebuild.")
+        print("MISSING required files — attach dataset brain-data / kaggle_data_v3 or rebuild.")
         return 1
     return 0
 
