@@ -1,0 +1,106 @@
+{
+  "numba": true,
+  "cupy": false,
+  "speed": [
+    {
+      "N": 2875,
+      "batch": 1,
+      "dt_ms": 0.25,
+      "T_ms": 100.0,
+      "steps": 400,
+      "elapsed_s": 0.017317925000043033,
+      "steps_per_sec": 23097.455382154967,
+      "neuron_steps_per_sec": 66405184.22369553,
+      "aborted": false,
+      "numba": true,
+      "cupy": false
+    },
+    {
+      "N": 2875,
+      "batch": 4,
+      "dt_ms": 0.25,
+      "T_ms": 100.0,
+      "steps": 400,
+      "elapsed_s": 0.08643839299998035,
+      "steps_per_sec": 4627.573305303014,
+      "neuron_steps_per_sec": 53217093.01098467,
+      "aborted": false,
+      "numba": true,
+      "cupy": false
+    },
+    {
+      "N": 20000,
+      "batch": 1,
+      "dt_ms": 0.25,
+      "T_ms": 50.0,
+      "steps": 200,
+      "elapsed_s": 0.024237024000058227,
+      "steps_per_sec": 8251.838179453036,
+      "neuron_steps_per_sec": 165036763.58906072,
+      "aborted": false,
+      "numba": true,
+      "cupy": false
+    }
+  ],
+  "accuracy": {
+    "fi_curve": [
+      {
+        "I": 0.0,
+        "sim": 0.0,
+        "analytic": 0.0,
+        "rel_err": 0.0
+      },
+      {
+        "I": 150.0,
+        "sim": 0.0,
+        "analytic": 0.0,
+        "rel_err": 0.0
+      },
+      {
+        "I": 200.0,
+        "sim": 0.0,
+        "analytic": 0.0,
+        "rel_err": 0.0
+      },
+      {
+        "I": 250.0,
+        "sim": 33.75,
+        "analytic": 33.64071163018212,
+        "rel_err": 0.003248693755926076
+      },
+      {
+        "I": 350.0,
+        "sim": 62.5,
+        "analytic": 63.040002190641395,
+        "rel_err": 0.008566024300068338
+      },
+      {
+        "I": 500.0,
+        "sim": 98.75,
+        "analytic": 98.9187961700029,
+        "rel_err": 0.0017064114863752633
+      }
+    ],
+    "fi_pass": true,
+    "integrator": {
+      "rate_ref": "22.125",
+      "rate_prod": "21.749998",
+      "rel_err": "0.016949238",
+      "agree": 0.2824858757062147
+    },
+    "integrator_pass": true
+  },
+  "stability": {
+    "fly_cx_cal": {
+      "scale": 150.0,
+      "rate_hz": 8.902607917785645,
+      "cv": 0.49145608924408557,
+      "fallback": false
+    },
+    "fly_cx_long": {
+      "aborted": false,
+      "reason": null,
+      "pop_rate_hz": 13.117825508117676
+    }
+  }
+}
