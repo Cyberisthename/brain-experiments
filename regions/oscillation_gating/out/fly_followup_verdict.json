@@ -1,0 +1,73 @@
+{
+  "label": "SECONDARY_FLY_FOLLOWUP",
+  "means": {
+    "FLY": {
+      "XOR": 0.7824540750847921,
+      "CHAR": 2.028117396765285,
+      "NARMA": 0.7045470923185349
+    },
+    "NO_GATE": {
+      "XOR": 1.0,
+      "CHAR": 1.7733013298776414,
+      "NARMA": 0.5009337502221266
+    },
+    "MYELIN_ONLY": {
+      "XOR": 1.0,
+      "CHAR": 1.7833340068658192,
+      "NARMA": 0.47315381301773923
+    },
+    "CALLOSUM": {
+      "XOR": 1.0,
+      "CHAR": 1.6972934901714325,
+      "NARMA": 0.489945331381427
+    }
+  },
+  "meta": {
+    "label": "SECONDARY_FLY_FOLLOWUP",
+    "compare_against": [
+      "NO_GATE",
+      "MYELIN_ONLY",
+      "CALLOSUM"
+    ],
+    "fly_nnz": 1127,
+    "modular_nnz": 1127,
+    "dens_scale": 1.255615234375,
+    "frac_E": 0.59375,
+    "n_hidden": 160,
+    "seeds": [
+      1100,
+      1101,
+      1102,
+      1103,
+      1104,
+      1105,
+      1106,
+      1107,
+      1108,
+      1109,
+      1110,
+      1111
+    ],
+    "tasks": [
+      "XOR",
+      "CHAR",
+      "NARMA"
+    ],
+    "hp": {
+      "lr": 0.005,
+      "leak": 0.4,
+      "epochs": 45,
+      "steps_per_epoch": 20,
+      "batch_xor": 48,
+      "batch_char": 40,
+      "batch_narma": 32,
+      "seq_xor": 36,
+      "seq_char": 48,
+      "seq_narma": 64,
+      "char_train_chars": 30000,
+      "wd": 0.0,
+      "emb_dim": 32
+    },
+    "note": "Fly CX/EI_SBM wiring (bio_wired_net FRAC_E+EI_DENS), dens-scaled to match modular nnz; Dale softplus*esign; delay=1; no oscillation gate; same OscRNN harness."
+  }
+}

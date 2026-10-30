@@ -1,13 +1,15 @@
 {
   "lr": 0.005,
-  "leak": 0.5,
-  "epochs": 25,
-  "steps_per_epoch": 2,
-  "batch_xor": 64,
-  "batch_char": 48,
-  "seq_xor": 24,
+  "leak": 0.4,
+  "epochs": 45,
+  "steps_per_epoch": 20,
+  "batch_xor": 48,
+  "batch_char": 40,
+  "batch_narma": 32,
+  "seq_xor": 36,
   "seq_char": 48,
+  "seq_narma": 64,
   "char_train_chars": 30000,
   "wd": 0.0,
-  "emb_dim": 24
+  "emb_dim": 32
 }

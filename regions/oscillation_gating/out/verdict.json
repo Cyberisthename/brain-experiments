@@ -1,42 +1,67 @@
 {
-  "experiment": "oscillation_gating",
-  "scope": "fast_pilot",
-  "seeds": [
-    1100,
-    1101,
-    1102,
-    1103,
-    1104,
-    1105
-  ],
-  "tasks": [
-    "XOR",
-    "CHAR"
-  ],
+  "primary_ctc": false,
+  "primary_overall": false,
+  "n_pass": 3,
+  "n_tests": 9,
+  "myelin_sync_beats_either_alone_raw": false,
+  "callosum_beats_rand_xor_raw": false,
+  "callosum_beats_nobridge_xor_raw": false,
+  "verdict_text": "NOT SUPPORTED \u2014 COHERENT does not beat INCOHERENT on all three primary endpoints after Bonferroni.",
   "means": {
     "COHERENT": {
-      "XOR": 0.514,
-      "CHAR": 2.578
+      "XOR": 0.9663511787851653,
+      "CHAR": 1.7930100560188293,
+      "NARMA": 0.5354758906695579
     },
     "INCOHERENT": {
-      "XOR": 0.521,
-      "CHAR": 2.577
+      "XOR": 0.9984132332934273,
+      "CHAR": 1.7949808918767503,
+      "NARMA": 0.5184532507426208
     },
     "NO_GATE": {
-      "XOR": 0.526,
-      "CHAR": 2.577
+      "XOR": 1.0,
+      "CHAR": 1.7733013298776414,
+      "NARMA": 0.5009337502221266
     },
     "HUB": {
-      "XOR": 0.516,
-      "CHAR": 2.578
+      "XOR": 0.9710648250248698,
+      "CHAR": 1.7920243591070177,
+      "NARMA": 0.5343954294092125
     },
     "RAND_MATCH": {
-      "XOR": 0.495,
-      "CHAR": 2.568
+      "XOR": 0.5894003833333651,
+      "CHAR": 2.1087185856368804,
+      "NARMA": 0.7402699258592395
+    },
+    "MYELIN_ONLY": {
+      "XOR": 1.0,
+      "CHAR": 1.7833340068658192,
+      "NARMA": 0.47315381301773923
+    },
+    "MYELIN_COHERENT": {
+      "XOR": 0.9680312830540868,
+      "CHAR": 1.7913969341251585,
+      "NARMA": 0.5159559903873338
+    },
+    "CALLOSUM": {
+      "XOR": 1.0,
+      "CHAR": 1.6972934901714325,
+      "NARMA": 0.489945331381427
+    },
+    "RAND_BRIDGE": {
+      "XOR": 1.0,
+      "CHAR": 1.6963590350415971,
+      "NARMA": 0.4963251339892547
+    },
+    "NO_BRIDGE": {
+      "XOR": 1.0,
+      "CHAR": 1.705885218249427,
+      "NARMA": 0.5327118846277397
+    },
+    "DENSE_BRIDGE": {
+      "XOR": 1.0,
+      "CHAR": 1.5681817366017237,
+      "NARMA": 0.4537703597711193
     }
-  },
-  "primary_passes": 0,
-  "primary_total": 6,
-  "ctc_coherent_beats_incoherent": false,
-  "verdict": "NOT SUPPORTED (pilot)"
+  }
 }

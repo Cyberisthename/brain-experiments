@@ -1,7 +1,25 @@
-# oscillation_gating (fast CTC pilot)
+# oscillation_gating (FULL)
 
-See `PREREG_oscillation_gating.md` and `RESULTS_oscillation_gating.md`.
+Communication-through-coherence (CTC) multi-region rate-RNN experiment, plus myelin-delay and corpus-callosum arms.
 
-Figure: `figs/oscillation_gating.png` (learning curves; may be local-only if binary push skipped).
+- Prereg: `PREREG_oscillation_gating.md`
+- Trainer: `oscillation_gating.py`
+- Analyzer: `analyze_oscillation_gating.py`
+- Results: `RESULTS_oscillation_gating.md`
 
-Run: `python3 oscillation_gating.py --tune && python3 oscillation_gating.py --eval --workers 2 && python3 analyze_oscillation_gating.py`
+```bash
+python oscillation_gating.py --tune --workers 2
+python oscillation_gating.py --eval --workers 2
+python analyze_oscillation_gating.py
+```
+
+## Secondary FLY followup (separate labeled run)
+
+After main RESULTS: fly CX / EI_SBM wiring (`bio_wired_net` FRAC_E + EI dens, dens-scaled to match modular nnz=1127 at N=160), Dale softplus×esign, delay=1, no gate. Same seeds/epochs/tasks. Compared vs NO_GATE, MYELIN_ONLY, CALLOSUM.
+
+```bash
+python oscillation_gating.py --followup-fly --workers 2   # → out/fly_followup_runs.jsonl
+python analyze_fly_followup.py                           # → RESULTS_FLY_FOLLOWUP.md
+```
+
+Fast pilot (2026-10-29) archived under `out/pilot_fast/` — undertrained null.
