@@ -28,3 +28,6 @@ __pycache__/
 *.log
 *.done
 queue.done
+
+# Local human connectome downloads (never push)
+connectomes/
