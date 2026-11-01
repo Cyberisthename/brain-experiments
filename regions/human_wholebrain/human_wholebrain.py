@@ -487,18 +487,43 @@ def make_char_batch(seq_len, batch, start_limit, rng):
     return torch.from_numpy(u), torch.from_numpy(y)
 
 
-def make_narma_batch(seq_len, batch, rng):
+def make_narma_batch(seq_len, batch, rng, max_abs=50.0, max_tries=50):
+    """NARMA-10 batch with rejection of unstable target trajectories.
+
+    Standard drive is u ~ Uniform[0, 0.5] (Atiya & Parlos 2000). That system is
+    only *marginally* stable: a small fraction of input sequences make y explode
+    to Inf, which NaNs the MSE loss and poisons training (seen for seed 2207).
+    We keep the same input range and recurrence, but resample any series whose
+    target leaves a generous finite bound (or becomes non-finite). Bound is far
+    above the nominal O(1) NARMA operating scale so previously finite seeds are
+    bit-identical; only explosive trajectories are replaced.
+    """
     T = seq_len
     u = rng.uniform(0, 0.5, size=(T, batch, 1)).astype(np.float32)
     y = np.zeros((T, batch, 1), dtype=np.float32)
     for b in range(batch):
-        for i in range(NARMA_ORDER, T - 1):
-            y[i + 1, b, 0] = (
-                0.3 * y[i, b, 0]
-                + 0.05 * y[i, b, 0] * y[i - 9:i + 1, b, 0].sum()
-                + 1.5 * u[i - 9, b, 0] * u[i, b, 0]
-                + 0.1
-            )
+        for attempt in range(max_tries):
+            if attempt > 0:
+                u[:, b, 0] = rng.uniform(0, 0.5, size=(T,)).astype(np.float32)
+            y[:, b, 0] = 0.0
+            ok = True
+            for i in range(NARMA_ORDER, T - 1):
+                val = (
+                    0.3 * y[i, b, 0]
+                    + 0.05 * y[i, b, 0] * y[i - 9:i + 1, b, 0].sum()
+                    + 1.5 * u[i - 9, b, 0] * u[i, b, 0]
+                    + 0.1
+                )
+                if (not np.isfinite(val)) or abs(val) > max_abs:
+                    ok = False
+                    break
+                y[i + 1, b, 0] = val
+            if ok:
+                break
+        else:
+            # Extremely rare: clip last attempt so training cannot NaN.
+            y[:, b, 0] = np.nan_to_num(y[:, b, 0], nan=0.0, posinf=max_abs, neginf=-max_abs)
+            np.clip(y[:, b, 0], -max_abs, max_abs, out=y[:, b, 0])
     mask = np.zeros((T, batch), dtype=np.float32); mask[20:] = 1.0
     return torch.from_numpy(u), torch.from_numpy(y), torch.from_numpy(mask)
 
