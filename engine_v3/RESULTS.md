@@ -28,9 +28,21 @@ First row: BASE XOR_HARD seed=3300 metric≈0.519 (~91 s/job) → ETA ~5 h for f
 
 Re-run `python3 engine_v3/analyze_ablation.py` when `out/ablation_runs.jsonl` completes; paste Wilcoxon table here.
 
+### Ablation progress (incomplete — 9/192 rows)
+
+PID **383108**, log `engine_v3/out/ablation.log`, jsonl resume-safe.
+Callosum eval PID **362279** still running untouched.
+
+| Feature | Task | n | mean | std |
+|---|---|---:|---:|---:|
+| BASE | XOR_HARD | 8 | 0.5177 | 0.0144 |
+| BASE | NARMA | 1 | 0.9237 | nan |
+
+No feature-vs-BASE Wilcoxon yet (need matched seeds per feature). Re-run `analyze_ablation.py` at completion.
+
 ### Ablation verdicts
 
-*(pending full grid — do not interpret partial means as confirmatory)*
+**Pending** full 192-job grid (~5 h wall at ~90 s/job, 1 worker).
 
 ## Anything broken
 
