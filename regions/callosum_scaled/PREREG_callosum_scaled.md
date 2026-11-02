@@ -65,10 +65,10 @@ Primary “does the **map** matter?” contrast: **REAL_SC vs DEGREE_SHUFFLE** (
 - Frozen hparams (from realistic_callosum / human_wholebrain), written to `out/hparams.json` before eval:
 
 ```
-lr=5e-3, leak=0.4, epochs=45, steps_per_epoch=20,
-batch_xor=48, batch_char=40, batch_narma=32, batch_xfer=48,
-seq_xor=48, seq_char=48, seq_narma=64, seq_xfer=48,
-char_train_chars=30000, wd=0.0, emb_dim=32, DMAX=5
+lr=5e-3, leak=0.4, epochs=30, steps_per_epoch=12,
+batch_xor=32, batch_char=32, batch_narma=24, batch_xfer=32,
+seq_xor=40, seq_char=40, seq_narma=56, seq_xfer=40,
+char_train_chars=30000, wd=0.0, emb_dim=32, eval_every=3, DMAX=5
 ```
 
 ## Stats (declared up front)
@@ -109,6 +109,23 @@ Workers ≤ 2; `nohup`; resume-safe via `out/runs.jsonl` keyed by `(arm, task, s
 
 Null allowed. Commit code + PREREG + RESULTS only. Connectome binaries stay gitignored.
 
+
 ## Amendments
 
-*(none at freeze — any runtime cut must be dated here **before** eval seeds are scored.)*
+### 2026-11-02 (pre-eval) — DEGREE_SHUFFLE class-wise rewire
+Clarified DEGREE_SHUFFLE: Maslov–Sneppen is run **separately** on intra-LH, intra-RH, and callosal edge sets (then pools reassigned within class). Full-graph MS was checked at wiring-time and inflated callosal nnz ~3× by destroying hemi modularity, which would confound the topography contrast. Class-wise MS matches research note 2 (“shuffle of inter + intra”) and keeps bridge count matched to REAL_SC. **No eval seeds scored yet.**
+
+### 2026-11-02 (pre-eval) — sparse unit expansion + sparse OscRNN
+Full n_local×n_local block expansion at N_label=512 (N=544) made nnz≈86k and
+dense/softplus matmuls ~10+ min/job (Stage A ≫ 24 h). **Before any eval seed:**
+(1) OscRNN uses sparse edge lists (softplus only on existing edges);
+(2) each region edge expands to **n_local** random directed unit edges (bio2art-style
+sparse), not a full block; within-parcel stays all-to-all. Topology/weights/delays
+at the **region** level are unchanged; only the unit lift is sparsified. Timing
+probe must confirm Stage A ≲ 24 h before `--eval`.
+
+### 2026-11-02 (pre-eval) — train budget cut for 24 h wall
+Sparse expansion still left ~5–10 min/job at 45×20 (Python BPTT loop). Cut
+frozen train budget to epochs=30, steps_per_epoch=12, smaller batches/seq, and
+eval_every=3 **before any held-out seed**. Same across all arms. Primary stats
+unchanged. Stage B/C still conditional on remaining wall.
