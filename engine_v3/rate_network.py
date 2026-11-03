@@ -220,22 +220,29 @@ class OscRNN(nn.Module):
             return mag * src_sign * i_scale
         return self.w_intra
 
+    def _alloc_stp(self, B: int, device, dtype):
+        """Allocate fresh leaf STP tensors (never reuse autograd history)."""
+        E = int(self.inter_src.numel())
+        U = float(self.cfg.stp_U)
+        self.stp_u = torch.full((B, E), U, device=device, dtype=dtype)
+        self.stp_x = torch.ones(B, E, device=device, dtype=dtype)
+        self._stp_ready = True
+
     def _ensure_stp(self, B: int, device, dtype):
         E = int(self.inter_src.numel())
         if (not self.cfg.use_stp) or E == 0:
             self._stp_ready = False
             return
-        if (
-            self._stp_ready
-            and hasattr(self, "stp_u")
-            and self.stp_u.shape[0] == B
-            and self.stp_u.device == device
-        ):
-            return
-        U = float(self.cfg.stp_U)
-        self.stp_u = torch.full((B, E), U, device=device, dtype=dtype)
-        self.stp_x = torch.ones(B, E, device=device, dtype=dtype)
-        self._stp_ready = True
+        # Always allocate NEW leaf tensors. Reusing self.stp_u/stp_x that still
+        # carry grad_fn from a prior forward+backward causes
+        # "backward through the graph a second time" on the next step.
+        self._alloc_stp(B, device, dtype)
+
+    def detach_persistent_state(self):
+        """Detach STP (and any future persistent) state between TBPTT chunks/batches."""
+        if getattr(self, "_stp_ready", False) and hasattr(self, "stp_u"):
+            self.stp_u = self.stp_u.detach()
+            self.stp_x = self.stp_x.detach()
 
     def _stp_modulate(self, pre_states: torch.Tensor, w_mag: torch.Tensor) -> torch.Tensor:
         """Update STP and return effective weights (B, E). pre_states: (B, N)."""
@@ -312,10 +319,8 @@ class OscRNN(nn.Module):
         g_fast = torch.zeros(B, self.n, device=device, dtype=dtype)
         g_slow = torch.zeros(B, self.n, device=device, dtype=dtype)
 
+        # Fresh leaf STP state per sequence (resets facilitation; breaks prior graph).
         self._ensure_stp(B, device, dtype)
-        if self.cfg.use_stp and self._stp_ready:
-            self.stp_u.fill_(float(self.cfg.stp_U))
-            self.stp_x.fill_(1.0)
 
         outs = []
         for t in range(T):
@@ -352,6 +357,8 @@ class OscRNN(nn.Module):
             outs.append(self.readout(self._feat(x)))
             self._step_count += 1
 
+        # Detach persistent STP so a subsequent chunk/batch cannot re-enter this graph.
+        self.detach_persistent_state()
         return torch.stack(outs, 0)
 
     def forward_sequence_roll_reference(self, u: torch.Tensor) -> torch.Tensor:

@@ -158,3 +158,44 @@ def test_nan_guard():
     u = torch.full((10, 2, 2), 1e6)
     y = m.forward_sequence(u)
     assert torch.isfinite(y).all()
+
+
+def test_feature_arms_multi_step_train():
+    """Each feature flag must survive several Adam steps (no double-backward).
+
+    STP used to keep stp_u/stp_x with grad_fn across batches via in-place fill_,
+    which crashed on the 2nd backward. This guards that regression.
+    """
+    from engine_v3.train import feature_cfg, train_task, DEFAULT_HP
+
+    w = synthetic_wiring(n=32, seed=0, p_intra=0.1, p_inter=0.05)
+    hp = dict(
+        DEFAULT_HP,
+        epochs=2,
+        steps_per_epoch=3,
+        batch_xor=4,
+        seq_xor=16,
+        emb_dim=8,
+    )
+    for feat in ("BASE", "STP", "DUAL_TAU", "DALE", "HOMEO", "ALL"):
+        cfg = feature_cfg(feat, leak=0.4)
+        r = train_task(
+            w, "XOR_HARD", 3300, hp, feature=feat, cfg=cfg, arm="SYNTH", record_curve=False
+        )
+        assert not r.get("poisoned"), f"{feat} poisoned: {r.get('abort_reason')}"
+        assert r.get("metric") is not None and np.isfinite(r["metric"]), feat
+
+
+def test_stp_state_is_leaf_across_batches():
+    """After forward+backward, a new forward must start from leaf STP tensors."""
+    m, _ = _model(seed=41, use_stp=True)
+    opt = torch.optim.Adam(m.parameters(), lr=1e-2)
+    u = torch.rand(12, 4, 2)
+    for _ in range(3):
+        opt.zero_grad()
+        y = m.forward_sequence(u)
+        loss = y.pow(2).mean()
+        loss.backward()
+        opt.step()
+        assert m.stp_u.grad_fn is None, "stp_u must be detached/leaf between batches"
+        assert m.stp_x.grad_fn is None, "stp_x must be detached/leaf between batches"
