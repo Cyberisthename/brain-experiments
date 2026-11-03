@@ -153,4 +153,17 @@ These are thin numpy views of the sources above — still **local-only**.
 - **Delays (“myelin” arm):** Consensus **fiber length** → delay bins (callosal ~122 mm vs within ~71 mm)  
 - **E/I signs:** Griffa FC sign (~97% + on majority callosal bridge)  
 - **Named tracts (Yeh):** documentation / future tract-masked arms — not yet wired into OscRNN  
-- **Rosen 360:** denser probabilistic prior if we scale past 68 parcels  
+- **Rosen 360:** denser probabilistic prior if we scale past 68 parcels
+
+---
+
+## Microstructure add-on (2026-10-30)
+
+See **`microstructure/MICROSTRUCTURE.md`**. Local (~22 MB) open downloads now include:
+
+- HCP S1200 **T1w/T2w myelin** (neuromaps fsLR 32k) + 360 MMP parcel means  
+- FSL **HCP1065 FA/MD** templates + JHU callosum vs other-WM FA stats  
+- Yeh **Corpus_Callosum** tract mask (Zenodo 3627772)  
+- Caminiti 2013 human callosal axon diameter / delay table  
+
+Still no TB-scale raw HCP packs. **Local only — never push.**

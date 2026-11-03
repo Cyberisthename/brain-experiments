@@ -35,11 +35,19 @@ DEFAULT_HP = dict(
 )
 
 
-def set_seed(s: int):
+def set_seed(s: int, deterministic: bool = True):
     np.random.seed(s)
     torch.manual_seed(s)
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(s)
+    if deterministic:
+        torch.backends.cudnn.deterministic = True
+        torch.backends.cudnn.benchmark = False
+        # keep soft; full deterministic_algorithms can break some ops
+        try:
+            torch.use_deterministic_algorithms(True, warn_only=True)
+        except Exception:
+            pass
 
 
 def configure_threads(n: int = 1):
@@ -77,7 +85,16 @@ def append_jsonl(path: Path, record: dict):
         os.fsync(f.fileno())
 
 
-def eval_metric(model, task, seed, hp, n_batches=4):
+def _to_device(batch, device):
+    if batch is None:
+        return None
+    if isinstance(batch, (tuple, list)):
+        return tuple(_to_device(x, device) for x in batch)
+    return batch.to(device)
+
+
+def eval_metric(model, task, seed, hp, n_batches=4, device=None):
+    device = torch.device(device or next(model.parameters()).device)
     rng = np.random.default_rng(seed)
     metrics = []
     _, _, _, _, _, _, d_task = T.task_io(task, hp)
@@ -86,14 +103,15 @@ def eval_metric(model, task, seed, hp, n_batches=4):
         for _ in range(n_batches):
             if task == "CHAR":
                 u, y, mask = T.batch_for_task(task, hp, rng)
-                pred = model.forward_sequence(u)
-                loss, m = T.loss_and_metric_from_pred(task, pred, y, mask)
-                metrics.append(m)
             else:
                 u, y, mask = T.batch_for_task(task, hp, rng, d_task=d_task)
-                pred = model.forward_sequence(u)
-                loss, m = T.loss_and_metric_from_pred(task, pred, y, mask)
-                metrics.append(m)
+            u = u.to(device)
+            y = y.to(device)
+            if mask is not None:
+                mask = mask.to(device)
+            pred = model.forward_sequence(u)
+            loss, m = T.loss_and_metric_from_pred(task, pred, y, mask)
+            metrics.append(m)
     return float(np.mean(metrics))
 
 
@@ -106,9 +124,11 @@ def train_task(
     cfg: Optional[OscRNNConfig] = None,
     record_curve: bool = True,
     arm: str = "SYNTH",
+    device: str | torch.device = "cpu",
 ) -> dict:
     configure_threads(1)
-    set_seed(seed)
+    device = torch.device(device)
+    set_seed(seed, deterministic=(device.type == "cpu" or os.environ.get("ENGINE_V3_DETERMINISTIC", "1") == "1"))
     cfg = cfg or OscRNNConfig(leak=hp.get("leak", 0.4))
     n_in, out_dim, emb_dim, vocab, readout_mode, input_mode, d_task = T.task_io(task, hp)
     model = OscRNN(
@@ -122,6 +142,7 @@ def train_task(
         input_mode=input_mode,
         seed=seed,
     )
+    model = model.to(device)
     opt = torch.optim.Adam(model.parameters(), lr=hp["lr"], weight_decay=hp.get("wd", 0.0))
     curve = []
     rng = np.random.default_rng(seed + 17)
@@ -140,8 +161,14 @@ def train_task(
                 u, y, mask = T.batch_for_task(task, hp, rng)
             else:
                 u, y, mask = T.batch_for_task(task, hp, rng, d_task=d_task)
+            u = u.to(device)
+            y = y.to(device)
+            if mask is not None:
+                mask = mask.to(device)
+            else:
+                mask = torch.ones(1, device=device)
             pred = model.forward_sequence(u)
-            loss, _ = T.loss_and_metric_from_pred(task, pred, y, mask if mask is not None else torch.ones(1))
+            loss, _ = T.loss_and_metric_from_pred(task, pred, y, mask)
             if not torch.isfinite(loss):
                 aborted = True
                 abort_reason = f"nonfinite_loss_ep{ep}"
@@ -153,7 +180,7 @@ def train_task(
             last_loss = loss
         if aborted:
             break
-        metric = eval_metric(model, task, seed + 1000 + ep, hp, n_batches=2)
+        metric = eval_metric(model, task, seed + 1000 + ep, hp, n_batches=2, device=device)
         if not np.isfinite(metric):
             aborted = True
             abort_reason = f"nonfinite_metric_ep{ep}"
@@ -182,7 +209,7 @@ def train_task(
             curve=curve if record_curve else [],
         )
 
-    final = eval_metric(model, task, seed + 777, hp, n_batches=6)
+    final = eval_metric(model, task, seed + 777, hp, n_batches=6, device=device)
     return dict(
         engine=ENGINE_TAG,
         arm=arm,

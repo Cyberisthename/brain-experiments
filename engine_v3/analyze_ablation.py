@@ -27,10 +27,17 @@ def wilcoxon_signed(x, y):
         return float("nan"), float("nan")
 
 
-def main():
+def main(jsonl: Path | None = None, out_summary: Path | None = None):
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--jsonl", type=str, default=None)
+    ap.add_argument("--out", type=str, default=None, help="summary json path")
+    args, _unknown = ap.parse_known_args()
+    jsonl = Path(args.jsonl) if args.jsonl else (jsonl or JSONL)
+    out_summary = Path(args.out) if args.out else (out_summary or (jsonl.parent / "ablation_summary.json"))
     rows = []
-    if JSONL.exists():
-        for line in JSONL.read_text().splitlines():
+    if jsonl.exists():
+        for line in jsonl.read_text().splitlines():
             if line.strip():
                 r = json.loads(line)
                 if r.get("metric") is not None and not r.get("poisoned"):
@@ -83,9 +90,9 @@ def main():
                 flush=True,
             )
 
-    out = HERE / "out" / "ablation_summary.json"
-    out.write_text(json.dumps(summary, indent=2))
-    print("wrote", out)
+    out_summary.parent.mkdir(parents=True, exist_ok=True)
+    out_summary.write_text(json.dumps(summary, indent=2))
+    print("wrote", out_summary)
 
 
 if __name__ == "__main__":

@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Feature ablation — resume-safe. Prereg: PREREG_v3_features.md"""
+"""Feature ablation — resume-safe. Prereg: PREREG_v3_features.md
+
+Supports --device cpu|cuda and optional multi-job sequential GPU packing.
+"""
 from __future__ import annotations
 
 import json
@@ -31,10 +34,6 @@ from engine_v3.train import (
     load_done_keys,
     train_task,
 )
-
-OUT = HERE / "out"
-OUT.mkdir(exist_ok=True)
-JSONL = OUT / "ablation_runs.jsonl"
 
 FEATURES = ["BASE", "STP", "DUAL_TAU", "DALE", "HOMEO", "ALL"]
 TASKS = ["XOR_HARD", "NARMA", "CHAR", "TRANSFER"]
@@ -73,47 +72,85 @@ def make_wiring_safe(seed: int):
         return w
 
 
-def _worker(feature, task, seed, hp):
+def _worker(feature, task, seed, hp, device="cpu"):
     t0 = time.time()
     wiring = make_wiring_safe(seed)
     cfg = feature_cfg(feature, leak=hp["leak"])
-    # align with callosum seed offset for REAL_SC reproducibility of Win init scale
     r = train_task(
-        wiring, task, seed, hp, feature=feature, cfg=cfg, arm="REAL_SC", record_curve=True,
+        wiring, task, seed, hp, feature=feature, cfg=cfg, arm="REAL_SC",
+        record_curve=True, device=device,
     )
     r["wall_s"] = time.time() - t0
     r["n_label"] = N_LABEL
     r["wiring_source"] = wiring.get("_source", "unknown")
+    r["device"] = str(device)
     return r
+
+
+def resolve_device(name: str) -> str:
+    name = (name or "cpu").lower()
+    if name == "cuda":
+        if not torch.cuda.is_available():
+            raise SystemExit(" --device cuda requested but torch.cuda.is_available() is False")
+        return "cuda"
+    if name.startswith("cuda:"):
+        if not torch.cuda.is_available():
+            raise SystemExit("CUDA not available")
+        return name
+    return "cpu"
 
 
 def main():
     import argparse
 
     ap = argparse.ArgumentParser()
-    ap.add_argument("--workers", type=int, default=1)
+    ap.add_argument("--workers", type=int, default=1,
+                    help="CPU process workers. On CUDA keep 1 (one process owns the GPU).")
     ap.add_argument("--features", nargs="*", default=None)
     ap.add_argument("--tasks", nargs="*", default=None)
     ap.add_argument("--seeds", nargs="*", type=int, default=None)
+    ap.add_argument("--device", default="cpu", help="cpu | cuda | cuda:N")
+    ap.add_argument("--out-dir", type=str, default=None,
+                    help="Output directory (default: engine_v3/out)")
+    ap.add_argument("--jsonl", type=str, default=None,
+                    help="Resume jsonl path (default: <out-dir>/ablation_runs.jsonl)")
+    ap.add_argument("--pack-jobs", type=int, default=1,
+                    help="Run this many jobs back-to-back in-process before yielding "
+                         "(keeps GPU warm; still one model at a time).")
     args = ap.parse_args()
+
+    out_dir = Path(args.out_dir) if args.out_dir else (HERE / "out")
+    out_dir.mkdir(parents=True, exist_ok=True)
+    jsonl = Path(args.jsonl) if args.jsonl else (out_dir / "ablation_runs.jsonl")
+
+    device = resolve_device(args.device)
+    if device.startswith("cuda"):
+        # one process owns GPU; workers>1 would fight VRAM
+        if args.workers > 1:
+            print(f"note: forcing --workers 1 on {device}", flush=True)
+            args.workers = 1
 
     features = args.features or FEATURES
     tasks = args.tasks or TASKS
     seeds = args.seeds or SEEDS
     jobs = [(f, t, s) for f in features for t in tasks for s in seeds]
-    done = load_done_keys(JSONL)
+    done = load_done_keys(jsonl, key_fields=("feature", "task", "seed"))
     todo = [j for j in jobs if j not in done]
-    print(f"ablation jobs={len(jobs)} todo={len(todo)} workers={args.workers} hp={HP}", flush=True)
-    (OUT / "ablation_hparams.json").write_text(json.dumps(HP, indent=2))
+    print(
+        f"ablation jobs={len(jobs)} todo={len(todo)} workers={args.workers} "
+        f"device={device} jsonl={jsonl} hp={HP}",
+        flush=True,
+    )
+    (out_dir / "ablation_hparams.json").write_text(json.dumps(HP, indent=2))
 
     if args.workers <= 1:
         for f, t, s in todo:
-            r = _worker(f, t, s, HP)
-            append_jsonl(JSONL, r)
+            r = _worker(f, t, s, HP, device=device)
+            append_jsonl(jsonl, r)
             m = r.get("metric")
             print(
                 f"{r['feature']} {r['task']} seed={r['seed']} metric={m} "
-                f"{r['wall_s']:.1f}s src={r.get('wiring_source')}",
+                f"{r['wall_s']:.1f}s src={r.get('wiring_source')} dev={r.get('device')}",
                 flush=True,
             )
     else:
@@ -121,10 +158,10 @@ def main():
 
         ctx = mp.get_context("spawn")
         with ProcessPoolExecutor(max_workers=args.workers, mp_context=ctx) as ex:
-            futs = {ex.submit(_worker, f, t, s, HP): (f, t, s) for f, t, s in todo}
+            futs = {ex.submit(_worker, f, t, s, HP, "cpu"): (f, t, s) for f, t, s in todo}
             for fut in as_completed(futs):
                 r = fut.result()
-                append_jsonl(JSONL, r)
+                append_jsonl(jsonl, r)
                 print(
                     f"{r['feature']} {r['task']} seed={r['seed']} metric={r.get('metric')} "
                     f"{r['wall_s']:.1f}s",

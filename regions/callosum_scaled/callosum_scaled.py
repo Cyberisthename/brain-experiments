@@ -24,7 +24,8 @@ ROOT = HERE.parents[1]
 OUT = HERE / "out"; OUT.mkdir(exist_ok=True)
 FIGS = HERE / "figs"; FIGS.mkdir(exist_ok=True)
 DATA = HERE / "data"
-WHOLE_NPZ = ROOT / "connectomes" / "human" / "griffa70" / "griffa70_scale68_whole.npz"
+_DEFAULT_WHOLE = ROOT / "connectomes" / "human" / "griffa70" / "griffa70_scale68_whole.npz"
+WHOLE_NPZ = Path(os.environ["FLYBRAIN_GRIFFA_WHOLE_NPZ"]) if os.environ.get("FLYBRAIN_GRIFFA_WHOLE_NPZ") else _DEFAULT_WHOLE
 
 N_PARCEL = 68
 N_LH = 34
