@@ -1,0 +1,8 @@
+{"item_id":"str","status":"UNREVIEWED|IN_REVIEW|ADJUDICATED|DROPPED","split":"DEV|TEST","category":"C1..C7",
+ "question":"str","asked_time":"str|null","asked_context":"str|null",
+ "evidence":[{"evidence_id":"str","text":"verbatim passage","source":{"kind":"local|external","path_or_url":"str","sha256_or_archive":"str","retrieved":"YYYY-MM-DD","origin_id":"str (same origin => same id)","truth_date":"str|unknown"}}],
+ "distractors":[{"evidence_id":"str","why_distractor":"lexical|context|time"}],
+ "annotations":[{"role":"annotatorA|annotatorB|adjudicator","reviewer":"pseudonym","time":"iso","label":"answerable|conflict|insufficient","gold_value":"str|null","unit":"str|null",
+   "relations":[{"a":"evidence_id","b":"evidence_id","type":"supports|contradicts|supersedes|different_context|unrelated_similar|weak_evidence"}],
+   "reliability":[{"evidence_id":"str","level":"high|medium|low","reason":"str"}],"confidence":"1-5","note":"str"}],
+ "final":{"label":null,"gold_value":null,"relations":null,"adjudicated_by":null,"version":null}}

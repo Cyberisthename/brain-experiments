@@ -1,0 +1,48 @@
+{
+  "train": {
+    "lr": 0.005,
+    "leak": 0.4,
+    "epochs": 25,
+    "steps_per_epoch": 10,
+    "batch_xor": 32,
+    "batch_char": 24,
+    "batch_narma": 24,
+    "batch_xfer": 32,
+    "seq_xor": 48,
+    "seq_char": 40,
+    "seq_narma": 64,
+    "seq_xfer": 48,
+    "char_train_chars": 20000,
+    "wd": 0.0,
+    "emb_dim": 32
+  },
+  "hypo": {
+    "beta": 0.05,
+    "kappa": 0.5,
+    "s_star": 0.3,
+    "inhibit": 0.5,
+    "temperature": 1.0,
+    "n_pi": 8,
+    "k_syn": 32
+  },
+  "seeds": [
+    3400,
+    3401,
+    3402,
+    3403,
+    3404,
+    3405,
+    3406,
+    3407
+  ],
+  "arms": [
+    "BASE",
+    "HOME_O_ERR",
+    "RAND_MOD",
+    "RIVAL",
+    "SINGLE",
+    "SHUF_RIVAL",
+    "VOL",
+    "SYN"
+  ]
+}

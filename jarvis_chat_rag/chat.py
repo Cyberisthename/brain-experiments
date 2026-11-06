@@ -1,10 +1,24 @@
 #!/usr/bin/env python3
-"""JARVIS medium_v3 CLI chat with BM25 RAG + hybrid extractive fallback.
+"""JARVIS medium_v3 CLI chat — default: pack router + CAD hybrid + auto /define.
+
+Default pipeline (no flags needed):
+  1. Pack-routed BM25 retrieval (dictionary / books / uploads)
+  2. Context-aware decoding (CAD) for generation, with extractive hybrid
+  3. Automatic WordNet dictionary for "what does X mean" / "define X"
+
+Old modes stay reachable:
+  --mode greedy|gen          greedy LM continuation (no CAD)
+  --mode hybrid              extractive + greedy gen (no CAD)
+  --mode cad                 CAD generation only
+  --retrieval global         classic global BM25 (no pack router)
+  --reason / --mode reason   training-free evidence audit; no model load
 
 Examples:
   nice -n 19 python3 chat.py --once "What is the capital of France?"
-  nice -n 19 python3 chat.py --mode hybrid
+  nice -n 19 python3 chat.py
+  nice -n 19 python3 chat.py --mode greedy --retrieval global
   nice -n 19 python3 chat.py --upload "The capital of Atlantis is Poseidonis."
+  nice -n 19 python3 chat.py --shadow --once "What was NEURON-4's confident-wrong rate?"
 """
 from __future__ import annotations
 
@@ -20,60 +34,44 @@ os.environ.setdefault("OPENBLAS_NUM_THREADS", "2")
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from extractive import best_extractive, format_hybrid  # noqa: E402
-from model_io import continuation_only, generate, load_medium  # noqa: E402
-from retriever import ChatRetriever, append_upload, seed_novel_facts  # noqa: E402
-from answer_modes import answer_one_mode  # noqa: E402
+from answer_modes import MODE_ALIASES, CANONICAL_MODES, answer_one_mode, normalize_mode  # noqa: E402
 from dictionary_lookup import answer_define  # noqa: E402
+from pack_router import RoutedRetriever  # noqa: E402
+from retriever import ChatRetriever, append_upload, seed_novel_facts  # noqa: E402
+
+MODE_CHOICES = sorted(CANONICAL_MODES | set(MODE_ALIASES.keys()) | {"default"})
 
 
-def make_prompt(question: str) -> str:
-    q = question.strip()
-    if q.lower().startswith("question:"):
-        return q if "answer:" in q.lower() else q + "\nAnswer:"
-    return f"Question: {q}\nAnswer:"
-
-
-def answer_one(model, tok, retriever, question: str, mode: str, max_new: int, temperature: float, min_ext: float):
-    prompt = make_prompt(question)
-    hits = retriever.search(question, k=retriever.k)
-    aug = retriever.augment(prompt, query=question)
-    full = generate(model, tok, aug, max_new=max_new, temperature=temperature)
-    cont = continuation_only(full, aug).strip()
-    ext = best_extractive(question, hits, min_score=min_ext)
-
-    if mode == "gen":
-        out = {
-            "mode": "gen",
-            "question": question,
-            "context_preview": retriever.context(question)[:500],
-            "prompt_preview": aug[:500],
-            "generation": cont,
-            "full": full,
-            "extractive": ext,
-            "display": cont,
-        }
-    else:
-        display = format_hybrid(ext, cont, mode_label="hybrid")
-        out = {
-            "mode": "hybrid",
-            "question": question,
-            "context_preview": retriever.context(question)[:500],
-            "prompt_preview": aug[:500],
-            "generation": cont,
-            "full": full,
-            "extractive": ext,
-            "display": display,
-        }
-    return out
+def build_retriever(k: int, max_chars: int, retrieval: str):
+    base = ChatRetriever(k=k, max_chars=max_chars)
+    if retrieval == "global":
+        return base
+    return RoutedRetriever(base, enable_route=True, k=k, max_chars=max_chars)
 
 
 def main():
-    ap = argparse.ArgumentParser(description="JARVIS medium chat with BM25 RAG")
+    ap = argparse.ArgumentParser(
+        description="JARVIS medium chat: default = pack router + CAD hybrid + auto WordNet define"
+    )
     ap.add_argument("--ckpt", default="/workspace/jarvis/checkpoints/medium_v3/best.pt")
     ap.add_argument("--data", default="/workspace/jarvis_kaggle/bundle_medium")
-    ap.add_argument("--mode", choices=["gen", "hybrid", "cad", "copybias", "cad_hybrid", "dict", "soft_exclusion", "knn"], default="hybrid",
-                    help="gen|hybrid|cad|copybias|cad_hybrid|dict (WordNet define path)")
+    ap.add_argument(
+        "--mode",
+        choices=MODE_CHOICES,
+        default="default",
+        help=(
+            "default=cad_hybrid (CAD+extractive+auto-dict). "
+            "Opt-in reason (no LM). Old: greedy|gen, hybrid, cad, copybias, dict, soft_exclusion, knn"
+        ),
+    )
+    ap.add_argument(
+        "--retrieval",
+        choices=["routed", "global"],
+        default="routed",
+        help="routed=pack router (default); global=classic BM25 over all packs",
+    )
+    ap.add_argument("--reason", action="store_true", help="training-free evidence sorting/checking; no model load needed")
+    ap.add_argument("--no-dict", action="store_true", help="disable automatic /define path")
     ap.add_argument("--k", type=int, default=3)
     ap.add_argument("--max-chars", type=int, default=900)
     ap.add_argument("--max-new", type=int, default=48)
@@ -84,7 +82,17 @@ def main():
     ap.add_argument("--upload", type=str, default=None, help="append a fact doc to local knowledge store")
     ap.add_argument("--seed-novel", action="store_true", help="seed novel_facts into uploads")
     ap.add_argument("--rebuild-index", action="store_true")
+    ap.add_argument(
+        "--shadow",
+        action="store_true",
+        help="print frozen NEURON-4 E-auto sidecar line after the primary answer (does NOT replace it)",
+    )
     args = ap.parse_args()
+
+    try:
+        args.mode = "reason" if args.reason else normalize_mode(args.mode)
+    except ValueError as e:
+        ap.error(str(e))
 
     if args.seed_novel:
         n = seed_novel_facts()
@@ -100,20 +108,35 @@ def main():
         build_combined_index(force=True)
         print("rebuilt combined BM25 index", flush=True)
 
-    if args.upload and not args.once:
-        # upload-only invocation
-        if not sys.stdin.isatty() and not args.once:
-            return
-        # still allow interactive after upload unless --once unset and no tty intent
-        pass
+    # Model-free reasoning/dictionary startup; lazily load if REPL changes mode.
+    model = tok = None
 
-    print("Loading medium_v3 (CPU, 2 threads)…", flush=True)
-    model, tok, info = load_medium(Path(args.ckpt), Path(args.data), max_ctx=args.max_ctx)
-    print(f"loaded step={info['step']} params={info['n_params']:,} ctx={info['max_seq_len']}", flush=True)
+    def ensure_model():
+        nonlocal model, tok
+        if model is None:
+            print("Loading medium_v3 (CPU, 2 threads)…", flush=True)
+            from model_io import load_medium
+            model, tok, info = load_medium(Path(args.ckpt), Path(args.data), max_ctx=args.max_ctx)
+            print(f"loaded step={info['step']} params={info['n_params']:,} ctx={info['max_seq_len']}", flush=True)
 
-    retriever = ChatRetriever(k=args.k, max_chars=args.max_chars)
+    if args.mode not in {"reason", "dict"}:
+        ensure_model()
+
+    retriever = build_retriever(args.k, args.max_chars, args.retrieval)
     print(f"retriever: {retriever.info()}", flush=True)
-    print(f"mode={args.mode}  (commands: /quit /mode gen|hybrid|cad|copybias|soft_exclusion|knn|dict /define <word> /upload <text>)", flush=True)
+    shadow = None
+    if args.shadow:
+        from shadow_eauto import ShadowEAuto
+        print("Loading shadow E-auto (sidecar only; primary answer unchanged)…", flush=True)
+        shadow = ShadowEAuto.from_knowledge()
+        print(f"shadow E-auto: {shadow.info()}", flush=True)
+    print(
+        f"mode={args.mode} retrieval={args.retrieval} prefer_dict={not args.no_dict}\n"
+        f"  (commands: /quit /mode <name> /retrieval routed|global /define <word> /upload <text> /shadow /reason)",
+        flush=True,
+    )
+
+    state = {"retriever": retriever, "retrieval": args.retrieval, "shadow": shadow if args.shadow else None, "shadow_on": bool(args.shadow)}
 
     def handle(q: str):
         q = q.strip()
@@ -121,43 +144,93 @@ def main():
             return
         if q.lower() in {"/quit", "/exit", "quit", "exit"}:
             raise SystemExit(0)
+        if q.lower() == "/reason":
+            args.mode = "reason"
+            print("mode → reason (training-free evidence audit)", flush=True)
+            return
         if q.lower().startswith("/mode "):
-            nonlocal_mode = q.split(None, 1)[1].strip().lower()
-            if nonlocal_mode in {"gen", "hybrid", "cad", "copybias", "cad_hybrid", "dict", "soft_exclusion", "knn", "softexcl"}:
-                args.mode = nonlocal_mode
+            name = q.split(None, 1)[1].strip().lower()
+            try:
+                args.mode = normalize_mode(name)
                 print(f"mode → {args.mode}", flush=True)
-            else:
-                print("use /mode gen|hybrid|cad|copybias|soft_exclusion|knn|dict", flush=True)
+            except ValueError:
+                print(
+                    "use /mode default|cad_hybrid|greedy|gen|hybrid|cad|copybias|"
+                    "soft_exclusion|knn|dict|reason",
+                    flush=True,
+                )
+            return
+        if q.lower().startswith("/retrieval "):
+            name = q.split(None, 1)[1].strip().lower()
+            if name not in {"routed", "global"}:
+                print("use /retrieval routed|global", flush=True)
+                return
+            state["retrieval"] = name
+            state["retriever"] = build_retriever(args.k, args.max_chars, name)
+            print(f"retrieval → {name}  info={state['retriever'].info()}", flush=True)
             return
         if q.lower().startswith("/upload "):
             text = q.split(None, 1)[1]
             append_upload(text, source="upload")
             build_combined_index(force=True)
-            # reload retriever
-            nonlocal_r = ChatRetriever(k=args.k, max_chars=args.max_chars)
-            # rebind
-            handle.retriever = nonlocal_r  # type: ignore
+            state["retriever"] = build_retriever(args.k, args.max_chars, state["retrieval"])
             print("uploaded + index rebuilt", flush=True)
             return
 
         if q.lower().startswith("/define "):
-            print("\n" + (answer_define("what does " + q.split(None, 1)[1] + " mean?") or "[DICT] miss") + "\n", flush=True)
+            print(
+                "\n"
+                + (answer_define("what does " + q.split(None, 1)[1] + " mean?") or "[DICT] miss")
+                + "\n",
+                flush=True,
+            )
             return
-        r = getattr(handle, "retriever", retriever)
-        if args.mode in {"cad", "copybias", "cad_hybrid", "dict", "soft_exclusion", "knn", "softexcl"}:
-            out = answer_one_mode(
-                model, tok, r, q, mode=args.mode,
-                max_new=args.max_new, temperature=args.temperature, min_ext=args.min_ext_score,
-            )
-        else:
-            out = answer_one(
-                model, tok, r, q, args.mode, args.max_new, args.temperature, args.min_ext_score
-            )
-        print("\n" + out["display"] + "\n", flush=True)
-        if out.get("extractive") and args.mode == "gen":
-            print(f"(extractive hint: {out['extractive']['span']!r} score={out['extractive']['score']:.2f})", flush=True)
+        if q.lower().strip() in {"/shadow", "/shadow on", "/shadow off"}:
+            cmd = q.lower().strip()
+            if cmd == "/shadow":
+                state["shadow_on"] = not state.get("shadow_on")
+            elif cmd.endswith("on"):
+                state["shadow_on"] = True
+            else:
+                state["shadow_on"] = False
+            if state["shadow_on"] and state.get("shadow") is None:
+                from shadow_eauto import ShadowEAuto
+                print("Loading shadow E-auto (sidecar only)…", flush=True)
+                state["shadow"] = ShadowEAuto.from_knowledge()
+                print(f"shadow E-auto: {state['shadow'].info()}", flush=True)
+            print(f"shadow sidecar → {'ON' if state['shadow_on'] else 'OFF'} (primary answer unchanged)", flush=True)
+            return
 
-    handle.retriever = retriever  # type: ignore
+        if args.mode not in {"reason", "dict"}:
+            ensure_model()
+        out = answer_one_mode(
+            model,
+            tok,
+            state["retriever"],
+            q,
+            mode=args.mode,
+            max_new=args.max_new,
+            temperature=args.temperature,
+            min_ext=args.min_ext_score,
+            prefer_dict=not args.no_dict,
+        )
+        print("\n" + out["display"] + "\n", flush=True)
+        # Shadow sidecar: NEVER replaces primary display above
+        if state.get("shadow_on") and state.get("shadow") is not None:
+            try:
+                print(state["shadow"].answer_sidecar(q), flush=True)
+            except Exception as e:
+                print(f"[shadow E-auto] error: {e}", flush=True)
+        if out.get("extractive") and args.mode == "gen" and out["mode"] != "dict":
+            ext = out["extractive"]
+            if ext:
+                print(
+                    f"(extractive hint: {ext.get('span')!r} score={ext.get('score', 0):.2f})",
+                    flush=True,
+                )
+        route = getattr(state["retriever"], "last_route", None)
+        if route is not None:
+            print(f"(route: pack={route.pack} reason={route.reason})", flush=True)
 
     if args.once:
         handle(args.once)

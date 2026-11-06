@@ -1,0 +1,522 @@
+[
+  {
+    "arm": "bag",
+    "seed": 0,
+    "n_edges": 0,
+    "degree_preserved": null,
+    "label_counts": {},
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "bag",
+    "seed": 1,
+    "n_edges": 0,
+    "degree_preserved": null,
+    "label_counts": {},
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "bag",
+    "seed": 2,
+    "n_edges": 0,
+    "degree_preserved": null,
+    "label_counts": {},
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "bag",
+    "seed": 3,
+    "n_edges": 0,
+    "degree_preserved": null,
+    "label_counts": {},
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "bag",
+    "seed": 4,
+    "n_edges": 0,
+    "degree_preserved": null,
+    "label_counts": {},
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "bag",
+    "seed": 5,
+    "n_edges": 0,
+    "degree_preserved": null,
+    "label_counts": {},
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "bag",
+    "seed": 6,
+    "n_edges": 0,
+    "degree_preserved": null,
+    "label_counts": {},
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "bag",
+    "seed": 7,
+    "n_edges": 0,
+    "degree_preserved": null,
+    "label_counts": {},
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "plain",
+    "seed": 0,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "plain",
+    "seed": 1,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "plain",
+    "seed": 2,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "plain",
+    "seed": 3,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "plain",
+    "seed": 4,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "plain",
+    "seed": 5,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "plain",
+    "seed": 6,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "plain",
+    "seed": 7,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "E",
+    "seed": 0,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "E",
+    "seed": 1,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "E",
+    "seed": 2,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "E",
+    "seed": 3,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "E",
+    "seed": 4,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "E",
+    "seed": 5,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "E",
+    "seed": 6,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "E",
+    "seed": 7,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "degree_shuffle",
+    "seed": 0,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 82
+  },
+  {
+    "arm": "degree_shuffle",
+    "seed": 1,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 1,
+    "changed_endpoint_pairs": 82
+  },
+  {
+    "arm": "degree_shuffle",
+    "seed": 2,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 1,
+    "changed_endpoint_pairs": 82
+  },
+  {
+    "arm": "degree_shuffle",
+    "seed": 3,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 2,
+    "changed_endpoint_pairs": 82
+  },
+  {
+    "arm": "degree_shuffle",
+    "seed": 4,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 82
+  },
+  {
+    "arm": "degree_shuffle",
+    "seed": 5,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 2,
+    "changed_endpoint_pairs": 82
+  },
+  {
+    "arm": "degree_shuffle",
+    "seed": 6,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 82
+  },
+  {
+    "arm": "degree_shuffle",
+    "seed": 7,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2,
+      "unrelated_similar": 9
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 82
+  },
+  {
+    "arm": "label_shuffle",
+    "seed": 0,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "unrelated_similar": 9,
+      "contradicts": 2
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "label_shuffle",
+    "seed": 1,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "contradicts": 2,
+      "unrelated_similar": 9,
+      "supported": 9
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "label_shuffle",
+    "seed": 2,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "supported": 9,
+      "same_card": 62,
+      "unrelated_similar": 9,
+      "contradicts": 2
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "label_shuffle",
+    "seed": 3,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "unrelated_similar": 9,
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "label_shuffle",
+    "seed": 4,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "unrelated_similar": 9,
+      "supported": 9,
+      "contradicts": 2
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "label_shuffle",
+    "seed": 5,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "supported": 9,
+      "same_card": 62,
+      "unrelated_similar": 9,
+      "contradicts": 2
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "label_shuffle",
+    "seed": 6,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "same_card": 62,
+      "supported": 9,
+      "unrelated_similar": 9,
+      "contradicts": 2
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  },
+  {
+    "arm": "label_shuffle",
+    "seed": 7,
+    "n_edges": 82,
+    "degree_preserved": true,
+    "label_counts": {
+      "unrelated_similar": 9,
+      "same_card": 62,
+      "supported": 9,
+      "contradicts": 2
+    },
+    "self_loops": 0,
+    "changed_endpoint_pairs": 0
+  }
+]

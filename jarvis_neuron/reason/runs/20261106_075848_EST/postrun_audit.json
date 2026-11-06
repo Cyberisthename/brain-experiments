@@ -1,0 +1,22 @@
+{
+  "frozen_artifacts_unchanged": true,
+  "original_sources_unchanged": true,
+  "prediction_rows": 3680,
+  "unique_questions": 92,
+  "E_misses": [
+    {
+      "qid": "q052",
+      "question": "In the uploaded notes, what value is recorded for 'author of the iliad'?",
+      "gold": "Homer",
+      "answer": null,
+      "decision": "no supported candidate"
+    },
+    {
+      "qid": "q053",
+      "question": "In the uploaded notes, what value is recorded for 'author of the odyssey'?",
+      "gold": "Homer",
+      "answer": null,
+      "decision": "no supported candidate"
+    }
+  ]
+}

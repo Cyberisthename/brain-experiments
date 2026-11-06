@@ -1,0 +1,1 @@
+seed 106 n=36 b=0.25 tau=0.1 sa_agree=20/20 t=22s

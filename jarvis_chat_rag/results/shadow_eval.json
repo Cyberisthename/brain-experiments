@@ -1,0 +1,1063 @@
+{
+  "finished_et": "2026-11-06 12:32:53 ET",
+  "seconds": 5.93,
+  "shadow_info": {
+    "n_memories": 485,
+    "n_facts": 79,
+    "n_numeric_values": 12,
+    "n_string_values": 67,
+    "project": "chat_rag/shadow",
+    "limitation": "E-auto Graph expects structured {project, entity, attr, intent} queries and entity/attr/value memories. Native N4 auto_extract only keeps NUMERIC markdown table cells. This adapter (1) renders each fact card as a 2-column markdown table plus the raw sentence, (2) runs N4.auto_extract for numeric cells, (3) adds a string-cell extractor over the SAME tables so open chat values work, (4) maps NL questions to entity/attr by token overlap \u2014 not fluent free-form QA. Uncertain flags come from UNC regex markers only (no gold-trained classifier).",
+    "neuron4_import": "/workspace/jarvis/neuron/neuron4/run_neuron4.py"
+  },
+  "published_full_eval_baselines": {
+    "retrieval_routed": 0.9666666666666667,
+    "retrieval_global": 0.9333333333333333,
+    "hybrid": 0.9,
+    "gen": 0.3,
+    "cad": 0.43333333333333335,
+    "routed_hybrid": 0.9,
+    "n": 30,
+    "finished_et": "2026-11-03 13:18:16"
+  },
+  "full_eval_30q": {
+    "summary": {
+      "name": "full_eval_30q",
+      "n": 30,
+      "eauto_accuracy": 0.7333,
+      "eauto_coverage": 0.8,
+      "eauto_abstain": 6,
+      "eauto_correct": 22,
+      "eauto_wrong_answered": 2,
+      "eauto_selective_accuracy": 0.9167,
+      "eauto_confident_wrong_among_answered": 0.0833,
+      "retrieval_acc": 0.9667,
+      "hybrid_acc": 0.9,
+      "retrieval_n": 30,
+      "hybrid_n": 30
+    },
+    "items": [
+      {
+        "id": "france",
+        "kind": "pack",
+        "question": "What is the capital of France?",
+        "gold": "Paris",
+        "eauto_answer": "Paris",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "france",
+          "attr": "capital",
+          "project": "chat_rag/shadow",
+          "map_score": 17.5
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": false
+      },
+      {
+        "id": "dracula",
+        "kind": "pack",
+        "question": "Who wrote Dracula?",
+        "gold": "Bram Stoker",
+        "eauto_answer": "Bram Stoker",
+        "eauto_confidence": 0.9,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "dracula",
+          "attr": "author",
+          "project": "chat_rag/shadow",
+          "map_score": 16.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": false
+      },
+      {
+        "id": "frankenstein",
+        "kind": "pack",
+        "question": "Who wrote Frankenstein?",
+        "gold": "Mary Shelley",
+        "eauto_answer": "Mary Shelley",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "frankenstein",
+          "attr": "author",
+          "project": "chat_rag/shadow",
+          "map_score": 16.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": false
+      },
+      {
+        "id": "wwi",
+        "kind": "pack",
+        "question": "What year did World War I begin?",
+        "gold": "1914",
+        "eauto_answer": "1914",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "world war i",
+          "attr": "year",
+          "project": "chat_rag/shadow",
+          "map_score": 15.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": true
+      },
+      {
+        "id": "hamlet",
+        "kind": "pack",
+        "question": "Who wrote Hamlet?",
+        "gold": "Shakespeare",
+        "eauto_answer": "William Shakespeare",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "hamlet",
+          "attr": "author",
+          "project": "chat_rag/shadow",
+          "map_score": 16.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": true
+      },
+      {
+        "id": "gibbon",
+        "kind": "pack",
+        "question": "Who wrote The History of the Decline and Fall of the Roman Empire?",
+        "gold": "Edward Gibbon",
+        "eauto_answer": "Edward Gibbon",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "the history of the decline and fall of the roman empire",
+          "attr": "author",
+          "project": "chat_rag/shadow",
+          "map_score": 39.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": false
+      },
+      {
+        "id": "herodotus",
+        "kind": "pack",
+        "question": "Who wrote The History of Herodotus \u2014 Volume 1?",
+        "gold": "Herodotus",
+        "eauto_answer": "Herodotus",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "the history of herodotus \u2014 volume 1",
+          "attr": "author",
+          "project": "chat_rag/shadow",
+          "map_score": 32.25
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": true
+      },
+      {
+        "id": "thucydides",
+        "kind": "pack",
+        "question": "Who wrote The History of the Peloponnesian War?",
+        "gold": "Thucydides",
+        "eauto_answer": "Thucydides",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "the history of the peloponnesian war",
+          "attr": "author",
+          "project": "chat_rag/shadow",
+          "map_score": 25.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": false
+      },
+      {
+        "id": "paine",
+        "kind": "pack",
+        "question": "Who wrote Common Sense?",
+        "gold": "Thomas Paine",
+        "eauto_answer": "Thomas Paine",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "common sense",
+          "attr": "author",
+          "project": "chat_rag/shadow",
+          "map_score": 23.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": false,
+        "gen_hit": false
+      },
+      {
+        "id": "jefferson",
+        "kind": "pack",
+        "question": "Who wrote The Declaration of Independence of the United States of America?",
+        "gold": "Thomas Jefferson",
+        "eauto_answer": "Thomas Jefferson",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "the declaration of independence of the united states of america",
+          "attr": "author",
+          "project": "chat_rag/shadow",
+          "map_score": 44.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": false
+      },
+      {
+        "id": "zorblax",
+        "kind": "novel",
+        "question": "What is the capital of Zorblax?",
+        "gold": "Quendara",
+        "eauto_answer": "Quendara",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "zorblax",
+          "attr": "capital",
+          "project": "chat_rag/shadow",
+          "map_score": 17.5
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": false
+      },
+      {
+        "id": "voss",
+        "kind": "novel",
+        "question": "Who discovered aerogel photosynthesis?",
+        "gold": "Dr. Mirella Voss",
+        "eauto_answer": "ABSTAIN",
+        "eauto_confidence": 0.0,
+        "eauto_reason": "no entity/attr map from NL question",
+        "eauto_mapped": null,
+        "eauto_correct": false,
+        "eauto_abstain": true,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": false
+      },
+      {
+        "id": "wren",
+        "kind": "novel",
+        "question": "In what year did the MV Starlight Wren launch?",
+        "gold": "2147",
+        "eauto_answer": "2147",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "the mv starlight wren",
+          "attr": "launch year",
+          "project": "chat_rag/shadow",
+          "map_score": 16.5
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": false
+      },
+      {
+        "id": "kestrel",
+        "kind": "novel",
+        "question": "What does the Kestrel Protocol use?",
+        "gold": "three-phase lattice keys",
+        "eauto_answer": "three-phase lattice keys",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "the kestrel protocol",
+          "attr": "uses",
+          "project": "chat_rag/shadow",
+          "map_score": 18.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": true
+      },
+      {
+        "id": "amberfall",
+        "kind": "novel",
+        "question": "Who founded the city of Amberfall?",
+        "gold": "Queen Lysara",
+        "eauto_answer": "Queen Lysara",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "the city of amberfall",
+          "attr": "founder",
+          "project": "chat_rag/shadow",
+          "map_score": 18.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": true
+      },
+      {
+        "id": "xylith",
+        "kind": "novel",
+        "question": "What is the atomic number of Xylith?",
+        "gold": "149",
+        "eauto_answer": "149",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "xylith",
+          "attr": "atomic number",
+          "project": "chat_rag/shadow",
+          "map_score": 19.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": false
+      },
+      {
+        "id": "okorie",
+        "kind": "novel",
+        "question": "Who wrote Bright Circadian?",
+        "gold": "Hana Okorie",
+        "eauto_answer": "Hana Okorie",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "bright circadian",
+          "attr": "author",
+          "project": "chat_rag/shadow",
+          "map_score": 23.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": false
+      },
+      {
+        "id": "nexora",
+        "kind": "novel",
+        "question": "How many moons does Nexora-4 have?",
+        "gold": "seven",
+        "eauto_answer": "seven",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "planet nexora-4",
+          "attr": "moons",
+          "project": "chat_rag/shadow",
+          "map_score": 15.5
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": false
+      },
+      {
+        "id": "helixwind",
+        "kind": "novel",
+        "question": "Who is the CEO of Helixwind?",
+        "gold": "Priya Dunn",
+        "eauto_answer": "Priya Dunn",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "helixwind",
+          "attr": "value",
+          "project": "chat_rag/shadow",
+          "map_score": 11.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": false
+      },
+      {
+        "id": "marlowe",
+        "kind": "novel",
+        "question": "Who invented the MARLOWE algorithm?",
+        "gold": "Eli Navarro",
+        "eauto_answer": "The MARLOWE algorithm was",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "by eli navarro",
+          "attr": "inventor",
+          "project": "chat_rag/shadow",
+          "map_score": 5.5
+        },
+        "eauto_correct": false,
+        "eauto_abstain": false,
+        "eauto_wrong": true,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": true
+      },
+      {
+        "id": "glaucite",
+        "kind": "novel",
+        "question": "What color is glaucite?",
+        "gold": "blue-green",
+        "eauto_answer": "blue-green",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "glaucite",
+          "attr": "color",
+          "project": "chat_rag/shadow",
+          "map_score": 16.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": false
+      },
+      {
+        "id": "northmere",
+        "kind": "novel",
+        "question": "What is the motto of the University of Northmere?",
+        "gold": "Lux in limine",
+        "eauto_answer": "Lux in limine",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "the university of northmere",
+          "attr": "value",
+          "project": "chat_rag/shadow",
+          "map_score": 18.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": true
+      },
+      {
+        "id": "atlantis",
+        "kind": "madeup",
+        "question": "What is the capital of Atlantis?",
+        "gold": "Poseidonis",
+        "eauto_answer": "Poseidonis",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "atlantis",
+          "attr": "capital",
+          "project": "chat_rag/shadow",
+          "map_score": 17.5
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": true
+      },
+      {
+        "id": "gleeb",
+        "kind": "madeup",
+        "question": "Who invented the Gleeb capacitor?",
+        "gold": "Nara Quill",
+        "eauto_answer": "Nara Quill",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "the gleeb capacitor in 2091",
+          "attr": "inventor",
+          "project": "chat_rag/shadow",
+          "map_score": 19.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": false
+      },
+      {
+        "id": "def_neuron",
+        "kind": "dict",
+        "question": "What does neuron mean?",
+        "gold": "nerve",
+        "eauto_answer": "0.064",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "neuron-4 e-auto",
+          "attr": "confident-wrong",
+          "project": "chat_rag/shadow",
+          "map_score": 7.0
+        },
+        "eauto_correct": false,
+        "eauto_abstain": false,
+        "eauto_wrong": true,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": false
+      },
+      {
+        "id": "def_synapse",
+        "kind": "dict",
+        "question": "What does synapse mean?",
+        "gold": "junction",
+        "eauto_answer": "ABSTAIN",
+        "eauto_confidence": 0.0,
+        "eauto_reason": "no entity/attr map from NL question",
+        "eauto_mapped": null,
+        "eauto_correct": false,
+        "eauto_abstain": true,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": false
+      },
+      {
+        "id": "def_myelin",
+        "kind": "dict",
+        "question": "Define myelin",
+        "gold": "fatty",
+        "eauto_answer": "ABSTAIN",
+        "eauto_confidence": 0.0,
+        "eauto_reason": "no entity/attr map from NL question",
+        "eauto_mapped": null,
+        "eauto_correct": false,
+        "eauto_abstain": true,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": false
+      },
+      {
+        "id": "def_photosynthesis",
+        "kind": "dict",
+        "question": "What does photosynthesis mean?",
+        "gold": "synthesis",
+        "eauto_answer": "ABSTAIN",
+        "eauto_confidence": 0.0,
+        "eauto_reason": "no entity/attr map from NL question",
+        "eauto_mapped": null,
+        "eauto_correct": false,
+        "eauto_abstain": true,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "gen_hit": true
+      },
+      {
+        "id": "def_algorithm",
+        "kind": "dict",
+        "question": "What does algorithm mean?",
+        "gold": "rule",
+        "eauto_answer": "ABSTAIN",
+        "eauto_confidence": 0.0,
+        "eauto_reason": "no entity/attr map from NL question",
+        "eauto_mapped": null,
+        "eauto_correct": false,
+        "eauto_abstain": true,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": false,
+        "gen_hit": false
+      },
+      {
+        "id": "def_entropy",
+        "kind": "dict",
+        "question": "What does entropy mean?",
+        "gold": "uncertainty",
+        "eauto_answer": "ABSTAIN",
+        "eauto_confidence": 0.0,
+        "eauto_reason": "no entity/attr map from NL question",
+        "eauto_mapped": null,
+        "eauto_correct": false,
+        "eauto_abstain": true,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": false,
+        "hybrid_hit": false,
+        "gen_hit": false
+      }
+    ]
+  },
+  "jarvis_notes": {
+    "summary": {
+      "name": "jarvis_notes",
+      "n": 15,
+      "eauto_accuracy": 1.0,
+      "eauto_coverage": 0.8667,
+      "eauto_abstain": 2,
+      "eauto_correct": 15,
+      "eauto_wrong_answered": 0,
+      "eauto_selective_accuracy": 1.0,
+      "eauto_confident_wrong_among_answered": 0.0,
+      "retrieval_acc": 0.9231,
+      "hybrid_acc": 0.9231,
+      "retrieval_n": 13,
+      "hybrid_n": 13
+    },
+    "items": [
+      {
+        "id": "jn_n4_cwr",
+        "kind": "jarvis_notes",
+        "question": "What was NEURON-4 E-auto confident-wrong rate?",
+        "gold": "0.064",
+        "eauto_answer": "0.064",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "neuron-4 e-auto",
+          "attr": "confident-wrong",
+          "project": "chat_rag/shadow",
+          "map_score": 25.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "extractive_span": "1013",
+        "retrieved_ids": [
+          "jn_n4_cwr",
+          "jn_n4_vs_exact",
+          "jn_n5"
+        ]
+      },
+      {
+        "id": "jn_n4_vs_exact",
+        "kind": "jarvis_notes",
+        "question": "Did NEURON-4 E-auto beat exact search on confident-wrong?",
+        "gold": "yes",
+        "eauto_answer": "yes",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "neuron-4 e-auto",
+          "attr": "beat exact on confident-wrong",
+          "project": "chat_rag/shadow",
+          "map_score": 28.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": false,
+        "hybrid_hit": false,
+        "extractive_span": "On NEURON-4",
+        "retrieved_ids": [
+          "jn_n4_vs_exact",
+          "jn_n4_cwr",
+          "jn_n5"
+        ]
+      },
+      {
+        "id": "jn_n4_labels",
+        "kind": "jarvis_notes",
+        "question": "Are NEURON-4 labels human judgments?",
+        "gold": "no",
+        "eauto_answer": "no",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "neuron-4 labels",
+          "attr": "human judgment",
+          "project": "chat_rag/shadow",
+          "map_score": 26.5
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "extractive_span": "4",
+        "retrieved_ids": [
+          "jn_n4_labels",
+          "jn_n4_cwr",
+          "jn_n4_vs_exact"
+        ]
+      },
+      {
+        "id": "jn_n5",
+        "kind": "jarvis_notes",
+        "question": "Did NEURON-5 beat E-auto on confident-wrong?",
+        "gold": "no",
+        "eauto_answer": "no",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "neuron-5",
+          "attr": "beat e-auto on confident-wrong",
+          "project": "chat_rag/shadow",
+          "map_score": 30.5
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "extractive_span": "NEURON-5 P_energy",
+        "retrieved_ids": [
+          "jn_n5",
+          "jn_n4_vs_exact",
+          "jn_n4_cwr"
+        ]
+      },
+      {
+        "id": "jn_qms",
+        "kind": "jarvis_notes",
+        "question": "Did QMS-1 find a better-than-default config worth hardware?",
+        "gold": "no",
+        "eauto_answer": "no",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "qms-1",
+          "attr": "hardware case",
+          "project": "chat_rag/shadow",
+          "map_score": 14.5
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "extractive_span": "E_auto",
+        "retrieved_ids": [
+          "jn_qms",
+          "cyber_ai:210",
+          "cyber_ai:378"
+        ]
+      },
+      {
+        "id": "jn_tutor",
+        "kind": "jarvis_notes",
+        "question": "How did the teacher tutor training go?",
+        "gold": "NOT SUPPORTED",
+        "eauto_answer": "NOT SUPPORTED",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "tutor pilot",
+          "attr": "verdict",
+          "project": "chat_rag/shadow",
+          "map_score": 12.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "extractive_span": "Knowledge",
+        "retrieved_ids": [
+          "cyber_ai:268",
+          "literature:6462",
+          "jn_tutor"
+        ]
+      },
+      {
+        "id": "jn_chat_hybrid",
+        "kind": "jarvis_notes",
+        "question": "What was chat_rag hybrid accuracy on the 30Q eval?",
+        "gold": "0.900",
+        "eauto_answer": "0.9",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "chat rag hybrid",
+          "attr": "accuracy",
+          "project": "chat_rag/shadow",
+          "map_score": 17.5
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "extractive_span": "Training-free",
+        "retrieved_ids": [
+          "jn_chat_hybrid",
+          "jn_chat_gen",
+          "jn_chat_cad"
+        ]
+      },
+      {
+        "id": "jn_chat_gen",
+        "kind": "jarvis_notes",
+        "question": "What was chat_rag gen accuracy on the 30Q eval?",
+        "gold": "0.300",
+        "eauto_answer": "0.3",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "chat rag gen",
+          "attr": "accuracy",
+          "project": "chat_rag/shadow",
+          "map_score": 12.5
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "extractive_span": "Training-free",
+        "retrieved_ids": [
+          "jn_chat_hybrid",
+          "jn_chat_gen",
+          "jn_chat_cad"
+        ]
+      },
+      {
+        "id": "jn_chat_cad",
+        "kind": "jarvis_notes",
+        "question": "What was chat_rag CAD accuracy on the 30Q eval?",
+        "gold": "0.433",
+        "eauto_answer": "0.433",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "chat rag cad",
+          "attr": "accuracy",
+          "project": "chat_rag/shadow",
+          "map_score": 12.5
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "extractive_span": "Training-free",
+        "retrieved_ids": [
+          "jn_chat_hybrid",
+          "jn_chat_cad",
+          "jn_chat_gen"
+        ]
+      },
+      {
+        "id": "jn_chat_ret",
+        "kind": "jarvis_notes",
+        "question": "What was chat_rag routed retrieval accuracy on the 30Q eval?",
+        "gold": "0.967",
+        "eauto_answer": "0.967",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "chat rag routed retrieval",
+          "attr": "accuracy",
+          "project": "chat_rag/shadow",
+          "map_score": 24.5
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "extractive_span": "Training-free",
+        "retrieved_ids": [
+          "jn_chat_hybrid",
+          "jn_chat_ret",
+          "jn_chat_gen"
+        ]
+      },
+      {
+        "id": "jn_hypo",
+        "kind": "jarvis_notes",
+        "question": "Did the hypothalamus A/B/C tests hold up?",
+        "gold": "no",
+        "eauto_answer": "no",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "hypothalamus abc",
+          "attr": "supported",
+          "project": "chat_rag/shadow",
+          "map_score": 12.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "extractive_span": "Test",
+        "retrieved_ids": [
+          "jn_hypo",
+          "cyber_ai:97",
+          "cyber_ai:202"
+        ]
+      },
+      {
+        "id": "jn_callosum",
+        "kind": "jarvis_notes",
+        "question": "Did the real callosum map beat degree shuffle on transfer?",
+        "gold": "no",
+        "eauto_answer": "no",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "callosum scaled",
+          "attr": "beat degree shuffle on transfer",
+          "project": "chat_rag/shadow",
+          "map_score": 13.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "extractive_span": "The",
+        "retrieved_ids": [
+          "jn_callosum",
+          "jn_stp",
+          "literature:9521"
+        ]
+      },
+      {
+        "id": "jn_stp",
+        "kind": "jarvis_notes",
+        "question": "Which engine_v3 ablation arm beat BASE on all four tasks?",
+        "gold": "STP",
+        "eauto_answer": "STP",
+        "eauto_confidence": 0.7,
+        "eauto_reason": "answered",
+        "eauto_mapped": {
+          "entity": "engine v3 ablation",
+          "attr": "best arm vs base",
+          "project": "chat_rag/shadow",
+          "map_score": 24.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": false,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": true,
+        "hybrid_hit": true,
+        "extractive_span": "In",
+        "retrieved_ids": [
+          "jn_stp",
+          "cyber_ai:2",
+          "cyber_ai:9"
+        ]
+      },
+      {
+        "id": "jn_probe_kappa_a",
+        "kind": "jarvis_notes",
+        "question": "What is shadow probe metric Kappa?",
+        "gold": "ABSTAIN",
+        "eauto_answer": "ABSTAIN",
+        "eauto_confidence": 0.3,
+        "eauto_reason": "abstain: unresolved contradiction or weak support (E)",
+        "eauto_mapped": {
+          "entity": "shadow probe kappa",
+          "attr": "value",
+          "project": "chat_rag/shadow",
+          "map_score": 16.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": true,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": null,
+        "hybrid_hit": null,
+        "retrieved_ids": [
+          "jn_probe_kappa_b",
+          "jn_probe_kappa_a",
+          "jn_probe_lambda"
+        ]
+      },
+      {
+        "id": "jn_probe_lambda",
+        "kind": "jarvis_notes",
+        "question": "What is shadow probe metric Lambda?",
+        "gold": "ABSTAIN",
+        "eauto_answer": "ABSTAIN",
+        "eauto_confidence": 0.2,
+        "eauto_reason": "abstain: only uncertain/proposed support (E)",
+        "eauto_mapped": {
+          "entity": "shadow probe lambda",
+          "attr": "value",
+          "project": "chat_rag/shadow",
+          "map_score": 16.0
+        },
+        "eauto_correct": true,
+        "eauto_abstain": true,
+        "eauto_wrong": false,
+        "retrieval_routed_hit": null,
+        "hybrid_hit": null,
+        "retrieved_ids": [
+          "jn_probe_lambda",
+          "jn_probe_kappa_b",
+          "jn_probe_kappa_a"
+        ]
+      }
+    ]
+  },
+  "neuron4_hashes": {
+    "run_neuron4_sha256": "9994ec5714617b1db9e966b84381a905e17b3652783c1c23ca077b3ff9d1c1e3",
+    "run_neuron4_matches_launch": true,
+    "n3lib_sha256": "2a392b927bdb4c50b1bb8e81d4ff26f1a9eb908a59c215ba20514f7ff41a0aa7",
+    "n3lib_matches_HASHES_FROZEN": true
+  },
+  "limitation": "E-auto Graph expects structured {project, entity, attr, intent} queries and entity/attr/value memories. Native N4 auto_extract only keeps NUMERIC markdown table cells. This adapter (1) renders each fact card as a 2-column markdown table plus the raw sentence, (2) runs N4.auto_extract for numeric cells, (3) adds a string-cell extractor over the SAME tables so open chat values work, (4) maps NL questions to entity/attr by token overlap \u2014 not fluent free-form QA. Uncertain flags come from UNC regex markers only (no gold-trained classifier).",
+  "notes": [
+    "Primary chat answer path was not replaced; this is shadow-only scoring.",
+    "full_eval hybrid/gen/CAD numbers are REUSED from 2026-11-03 full_eval.json (not recomputed).",
+    "jarvis_notes hybrid here = BM25 + extractive span (no LM) for a cheap live compare.",
+    "E-auto confident-wrong = wrong among non-abstain answers.",
+    "Institutional Books were not indexed."
+  ]
+}

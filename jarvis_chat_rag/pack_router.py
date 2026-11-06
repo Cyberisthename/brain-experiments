@@ -5,7 +5,7 @@ novel facts). Three packs match the user's architecture:
 
   dictionary  → wordnet
   books       → literature + history + cyber_ai
-  uploads     → novel + upload + fact_card + pack_fact
+  uploads     → novel + upload + fact_card + pack_fact + jarvis_notes
 
 Routing = keyword rules + per-pack BM25 mass. No training.
 """
@@ -19,7 +19,7 @@ from dictionary_lookup import extract_define_query
 PACK_SOURCES: Dict[str, Set[str]] = {
     "dictionary": {"wordnet"},
     "books": {"literature", "history", "cyber_ai"},
-    "uploads": {"novel", "upload", "fact_card", "pack_fact"},
+    "uploads": {"novel", "upload", "fact_card", "pack_fact", "jarvis_notes"},
 }
 
 PACK_KEYWORDS: Dict[str, Sequence[str]] = {
@@ -35,6 +35,8 @@ PACK_KEYWORDS: Dict[str, Sequence[str]] = {
         "glaucite", "northmere", "starlight wren", "capital of",
         "who wrote", "who invented", "who discovered", "who founded",
         "what year", "what color", "how many",
+        "neuron-4", "neuron-5", "e-auto", "confident-wrong", "qms",
+        "tutor", "hypothalamus", "callosum", "stp ablation", "jarvis notes",
     ),
 }
 

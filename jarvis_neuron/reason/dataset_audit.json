@@ -1,0 +1,97 @@
+{
+  "counts": {
+    "direct": 52,
+    "similar_unrelated": 7,
+    "conflict": 1,
+    "uncertain": 1,
+    "hop": 31
+  },
+  "n_facts": 110,
+  "n_cards": 485,
+  "edge_types": {
+    "same_card": 62,
+    "supported": 9,
+    "contradicts": 2,
+    "unrelated_similar": 9
+  },
+  "hop_cards": [
+    "jarvis_notes.jsonl:1",
+    "jarvis_notes.jsonl:12",
+    "jarvis_notes.jsonl:13",
+    "jarvis_notes.jsonl:2",
+    "jarvis_notes.jsonl:4",
+    "jarvis_notes.jsonl:5",
+    "jarvis_notes.jsonl:6",
+    "jarvis_notes.jsonl:7"
+  ],
+  "source_clusters": [
+    "callosum",
+    "chat_rag",
+    "engine_v3",
+    "neuron-4",
+    "neuron-5",
+    "qms-1",
+    "tutor"
+  ],
+  "exclusions": [
+    {
+      "slot": "the real callosum map did not beat degree-matched shuffle on transfer at n=",
+      "reason": "identifier/statistical ancillary/count field"
+    },
+    {
+      "slot": "confirmatory bonferroni unreachable at n=",
+      "reason": "identifier/statistical ancillary/count field"
+    },
+    {
+      "slot": "all",
+      "reason": "identifier/statistical ancillary/count field"
+    },
+    {
+      "slot": "no hardware case. default_e_auto test correct",
+      "reason": "identifier/statistical ancillary/count field"
+    },
+    {
+      "slot": "tutor lost to shuffled explanations (mean contrast",
+      "reason": "identifier/statistical ancillary/count field"
+    },
+    {
+      "slot": "author of common sense",
+      "reason": "historical 30Q topic"
+    },
+    {
+      "slot": "author of dracula",
+      "reason": "historical 30Q topic"
+    },
+    {
+      "slot": "author of frankenstein",
+      "reason": "historical 30Q topic"
+    },
+    {
+      "slot": "author of frankenstein; or, the modern prometheus",
+      "reason": "historical 30Q topic"
+    },
+    {
+      "slot": "author of hamlet",
+      "reason": "historical 30Q topic"
+    },
+    {
+      "slot": "author of the declaration of independence of the united states of america",
+      "reason": "historical 30Q topic"
+    },
+    {
+      "slot": "author of the history of herodotus \u2014 volume 1",
+      "reason": "historical 30Q topic"
+    },
+    {
+      "slot": "author of the history of the decline and fall of the roman empire",
+      "reason": "historical 30Q topic"
+    },
+    {
+      "slot": "author of the history of the peloponnesian war",
+      "reason": "historical 30Q topic"
+    }
+  ],
+  "old_30q_manifest_sha256": "0603dfd7b15868cb61c25d7d55e588ef0876076696dc82923df4a112f263bd21",
+  "gold_policy": "Literal source spans/templates; uncertainty/conflict labels from text rules, not independent human judgments. No existing answer/question/fact_statement fields used as system inputs.",
+  "cluster_policy": "Raw-text research topic groups; all cards about the same experiment count as one cluster. Similar-unrelated edges are not shared evidence and do not merge clusters."
+}

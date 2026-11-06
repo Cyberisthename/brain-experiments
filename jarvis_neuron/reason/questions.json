@@ -1,0 +1,2840 @@
+[
+  {
+    "qid": "q000",
+    "kind": "direct",
+    "cluster": "callosum",
+    "query": {
+      "text": "In the callosum notes, what value is recorded for 'degree_shuffle'?",
+      "project": "callosum",
+      "slot": "degree_shuffle"
+    },
+    "gold": "0.9996",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:12",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 12,
+        "card_id": "jn_callosum",
+        "source": "jarvis_notes",
+        "span": [
+          248,
+          254
+        ],
+        "raw": "0.9996"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q001",
+    "kind": "direct",
+    "cluster": "callosum",
+    "query": {
+      "text": "In the callosum notes, what value is recorded for 'real_sc beat weight_shuffle on transfer'?",
+      "project": "callosum",
+      "slot": "real_sc beat weight_shuffle on transfer"
+    },
+    "gold": "0.9978",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:12",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 12,
+        "card_id": "jn_callosum",
+        "source": "jarvis_notes",
+        "span": [
+          297,
+          303
+        ],
+        "raw": "0.9978"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q002",
+    "kind": "direct",
+    "cluster": "callosum",
+    "query": {
+      "text": "In the callosum notes, what value is recorded for 'real_sc transfer'?",
+      "project": "callosum",
+      "slot": "real_sc transfer"
+    },
+    "gold": "0.9978",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:12",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 12,
+        "card_id": "jn_callosum",
+        "source": "jarvis_notes",
+        "span": [
+          223,
+          229
+        ],
+        "raw": "0.9978"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q003",
+    "kind": "direct",
+    "cluster": "chat_rag",
+    "query": {
+      "text": "In the chat_rag notes, what value is recorded for 'cad scored'?",
+      "project": "chat_rag",
+      "slot": "cad scored"
+    },
+    "gold": "0.433",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:7",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 7,
+        "card_id": "jn_chat_hybrid",
+        "source": "jarvis_notes",
+        "span": [
+          229,
+          234
+        ],
+        "raw": "0.433"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q004",
+    "kind": "direct",
+    "cluster": "chat_rag",
+    "query": {
+      "text": "In the chat_rag notes, what value is recorded for 'generation scored'?",
+      "project": "chat_rag",
+      "slot": "generation scored"
+    },
+    "gold": "0.300",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:7",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 7,
+        "card_id": "jn_chat_hybrid",
+        "source": "jarvis_notes",
+        "span": [
+          211,
+          216
+        ],
+        "raw": "0.300"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q005",
+    "kind": "direct",
+    "cluster": "chat_rag",
+    "query": {
+      "text": "In the chat_rag notes, what value is recorded for 'pack-routed hybrid scored'?",
+      "project": "chat_rag",
+      "slot": "pack-routed hybrid scored"
+    },
+    "gold": "0.900",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:7",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 7,
+        "card_id": "jn_chat_hybrid",
+        "source": "jarvis_notes",
+        "span": [
+          262,
+          267
+        ],
+        "raw": "0.900"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q006",
+    "kind": "direct",
+    "cluster": "chat_rag",
+    "query": {
+      "text": "In the chat_rag notes, what value is recorded for 'retrieval pack-routed bm25 scored'?",
+      "project": "chat_rag",
+      "slot": "retrieval pack-routed bm25 scored"
+    },
+    "gold": "0.967",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:7",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 7,
+        "card_id": "jn_chat_hybrid",
+        "source": "jarvis_notes",
+        "span": [
+          186,
+          191
+        ],
+        "raw": "0.967"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q007",
+    "kind": "similar_unrelated",
+    "cluster": "chat_rag",
+    "query": {
+      "text": "In the chat_rag notes, what value is recorded for 'training-free chat_rag cad accuracy'?",
+      "project": "chat_rag",
+      "slot": "training-free chat_rag cad accuracy"
+    },
+    "gold": "0.433",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:9",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 9,
+        "card_id": "jn_chat_cad",
+        "source": "jarvis_notes",
+        "span": [
+          40,
+          45
+        ],
+        "raw": "0.433"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q008",
+    "kind": "similar_unrelated",
+    "cluster": "chat_rag",
+    "query": {
+      "text": "In the chat_rag notes, what value is recorded for 'training-free chat_rag full eval hybrid accuracy'?",
+      "project": "chat_rag",
+      "slot": "training-free chat_rag full eval hybrid accuracy"
+    },
+    "gold": "0.900",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:7",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 7,
+        "card_id": "jn_chat_hybrid",
+        "source": "jarvis_notes",
+        "span": [
+          53,
+          58
+        ],
+        "raw": "0.900"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q009",
+    "kind": "similar_unrelated",
+    "cluster": "chat_rag",
+    "query": {
+      "text": "In the chat_rag notes, what value is recorded for 'training-free chat_rag generation accuracy'?",
+      "project": "chat_rag",
+      "slot": "training-free chat_rag generation accuracy"
+    },
+    "gold": "0.300",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:8",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 8,
+        "card_id": "jn_chat_gen",
+        "source": "jarvis_notes",
+        "span": [
+          47,
+          52
+        ],
+        "raw": "0.300"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q010",
+    "kind": "direct",
+    "cluster": "chat_rag",
+    "query": {
+      "text": "In the chat_rag notes, what value is recorded for 'training-free chat_rag pack-routed retrieval accuracy'?",
+      "project": "chat_rag",
+      "slot": "training-free chat_rag pack-routed retrieval accuracy"
+    },
+    "gold": "0.967",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:10",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 10,
+        "card_id": "jn_chat_ret",
+        "source": "jarvis_notes",
+        "span": [
+          58,
+          63
+        ],
+        "raw": "0.967"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q011",
+    "kind": "direct",
+    "cluster": "engine_v3",
+    "query": {
+      "text": "In the engine_v3 notes, what value is recorded for 'base'?",
+      "project": "engine_v3",
+      "slot": "base"
+    },
+    "gold": "0.5177",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:13",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 13,
+        "card_id": "jn_stp",
+        "source": "jarvis_notes",
+        "span": [
+          280,
+          286
+        ],
+        "raw": "0.5177"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q012",
+    "kind": "direct",
+    "cluster": "engine_v3",
+    "query": {
+      "text": "In the engine_v3 notes, what value is recorded for 'char'?",
+      "project": "engine_v3",
+      "slot": "char"
+    },
+    "gold": "2.0397",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:13",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 13,
+        "card_id": "jn_stp",
+        "source": "jarvis_notes",
+        "span": [
+          317,
+          323
+        ],
+        "raw": "2.0397"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q013",
+    "kind": "direct",
+    "cluster": "engine_v3",
+    "query": {
+      "text": "In the engine_v3 notes, what value is recorded for 'narma'?",
+      "project": "engine_v3",
+      "slot": "narma"
+    },
+    "gold": "0.5968",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:13",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 13,
+        "card_id": "jn_stp",
+        "source": "jarvis_notes",
+        "span": [
+          294,
+          300
+        ],
+        "raw": "0.5968"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q014",
+    "kind": "direct",
+    "cluster": "engine_v3",
+    "query": {
+      "text": "In the engine_v3 notes, what value is recorded for 'stp xor_hard'?",
+      "project": "engine_v3",
+      "slot": "stp xor_hard"
+    },
+    "gold": "0.7196",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:13",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 13,
+        "card_id": "jn_stp",
+        "source": "jarvis_notes",
+        "span": [
+          265,
+          271
+        ],
+        "raw": "0.7196"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q015",
+    "kind": "direct",
+    "cluster": "engine_v3",
+    "query": {
+      "text": "In the engine_v3 notes, what value is recorded for 'transfer'?",
+      "project": "engine_v3",
+      "slot": "transfer"
+    },
+    "gold": "0.9854",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:13",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 13,
+        "card_id": "jn_stp",
+        "source": "jarvis_notes",
+        "span": [
+          344,
+          350
+        ],
+        "raw": "0.9854"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q016",
+    "kind": "similar_unrelated",
+    "cluster": "neuron-4",
+    "query": {
+      "text": "In the neuron-4 notes, what value is recorded for 'answerable coverage'?",
+      "project": "neuron-4",
+      "slot": "answerable coverage"
+    },
+    "gold": "0.926",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:1",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 1,
+        "card_id": "jn_n4_cwr",
+        "source": "jarvis_notes",
+        "span": [
+          265,
+          270
+        ],
+        "raw": "0.926"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q017",
+    "kind": "direct",
+    "cluster": "neuron-4",
+    "query": {
+      "text": "In the neuron-4 notes, what value is recorded for 'beat exact search confident-wrong'?",
+      "project": "neuron-4",
+      "slot": "beat exact search confident-wrong"
+    },
+    "gold": "0.294",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:2",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 2,
+        "card_id": "jn_n4_vs_exact",
+        "source": "jarvis_notes",
+        "span": [
+          84,
+          89
+        ],
+        "raw": "0.294"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q018",
+    "kind": "direct",
+    "cluster": "neuron-4",
+    "query": {
+      "text": "In the neuron-4 notes, what value is recorded for 'coverage for e-auto'?",
+      "project": "neuron-4",
+      "slot": "coverage for e-auto"
+    },
+    "gold": "0.635",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:2",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 2,
+        "card_id": "jn_n4_vs_exact",
+        "source": "jarvis_notes",
+        "span": [
+          242,
+          247
+        ],
+        "raw": "0.635"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q019",
+    "kind": "similar_unrelated",
+    "cluster": "neuron-4",
+    "query": {
+      "text": "In the neuron-4 notes, what value is recorded for 'e-auto confident-wrong'?",
+      "project": "neuron-4",
+      "slot": "e-auto confident-wrong"
+    },
+    "gold": "0.064",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:2",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 2,
+        "card_id": "jn_n4_vs_exact",
+        "source": "jarvis_notes",
+        "span": [
+          44,
+          49
+        ],
+        "raw": "0.064"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q020",
+    "kind": "similar_unrelated",
+    "cluster": "neuron-4",
+    "query": {
+      "text": "In the neuron-4 notes, what value is recorded for 'e-auto coverage'?",
+      "project": "neuron-4",
+      "slot": "e-auto coverage"
+    },
+    "gold": "0.635",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:1",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 1,
+        "card_id": "jn_n4_cwr",
+        "source": "jarvis_notes",
+        "span": [
+          238,
+          243
+        ],
+        "raw": "0.635"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q021",
+    "kind": "direct",
+    "cluster": "neuron-4",
+    "query": {
+      "text": "In the neuron-4 notes, what value is recorded for 'exact'?",
+      "project": "neuron-4",
+      "slot": "exact"
+    },
+    "gold": "0.715",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:2",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 2,
+        "card_id": "jn_n4_vs_exact",
+        "source": "jarvis_notes",
+        "span": [
+          261,
+          266
+        ],
+        "raw": "0.715"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q022",
+    "kind": "similar_unrelated",
+    "cluster": "neuron-4",
+    "query": {
+      "text": "In the neuron-4 notes, what value is recorded for 'exact search confident-wrong'?",
+      "project": "neuron-4",
+      "slot": "exact search confident-wrong"
+    },
+    "gold": "0.294",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:1",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 1,
+        "card_id": "jn_n4_cwr",
+        "source": "jarvis_notes",
+        "span": [
+          331,
+          336
+        ],
+        "raw": "0.294"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q023",
+    "kind": "direct",
+    "cluster": "neuron-4",
+    "query": {
+      "text": "In the neuron-4 notes, what value is recorded for 'neuron-4 e-auto confident-wrong rate'?",
+      "project": "neuron-4",
+      "slot": "neuron-4 e-auto confident-wrong rate"
+    },
+    "gold": "0.064",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:1",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 1,
+        "card_id": "jn_n4_cwr",
+        "source": "jarvis_notes",
+        "span": [
+          41,
+          46
+        ],
+        "raw": "0.064"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q024",
+    "kind": "direct",
+    "cluster": "neuron-4",
+    "query": {
+      "text": "In the neuron-4 notes, what value is recorded for 'selective accuracy'?",
+      "project": "neuron-4",
+      "slot": "selective accuracy"
+    },
+    "gold": "0.899",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:1",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 1,
+        "card_id": "jn_n4_cwr",
+        "source": "jarvis_notes",
+        "span": [
+          291,
+          296
+        ],
+        "raw": "0.899"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q025",
+    "kind": "direct",
+    "cluster": "neuron-5",
+    "query": {
+      "text": "In the neuron-5 notes, what value is recorded for 'e-auto'?",
+      "project": "neuron-5",
+      "slot": "e-auto"
+    },
+    "gold": "0.071",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:4",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 4,
+        "card_id": "jn_n5",
+        "source": "jarvis_notes",
+        "span": [
+          98,
+          103
+        ],
+        "raw": "0.071"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q026",
+    "kind": "direct",
+    "cluster": "neuron-5",
+    "query": {
+      "text": "In the neuron-5 notes, what value is recorded for 'p_energy conf-wrong'?",
+      "project": "neuron-5",
+      "slot": "p_energy conf-wrong"
+    },
+    "gold": "0.094",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:4",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 4,
+        "card_id": "jn_n5",
+        "source": "jarvis_notes",
+        "span": [
+          78,
+          83
+        ],
+        "raw": "0.094"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q027",
+    "kind": "direct",
+    "cluster": "qms-1",
+    "query": {
+      "text": "In the qms-1 notes, what value is recorded for 'conf-wrong'?",
+      "project": "qms-1",
+      "slot": "conf-wrong"
+    },
+    "gold": "0.086",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:5",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 5,
+        "card_id": "jn_qms",
+        "source": "jarvis_notes",
+        "span": [
+          298,
+          303
+        ],
+        "raw": "0.086"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q028",
+    "kind": "direct",
+    "cluster": "qms-1",
+    "query": {
+      "text": "In the qms-1 notes, what value is recorded for 'default_e_auto confident-wrong diff'?",
+      "project": "qms-1",
+      "slot": "default_e_auto confident-wrong diff"
+    },
+    "gold": "0.000",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:5",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 5,
+        "card_id": "jn_qms",
+        "source": "jarvis_notes",
+        "span": [
+          92,
+          97
+        ],
+        "raw": "0.000"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q029",
+    "kind": "conflict",
+    "cluster": "shadow probe",
+    "query": {
+      "text": "In the shadow probe notes, what value is recorded for 'shadow probe metric kappa'?",
+      "project": "shadow probe",
+      "slot": "shadow probe metric kappa"
+    },
+    "gold": "ABSTAIN",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:14",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 14,
+        "card_id": "jn_probe_kappa_a",
+        "source": "jarvis_notes",
+        "span": [
+          29,
+          33
+        ],
+        "raw": "0.42"
+      },
+      {
+        "card": "jarvis_notes.jsonl:15",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 15,
+        "card_id": "jn_probe_kappa_b",
+        "source": "jarvis_notes",
+        "span": [
+          29,
+          33
+        ],
+        "raw": "0.91"
+      }
+    ],
+    "answerable": false
+  },
+  {
+    "qid": "q030",
+    "kind": "uncertain",
+    "cluster": "shadow probe",
+    "query": {
+      "text": "In the shadow probe notes, what value is recorded for 'shadow probe metric lambda'?",
+      "project": "shadow probe",
+      "slot": "shadow probe metric lambda"
+    },
+    "gold": "ABSTAIN",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:16",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 16,
+        "card_id": "jn_probe_lambda",
+        "source": "jarvis_notes",
+        "span": [
+          30,
+          35
+        ],
+        "raw": "~0.55"
+      }
+    ],
+    "answerable": false
+  },
+  {
+    "qid": "q031",
+    "kind": "direct",
+    "cluster": "tutor",
+    "query": {
+      "text": "In the tutor notes, what value is recorded for 'shuffled'?",
+      "project": "tutor",
+      "slot": "shuffled"
+    },
+    "gold": "0.09",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:6",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 6,
+        "card_id": "jn_tutor",
+        "source": "jarvis_notes",
+        "span": [
+          90,
+          94
+        ],
+        "raw": "0.09"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q032",
+    "kind": "direct",
+    "cluster": "tutor",
+    "query": {
+      "text": "In the tutor notes, what value is recorded for 'tutor primary mean'?",
+      "project": "tutor",
+      "slot": "tutor primary mean"
+    },
+    "gold": "0.00",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:6",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 6,
+        "card_id": "jn_tutor",
+        "source": "jarvis_notes",
+        "span": [
+          69,
+          73
+        ],
+        "raw": "0.00"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q033",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of \"de bello gallico\" and other commentaries'?",
+      "project": "uploaded",
+      "slot": "author of \"de bello gallico\" and other commentaries"
+    },
+    "gold": "Julius Caesar",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:40",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 40,
+        "card_id": "who_history_158",
+        "source": "pack_fact",
+        "span": [
+          0,
+          13
+        ],
+        "raw": "Julius Caesar"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q034",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of a tale of two cities'?",
+      "project": "uploaded",
+      "slot": "author of a tale of two cities"
+    },
+    "gold": "Charles Dickens",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:49",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 49,
+        "card_id": "who_literature_25",
+        "source": "pack_fact",
+        "span": [
+          0,
+          15
+        ],
+        "raw": "Charles Dickens"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q035",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of adventures of huckleberry finn'?",
+      "project": "uploaded",
+      "slot": "author of adventures of huckleberry finn"
+    },
+    "gold": "Mark Twain",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:51",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 51,
+        "card_id": "who_literature_35",
+        "source": "pack_fact",
+        "span": [
+          0,
+          10
+        ],
+        "raw": "Mark Twain"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q036",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of alice's adventures in wonderland'?",
+      "project": "uploaded",
+      "slot": "author of alice's adventures in wonderland"
+    },
+    "gold": "Lewis Carroll",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:63",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 63,
+        "card_id": "who_literature_90",
+        "source": "pack_fact",
+        "span": [
+          0,
+          13
+        ],
+        "raw": "Lewis Carroll"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q037",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of crime and punishment'?",
+      "project": "uploaded",
+      "slot": "author of crime and punishment"
+    },
+    "gold": "Fyodor Dostoyevsky",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:57",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 57,
+        "card_id": "who_literature_60",
+        "source": "pack_fact",
+        "span": [
+          0,
+          18
+        ],
+        "raw": "Fyodor Dostoyevsky"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q038",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of great expectations'?",
+      "project": "uploaded",
+      "slot": "author of great expectations"
+    },
+    "gold": "Charles Dickens",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:50",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 50,
+        "card_id": "who_literature_30",
+        "source": "pack_fact",
+        "span": [
+          0,
+          15
+        ],
+        "raw": "Charles Dickens"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q039",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of jane eyre: an autobiography'?",
+      "project": "uploaded",
+      "slot": "author of jane eyre: an autobiography"
+    },
+    "gold": "Charlotte Bront\u00eb",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:59",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 59,
+        "card_id": "who_literature_70",
+        "source": "pack_fact",
+        "span": [
+          0,
+          16
+        ],
+        "raw": "Charlotte Bront\u00eb"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q040",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of moby dick; or, the whale'?",
+      "project": "uploaded",
+      "slot": "author of moby dick; or, the whale"
+    },
+    "gold": "Herman Melville",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:56",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 56,
+        "card_id": "who_literature_55",
+        "source": "pack_fact",
+        "span": [
+          0,
+          15
+        ],
+        "raw": "Herman Melville"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q041",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of plutarch: lives of the noble grecians and romans'?",
+      "project": "uploaded",
+      "slot": "author of plutarch: lives of the noble grecians and romans"
+    },
+    "gold": "Plutarch",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:34",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 34,
+        "card_id": "who_history_130",
+        "source": "pack_fact",
+        "span": [
+          0,
+          8
+        ],
+        "raw": "Plutarch"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q042",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of pride and prejudice'?",
+      "project": "uploaded",
+      "slot": "author of pride and prejudice"
+    },
+    "gold": "Jane Austen",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:47",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 47,
+        "card_id": "who_literature_15",
+        "source": "pack_fact",
+        "span": [
+          0,
+          11
+        ],
+        "raw": "Jane Austen"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q043",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of sense and sensibility'?",
+      "project": "uploaded",
+      "slot": "author of sense and sensibility"
+    },
+    "gold": "Jane Austen",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:48",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 48,
+        "card_id": "who_literature_20",
+        "source": "pack_fact",
+        "span": [
+          0,
+          11
+        ],
+        "raw": "Jane Austen"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q044",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of the adventures of sherlock holmes'?",
+      "project": "uploaded",
+      "slot": "author of the adventures of sherlock holmes"
+    },
+    "gold": "Arthur Conan Doyle",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:61",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 61,
+        "card_id": "who_literature_80",
+        "source": "pack_fact",
+        "span": [
+          0,
+          18
+        ],
+        "raw": "Arthur Conan Doyle"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q045",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of the adventures of tom sawyer, complete'?",
+      "project": "uploaded",
+      "slot": "author of the adventures of tom sawyer, complete"
+    },
+    "gold": "Mark Twain",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:52",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 52,
+        "card_id": "who_literature_40",
+        "source": "pack_fact",
+        "span": [
+          0,
+          10
+        ],
+        "raw": "Mark Twain"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q046",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of the brothers karamazov'?",
+      "project": "uploaded",
+      "slot": "author of the brothers karamazov"
+    },
+    "gold": "Fyodor Dostoyevsky",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:58",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 58,
+        "card_id": "who_literature_65",
+        "source": "pack_fact",
+        "span": [
+          0,
+          18
+        ],
+        "raw": "Fyodor Dostoyevsky"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q047",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of the complete works of william shakespeare'?",
+      "project": "uploaded",
+      "slot": "author of the complete works of william shakespeare"
+    },
+    "gold": "William Shakespeare",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:43",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 43,
+        "card_id": "who_literature_0",
+        "source": "pack_fact",
+        "span": [
+          0,
+          19
+        ],
+        "raw": "William Shakespeare"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q048",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of the federalist papers'?",
+      "project": "uploaded",
+      "slot": "author of the federalist papers"
+    },
+    "gold": "Alexander Hamilton",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:38",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 38,
+        "card_id": "who_history_148",
+        "source": "pack_fact",
+        "span": [
+          0,
+          18
+        ],
+        "raw": "Alexander Hamilton"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q049",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of the germany and the agricola of tacitus'?",
+      "project": "uploaded",
+      "slot": "author of the germany and the agricola of tacitus"
+    },
+    "gold": "Cornelius Tacitus",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:42",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 42,
+        "card_id": "who_history_168",
+        "source": "pack_fact",
+        "span": [
+          0,
+          17
+        ],
+        "raw": "Cornelius Tacitus"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q050",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of the history of england, from the accession of james ii \u2014 volume 1'?",
+      "project": "uploaded",
+      "slot": "author of the history of england, from the accession of james ii \u2014 volume 1"
+    },
+    "gold": "Baron Thomas Babington Macaulay Macaulay",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:41",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 41,
+        "card_id": "who_history_163",
+        "source": "pack_fact",
+        "span": [
+          0,
+          40
+        ],
+        "raw": "Baron Thomas Babington Macaulay Macaulay"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q051",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of the history of herodotus \u2014 volume 2'?",
+      "project": "uploaded",
+      "slot": "author of the history of herodotus \u2014 volume 2"
+    },
+    "gold": "Herodotus",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:32",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 32,
+        "card_id": "who_history_120",
+        "source": "pack_fact",
+        "span": [
+          0,
+          9
+        ],
+        "raw": "Herodotus"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q052",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of the iliad'?",
+      "project": "uploaded",
+      "slot": "author of the iliad"
+    },
+    "gold": "Homer",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:54",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 54,
+        "card_id": "who_literature_5",
+        "source": "pack_fact",
+        "span": [
+          0,
+          5
+        ],
+        "raw": "Homer"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q053",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of the odyssey'?",
+      "project": "uploaded",
+      "slot": "author of the odyssey"
+    },
+    "gold": "Homer",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:44",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 44,
+        "card_id": "who_literature_10",
+        "source": "pack_fact",
+        "span": [
+          0,
+          5
+        ],
+        "raw": "Homer"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q054",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of the picture of dorian gray'?",
+      "project": "uploaded",
+      "slot": "author of the picture of dorian gray"
+    },
+    "gold": "Oscar Wilde",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:64",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 64,
+        "card_id": "who_literature_95",
+        "source": "pack_fact",
+        "span": [
+          0,
+          11
+        ],
+        "raw": "Oscar Wilde"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q055",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of the united states bill of rights'?",
+      "project": "uploaded",
+      "slot": "author of the united states bill of rights"
+    },
+    "gold": "United States",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:37",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 37,
+        "card_id": "who_history_145",
+        "source": "pack_fact",
+        "span": [
+          0,
+          13
+        ],
+        "raw": "United States"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q056",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of the united states constitution'?",
+      "project": "uploaded",
+      "slot": "author of the united states constitution"
+    },
+    "gold": "United States",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:36",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 36,
+        "card_id": "who_history_140",
+        "source": "pack_fact",
+        "span": [
+          0,
+          13
+        ],
+        "raw": "United States"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q057",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of the works of edgar allan poe \u2014 volume 1'?",
+      "project": "uploaded",
+      "slot": "author of the works of edgar allan poe \u2014 volume 1"
+    },
+    "gold": "Edgar Allan Poe",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:53",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 53,
+        "card_id": "who_literature_45",
+        "source": "pack_fact",
+        "span": [
+          0,
+          15
+        ],
+        "raw": "Edgar Allan Poe"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q058",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of treasure island'?",
+      "project": "uploaded",
+      "slot": "author of treasure island"
+    },
+    "gold": "Robert Louis Stevenson",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:45",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 45,
+        "card_id": "who_literature_100",
+        "source": "pack_fact",
+        "span": [
+          0,
+          22
+        ],
+        "raw": "Robert Louis Stevenson"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q059",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of war and peace. graf leo tolstoy wrote war and peace'?",
+      "project": "uploaded",
+      "slot": "author of war and peace. graf leo tolstoy wrote war and peace"
+    },
+    "gold": "graf Leo Tolstoy",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:46",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 46,
+        "card_id": "who_literature_105",
+        "source": "pack_fact",
+        "span": [
+          0,
+          16
+        ],
+        "raw": "graf Leo Tolstoy"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q060",
+    "kind": "direct",
+    "cluster": "uploaded",
+    "query": {
+      "text": "In the uploaded notes, what value is recorded for 'author of wuthering heights'?",
+      "project": "uploaded",
+      "slot": "author of wuthering heights"
+    },
+    "gold": "Emily Bront\u00eb",
+    "support": [
+      {
+        "card": "uploaded_facts.jsonl:60",
+        "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+        "line": 60,
+        "card_id": "who_literature_75",
+        "source": "pack_fact",
+        "span": [
+          0,
+          12
+        ],
+        "raw": "Emily Bront\u00eb"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q061",
+    "kind": "hop",
+    "cluster": "neuron-4",
+    "query": {
+      "text": "In neuron-4, find the note containing 'exact search confident-wrong' = 0.294. What value is attached to 'answerable coverage' in that same note?",
+      "project": "neuron-4",
+      "slot": "answerable coverage",
+      "seed_slot": "exact search confident-wrong",
+      "seed_value": "0.294"
+    },
+    "gold": "0.926",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:1",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 1,
+        "card_id": "jn_n4_cwr",
+        "source": "jarvis_notes",
+        "span": [
+          331,
+          336
+        ],
+        "raw": "0.294"
+      },
+      {
+        "card": "jarvis_notes.jsonl:1",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 1,
+        "card_id": "jn_n4_cwr",
+        "source": "jarvis_notes",
+        "span": [
+          265,
+          270
+        ],
+        "raw": "0.926"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q062",
+    "kind": "hop",
+    "cluster": "neuron-4",
+    "query": {
+      "text": "In neuron-4, find the note containing 'exact search confident-wrong' = 0.294. What value is attached to 'selective accuracy' in that same note?",
+      "project": "neuron-4",
+      "slot": "selective accuracy",
+      "seed_slot": "exact search confident-wrong",
+      "seed_value": "0.294"
+    },
+    "gold": "0.899",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:1",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 1,
+        "card_id": "jn_n4_cwr",
+        "source": "jarvis_notes",
+        "span": [
+          331,
+          336
+        ],
+        "raw": "0.294"
+      },
+      {
+        "card": "jarvis_notes.jsonl:1",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 1,
+        "card_id": "jn_n4_cwr",
+        "source": "jarvis_notes",
+        "span": [
+          291,
+          296
+        ],
+        "raw": "0.899"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q063",
+    "kind": "hop",
+    "cluster": "neuron-4",
+    "query": {
+      "text": "In neuron-4, find the note containing 'selective accuracy' = 0.899. What value is attached to 'e-auto coverage' in that same note?",
+      "project": "neuron-4",
+      "slot": "e-auto coverage",
+      "seed_slot": "selective accuracy",
+      "seed_value": "0.899"
+    },
+    "gold": "0.635",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:1",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 1,
+        "card_id": "jn_n4_cwr",
+        "source": "jarvis_notes",
+        "span": [
+          291,
+          296
+        ],
+        "raw": "0.899"
+      },
+      {
+        "card": "jarvis_notes.jsonl:1",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 1,
+        "card_id": "jn_n4_cwr",
+        "source": "jarvis_notes",
+        "span": [
+          238,
+          243
+        ],
+        "raw": "0.635"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q064",
+    "kind": "hop",
+    "cluster": "neuron-4",
+    "query": {
+      "text": "In neuron-4, find the note containing 'e-auto coverage' = 0.635. What value is attached to 'selective accuracy' in that same note?",
+      "project": "neuron-4",
+      "slot": "selective accuracy",
+      "seed_slot": "e-auto coverage",
+      "seed_value": "0.635"
+    },
+    "gold": "0.899",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:1",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 1,
+        "card_id": "jn_n4_cwr",
+        "source": "jarvis_notes",
+        "span": [
+          238,
+          243
+        ],
+        "raw": "0.635"
+      },
+      {
+        "card": "jarvis_notes.jsonl:1",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 1,
+        "card_id": "jn_n4_cwr",
+        "source": "jarvis_notes",
+        "span": [
+          291,
+          296
+        ],
+        "raw": "0.899"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q065",
+    "kind": "hop",
+    "cluster": "neuron-4",
+    "query": {
+      "text": "In neuron-4, find the note containing 'selective accuracy' = 0.899. What value is attached to 'answerable coverage' in that same note?",
+      "project": "neuron-4",
+      "slot": "answerable coverage",
+      "seed_slot": "selective accuracy",
+      "seed_value": "0.899"
+    },
+    "gold": "0.926",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:1",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 1,
+        "card_id": "jn_n4_cwr",
+        "source": "jarvis_notes",
+        "span": [
+          291,
+          296
+        ],
+        "raw": "0.899"
+      },
+      {
+        "card": "jarvis_notes.jsonl:1",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 1,
+        "card_id": "jn_n4_cwr",
+        "source": "jarvis_notes",
+        "span": [
+          265,
+          270
+        ],
+        "raw": "0.926"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q066",
+    "kind": "hop",
+    "cluster": "callosum",
+    "query": {
+      "text": "In callosum, find the note containing 'real_sc transfer' = 0.9978. What value is attached to 'real_sc beat weight_shuffle on transfer' in that same note?",
+      "project": "callosum",
+      "slot": "real_sc beat weight_shuffle on transfer",
+      "seed_slot": "real_sc transfer",
+      "seed_value": "0.9978"
+    },
+    "gold": "0.9978",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:12",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 12,
+        "card_id": "jn_callosum",
+        "source": "jarvis_notes",
+        "span": [
+          223,
+          229
+        ],
+        "raw": "0.9978"
+      },
+      {
+        "card": "jarvis_notes.jsonl:12",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 12,
+        "card_id": "jn_callosum",
+        "source": "jarvis_notes",
+        "span": [
+          297,
+          303
+        ],
+        "raw": "0.9978"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q067",
+    "kind": "hop",
+    "cluster": "callosum",
+    "query": {
+      "text": "In callosum, find the note containing 'real_sc beat weight_shuffle on transfer' = 0.9978. What value is attached to 'degree_shuffle' in that same note?",
+      "project": "callosum",
+      "slot": "degree_shuffle",
+      "seed_slot": "real_sc beat weight_shuffle on transfer",
+      "seed_value": "0.9978"
+    },
+    "gold": "0.9996",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:12",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 12,
+        "card_id": "jn_callosum",
+        "source": "jarvis_notes",
+        "span": [
+          297,
+          303
+        ],
+        "raw": "0.9978"
+      },
+      {
+        "card": "jarvis_notes.jsonl:12",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 12,
+        "card_id": "jn_callosum",
+        "source": "jarvis_notes",
+        "span": [
+          248,
+          254
+        ],
+        "raw": "0.9996"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q068",
+    "kind": "hop",
+    "cluster": "callosum",
+    "query": {
+      "text": "In callosum, find the note containing 'degree_shuffle' = 0.9996. What value is attached to 'real_sc beat weight_shuffle on transfer' in that same note?",
+      "project": "callosum",
+      "slot": "real_sc beat weight_shuffle on transfer",
+      "seed_slot": "degree_shuffle",
+      "seed_value": "0.9996"
+    },
+    "gold": "0.9978",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:12",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 12,
+        "card_id": "jn_callosum",
+        "source": "jarvis_notes",
+        "span": [
+          248,
+          254
+        ],
+        "raw": "0.9996"
+      },
+      {
+        "card": "jarvis_notes.jsonl:12",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 12,
+        "card_id": "jn_callosum",
+        "source": "jarvis_notes",
+        "span": [
+          297,
+          303
+        ],
+        "raw": "0.9978"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q069",
+    "kind": "hop",
+    "cluster": "callosum",
+    "query": {
+      "text": "In callosum, find the note containing 'real_sc transfer' = 0.9978. What value is attached to 'degree_shuffle' in that same note?",
+      "project": "callosum",
+      "slot": "degree_shuffle",
+      "seed_slot": "real_sc transfer",
+      "seed_value": "0.9978"
+    },
+    "gold": "0.9996",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:12",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 12,
+        "card_id": "jn_callosum",
+        "source": "jarvis_notes",
+        "span": [
+          223,
+          229
+        ],
+        "raw": "0.9978"
+      },
+      {
+        "card": "jarvis_notes.jsonl:12",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 12,
+        "card_id": "jn_callosum",
+        "source": "jarvis_notes",
+        "span": [
+          248,
+          254
+        ],
+        "raw": "0.9996"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q070",
+    "kind": "hop",
+    "cluster": "callosum",
+    "query": {
+      "text": "In callosum, find the note containing 'degree_shuffle' = 0.9996. What value is attached to 'real_sc transfer' in that same note?",
+      "project": "callosum",
+      "slot": "real_sc transfer",
+      "seed_slot": "degree_shuffle",
+      "seed_value": "0.9996"
+    },
+    "gold": "0.9978",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:12",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 12,
+        "card_id": "jn_callosum",
+        "source": "jarvis_notes",
+        "span": [
+          248,
+          254
+        ],
+        "raw": "0.9996"
+      },
+      {
+        "card": "jarvis_notes.jsonl:12",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 12,
+        "card_id": "jn_callosum",
+        "source": "jarvis_notes",
+        "span": [
+          223,
+          229
+        ],
+        "raw": "0.9978"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q071",
+    "kind": "hop",
+    "cluster": "engine_v3",
+    "query": {
+      "text": "In engine_v3, find the note containing 'transfer' = 0.9854. What value is attached to 'char' in that same note?",
+      "project": "engine_v3",
+      "slot": "char",
+      "seed_slot": "transfer",
+      "seed_value": "0.9854"
+    },
+    "gold": "2.0397",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:13",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 13,
+        "card_id": "jn_stp",
+        "source": "jarvis_notes",
+        "span": [
+          344,
+          350
+        ],
+        "raw": "0.9854"
+      },
+      {
+        "card": "jarvis_notes.jsonl:13",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 13,
+        "card_id": "jn_stp",
+        "source": "jarvis_notes",
+        "span": [
+          317,
+          323
+        ],
+        "raw": "2.0397"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q072",
+    "kind": "hop",
+    "cluster": "engine_v3",
+    "query": {
+      "text": "In engine_v3, find the note containing 'char' = 2.0397. What value is attached to 'narma' in that same note?",
+      "project": "engine_v3",
+      "slot": "narma",
+      "seed_slot": "char",
+      "seed_value": "2.0397"
+    },
+    "gold": "0.5968",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:13",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 13,
+        "card_id": "jn_stp",
+        "source": "jarvis_notes",
+        "span": [
+          317,
+          323
+        ],
+        "raw": "2.0397"
+      },
+      {
+        "card": "jarvis_notes.jsonl:13",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 13,
+        "card_id": "jn_stp",
+        "source": "jarvis_notes",
+        "span": [
+          294,
+          300
+        ],
+        "raw": "0.5968"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q073",
+    "kind": "hop",
+    "cluster": "engine_v3",
+    "query": {
+      "text": "In engine_v3, find the note containing 'base' = 0.5177. What value is attached to 'transfer' in that same note?",
+      "project": "engine_v3",
+      "slot": "transfer",
+      "seed_slot": "base",
+      "seed_value": "0.5177"
+    },
+    "gold": "0.9854",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:13",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 13,
+        "card_id": "jn_stp",
+        "source": "jarvis_notes",
+        "span": [
+          280,
+          286
+        ],
+        "raw": "0.5177"
+      },
+      {
+        "card": "jarvis_notes.jsonl:13",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 13,
+        "card_id": "jn_stp",
+        "source": "jarvis_notes",
+        "span": [
+          344,
+          350
+        ],
+        "raw": "0.9854"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q074",
+    "kind": "hop",
+    "cluster": "engine_v3",
+    "query": {
+      "text": "In engine_v3, find the note containing 'narma' = 0.5968. What value is attached to 'stp xor_hard' in that same note?",
+      "project": "engine_v3",
+      "slot": "stp xor_hard",
+      "seed_slot": "narma",
+      "seed_value": "0.5968"
+    },
+    "gold": "0.7196",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:13",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 13,
+        "card_id": "jn_stp",
+        "source": "jarvis_notes",
+        "span": [
+          294,
+          300
+        ],
+        "raw": "0.5968"
+      },
+      {
+        "card": "jarvis_notes.jsonl:13",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 13,
+        "card_id": "jn_stp",
+        "source": "jarvis_notes",
+        "span": [
+          265,
+          271
+        ],
+        "raw": "0.7196"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q075",
+    "kind": "hop",
+    "cluster": "engine_v3",
+    "query": {
+      "text": "In engine_v3, find the note containing 'base' = 0.5177. What value is attached to 'stp xor_hard' in that same note?",
+      "project": "engine_v3",
+      "slot": "stp xor_hard",
+      "seed_slot": "base",
+      "seed_value": "0.5177"
+    },
+    "gold": "0.7196",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:13",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 13,
+        "card_id": "jn_stp",
+        "source": "jarvis_notes",
+        "span": [
+          280,
+          286
+        ],
+        "raw": "0.5177"
+      },
+      {
+        "card": "jarvis_notes.jsonl:13",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 13,
+        "card_id": "jn_stp",
+        "source": "jarvis_notes",
+        "span": [
+          265,
+          271
+        ],
+        "raw": "0.7196"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q076",
+    "kind": "hop",
+    "cluster": "neuron-4",
+    "query": {
+      "text": "In neuron-4, find the note containing 'beat exact search confident-wrong' = 0.294. What value is attached to 'coverage for e-auto' in that same note?",
+      "project": "neuron-4",
+      "slot": "coverage for e-auto",
+      "seed_slot": "beat exact search confident-wrong",
+      "seed_value": "0.294"
+    },
+    "gold": "0.635",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:2",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 2,
+        "card_id": "jn_n4_vs_exact",
+        "source": "jarvis_notes",
+        "span": [
+          84,
+          89
+        ],
+        "raw": "0.294"
+      },
+      {
+        "card": "jarvis_notes.jsonl:2",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 2,
+        "card_id": "jn_n4_vs_exact",
+        "source": "jarvis_notes",
+        "span": [
+          242,
+          247
+        ],
+        "raw": "0.635"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q077",
+    "kind": "hop",
+    "cluster": "neuron-4",
+    "query": {
+      "text": "In neuron-4, find the note containing 'exact' = 0.715. What value is attached to 'coverage for e-auto' in that same note?",
+      "project": "neuron-4",
+      "slot": "coverage for e-auto",
+      "seed_slot": "exact",
+      "seed_value": "0.715"
+    },
+    "gold": "0.635",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:2",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 2,
+        "card_id": "jn_n4_vs_exact",
+        "source": "jarvis_notes",
+        "span": [
+          261,
+          266
+        ],
+        "raw": "0.715"
+      },
+      {
+        "card": "jarvis_notes.jsonl:2",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 2,
+        "card_id": "jn_n4_vs_exact",
+        "source": "jarvis_notes",
+        "span": [
+          242,
+          247
+        ],
+        "raw": "0.635"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q078",
+    "kind": "hop",
+    "cluster": "neuron-4",
+    "query": {
+      "text": "In neuron-4, find the note containing 'e-auto confident-wrong' = 0.064. What value is attached to 'beat exact search confident-wrong' in that same note?",
+      "project": "neuron-4",
+      "slot": "beat exact search confident-wrong",
+      "seed_slot": "e-auto confident-wrong",
+      "seed_value": "0.064"
+    },
+    "gold": "0.294",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:2",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 2,
+        "card_id": "jn_n4_vs_exact",
+        "source": "jarvis_notes",
+        "span": [
+          44,
+          49
+        ],
+        "raw": "0.064"
+      },
+      {
+        "card": "jarvis_notes.jsonl:2",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 2,
+        "card_id": "jn_n4_vs_exact",
+        "source": "jarvis_notes",
+        "span": [
+          84,
+          89
+        ],
+        "raw": "0.294"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q079",
+    "kind": "hop",
+    "cluster": "neuron-4",
+    "query": {
+      "text": "In neuron-4, find the note containing 'e-auto confident-wrong' = 0.064. What value is attached to 'coverage for e-auto' in that same note?",
+      "project": "neuron-4",
+      "slot": "coverage for e-auto",
+      "seed_slot": "e-auto confident-wrong",
+      "seed_value": "0.064"
+    },
+    "gold": "0.635",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:2",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 2,
+        "card_id": "jn_n4_vs_exact",
+        "source": "jarvis_notes",
+        "span": [
+          44,
+          49
+        ],
+        "raw": "0.064"
+      },
+      {
+        "card": "jarvis_notes.jsonl:2",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 2,
+        "card_id": "jn_n4_vs_exact",
+        "source": "jarvis_notes",
+        "span": [
+          242,
+          247
+        ],
+        "raw": "0.635"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q080",
+    "kind": "hop",
+    "cluster": "neuron-4",
+    "query": {
+      "text": "In neuron-4, find the note containing 'coverage for e-auto' = 0.635. What value is attached to 'e-auto confident-wrong' in that same note?",
+      "project": "neuron-4",
+      "slot": "e-auto confident-wrong",
+      "seed_slot": "coverage for e-auto",
+      "seed_value": "0.635"
+    },
+    "gold": "0.064",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:2",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 2,
+        "card_id": "jn_n4_vs_exact",
+        "source": "jarvis_notes",
+        "span": [
+          242,
+          247
+        ],
+        "raw": "0.635"
+      },
+      {
+        "card": "jarvis_notes.jsonl:2",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 2,
+        "card_id": "jn_n4_vs_exact",
+        "source": "jarvis_notes",
+        "span": [
+          44,
+          49
+        ],
+        "raw": "0.064"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q081",
+    "kind": "hop",
+    "cluster": "neuron-5",
+    "query": {
+      "text": "In neuron-5, find the note containing 'e-auto' = 0.071. What value is attached to 'p_energy conf-wrong' in that same note?",
+      "project": "neuron-5",
+      "slot": "p_energy conf-wrong",
+      "seed_slot": "e-auto",
+      "seed_value": "0.071"
+    },
+    "gold": "0.094",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:4",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 4,
+        "card_id": "jn_n5",
+        "source": "jarvis_notes",
+        "span": [
+          98,
+          103
+        ],
+        "raw": "0.071"
+      },
+      {
+        "card": "jarvis_notes.jsonl:4",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 4,
+        "card_id": "jn_n5",
+        "source": "jarvis_notes",
+        "span": [
+          78,
+          83
+        ],
+        "raw": "0.094"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q082",
+    "kind": "hop",
+    "cluster": "neuron-5",
+    "query": {
+      "text": "In neuron-5, find the note containing 'p_energy conf-wrong' = 0.094. What value is attached to 'e-auto' in that same note?",
+      "project": "neuron-5",
+      "slot": "e-auto",
+      "seed_slot": "p_energy conf-wrong",
+      "seed_value": "0.094"
+    },
+    "gold": "0.071",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:4",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 4,
+        "card_id": "jn_n5",
+        "source": "jarvis_notes",
+        "span": [
+          78,
+          83
+        ],
+        "raw": "0.094"
+      },
+      {
+        "card": "jarvis_notes.jsonl:4",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 4,
+        "card_id": "jn_n5",
+        "source": "jarvis_notes",
+        "span": [
+          98,
+          103
+        ],
+        "raw": "0.071"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q083",
+    "kind": "hop",
+    "cluster": "qms-1",
+    "query": {
+      "text": "In qms-1, find the note containing 'default_e_auto confident-wrong diff' = 0.000. What value is attached to 'conf-wrong' in that same note?",
+      "project": "qms-1",
+      "slot": "conf-wrong",
+      "seed_slot": "default_e_auto confident-wrong diff",
+      "seed_value": "0.000"
+    },
+    "gold": "0.086",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:5",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 5,
+        "card_id": "jn_qms",
+        "source": "jarvis_notes",
+        "span": [
+          92,
+          97
+        ],
+        "raw": "0.000"
+      },
+      {
+        "card": "jarvis_notes.jsonl:5",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 5,
+        "card_id": "jn_qms",
+        "source": "jarvis_notes",
+        "span": [
+          298,
+          303
+        ],
+        "raw": "0.086"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q084",
+    "kind": "hop",
+    "cluster": "qms-1",
+    "query": {
+      "text": "In qms-1, find the note containing 'conf-wrong' = 0.086. What value is attached to 'default_e_auto confident-wrong diff' in that same note?",
+      "project": "qms-1",
+      "slot": "default_e_auto confident-wrong diff",
+      "seed_slot": "conf-wrong",
+      "seed_value": "0.086"
+    },
+    "gold": "0.000",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:5",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 5,
+        "card_id": "jn_qms",
+        "source": "jarvis_notes",
+        "span": [
+          298,
+          303
+        ],
+        "raw": "0.086"
+      },
+      {
+        "card": "jarvis_notes.jsonl:5",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 5,
+        "card_id": "jn_qms",
+        "source": "jarvis_notes",
+        "span": [
+          92,
+          97
+        ],
+        "raw": "0.000"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q085",
+    "kind": "hop",
+    "cluster": "tutor",
+    "query": {
+      "text": "In tutor, find the note containing 'tutor primary mean' = 0.00. What value is attached to 'shuffled' in that same note?",
+      "project": "tutor",
+      "slot": "shuffled",
+      "seed_slot": "tutor primary mean",
+      "seed_value": "0.00"
+    },
+    "gold": "0.09",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:6",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 6,
+        "card_id": "jn_tutor",
+        "source": "jarvis_notes",
+        "span": [
+          69,
+          73
+        ],
+        "raw": "0.00"
+      },
+      {
+        "card": "jarvis_notes.jsonl:6",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 6,
+        "card_id": "jn_tutor",
+        "source": "jarvis_notes",
+        "span": [
+          90,
+          94
+        ],
+        "raw": "0.09"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q086",
+    "kind": "hop",
+    "cluster": "tutor",
+    "query": {
+      "text": "In tutor, find the note containing 'shuffled' = 0.09. What value is attached to 'tutor primary mean' in that same note?",
+      "project": "tutor",
+      "slot": "tutor primary mean",
+      "seed_slot": "shuffled",
+      "seed_value": "0.09"
+    },
+    "gold": "0.00",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:6",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 6,
+        "card_id": "jn_tutor",
+        "source": "jarvis_notes",
+        "span": [
+          90,
+          94
+        ],
+        "raw": "0.09"
+      },
+      {
+        "card": "jarvis_notes.jsonl:6",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 6,
+        "card_id": "jn_tutor",
+        "source": "jarvis_notes",
+        "span": [
+          69,
+          73
+        ],
+        "raw": "0.00"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q087",
+    "kind": "hop",
+    "cluster": "chat_rag",
+    "query": {
+      "text": "In chat_rag, find the note containing 'cad scored' = 0.433. What value is attached to 'retrieval pack-routed bm25 scored' in that same note?",
+      "project": "chat_rag",
+      "slot": "retrieval pack-routed bm25 scored",
+      "seed_slot": "cad scored",
+      "seed_value": "0.433"
+    },
+    "gold": "0.967",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:7",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 7,
+        "card_id": "jn_chat_hybrid",
+        "source": "jarvis_notes",
+        "span": [
+          229,
+          234
+        ],
+        "raw": "0.433"
+      },
+      {
+        "card": "jarvis_notes.jsonl:7",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 7,
+        "card_id": "jn_chat_hybrid",
+        "source": "jarvis_notes",
+        "span": [
+          186,
+          191
+        ],
+        "raw": "0.967"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q088",
+    "kind": "hop",
+    "cluster": "chat_rag",
+    "query": {
+      "text": "In chat_rag, find the note containing 'cad scored' = 0.433. What value is attached to 'training-free chat_rag full eval hybrid accuracy' in that same note?",
+      "project": "chat_rag",
+      "slot": "training-free chat_rag full eval hybrid accuracy",
+      "seed_slot": "cad scored",
+      "seed_value": "0.433"
+    },
+    "gold": "0.900",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:7",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 7,
+        "card_id": "jn_chat_hybrid",
+        "source": "jarvis_notes",
+        "span": [
+          229,
+          234
+        ],
+        "raw": "0.433"
+      },
+      {
+        "card": "jarvis_notes.jsonl:7",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 7,
+        "card_id": "jn_chat_hybrid",
+        "source": "jarvis_notes",
+        "span": [
+          53,
+          58
+        ],
+        "raw": "0.900"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q089",
+    "kind": "hop",
+    "cluster": "chat_rag",
+    "query": {
+      "text": "In chat_rag, find the note containing 'generation scored' = 0.300. What value is attached to 'pack-routed hybrid scored' in that same note?",
+      "project": "chat_rag",
+      "slot": "pack-routed hybrid scored",
+      "seed_slot": "generation scored",
+      "seed_value": "0.300"
+    },
+    "gold": "0.900",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:7",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 7,
+        "card_id": "jn_chat_hybrid",
+        "source": "jarvis_notes",
+        "span": [
+          211,
+          216
+        ],
+        "raw": "0.300"
+      },
+      {
+        "card": "jarvis_notes.jsonl:7",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 7,
+        "card_id": "jn_chat_hybrid",
+        "source": "jarvis_notes",
+        "span": [
+          262,
+          267
+        ],
+        "raw": "0.900"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q090",
+    "kind": "hop",
+    "cluster": "chat_rag",
+    "query": {
+      "text": "In chat_rag, find the note containing 'training-free chat_rag full eval hybrid accuracy' = 0.900. What value is attached to 'generation scored' in that same note?",
+      "project": "chat_rag",
+      "slot": "generation scored",
+      "seed_slot": "training-free chat_rag full eval hybrid accuracy",
+      "seed_value": "0.900"
+    },
+    "gold": "0.300",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:7",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 7,
+        "card_id": "jn_chat_hybrid",
+        "source": "jarvis_notes",
+        "span": [
+          53,
+          58
+        ],
+        "raw": "0.900"
+      },
+      {
+        "card": "jarvis_notes.jsonl:7",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 7,
+        "card_id": "jn_chat_hybrid",
+        "source": "jarvis_notes",
+        "span": [
+          211,
+          216
+        ],
+        "raw": "0.300"
+      }
+    ],
+    "answerable": true
+  },
+  {
+    "qid": "q091",
+    "kind": "hop",
+    "cluster": "chat_rag",
+    "query": {
+      "text": "In chat_rag, find the note containing 'training-free chat_rag full eval hybrid accuracy' = 0.900. What value is attached to 'cad scored' in that same note?",
+      "project": "chat_rag",
+      "slot": "cad scored",
+      "seed_slot": "training-free chat_rag full eval hybrid accuracy",
+      "seed_value": "0.900"
+    },
+    "gold": "0.433",
+    "support": [
+      {
+        "card": "jarvis_notes.jsonl:7",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 7,
+        "card_id": "jn_chat_hybrid",
+        "source": "jarvis_notes",
+        "span": [
+          53,
+          58
+        ],
+        "raw": "0.900"
+      },
+      {
+        "card": "jarvis_notes.jsonl:7",
+        "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+        "line": 7,
+        "card_id": "jn_chat_hybrid",
+        "source": "jarvis_notes",
+        "span": [
+          229,
+          234
+        ],
+        "raw": "0.433"
+      }
+    ],
+    "answerable": true
+  }
+]

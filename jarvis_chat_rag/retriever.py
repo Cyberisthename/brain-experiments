@@ -21,6 +21,7 @@ from model.memory_rag import PackMemory, build_index, tokenize  # noqa: E402
 PACK_INDEX = KAGGLE / "adapters" / "memory" / "bm25_packs.pkl"
 KNOWLEDGE = Path("/workspace/jarvis_model/knowledge")
 UPLOAD_JSONL = ROOT / "knowledge" / "uploaded_facts.jsonl"
+NOTES_JSONL = ROOT / "knowledge" / "jarvis_notes.jsonl"
 COMBINED_INDEX = ROOT / "knowledge" / "bm25_packs_plus_uploads.pkl"
 
 
@@ -169,6 +170,18 @@ def build_combined_index(force: bool = False) -> Path:
                 "text": text[:4000],
             }
         )
+    # jarvis_notes.jsonl — research fact cards (separate from novel eval uploads)
+    for i, row in enumerate(load_uploads(NOTES_JSONL)):
+        text = (row.get("text") or "").strip()
+        if len(text) < 10:
+            continue
+        chunks.append(
+            {
+                "id": row.get("id") or f"jarvis_notes:{i}",
+                "source": row.get("source") or "jarvis_notes",
+                "text": text[:4000],
+            }
+        )
     try:
         from rank_bm25 import BM25Okapi
     except ImportError as e:
@@ -181,6 +194,7 @@ def build_combined_index(force: bool = False) -> Path:
     meta = {
         "n_chunks": len(chunks),
         "n_uploads": len(load_uploads()),
+        "n_jarvis_notes": len(load_uploads(NOTES_JSONL)),
         "sources": sorted({c["source"] for c in chunks}),
         "path": str(COMBINED_INDEX),
         "note": "literature+history+cyber_ai packs + chat_rag uploads; NO institutional_books",

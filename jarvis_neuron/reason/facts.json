@@ -1,0 +1,1432 @@
+[
+  {
+    "id": 0,
+    "project": "uploaded",
+    "slot": "capital of zorblax",
+    "value": "Quendara",
+    "card": "uploaded_facts.jsonl:1",
+    "raw": "Quendara",
+    "span": [
+      26,
+      34
+    ],
+    "weak": false
+  },
+  {
+    "id": 1,
+    "project": "uploaded",
+    "slot": "the mv starlight wren launched in",
+    "value": "2147",
+    "card": "uploaded_facts.jsonl:3",
+    "raw": "2147",
+    "span": [
+      34,
+      38
+    ],
+    "weak": false
+  },
+  {
+    "id": 2,
+    "project": "uploaded",
+    "slot": "the element xylith has atomic number",
+    "value": "149",
+    "card": "uploaded_facts.jsonl:6",
+    "raw": "149",
+    "span": [
+      37,
+      40
+    ],
+    "weak": false
+  },
+  {
+    "id": 3,
+    "project": "uploaded",
+    "slot": "the battle of twin spires was fought in",
+    "value": "1833",
+    "card": "uploaded_facts.jsonl:8",
+    "raw": "1833",
+    "span": [
+      40,
+      44
+    ],
+    "weak": false
+  },
+  {
+    "id": 4,
+    "project": "uploaded",
+    "slot": "a ring scores",
+    "value": "5",
+    "card": "uploaded_facts.jsonl:12",
+    "raw": "5",
+    "span": [
+      28,
+      29
+    ],
+    "weak": false
+  },
+  {
+    "id": 5,
+    "project": "uploaded",
+    "slot": "capital of atlantis",
+    "value": "Poseidonis",
+    "card": "uploaded_facts.jsonl:23",
+    "raw": "Poseidonis",
+    "span": [
+      27,
+      37
+    ],
+    "weak": false
+  },
+  {
+    "id": 6,
+    "project": "uploaded",
+    "slot": "nara quill invented the gleeb capacitor in",
+    "value": "2091",
+    "card": "uploaded_facts.jsonl:24",
+    "raw": "2091",
+    "span": [
+      43,
+      47
+    ],
+    "weak": false
+  },
+  {
+    "id": 7,
+    "project": "uploaded",
+    "slot": "author of dracula",
+    "value": "Bram Stoker",
+    "card": "uploaded_facts.jsonl:25",
+    "raw": "Bram Stoker",
+    "span": [
+      0,
+      11
+    ],
+    "weak": false
+  },
+  {
+    "id": 8,
+    "project": "uploaded",
+    "slot": "author of frankenstein",
+    "value": "Mary Shelley",
+    "card": "uploaded_facts.jsonl:26",
+    "raw": "Mary Shelley",
+    "span": [
+      0,
+      12
+    ],
+    "weak": false
+  },
+  {
+    "id": 9,
+    "project": "uploaded",
+    "slot": "capital of france",
+    "value": "Paris",
+    "card": "uploaded_facts.jsonl:27",
+    "raw": "Paris",
+    "span": [
+      25,
+      30
+    ],
+    "weak": false
+  },
+  {
+    "id": 10,
+    "project": "uploaded",
+    "slot": "world war i began in",
+    "value": "1914",
+    "card": "uploaded_facts.jsonl:28",
+    "raw": "1914",
+    "span": [
+      21,
+      25
+    ],
+    "weak": false
+  },
+  {
+    "id": 11,
+    "project": "uploaded",
+    "slot": "the first world war started in the year",
+    "value": "1914",
+    "card": "uploaded_facts.jsonl:28",
+    "raw": "1914",
+    "span": [
+      67,
+      71
+    ],
+    "weak": false
+  },
+  {
+    "id": 12,
+    "project": "uploaded",
+    "slot": "author of hamlet",
+    "value": "William Shakespeare",
+    "card": "uploaded_facts.jsonl:29",
+    "raw": "William Shakespeare",
+    "span": [
+      0,
+      19
+    ],
+    "weak": false
+  },
+  {
+    "id": 13,
+    "project": "uploaded",
+    "slot": "author of the history of the decline and fall of the roman empire",
+    "value": "Edward Gibbon",
+    "card": "uploaded_facts.jsonl:30",
+    "raw": "Edward Gibbon",
+    "span": [
+      0,
+      13
+    ],
+    "weak": false
+  },
+  {
+    "id": 14,
+    "project": "uploaded",
+    "slot": "herodotus wrote the history of herodotus \u2014 volume",
+    "value": "1",
+    "card": "uploaded_facts.jsonl:31",
+    "raw": "1",
+    "span": [
+      50,
+      51
+    ],
+    "weak": false
+  },
+  {
+    "id": 15,
+    "project": "uploaded",
+    "slot": "author of the history of herodotus \u2014 volume 1",
+    "value": "Herodotus",
+    "card": "uploaded_facts.jsonl:31",
+    "raw": "Herodotus",
+    "span": [
+      0,
+      9
+    ],
+    "weak": false
+  },
+  {
+    "id": 16,
+    "project": "uploaded",
+    "slot": "herodotus wrote the history of herodotus \u2014 volume",
+    "value": "2",
+    "card": "uploaded_facts.jsonl:32",
+    "raw": "2",
+    "span": [
+      50,
+      51
+    ],
+    "weak": false
+  },
+  {
+    "id": 17,
+    "project": "uploaded",
+    "slot": "author of the history of herodotus \u2014 volume 2",
+    "value": "Herodotus",
+    "card": "uploaded_facts.jsonl:32",
+    "raw": "Herodotus",
+    "span": [
+      0,
+      9
+    ],
+    "weak": false
+  },
+  {
+    "id": 18,
+    "project": "uploaded",
+    "slot": "author of the history of the peloponnesian war",
+    "value": "Thucydides",
+    "card": "uploaded_facts.jsonl:33",
+    "raw": "Thucydides",
+    "span": [
+      0,
+      10
+    ],
+    "weak": false
+  },
+  {
+    "id": 19,
+    "project": "uploaded",
+    "slot": "author of plutarch: lives of the noble grecians and romans",
+    "value": "Plutarch",
+    "card": "uploaded_facts.jsonl:34",
+    "raw": "Plutarch",
+    "span": [
+      0,
+      8
+    ],
+    "weak": false
+  },
+  {
+    "id": 20,
+    "project": "uploaded",
+    "slot": "author of the declaration of independence of the united states of america",
+    "value": "Thomas Jefferson",
+    "card": "uploaded_facts.jsonl:35",
+    "raw": "Thomas Jefferson",
+    "span": [
+      0,
+      16
+    ],
+    "weak": false
+  },
+  {
+    "id": 21,
+    "project": "uploaded",
+    "slot": "author of the united states constitution",
+    "value": "United States",
+    "card": "uploaded_facts.jsonl:36",
+    "raw": "United States",
+    "span": [
+      0,
+      13
+    ],
+    "weak": false
+  },
+  {
+    "id": 22,
+    "project": "uploaded",
+    "slot": "author of the united states bill of rights",
+    "value": "United States",
+    "card": "uploaded_facts.jsonl:37",
+    "raw": "United States",
+    "span": [
+      0,
+      13
+    ],
+    "weak": false
+  },
+  {
+    "id": 23,
+    "project": "uploaded",
+    "slot": "author of the federalist papers",
+    "value": "Alexander Hamilton",
+    "card": "uploaded_facts.jsonl:38",
+    "raw": "Alexander Hamilton",
+    "span": [
+      0,
+      18
+    ],
+    "weak": false
+  },
+  {
+    "id": 24,
+    "project": "uploaded",
+    "slot": "author of common sense",
+    "value": "Thomas Paine",
+    "card": "uploaded_facts.jsonl:39",
+    "raw": "Thomas Paine",
+    "span": [
+      0,
+      12
+    ],
+    "weak": false
+  },
+  {
+    "id": 25,
+    "project": "uploaded",
+    "slot": "author of \"de bello gallico\" and other commentaries",
+    "value": "Julius Caesar",
+    "card": "uploaded_facts.jsonl:40",
+    "raw": "Julius Caesar",
+    "span": [
+      0,
+      13
+    ],
+    "weak": false
+  },
+  {
+    "id": 26,
+    "project": "uploaded",
+    "slot": "from the accession of james ii \u2014 volume",
+    "value": "1",
+    "card": "uploaded_facts.jsonl:41",
+    "raw": "1",
+    "span": [
+      111,
+      112
+    ],
+    "weak": false
+  },
+  {
+    "id": 27,
+    "project": "uploaded",
+    "slot": "author of the history of england, from the accession of james ii \u2014 volume 1",
+    "value": "Baron Thomas Babington Macaulay Macaulay",
+    "card": "uploaded_facts.jsonl:41",
+    "raw": "Baron Thomas Babington Macaulay Macaulay",
+    "span": [
+      0,
+      40
+    ],
+    "weak": false
+  },
+  {
+    "id": 28,
+    "project": "uploaded",
+    "slot": "author of the germany and the agricola of tacitus",
+    "value": "Cornelius Tacitus",
+    "card": "uploaded_facts.jsonl:42",
+    "raw": "Cornelius Tacitus",
+    "span": [
+      0,
+      17
+    ],
+    "weak": false
+  },
+  {
+    "id": 29,
+    "project": "uploaded",
+    "slot": "author of the complete works of william shakespeare",
+    "value": "William Shakespeare",
+    "card": "uploaded_facts.jsonl:43",
+    "raw": "William Shakespeare",
+    "span": [
+      0,
+      19
+    ],
+    "weak": false
+  },
+  {
+    "id": 30,
+    "project": "uploaded",
+    "slot": "author of the odyssey",
+    "value": "Homer",
+    "card": "uploaded_facts.jsonl:44",
+    "raw": "Homer",
+    "span": [
+      0,
+      5
+    ],
+    "weak": false
+  },
+  {
+    "id": 31,
+    "project": "uploaded",
+    "slot": "author of treasure island",
+    "value": "Robert Louis Stevenson",
+    "card": "uploaded_facts.jsonl:45",
+    "raw": "Robert Louis Stevenson",
+    "span": [
+      0,
+      22
+    ],
+    "weak": false
+  },
+  {
+    "id": 32,
+    "project": "uploaded",
+    "slot": "author of war and peace. graf leo tolstoy wrote war and peace",
+    "value": "graf Leo Tolstoy",
+    "card": "uploaded_facts.jsonl:46",
+    "raw": "graf Leo Tolstoy",
+    "span": [
+      0,
+      16
+    ],
+    "weak": false
+  },
+  {
+    "id": 33,
+    "project": "uploaded",
+    "slot": "author of pride and prejudice",
+    "value": "Jane Austen",
+    "card": "uploaded_facts.jsonl:47",
+    "raw": "Jane Austen",
+    "span": [
+      0,
+      11
+    ],
+    "weak": false
+  },
+  {
+    "id": 34,
+    "project": "uploaded",
+    "slot": "author of sense and sensibility",
+    "value": "Jane Austen",
+    "card": "uploaded_facts.jsonl:48",
+    "raw": "Jane Austen",
+    "span": [
+      0,
+      11
+    ],
+    "weak": false
+  },
+  {
+    "id": 35,
+    "project": "uploaded",
+    "slot": "author of a tale of two cities",
+    "value": "Charles Dickens",
+    "card": "uploaded_facts.jsonl:49",
+    "raw": "Charles Dickens",
+    "span": [
+      0,
+      15
+    ],
+    "weak": false
+  },
+  {
+    "id": 36,
+    "project": "uploaded",
+    "slot": "author of great expectations",
+    "value": "Charles Dickens",
+    "card": "uploaded_facts.jsonl:50",
+    "raw": "Charles Dickens",
+    "span": [
+      0,
+      15
+    ],
+    "weak": false
+  },
+  {
+    "id": 37,
+    "project": "uploaded",
+    "slot": "author of adventures of huckleberry finn",
+    "value": "Mark Twain",
+    "card": "uploaded_facts.jsonl:51",
+    "raw": "Mark Twain",
+    "span": [
+      0,
+      10
+    ],
+    "weak": false
+  },
+  {
+    "id": 38,
+    "project": "uploaded",
+    "slot": "author of the adventures of tom sawyer, complete",
+    "value": "Mark Twain",
+    "card": "uploaded_facts.jsonl:52",
+    "raw": "Mark Twain",
+    "span": [
+      0,
+      10
+    ],
+    "weak": false
+  },
+  {
+    "id": 39,
+    "project": "uploaded",
+    "slot": "edgar allan poe wrote the works of edgar allan poe \u2014 volume",
+    "value": "1",
+    "card": "uploaded_facts.jsonl:53",
+    "raw": "1",
+    "span": [
+      60,
+      61
+    ],
+    "weak": false
+  },
+  {
+    "id": 40,
+    "project": "uploaded",
+    "slot": "author of the works of edgar allan poe \u2014 volume 1",
+    "value": "Edgar Allan Poe",
+    "card": "uploaded_facts.jsonl:53",
+    "raw": "Edgar Allan Poe",
+    "span": [
+      0,
+      15
+    ],
+    "weak": false
+  },
+  {
+    "id": 41,
+    "project": "uploaded",
+    "slot": "author of the iliad",
+    "value": "Homer",
+    "card": "uploaded_facts.jsonl:54",
+    "raw": "Homer",
+    "span": [
+      0,
+      5
+    ],
+    "weak": false
+  },
+  {
+    "id": 42,
+    "project": "uploaded",
+    "slot": "author of frankenstein; or, the modern prometheus",
+    "value": "Mary Wollstonecraft Shelley",
+    "card": "uploaded_facts.jsonl:55",
+    "raw": "Mary Wollstonecraft Shelley",
+    "span": [
+      0,
+      27
+    ],
+    "weak": false
+  },
+  {
+    "id": 43,
+    "project": "uploaded",
+    "slot": "author of moby dick; or, the whale",
+    "value": "Herman Melville",
+    "card": "uploaded_facts.jsonl:56",
+    "raw": "Herman Melville",
+    "span": [
+      0,
+      15
+    ],
+    "weak": false
+  },
+  {
+    "id": 44,
+    "project": "uploaded",
+    "slot": "author of crime and punishment",
+    "value": "Fyodor Dostoyevsky",
+    "card": "uploaded_facts.jsonl:57",
+    "raw": "Fyodor Dostoyevsky",
+    "span": [
+      0,
+      18
+    ],
+    "weak": false
+  },
+  {
+    "id": 45,
+    "project": "uploaded",
+    "slot": "author of the brothers karamazov",
+    "value": "Fyodor Dostoyevsky",
+    "card": "uploaded_facts.jsonl:58",
+    "raw": "Fyodor Dostoyevsky",
+    "span": [
+      0,
+      18
+    ],
+    "weak": false
+  },
+  {
+    "id": 46,
+    "project": "uploaded",
+    "slot": "author of jane eyre: an autobiography",
+    "value": "Charlotte Bront\u00eb",
+    "card": "uploaded_facts.jsonl:59",
+    "raw": "Charlotte Bront\u00eb",
+    "span": [
+      0,
+      16
+    ],
+    "weak": false
+  },
+  {
+    "id": 47,
+    "project": "uploaded",
+    "slot": "author of wuthering heights",
+    "value": "Emily Bront\u00eb",
+    "card": "uploaded_facts.jsonl:60",
+    "raw": "Emily Bront\u00eb",
+    "span": [
+      0,
+      12
+    ],
+    "weak": false
+  },
+  {
+    "id": 48,
+    "project": "uploaded",
+    "slot": "author of the adventures of sherlock holmes",
+    "value": "Arthur Conan Doyle",
+    "card": "uploaded_facts.jsonl:61",
+    "raw": "Arthur Conan Doyle",
+    "span": [
+      0,
+      18
+    ],
+    "weak": false
+  },
+  {
+    "id": 49,
+    "project": "uploaded",
+    "slot": "author of dracula",
+    "value": "Bram Stoker",
+    "card": "uploaded_facts.jsonl:62",
+    "raw": "Bram Stoker",
+    "span": [
+      0,
+      11
+    ],
+    "weak": false
+  },
+  {
+    "id": 50,
+    "project": "uploaded",
+    "slot": "author of alice's adventures in wonderland",
+    "value": "Lewis Carroll",
+    "card": "uploaded_facts.jsonl:63",
+    "raw": "Lewis Carroll",
+    "span": [
+      0,
+      13
+    ],
+    "weak": false
+  },
+  {
+    "id": 51,
+    "project": "uploaded",
+    "slot": "author of the picture of dorian gray",
+    "value": "Oscar Wilde",
+    "card": "uploaded_facts.jsonl:64",
+    "raw": "Oscar Wilde",
+    "span": [
+      0,
+      11
+    ],
+    "weak": false
+  },
+  {
+    "id": 52,
+    "project": "uploaded",
+    "slot": "free inquiry is associated with the year",
+    "value": "1749",
+    "card": "uploaded_facts.jsonl:65",
+    "raw": "1749",
+    "span": [
+      41,
+      45
+    ],
+    "weak": false
+  },
+  {
+    "id": 53,
+    "project": "uploaded",
+    "slot": "ethiopia is associated with the year",
+    "value": "1806",
+    "card": "uploaded_facts.jsonl:66",
+    "raw": "1806",
+    "span": [
+      37,
+      41
+    ],
+    "weak": false
+  },
+  {
+    "id": 54,
+    "project": "uploaded",
+    "slot": "simon is associated with the year",
+    "value": "1707",
+    "card": "uploaded_facts.jsonl:67",
+    "raw": "1707",
+    "span": [
+      34,
+      38
+    ],
+    "weak": false
+  },
+  {
+    "id": 55,
+    "project": "uploaded",
+    "slot": "claude maltret is associated with the year",
+    "value": "1663",
+    "card": "uploaded_facts.jsonl:68",
+    "raw": "1663",
+    "span": [
+      43,
+      47
+    ],
+    "weak": false
+  },
+  {
+    "id": 56,
+    "project": "uploaded",
+    "slot": "from is associated with the year",
+    "value": "1687",
+    "card": "uploaded_facts.jsonl:69",
+    "raw": "1687",
+    "span": [
+      33,
+      37
+    ],
+    "weak": false
+  },
+  {
+    "id": 57,
+    "project": "uploaded",
+    "slot": "the constitution written at the constitutional convention in philadelphia in",
+    "value": "1787",
+    "card": "uploaded_facts.jsonl:80",
+    "raw": "1787",
+    "span": [
+      115,
+      119
+    ],
+    "weak": false
+  },
+  {
+    "id": 58,
+    "project": "uploaded",
+    "slot": "humans have",
+    "value": "22",
+    "card": "uploaded_facts.jsonl:138",
+    "raw": "22",
+    "span": [
+      146,
+      148
+    ],
+    "weak": false
+  },
+  {
+    "id": 59,
+    "project": "uploaded",
+    "slot": "any of the more than",
+    "value": "100",
+    "card": "uploaded_facts.jsonl:156",
+    "raw": "100",
+    "span": [
+      54,
+      57
+    ],
+    "weak": false
+  },
+  {
+    "id": 60,
+    "project": "uploaded",
+    "slot": "known substances (of which",
+    "value": "92",
+    "card": "uploaded_facts.jsonl:156",
+    "raw": "92",
+    "span": [
+      85,
+      87
+    ],
+    "weak": false
+  },
+  {
+    "id": 61,
+    "project": "uploaded",
+    "slot": "a verse form consisting of",
+    "value": "14",
+    "card": "uploaded_facts.jsonl:165",
+    "raw": "14",
+    "span": [
+      59,
+      61
+    ],
+    "weak": false
+  },
+  {
+    "id": 62,
+    "project": "uploaded",
+    "slot": "one of the",
+    "value": "13",
+    "card": "uploaded_facts.jsonl:180",
+    "raw": "13",
+    "span": [
+      43,
+      45
+    ],
+    "weak": false
+  },
+  {
+    "id": 63,
+    "project": "uploaded",
+    "slot": "the constitution written at the constitutional convention in philadelphia in",
+    "value": "1787",
+    "card": "uploaded_facts.jsonl:244",
+    "raw": "1787",
+    "span": [
+      129,
+      133
+    ],
+    "weak": false
+  },
+  {
+    "id": 64,
+    "project": "uploaded",
+    "slot": "the constitution written at the constitutional convention in philadelphia in",
+    "value": "1787",
+    "card": "uploaded_facts.jsonl:245",
+    "raw": "1787",
+    "span": [
+      120,
+      124
+    ],
+    "weak": false
+  },
+  {
+    "id": 65,
+    "project": "uploaded",
+    "slot": "the constitution written at the constitutional convention in philadelphia in",
+    "value": "1787",
+    "card": "uploaded_facts.jsonl:246",
+    "raw": "1787",
+    "span": [
+      118,
+      122
+    ],
+    "weak": false
+  },
+  {
+    "id": 66,
+    "project": "uploaded",
+    "slot": "what are the",
+    "value": "4",
+    "card": "uploaded_facts.jsonl:393",
+    "raw": "4",
+    "span": [
+      132,
+      133
+    ],
+    "weak": false
+  },
+  {
+    "id": 67,
+    "project": "uploaded",
+    "slot": "factors of",
+    "value": "6",
+    "card": "uploaded_facts.jsonl:393",
+    "raw": "6",
+    "span": [
+      145,
+      146
+    ],
+    "weak": false
+  },
+  {
+    "id": 68,
+    "project": "uploaded",
+    "slot": "any of the more than",
+    "value": "100",
+    "card": "uploaded_facts.jsonl:394",
+    "raw": "100",
+    "span": [
+      63,
+      66
+    ],
+    "weak": false
+  },
+  {
+    "id": 69,
+    "project": "uploaded",
+    "slot": "known substances (of which",
+    "value": "92",
+    "card": "uploaded_facts.jsonl:394",
+    "raw": "92",
+    "span": [
+      94,
+      96
+    ],
+    "weak": false
+  },
+  {
+    "id": 70,
+    "project": "uploaded",
+    "slot": "the southern states that seceded from the united states in",
+    "value": "1861",
+    "card": "uploaded_facts.jsonl:430",
+    "raw": "1861",
+    "span": [
+      96,
+      100
+    ],
+    "weak": false
+  },
+  {
+    "id": 71,
+    "project": "neuron-4",
+    "slot": "neuron-4 e-auto confident-wrong rate",
+    "value": "0.064",
+    "card": "jarvis_notes.jsonl:1",
+    "raw": "0.064",
+    "span": [
+      41,
+      46
+    ],
+    "weak": false
+  },
+  {
+    "id": 72,
+    "project": "neuron-4",
+    "slot": "e-auto coverage",
+    "value": "0.635",
+    "card": "jarvis_notes.jsonl:1",
+    "raw": "0.635",
+    "span": [
+      238,
+      243
+    ],
+    "weak": false
+  },
+  {
+    "id": 73,
+    "project": "neuron-4",
+    "slot": "answerable coverage",
+    "value": "0.926",
+    "card": "jarvis_notes.jsonl:1",
+    "raw": "0.926",
+    "span": [
+      265,
+      270
+    ],
+    "weak": false
+  },
+  {
+    "id": 74,
+    "project": "neuron-4",
+    "slot": "selective accuracy",
+    "value": "0.899",
+    "card": "jarvis_notes.jsonl:1",
+    "raw": "0.899",
+    "span": [
+      291,
+      296
+    ],
+    "weak": false
+  },
+  {
+    "id": 75,
+    "project": "neuron-4",
+    "slot": "exact search confident-wrong",
+    "value": "0.294",
+    "card": "jarvis_notes.jsonl:1",
+    "raw": "0.294",
+    "span": [
+      331,
+      336
+    ],
+    "weak": false
+  },
+  {
+    "id": 76,
+    "project": "neuron-4",
+    "slot": "e-auto confident-wrong",
+    "value": "0.064",
+    "card": "jarvis_notes.jsonl:2",
+    "raw": "0.064",
+    "span": [
+      44,
+      49
+    ],
+    "weak": false
+  },
+  {
+    "id": 77,
+    "project": "neuron-4",
+    "slot": "beat exact search confident-wrong",
+    "value": "0.294",
+    "card": "jarvis_notes.jsonl:2",
+    "raw": "0.294",
+    "span": [
+      84,
+      89
+    ],
+    "weak": false
+  },
+  {
+    "id": 78,
+    "project": "neuron-4",
+    "slot": "coverage for e-auto",
+    "value": "0.635",
+    "card": "jarvis_notes.jsonl:2",
+    "raw": "0.635",
+    "span": [
+      242,
+      247
+    ],
+    "weak": false
+  },
+  {
+    "id": 79,
+    "project": "neuron-4",
+    "slot": "exact",
+    "value": "0.715",
+    "card": "jarvis_notes.jsonl:2",
+    "raw": "0.715",
+    "span": [
+      261,
+      266
+    ],
+    "weak": false
+  },
+  {
+    "id": 80,
+    "project": "neuron-5",
+    "slot": "p_energy conf-wrong",
+    "value": "0.094",
+    "card": "jarvis_notes.jsonl:4",
+    "raw": "0.094",
+    "span": [
+      78,
+      83
+    ],
+    "weak": false
+  },
+  {
+    "id": 81,
+    "project": "neuron-5",
+    "slot": "e-auto",
+    "value": "0.071",
+    "card": "jarvis_notes.jsonl:4",
+    "raw": "0.071",
+    "span": [
+      98,
+      103
+    ],
+    "weak": false
+  },
+  {
+    "id": 82,
+    "project": "qms-1",
+    "slot": "default_e_auto confident-wrong diff",
+    "value": "0.000",
+    "card": "jarvis_notes.jsonl:5",
+    "raw": "0.000",
+    "span": [
+      92,
+      97
+    ],
+    "weak": false
+  },
+  {
+    "id": 83,
+    "project": "qms-1",
+    "slot": "no hardware case. default_e_auto test correct",
+    "value": "0.911",
+    "card": "jarvis_notes.jsonl:5",
+    "raw": "0.911",
+    "span": [
+      280,
+      285
+    ],
+    "weak": false
+  },
+  {
+    "id": 84,
+    "project": "qms-1",
+    "slot": "conf-wrong",
+    "value": "0.086",
+    "card": "jarvis_notes.jsonl:5",
+    "raw": "0.086",
+    "span": [
+      298,
+      303
+    ],
+    "weak": false
+  },
+  {
+    "id": 85,
+    "project": "tutor",
+    "slot": "tutor primary mean",
+    "value": "0.00",
+    "card": "jarvis_notes.jsonl:6",
+    "raw": "0.00",
+    "span": [
+      69,
+      73
+    ],
+    "weak": false
+  },
+  {
+    "id": 86,
+    "project": "tutor",
+    "slot": "shuffled",
+    "value": "0.09",
+    "card": "jarvis_notes.jsonl:6",
+    "raw": "0.09",
+    "span": [
+      90,
+      94
+    ],
+    "weak": false
+  },
+  {
+    "id": 87,
+    "project": "tutor",
+    "slot": "tutor lost to shuffled explanations (mean contrast",
+    "value": "-0.0925",
+    "card": "jarvis_notes.jsonl:6",
+    "raw": "-0.0925",
+    "span": [
+      243,
+      250
+    ],
+    "weak": false
+  },
+  {
+    "id": 88,
+    "project": "chat_rag",
+    "slot": "training-free chat_rag full eval hybrid accuracy",
+    "value": "0.900",
+    "card": "jarvis_notes.jsonl:7",
+    "raw": "0.900",
+    "span": [
+      53,
+      58
+    ],
+    "weak": false
+  },
+  {
+    "id": 89,
+    "project": "chat_rag",
+    "slot": "retrieval pack-routed bm25 scored",
+    "value": "0.967",
+    "card": "jarvis_notes.jsonl:7",
+    "raw": "0.967",
+    "span": [
+      186,
+      191
+    ],
+    "weak": false
+  },
+  {
+    "id": 90,
+    "project": "chat_rag",
+    "slot": "generation scored",
+    "value": "0.300",
+    "card": "jarvis_notes.jsonl:7",
+    "raw": "0.300",
+    "span": [
+      211,
+      216
+    ],
+    "weak": false
+  },
+  {
+    "id": 91,
+    "project": "chat_rag",
+    "slot": "cad scored",
+    "value": "0.433",
+    "card": "jarvis_notes.jsonl:7",
+    "raw": "0.433",
+    "span": [
+      229,
+      234
+    ],
+    "weak": false
+  },
+  {
+    "id": 92,
+    "project": "chat_rag",
+    "slot": "pack-routed hybrid scored",
+    "value": "0.900",
+    "card": "jarvis_notes.jsonl:7",
+    "raw": "0.900",
+    "span": [
+      262,
+      267
+    ],
+    "weak": false
+  },
+  {
+    "id": 93,
+    "project": "chat_rag",
+    "slot": "training-free chat_rag generation accuracy",
+    "value": "0.300",
+    "card": "jarvis_notes.jsonl:8",
+    "raw": "0.300",
+    "span": [
+      47,
+      52
+    ],
+    "weak": false
+  },
+  {
+    "id": 94,
+    "project": "chat_rag",
+    "slot": "training-free chat_rag cad accuracy",
+    "value": "0.433",
+    "card": "jarvis_notes.jsonl:9",
+    "raw": "0.433",
+    "span": [
+      40,
+      45
+    ],
+    "weak": false
+  },
+  {
+    "id": 95,
+    "project": "chat_rag",
+    "slot": "training-free chat_rag pack-routed retrieval accuracy",
+    "value": "0.967",
+    "card": "jarvis_notes.jsonl:10",
+    "raw": "0.967",
+    "span": [
+      58,
+      63
+    ],
+    "weak": false
+  },
+  {
+    "id": 96,
+    "project": "hypothalamus",
+    "slot": "all",
+    "value": "256",
+    "card": "jarvis_notes.jsonl:11",
+    "raw": "256",
+    "span": [
+      63,
+      66
+    ],
+    "weak": false
+  },
+  {
+    "id": 97,
+    "project": "callosum",
+    "slot": "the real callosum map did not beat degree-matched shuffle on transfer at n=",
+    "value": "1024",
+    "card": "jarvis_notes.jsonl:12",
+    "raw": "1024",
+    "span": [
+      75,
+      79
+    ],
+    "weak": false
+  },
+  {
+    "id": 98,
+    "project": "callosum",
+    "slot": "real_sc transfer",
+    "value": "0.9978",
+    "card": "jarvis_notes.jsonl:12",
+    "raw": "0.9978",
+    "span": [
+      223,
+      229
+    ],
+    "weak": false
+  },
+  {
+    "id": 99,
+    "project": "callosum",
+    "slot": "degree_shuffle",
+    "value": "0.9996",
+    "card": "jarvis_notes.jsonl:12",
+    "raw": "0.9996",
+    "span": [
+      248,
+      254
+    ],
+    "weak": false
+  },
+  {
+    "id": 100,
+    "project": "callosum",
+    "slot": "real_sc beat weight_shuffle on transfer",
+    "value": "0.9978",
+    "card": "jarvis_notes.jsonl:12",
+    "raw": "0.9978",
+    "span": [
+      297,
+      303
+    ],
+    "weak": false
+  },
+  {
+    "id": 101,
+    "project": "engine_v3",
+    "slot": "stp xor_hard",
+    "value": "0.7196",
+    "card": "jarvis_notes.jsonl:13",
+    "raw": "0.7196",
+    "span": [
+      265,
+      271
+    ],
+    "weak": false
+  },
+  {
+    "id": 102,
+    "project": "engine_v3",
+    "slot": "base",
+    "value": "0.5177",
+    "card": "jarvis_notes.jsonl:13",
+    "raw": "0.5177",
+    "span": [
+      280,
+      286
+    ],
+    "weak": false
+  },
+  {
+    "id": 103,
+    "project": "engine_v3",
+    "slot": "narma",
+    "value": "0.5968",
+    "card": "jarvis_notes.jsonl:13",
+    "raw": "0.5968",
+    "span": [
+      294,
+      300
+    ],
+    "weak": false
+  },
+  {
+    "id": 104,
+    "project": "engine_v3",
+    "slot": "char",
+    "value": "2.0397",
+    "card": "jarvis_notes.jsonl:13",
+    "raw": "2.0397",
+    "span": [
+      317,
+      323
+    ],
+    "weak": false
+  },
+  {
+    "id": 105,
+    "project": "engine_v3",
+    "slot": "transfer",
+    "value": "0.9854",
+    "card": "jarvis_notes.jsonl:13",
+    "raw": "0.9854",
+    "span": [
+      344,
+      350
+    ],
+    "weak": false
+  },
+  {
+    "id": 106,
+    "project": "engine_v3",
+    "slot": "confirmatory bonferroni unreachable at n=",
+    "value": "8",
+    "card": "jarvis_notes.jsonl:13",
+    "raw": "8",
+    "span": [
+      403,
+      404
+    ],
+    "weak": false
+  },
+  {
+    "id": 107,
+    "project": "shadow probe",
+    "slot": "shadow probe metric kappa",
+    "value": "0.42",
+    "card": "jarvis_notes.jsonl:14",
+    "raw": "0.42",
+    "span": [
+      29,
+      33
+    ],
+    "weak": false
+  },
+  {
+    "id": 108,
+    "project": "shadow probe",
+    "slot": "shadow probe metric kappa",
+    "value": "0.91",
+    "card": "jarvis_notes.jsonl:15",
+    "raw": "0.91",
+    "span": [
+      29,
+      33
+    ],
+    "weak": false
+  },
+  {
+    "id": 109,
+    "project": "shadow probe",
+    "slot": "shadow probe metric lambda",
+    "value": "0.55",
+    "card": "jarvis_notes.jsonl:16",
+    "raw": "~0.55",
+    "span": [
+      30,
+      35
+    ],
+    "weak": true
+  }
+]

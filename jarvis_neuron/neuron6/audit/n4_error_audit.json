@@ -1,0 +1,469 @@
+{
+ "source_sha256": "d8a9cbaeaba4d374882ac6195d581164b9f984a4ebbfad0b7ba4d7da471b56ce",
+ "corpus1": {
+  "n_questions": 1013,
+  "n_answered": 643,
+  "n_confident_wrong": 65,
+  "confident_wrong_over_all": 0.06416584402764067,
+  "wrong_given_answered": 0.10108864696734059,
+  "n_answerable": 624,
+  "answerable_answered": 578,
+  "answerable_answered_wrong_value": 0,
+  "n_gold_abstain": 389,
+  "gold_abstain_but_answered": 65,
+  "error_taxonomy_counts": {
+   "A_missed_weak_evidence (answered; gold=uncertain-cue fact; uncertainty classifier miss)": 62,
+   "D_false_conflict (abstained as contradiction; gold has single answer) [latest]": 34,
+   "E_false_weak_evidence (classifier flagged; gold certain) [exact]": 7,
+   "F_retrieval_or_scope_miss (no usable candidate / hop bridge failed) [multi_hop_3]": 4,
+   "B_missed_conflict (answered; gold=conflicting certain values)": 3,
+   "D_false_conflict (abstained as contradiction; gold has single answer) [multi_hop_3]": 1
+  },
+  "examples": {
+   "A_missed_weak_evidence (answered; gold=uncertain-cue fact; uncertainty classifier miss)": [
+    {
+     "seed": 0,
+     "qid": "s0_t24",
+     "q": "Going by our notes for the ibmq \u203a eureka work, what figure sits under 'legacy disagreement' for 'zz \u03b7'?",
+     "gold": "ABSTAIN",
+     "answer": "-0.0533",
+     "conf": 0.7
+    },
+    {
+     "seed": 0,
+     "qid": "s0_t29",
+     "q": "For the ibmq \u203a eureka effort, remind me what 'shots' scored on 'value'.",
+     "gold": "ABSTAIN",
+     "answer": "1024",
+     "conf": 0.9
+    },
+    {
+     "seed": 1,
+     "qid": "s1_t41",
+     "q": "Going by our notes for the fbsc_tests \u203a repo \u203a brain_experiments work, what figure sits under 'eval success (seed 0, shared td)' for 'raw obs (11-d)'?",
+     "gold": "ABSTAIN",
+     "answer": "0.75",
+     "conf": 0.7
+    }
+   ],
+   "D_false_conflict (abstained as contradiction; gold has single answer) [latest]": [
+    {
+     "seed": 1,
+     "qid": "s1_t22",
+     "q": "'human' had its 'xor' logged more than once in fbsc_tests \u203a repo \u203a brain_experiments; which value is current?",
+     "gold": "1e-08",
+     "answer": "ABSTAIN",
+     "conf": 0.3
+    },
+    {
+     "seed": 1,
+     "qid": "s1_t23",
+     "q": "Across every revision of the fbsc_tests \u203a repo \u203a brain_experiments work, what is the newest 'narma \u2193' recorded for 'human'?",
+     "gold": "0.3257",
+     "answer": "ABSTAIN",
+     "conf": 0.3
+    },
+    {
+     "seed": 1,
+     "qid": "s1_t24",
+     "q": "Across every revision of the fbsc_tests \u203a repo \u203a brain_experiments work, what is the newest 'narma \u2193' recorded for 'franken'?",
+     "gold": "0.34",
+     "answer": "ABSTAIN",
+     "conf": 0.3
+    }
+   ],
+   "B_missed_conflict (answered; gold=conflicting certain values)": [
+    {
+     "seed": 1,
+     "qid": "s1_t39",
+     "q": "Going by our notes for the fbsc_tests \u203a repo \u203a brain_experiments work, what figure sits under 'mc \u2191' for 'dens'?",
+     "gold": "ABSTAIN",
+     "answer": "24.54",
+     "conf": 0.7
+    },
+    {
+     "seed": 13,
+     "qid": "s13_t32",
+     "q": "Pull up the fbsc_tests \u203a repo \u203a brain_experiments records: the 'mean b' reading attached to 'human sc myelin vs degree preserving shuffle' was what?",
+     "gold": "ABSTAIN",
+     "answer": "0.5102",
+     "conf": 0.7
+    },
+    {
+     "seed": 19,
+     "qid": "s19_t36",
+     "q": "Pull up the fbsc_tests \u203a repo \u203a brain_experiments records: the 'narma \u2193' reading attached to 'dens' was what?",
+     "gold": "ABSTAIN",
+     "answer": "0.309",
+     "conf": 0.7
+    }
+   ],
+   "F_retrieval_or_scope_miss (no usable candidate / hop bridge failed) [multi_hop_3]": [
+    {
+     "seed": 9,
+     "qid": "s9_t58",
+     "q": "In the fbsc_tests \u203a repo \u203a brain_experiments material, one item lists 'mc real' = 5. Look that item up and give its 'n'.",
+     "gold": "300",
+     "answer": "ABSTAIN",
+     "conf": 0.0
+    },
+    {
+     "seed": 13,
+     "qid": "s13_t53",
+     "q": "In the fbsc_tests \u203a repo \u203a brain_experiments material, one item lists 'mc real' = 5. Look that item up and give its 'n'.",
+     "gold": "300",
+     "answer": "ABSTAIN",
+     "conf": 0.0
+    },
+    {
+     "seed": 17,
+     "qid": "s17_t56",
+     "q": "Inside fbsc_tests \u203a repo \u203a brain_experiments, find the entry whose 'mc real' equals 4.6; what 'n' does that same entry have elsewhere in the project?",
+     "gold": "185",
+     "answer": "ABSTAIN",
+     "conf": 0.0
+    }
+   ],
+   "E_false_weak_evidence (classifier flagged; gold certain) [exact]": [
+    {
+     "seed": 10,
+     "qid": "s10_t9",
+     "q": "Pull up the ibmq \u203a nitrogenase_honest records: the 'verdict' reading attached to 'creative coding / seed-compression demo' was what?",
+     "gold": "3",
+     "answer": "ABSTAIN",
+     "conf": 0.2
+    },
+    {
+     "seed": 11,
+     "qid": "s11_t1",
+     "q": "Going by our notes for the fbsc_tests \u203a repo \u203a docs work, what figure sits under 'generation method' for 'jarvis icon.png'?",
+     "gold": "20260925",
+     "answer": "ABSTAIN",
+     "conf": 0.2
+    },
+    {
+     "seed": 11,
+     "qid": "s11_t2",
+     "q": "Pull up the fbsc_tests \u203a repo \u203a docs records: the 'generation method' reading attached to 'jarvis identity tone.wav' was what?",
+     "gold": "778",
+     "answer": "ABSTAIN",
+     "conf": 0.2
+    }
+   ],
+   "D_false_conflict (abstained as contradiction; gold has single answer) [multi_hop_3]": [
+    {
+     "seed": 19,
+     "qid": "s19_t51",
+     "q": "In the fbsc_tests \u203a repo \u203a brain_experiments material, one item lists 'mc \u2191' = 18.07. Look that item up and give its 'params'.",
+     "gold": "11",
+     "answer": "ABSTAIN",
+     "conf": 0.3
+    }
+   ]
+  },
+  "by_kind": {
+   "conflict": {
+    "n": 189,
+    "answered": 3,
+    "wrong": 3,
+    "correct": 186,
+    "abstain_reasons": {
+     "abstain_contradiction": 186,
+     "answered": 3
+    }
+   },
+   "distractor": {
+    "n": 173,
+    "answered": 173,
+    "wrong": 0,
+    "correct": 173,
+    "abstain_reasons": {
+     "answered": 173
+    }
+   },
+   "exact": {
+    "n": 200,
+    "answered": 193,
+    "wrong": 0,
+    "correct": 193,
+    "abstain_reasons": {
+     "answered": 193,
+     "abstain_only_uncertain": 7
+    }
+   },
+   "latest": {
+    "n": 80,
+    "answered": 46,
+    "wrong": 0,
+    "correct": 46,
+    "abstain_reasons": {
+     "answered": 46,
+     "abstain_contradiction": 34
+    }
+   },
+   "multi_hop_3": {
+    "n": 171,
+    "answered": 166,
+    "wrong": 0,
+    "correct": 166,
+    "abstain_reasons": {
+     "answered": 166,
+     "abstain_no_candidate": 4,
+     "abstain_contradiction": 1
+    }
+   },
+   "uncertain": {
+    "n": 200,
+    "answered": 62,
+    "wrong": 62,
+    "correct": 138,
+    "abstain_reasons": {
+     "answered": 62,
+     "abstain_only_uncertain": 134,
+     "abstain_contradiction": 4
+    }
+   }
+  }
+ },
+ "corpus2": {
+  "n_questions": 1100,
+  "n_answered": 723,
+  "n_confident_wrong": 118,
+  "confident_wrong_over_all": 0.10727272727272727,
+  "wrong_given_answered": 0.1632088520055325,
+  "n_answerable": 700,
+  "answerable_answered": 605,
+  "answerable_answered_wrong_value": 0,
+  "n_gold_abstain": 400,
+  "gold_abstain_but_answered": 118,
+  "error_taxonomy_counts": {
+   "A_missed_weak_evidence (answered; gold=uncertain-cue fact; uncertainty classifier miss)": 96,
+   "E_false_weak_evidence (classifier flagged; gold certain) [multi_hop_3]": 49,
+   "E_false_weak_evidence (classifier flagged; gold certain) [exact]": 31,
+   "B_missed_conflict (answered; gold=conflicting certain values)": 22,
+   "E_false_weak_evidence (classifier flagged; gold certain) [distractor]": 11,
+   "F_retrieval_or_scope_miss (no usable candidate / hop bridge failed) [multi_hop_3]": 4
+  },
+  "examples": {
+   "E_false_weak_evidence (classifier flagged; gold certain) [exact]": [
+    {
+     "seed": 0,
+     "qid": "s500_t9",
+     "q": "For the chatbot effort, remind me what 'adapter 0e8eb2a7' scored on 'era'.",
+     "gold": "1800",
+     "answer": "ABSTAIN",
+     "conf": 0.2
+    },
+    {
+     "seed": 1,
+     "qid": "s501_t6",
+     "q": "Pull up the chatbot_upload \u203a brain_experiments \u203a hypothalamus records: the 'what it is' reading attached to 'neudorfer et al. 2020 hypothalamic mri atlas' was w",
+     "gold": "990",
+     "answer": "ABSTAIN",
+     "conf": 0.2
+    },
+    {
+     "seed": 2,
+     "qid": "s502_t3",
+     "q": "Going by our notes for the chatbot \u203a New folder work, what figure sits under 'scribe' for 'arzf2'?",
+     "gold": "2",
+     "answer": "ABSTAIN",
+     "conf": 0.2
+    }
+   ],
+   "A_missed_weak_evidence (answered; gold=uncertain-cue fact; uncertainty classifier miss)": [
+    {
+     "seed": 0,
+     "qid": "s500_t36",
+     "q": "Going by our notes for the chatbot work, what figure sits under 'cost' for 'savings'?",
+     "gold": "ABSTAIN",
+     "answer": "100",
+     "conf": 0.7
+    },
+    {
+     "seed": 0,
+     "qid": "s500_t38",
+     "q": "Going by our notes for the chatbot \u203a New folder work, what figure sits under 'score' for 'formula inventory (sign-level)'?",
+     "gold": "ABSTAIN",
+     "answer": "80",
+     "conf": 0.7
+    },
+    {
+     "seed": 0,
+     "qid": "s500_t39",
+     "q": "Pull up the chatbot_upload \u203a brain_experiments \u203a regions records: the 'homo/hetero wt' reading attached to 'lausanne consensus 68' was what?",
+     "gold": "ABSTAIN",
+     "answer": "18",
+     "conf": 0.7
+    }
+   ],
+   "E_false_weak_evidence (classifier flagged; gold certain) [multi_hop_3]": [
+    {
+     "seed": 0,
+     "qid": "s500_t45",
+     "q": "Inside bookish-umbrella, find the entry whose 'time' equals 1.5; what 'details' does that same entry have elsewhere in the project?",
+     "gold": "100",
+     "answer": "ABSTAIN",
+     "conf": 0.2
+    },
+    {
+     "seed": 0,
+     "qid": "s500_t50",
+     "q": "In the chatbot \u203a docs \u203a artifacts material, one item lists 'sha-256 (first 16)' = 728. Look that item up and give its 'tool'.",
+     "gold": "3",
+     "answer": "ABSTAIN",
+     "conf": 0.2
+    },
+    {
+     "seed": 0,
+     "qid": "s500_t52",
+     "q": "In the chatbot material, one item lists 'count' = 160. Look that item up and give its 'time'.",
+     "gold": "7",
+     "answer": "ABSTAIN",
+     "conf": 0.2
+    }
+   ],
+   "F_retrieval_or_scope_miss (no usable candidate / hop bridge failed) [multi_hop_3]": [
+    {
+     "seed": 0,
+     "qid": "s500_t51",
+     "q": "Inside chatbot \u203a ollama-jarvis-setup, find the entry whose 'when to use' equals 5; what 'read time' does that same entry have elsewhere in the project?",
+     "gold": "5",
+     "answer": "ABSTAIN",
+     "conf": 0.0
+    },
+    {
+     "seed": 1,
+     "qid": "s501_t51",
+     "q": "Inside chatbot \u203a ollama-jarvis-setup, find the entry whose 'when to use' equals 5; what 'read time' does that same entry have elsewhere in the project?",
+     "gold": "5",
+     "answer": "ABSTAIN",
+     "conf": 0.0
+    },
+    {
+     "seed": 3,
+     "qid": "s503_t47",
+     "q": "Inside chatbot \u203a ollama-jarvis-setup, find the entry whose 'when to use' equals 5; what 'read time' does that same entry have elsewhere in the project?",
+     "gold": "5",
+     "answer": "ABSTAIN",
+     "conf": 0.0
+    }
+   ],
+   "E_false_weak_evidence (classifier flagged; gold certain) [distractor]": [
+    {
+     "seed": 1,
+     "qid": "s501_t10",
+     "q": "For the chatbot effort, remind me what 'readme.md' scored on 'read time'.",
+     "gold": "5",
+     "answer": "ABSTAIN",
+     "conf": 0.2
+    },
+    {
+     "seed": 1,
+     "qid": "s501_t15",
+     "q": "For the chatbot effort, remind me what 'total' scored on 'time'.",
+     "gold": "7",
+     "answer": "ABSTAIN",
+     "conf": 0.2
+    },
+    {
+     "seed": 2,
+     "qid": "s502_t11",
+     "q": "Pull up the chatbot records: the 'read time' reading attached to 'readme.md' was what?",
+     "gold": "5",
+     "answer": "ABSTAIN",
+     "conf": 0.2
+    }
+   ],
+   "B_missed_conflict (answered; gold=conflicting certain values)": [
+    {
+     "seed": 1,
+     "qid": "s501_t27",
+     "q": "For the chatbot_upload \u203a brain_experiments \u203a jarvis_chat_rag effort, remind me what 'pack' scored on 'n'.",
+     "gold": "ABSTAIN",
+     "answer": "10",
+     "conf": 0.9
+    },
+    {
+     "seed": 5,
+     "qid": "s505_t26",
+     "q": "Going by our notes for the chatbot_upload \u203a brain_experiments \u203a jarvis_chat_rag work, what figure sits under 'hybrid' for 'pack'?",
+     "gold": "ABSTAIN",
+     "answer": "0.9",
+     "conf": 0.9
+    },
+    {
+     "seed": 5,
+     "qid": "s505_t29",
+     "q": "For the chatbot_upload \u203a brain_experiments \u203a jarvis_chat_rag effort, remind me what 'novel' scored on 'gen'.",
+     "gold": "ABSTAIN",
+     "answer": "0.333",
+     "conf": 0.9
+    }
+   ]
+  },
+  "by_kind": {
+   "conflict": {
+    "n": 200,
+    "answered": 22,
+    "wrong": 22,
+    "correct": 178,
+    "abstain_reasons": {
+     "abstain_contradiction": 166,
+     "answered": 22,
+     "abstain_only_uncertain": 12
+    }
+   },
+   "distractor": {
+    "n": 200,
+    "answered": 189,
+    "wrong": 0,
+    "correct": 189,
+    "abstain_reasons": {
+     "answered": 189,
+     "abstain_only_uncertain": 11
+    }
+   },
+   "exact": {
+    "n": 200,
+    "answered": 169,
+    "wrong": 0,
+    "correct": 169,
+    "abstain_reasons": {
+     "answered": 169,
+     "abstain_only_uncertain": 31
+    }
+   },
+   "latest": {
+    "n": 100,
+    "answered": 100,
+    "wrong": 0,
+    "correct": 100,
+    "abstain_reasons": {
+     "answered": 100
+    }
+   },
+   "multi_hop_3": {
+    "n": 200,
+    "answered": 147,
+    "wrong": 0,
+    "correct": 147,
+    "abstain_reasons": {
+     "abstain_only_uncertain": 49,
+     "answered": 147,
+     "abstain_no_candidate": 4
+    }
+   },
+   "uncertain": {
+    "n": 200,
+    "answered": 96,
+    "wrong": 96,
+    "correct": 104,
+    "abstain_reasons": {
+     "abstain_only_uncertain": 104,
+     "answered": 96
+    }
+   }
+  }
+ }
+}

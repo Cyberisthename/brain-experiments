@@ -1,4 +1,8 @@
-"""Unified answer helpers for training-free RAG modes."""
+"""Unified answer helpers for training-free RAG modes.
+
+Default chat stack (see chat.py): pack-routed retrieval + CAD hybrid +
+automatic WordNet /define for definition-style questions.
+"""
 from __future__ import annotations
 
 from typing import Optional
@@ -14,6 +18,36 @@ from extractive import best_extractive, format_hybrid
 from model_io import continuation_only, generate
 from dictionary_lookup import answer_define, extract_define_query
 
+# Canonical mode names + CLI aliases
+MODE_ALIASES = {
+    "default": "cad_hybrid",
+    "greedy": "gen",
+    "global": "gen",  # retrieval choice is separate; alias kept for --mode global
+    "softexcl": "soft_exclusion",
+    "soft": "soft_exclusion",
+    "knn_lm": "knn",
+}
+
+CANONICAL_MODES = {
+    "gen",
+    "hybrid",
+    "cad",
+    "copybias",
+    "cad_hybrid",
+    "dict",
+    "reason",
+    "soft_exclusion",
+    "knn",
+}
+
+
+def normalize_mode(mode: str) -> str:
+    m = (mode or "default").lower().strip()
+    m = MODE_ALIASES.get(m, m)
+    if m not in CANONICAL_MODES:
+        raise ValueError(f"unknown mode {mode!r}; choose from {sorted(CANONICAL_MODES | set(MODE_ALIASES))}")
+    return m
+
 
 def make_prompt(question: str) -> str:
     q = question.strip()
@@ -27,7 +61,7 @@ def answer_one_mode(
     tok,
     retriever,
     question: str,
-    mode: str,
+    mode: str = "default",
     max_new: int = 32,
     temperature: float = 0.0,
     min_ext: float = 1.5,
@@ -39,40 +73,42 @@ def answer_one_mode(
     knn_lambda: float = 0.5,
     knn_k: int = 16,
 ) -> dict:
-    """mode in {gen, hybrid, cad, copybias, cad_hybrid, dict, soft_exclusion, knn}.
+    """mode in {default/cad_hybrid, gen/greedy, hybrid, cad, copybias, dict, reason, soft_exclusion, knn}.
 
     Soft-exclusion = negative-constraint decoding (user idea).
     knn = passage-scoped kNN-LM interpolation.
+
+    When prefer_dict=True, any definition-style question ("what does X mean",
+    "define X", …) is answered via WordNet before LM decode.
     """
-    mode = mode.lower().strip()
+    mode = normalize_mode(mode)
     hits = retriever.search(question, k=retriever.k)
+    if mode == "reason":
+        from reason_sort import reason_answer
+        return reason_answer(question, hits, min_ext=min_ext, prefer_dict=prefer_dict)
     ctx = retriever.context(question)
     prompt = make_prompt(question)
     aug = retriever.augment(prompt, query=question)
 
+    # Automatic dictionary path for define-style questions (default on).
     dict_ans = answer_define(question) if prefer_dict else None
-    if mode == "dict" or (
-        prefer_dict
-        and dict_ans
-        and mode in {"hybrid", "cad_hybrid"}
-        and extract_define_query(question)
-    ):
-        if mode == "dict" or extract_define_query(question):
-            return {
-                "mode": "dict",
-                "question": question,
-                "context_preview": ctx[:500],
-                "prompt_preview": aug[:500],
-                "generation": "",
-                "extractive": {
-                    "span": dict_ans.split("\n")[1] if dict_ans and "\n" in dict_ans else (dict_ans or ""),
-                    "sentence": dict_ans or "",
-                    "source": "wordnet",
-                    "score": 99.0,
-                },
-                "display": dict_ans or "[DICT] miss",
-                "dict": dict_ans,
-            }
+    is_define = bool(extract_define_query(question))
+    if mode == "dict" or (prefer_dict and dict_ans and is_define):
+        return {
+            "mode": "dict",
+            "question": question,
+            "context_preview": ctx[:500],
+            "prompt_preview": aug[:500],
+            "generation": "",
+            "extractive": {
+                "span": dict_ans.split("\n")[1] if dict_ans and "\n" in dict_ans else (dict_ans or ""),
+                "sentence": dict_ans or "",
+                "source": "wordnet",
+                "score": 99.0,
+            },
+            "display": dict_ans or "[DICT] miss",
+            "dict": dict_ans,
+        }
 
     full = ""
     cont = ""
@@ -100,7 +136,7 @@ def answer_one_mode(
             alpha=cad_alpha,
         )
         cont = continuation_only(full, aug).strip()
-    elif mode in {"soft_exclusion", "softexcl", "soft"}:
+    elif mode in {"soft_exclusion"}:
         full = generate_soft_exclusion(
             model,
             tok,
@@ -114,7 +150,7 @@ def answer_one_mode(
             unsupported_strength=soft_strength,
         )
         cont = continuation_only(full, aug).strip()
-    elif mode in {"knn", "knn_lm"}:
+    elif mode in {"knn"}:
         full = generate_knn_lm(
             model,
             tok,

@@ -1,0 +1,5 @@
+# Audit of neuron4_qpu dev pilot (2026-11-05 ~3:30 PM ET). Pilot files left untouched.
+1. **Objective encodes the gold labels.** PREREG linear terms: supported/supersedes/contradicts get negative KEEP cost, unrelated_similar/uncertain_source/proposed get positive; the gold KEEP mask is defined by exactly the same type sets. Quadratic terms (|b|<=2.5, only 3 present) never outweigh linear ones. So the exact optimum equals the gold mask by construction; "boundary accuracy 1.00" is a tautology, not a finding (RESULTS shows optimum bitstring = gold).
+2. **Retrieval metrics were not recomputed per mask.** `lightweight_eval` reads stored NEURON-3 E_boundary outcomes and applies two hand rules (keep any unrelated_similar -> distractors wrong; cut all contradicts+supersedes -> conflict abstains wrong). No retrieval replay; every optimal-type mask gets identical constants (cw .030, coverage .569 in every row). It also reads the question `kind` (a gold field).
+3. **Source was NEURON-3 oracle E** (leaky labels), not NEURON-4 E-auto.
+Verdict: the pilot is a solver plumbing check only; it is NOT validation and its "gate PASS" must not be used to justify hardware.

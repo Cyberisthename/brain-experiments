@@ -1,0 +1,256 @@
+{
+  "summary": {
+    "n": 15,
+    "global": 1.0,
+    "routed": 1.0,
+    "by_kind": {
+      "pack": {
+        "n": 5,
+        "global": 1.0,
+        "routed": 1.0
+      },
+      "novel": {
+        "n": 5,
+        "global": 1.0,
+        "routed": 1.0
+      },
+      "madeup": {
+        "n": 2,
+        "global": 1.0,
+        "routed": 1.0
+      },
+      "dict": {
+        "n": 3,
+        "global": 1.0,
+        "routed": 1.0
+      }
+    }
+  },
+  "items": [
+    {
+      "id": "france",
+      "kind": "pack",
+      "question": "What is the capital of France?",
+      "gold": "Paris",
+      "global_hit": true,
+      "routed_hit": true,
+      "pack": "uploads",
+      "reason": "factish \u2192 uploads (bm=100.97)",
+      "scores": {
+        "dictionary": 74.85,
+        "books": 114.26,
+        "uploads": 103.07
+      }
+    },
+    {
+      "id": "dracula",
+      "kind": "pack",
+      "question": "Who wrote Dracula?",
+      "gold": "Bram Stoker",
+      "global_hit": true,
+      "routed_hit": true,
+      "pack": "uploads",
+      "reason": "factish \u2192 uploads (bm=52.84)",
+      "scores": {
+        "dictionary": 2.01,
+        "books": 51.33,
+        "uploads": 54.94
+      }
+    },
+    {
+      "id": "wwi",
+      "kind": "pack",
+      "question": "What year did World War I begin?",
+      "gold": "1914",
+      "global_hit": true,
+      "routed_hit": true,
+      "pack": "uploads",
+      "reason": "factish \u2192 uploads (bm=43.91)",
+      "scores": {
+        "dictionary": 23.83,
+        "books": 75.83,
+        "uploads": 46.01
+      }
+    },
+    {
+      "id": "jefferson",
+      "kind": "pack",
+      "question": "Who wrote The Declaration of Independence of the United States of America?",
+      "gold": "Thomas Jefferson",
+      "global_hit": true,
+      "routed_hit": true,
+      "pack": "uploads",
+      "reason": "factish \u2192 uploads (bm=217.93)",
+      "scores": {
+        "dictionary": 158.16,
+        "books": 258.95,
+        "uploads": 220.03
+      }
+    },
+    {
+      "id": "zorblax",
+      "kind": "novel",
+      "question": "What is the capital of Zorblax?",
+      "gold": "Quendara",
+      "global_hit": true,
+      "routed_hit": true,
+      "pack": "uploads",
+      "reason": "factish \u2192 uploads (bm=114.79)",
+      "scores": {
+        "dictionary": 74.85,
+        "books": 102.37,
+        "uploads": 118.69
+      }
+    },
+    {
+      "id": "voss",
+      "kind": "novel",
+      "question": "Who discovered aerogel photosynthesis?",
+      "gold": "Dr. Mirella Voss",
+      "global_hit": true,
+      "routed_hit": true,
+      "pack": "uploads",
+      "reason": "factish \u2192 uploads (bm=28.43)",
+      "scores": {
+        "dictionary": 18.69,
+        "books": 32.31,
+        "uploads": 32.33
+      }
+    },
+    {
+      "id": "wren",
+      "kind": "novel",
+      "question": "In what year did the MV Starlight Wren launch?",
+      "gold": "2147",
+      "global_hit": true,
+      "routed_hit": true,
+      "pack": "uploads",
+      "reason": "factish \u2192 uploads (bm=108.77)",
+      "scores": {
+        "dictionary": 49.74,
+        "books": 101.61,
+        "uploads": 112.97
+      }
+    },
+    {
+      "id": "atlantis",
+      "kind": "madeup",
+      "question": "What is the capital of Atlantis?",
+      "gold": "Poseidonis",
+      "global_hit": true,
+      "routed_hit": true,
+      "pack": "uploads",
+      "reason": "factish \u2192 uploads (bm=110.18)",
+      "scores": {
+        "dictionary": 74.85,
+        "books": 108.04,
+        "uploads": 114.08
+      }
+    },
+    {
+      "id": "gleeb",
+      "kind": "madeup",
+      "question": "Who invented the Gleeb capacitor?",
+      "gold": "Nara Quill",
+      "global_hit": true,
+      "routed_hit": true,
+      "pack": "uploads",
+      "reason": "factish \u2192 uploads (bm=86.99)",
+      "scores": {
+        "dictionary": 26.64,
+        "books": 64.47,
+        "uploads": 90.89
+      }
+    },
+    {
+      "id": "def_neuron",
+      "kind": "dict",
+      "question": "What does neuron mean?",
+      "gold": "nerve",
+      "global_hit": true,
+      "routed_hit": true,
+      "pack": "dictionary",
+      "reason": "define-query \u2192 dictionary",
+      "scores": {
+        "dictionary": 46.27,
+        "books": 52.77,
+        "uploads": 0.0
+      }
+    },
+    {
+      "id": "def_synapse",
+      "kind": "dict",
+      "question": "What does synapse mean?",
+      "gold": "junction",
+      "global_hit": true,
+      "routed_hit": true,
+      "pack": "dictionary",
+      "reason": "define-query \u2192 dictionary",
+      "scores": {
+        "dictionary": 35.95,
+        "books": 48.8,
+        "uploads": 0.0
+      }
+    },
+    {
+      "id": "def_photosynthesis",
+      "kind": "dict",
+      "question": "What does photosynthesis mean?",
+      "gold": "synthesis",
+      "global_hit": true,
+      "routed_hit": true,
+      "pack": "dictionary",
+      "reason": "define-query \u2192 dictionary",
+      "scores": {
+        "dictionary": 34.2,
+        "books": 48.8,
+        "uploads": 0.0
+      }
+    },
+    {
+      "id": "kestrel",
+      "kind": "novel",
+      "question": "What does the Kestrel Protocol use?",
+      "gold": "three-phase lattice keys",
+      "global_hit": true,
+      "routed_hit": true,
+      "pack": "uploads",
+      "reason": "factish \u2192 uploads (bm=60.05)",
+      "scores": {
+        "dictionary": 75.86,
+        "books": 87.36,
+        "uploads": 61.85
+      }
+    },
+    {
+      "id": "hamlet",
+      "kind": "pack",
+      "question": "Who wrote Hamlet?",
+      "gold": "Shakespeare",
+      "global_hit": true,
+      "routed_hit": true,
+      "pack": "uploads",
+      "reason": "factish \u2192 uploads (bm=50.75)",
+      "scores": {
+        "dictionary": 2.01,
+        "books": 55.66,
+        "uploads": 52.85
+      }
+    },
+    {
+      "id": "okorie",
+      "kind": "novel",
+      "question": "Who wrote Bright Circadian?",
+      "gold": "Hana Okorie",
+      "global_hit": true,
+      "routed_hit": true,
+      "pack": "uploads",
+      "reason": "factish \u2192 uploads (bm=62.24)",
+      "scores": {
+        "dictionary": 2.01,
+        "books": 42.31,
+        "uploads": 64.34
+      }
+    }
+  ]
+}

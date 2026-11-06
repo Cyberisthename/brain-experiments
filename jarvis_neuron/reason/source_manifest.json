@@ -1,0 +1,2918 @@
+{
+  "sha256": {
+    "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl": "ac05455e42979e9f2d0823a23a74b316b70a383d576bdb451324c8557e78f5c3",
+    "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl": "8f1bb7044aca5d1d3b58d5e8405cc699d687d76168ba0035682b1fc65f9c3a23"
+  },
+  "cards": {
+    "uploaded_facts.jsonl:1": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 1,
+      "card_id": "novel_00",
+      "source": "novel"
+    },
+    "uploaded_facts.jsonl:2": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 2,
+      "card_id": "novel_01",
+      "source": "novel"
+    },
+    "uploaded_facts.jsonl:3": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 3,
+      "card_id": "novel_02",
+      "source": "novel"
+    },
+    "uploaded_facts.jsonl:4": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 4,
+      "card_id": "novel_03",
+      "source": "novel"
+    },
+    "uploaded_facts.jsonl:5": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 5,
+      "card_id": "novel_04",
+      "source": "novel"
+    },
+    "uploaded_facts.jsonl:6": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 6,
+      "card_id": "novel_05",
+      "source": "novel"
+    },
+    "uploaded_facts.jsonl:7": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 7,
+      "card_id": "novel_06",
+      "source": "novel"
+    },
+    "uploaded_facts.jsonl:8": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 8,
+      "card_id": "novel_07",
+      "source": "novel"
+    },
+    "uploaded_facts.jsonl:9": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 9,
+      "card_id": "novel_08",
+      "source": "novel"
+    },
+    "uploaded_facts.jsonl:10": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 10,
+      "card_id": "novel_09",
+      "source": "novel"
+    },
+    "uploaded_facts.jsonl:11": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 11,
+      "card_id": "novel_10",
+      "source": "novel"
+    },
+    "uploaded_facts.jsonl:12": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 12,
+      "card_id": "novel_11",
+      "source": "novel"
+    },
+    "uploaded_facts.jsonl:13": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 13,
+      "card_id": "novel_12",
+      "source": "novel"
+    },
+    "uploaded_facts.jsonl:14": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 14,
+      "card_id": "novel_13",
+      "source": "novel"
+    },
+    "uploaded_facts.jsonl:15": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 15,
+      "card_id": "novel_14",
+      "source": "novel"
+    },
+    "uploaded_facts.jsonl:16": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 16,
+      "card_id": "novel_15",
+      "source": "novel"
+    },
+    "uploaded_facts.jsonl:17": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 17,
+      "card_id": "novel_16",
+      "source": "novel"
+    },
+    "uploaded_facts.jsonl:18": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 18,
+      "card_id": "novel_17",
+      "source": "novel"
+    },
+    "uploaded_facts.jsonl:19": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 19,
+      "card_id": "novel_18",
+      "source": "novel"
+    },
+    "uploaded_facts.jsonl:20": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 20,
+      "card_id": "novel_19",
+      "source": "novel"
+    },
+    "uploaded_facts.jsonl:21": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 21,
+      "card_id": "novel_20",
+      "source": "novel"
+    },
+    "uploaded_facts.jsonl:22": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 22,
+      "card_id": "novel_21",
+      "source": "novel"
+    },
+    "uploaded_facts.jsonl:23": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 23,
+      "card_id": "madeup_atlantis",
+      "source": "upload"
+    },
+    "uploaded_facts.jsonl:24": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 24,
+      "card_id": "madeup_gleeb",
+      "source": "upload"
+    },
+    "uploaded_facts.jsonl:25": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 25,
+      "card_id": "card_dracula",
+      "source": "fact_card"
+    },
+    "uploaded_facts.jsonl:26": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 26,
+      "card_id": "card_frankenstein",
+      "source": "fact_card"
+    },
+    "uploaded_facts.jsonl:27": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 27,
+      "card_id": "card_france",
+      "source": "fact_card"
+    },
+    "uploaded_facts.jsonl:28": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 28,
+      "card_id": "card_wwi",
+      "source": "fact_card"
+    },
+    "uploaded_facts.jsonl:29": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 29,
+      "card_id": "card_hamlet",
+      "source": "fact_card"
+    },
+    "uploaded_facts.jsonl:30": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 30,
+      "card_id": "who_history_110",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:31": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 31,
+      "card_id": "who_history_115",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:32": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 32,
+      "card_id": "who_history_120",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:33": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 33,
+      "card_id": "who_history_125",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:34": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 34,
+      "card_id": "who_history_130",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:35": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 35,
+      "card_id": "who_history_135",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:36": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 36,
+      "card_id": "who_history_140",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:37": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 37,
+      "card_id": "who_history_145",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:38": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 38,
+      "card_id": "who_history_148",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:39": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 39,
+      "card_id": "who_history_153",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:40": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 40,
+      "card_id": "who_history_158",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:41": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 41,
+      "card_id": "who_history_163",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:42": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 42,
+      "card_id": "who_history_168",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:43": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 43,
+      "card_id": "who_literature_0",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:44": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 44,
+      "card_id": "who_literature_10",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:45": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 45,
+      "card_id": "who_literature_100",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:46": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 46,
+      "card_id": "who_literature_105",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:47": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 47,
+      "card_id": "who_literature_15",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:48": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 48,
+      "card_id": "who_literature_20",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:49": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 49,
+      "card_id": "who_literature_25",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:50": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 50,
+      "card_id": "who_literature_30",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:51": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 51,
+      "card_id": "who_literature_35",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:52": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 52,
+      "card_id": "who_literature_40",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:53": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 53,
+      "card_id": "who_literature_45",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:54": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 54,
+      "card_id": "who_literature_5",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:55": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 55,
+      "card_id": "who_literature_50",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:56": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 56,
+      "card_id": "who_literature_55",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:57": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 57,
+      "card_id": "who_literature_60",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:58": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 58,
+      "card_id": "who_literature_65",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:59": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 59,
+      "card_id": "who_literature_70",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:60": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 60,
+      "card_id": "who_literature_75",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:61": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 61,
+      "card_id": "who_literature_80",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:62": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 62,
+      "card_id": "who_literature_85",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:63": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 63,
+      "card_id": "who_literature_90",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:64": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 64,
+      "card_id": "who_literature_95",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:65": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 65,
+      "card_id": "year_206",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:66": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 66,
+      "card_id": "year_207",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:67": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 67,
+      "card_id": "year_208",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:68": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 68,
+      "card_id": "year_209",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:69": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 69,
+      "card_id": "year_210",
+      "source": "pack_fact"
+    },
+    "uploaded_facts.jsonl:70": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 70,
+      "card_id": "wn:photosynthesis.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:71": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 71,
+      "card_id": "wn:mitochondrion.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:72": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 72,
+      "card_id": "wn:nerve_cell.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:73": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 73,
+      "card_id": "wn:synapse.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:74": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 74,
+      "card_id": "wn:algorithm.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:75": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 75,
+      "card_id": "wn:democracy.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:76": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 76,
+      "card_id": "wn:democracy.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:77": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 77,
+      "card_id": "wn:majority_rule.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:78": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 78,
+      "card_id": "wn:fundamental_law.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:79": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 79,
+      "card_id": "wn:constitution.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:80": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 80,
+      "card_id": "wn:united_states_constitution.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:81": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 81,
+      "card_id": "wn:gravity.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:82": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 82,
+      "card_id": "wn:graveness.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:83": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 83,
+      "card_id": "wn:gravity.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:84": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 84,
+      "card_id": "wn:speed.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:85": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 85,
+      "card_id": "wn:molecule.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:86": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 86,
+      "card_id": "wn:atom.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:87": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 87,
+      "card_id": "wn:atom.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:88": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 88,
+      "card_id": "wn:atom.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:89": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 89,
+      "card_id": "wn:cell.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:90": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 90,
+      "card_id": "wn:cell.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:91": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 91,
+      "card_id": "wn:cell.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:92": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 92,
+      "card_id": "wn:development.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:93": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 93,
+      "card_id": "wn:evolution.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:94": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 94,
+      "card_id": "wn:hypothesis.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:95": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 95,
+      "card_id": "wn:hypothesis.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:96": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 96,
+      "card_id": "wn:guess.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:97": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 97,
+      "card_id": "wn:variable.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:98": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 98,
+      "card_id": "wn:variable.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:99": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 99,
+      "card_id": "wn:variable_star.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:100": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 100,
+      "card_id": "wn:integer.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:101": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 101,
+      "card_id": "wn:derived_function.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:102": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 102,
+      "card_id": "wn:derivative.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:103": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 103,
+      "card_id": "wn:derivative_instrument.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:104": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 104,
+      "card_id": "wn:integral.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:105": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 105,
+      "card_id": "wn:built-in.s.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:106": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 106,
+      "card_id": "wn:integral.s.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:107": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 107,
+      "card_id": "wn:circuit.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:108": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 108,
+      "card_id": "wn:tour.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:109": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 109,
+      "card_id": "wn:circuit.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:110": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 110,
+      "card_id": "wn:voltage.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:111": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 111,
+      "card_id": "wn:electric_potential.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:112": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 112,
+      "card_id": "wn:current.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:113": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 113,
+      "card_id": "wn:current.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:114": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 114,
+      "card_id": "wn:stream.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:115": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 115,
+      "card_id": "wn:resistance.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:116": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 116,
+      "card_id": "wn:resistance.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:117": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 117,
+      "card_id": "wn:electric_resistance.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:118": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 118,
+      "card_id": "wn:capital.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:119": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 119,
+      "card_id": "wn:capital.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:120": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 120,
+      "card_id": "wn:capital.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:121": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 121,
+      "card_id": "wn:empire.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:122": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 122,
+      "card_id": "wn:empire.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:123": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 123,
+      "card_id": "wn:empire.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:124": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 124,
+      "card_id": "wn:democracy.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:125": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 125,
+      "card_id": "wn:republic.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:126": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 126,
+      "card_id": "wn:treaty.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:127": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 127,
+      "card_id": "wn:orbit.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:128": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 128,
+      "card_id": "wn:sphere.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:129": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 129,
+      "card_id": "wn:scope.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:130": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 130,
+      "card_id": "wn:planet.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:131": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 131,
+      "card_id": "wn:satellite.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:132": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 132,
+      "card_id": "wn:planet.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:133": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 133,
+      "card_id": "wn:galaxy.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:134": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 134,
+      "card_id": "wn:galax.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:135": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 135,
+      "card_id": "wn:galaxy.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:136": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 136,
+      "card_id": "wn:protein.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:137": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 137,
+      "card_id": "wn:enzyme.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:138": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 138,
+      "card_id": "wn:chromosome.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:139": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 139,
+      "card_id": "wn:genome.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:140": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 140,
+      "card_id": "wn:virus.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:141": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 141,
+      "card_id": "wn:virus.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:142": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 142,
+      "card_id": "wn:virus.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:143": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 143,
+      "card_id": "wn:bacteria.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:144": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 144,
+      "card_id": "wn:osmosis.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:145": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 145,
+      "card_id": "wn:diffusion.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:146": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 146,
+      "card_id": "wn:diffusion.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:147": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 147,
+      "card_id": "wn:dissemination.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:148": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 148,
+      "card_id": "wn:catalyst.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:149": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 149,
+      "card_id": "wn:catalyst.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:150": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 150,
+      "card_id": "wn:isotope.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:151": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 151,
+      "card_id": "wn:compound.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:152": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 152,
+      "card_id": "wn:compound.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:153": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 153,
+      "card_id": "wn:compound.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:154": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 154,
+      "card_id": "wn:component.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:155": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 155,
+      "card_id": "wn:component.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:156": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 156,
+      "card_id": "wn:chemical_element.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:157": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 157,
+      "card_id": "wn:metaphor.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:158": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 158,
+      "card_id": "wn:simile.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:159": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 159,
+      "card_id": "wn:sarcasm.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:160": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 160,
+      "card_id": "wn:irony.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:161": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 161,
+      "card_id": "wn:irony.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:162": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 162,
+      "card_id": "wn:fable.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:163": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 163,
+      "card_id": "wn:emblem.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:164": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 164,
+      "card_id": "wn:allegory.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:165": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 165,
+      "card_id": "wn:sonnet.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:166": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 166,
+      "card_id": "wn:sonnet.v.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:167": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 167,
+      "card_id": "wn:sonnet.v.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:168": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 168,
+      "card_id": "wn:calamity.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:169": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 169,
+      "card_id": "wn:tragedy.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:170": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 170,
+      "card_id": "wn:renaissance.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:171": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 171,
+      "card_id": "wn:rebirth.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:172": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 172,
+      "card_id": "wn:industrial.a.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:173": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 173,
+      "card_id": "wn:industrial.a.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:174": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 174,
+      "card_id": "wn:industrial.s.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:175": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 175,
+      "card_id": "wn:revolution.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:176": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 176,
+      "card_id": "wn:revolution.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:177": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 177,
+      "card_id": "wn:rotation.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:178": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 178,
+      "card_id": "wn:colony.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:179": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 179,
+      "card_id": "wn:colony.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:180": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 180,
+      "card_id": "wn:colony.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:181": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 181,
+      "card_id": "wn:federation.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:182": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 182,
+      "card_id": "wn:confederation.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:183": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 183,
+      "card_id": "wn:federation.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:184": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 184,
+      "card_id": "wn:encoding.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:185": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 185,
+      "card_id": "wn:firewall.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:186": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 186,
+      "card_id": "wn:firewall.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:187": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 187,
+      "card_id": "wn:firewall.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:188": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 188,
+      "card_id": "wn:protocol.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:189": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 189,
+      "card_id": "wn:protocol.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:190": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 190,
+      "card_id": "wn:protocol.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:191": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 191,
+      "card_id": "wn:rotational_latency.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:192": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 192,
+      "card_id": "wn:reaction_time.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:193": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 193,
+      "card_id": "wn:latency.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:194": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 194,
+      "card_id": "wn:bandwidth.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:195": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 195,
+      "card_id": "wn:attention.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:196": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 196,
+      "card_id": "wn:care.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:197": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 197,
+      "card_id": "wn:attention.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:198": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 198,
+      "card_id": "wn:transformer.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:199": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 199,
+      "card_id": "wn:implant.v.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:200": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 200,
+      "card_id": "wn:embed.v.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:201": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 201,
+      "card_id": "wn:gradient.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:202": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 202,
+      "card_id": "wn:gradient.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:203": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 203,
+      "card_id": "wn:loss.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:204": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 204,
+      "card_id": "wn:loss.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:205": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 205,
+      "card_id": "wn:loss.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:206": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 206,
+      "card_id": "wn:principal.n.04",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:207": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 207,
+      "card_id": "wn:corpus.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:208": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 208,
+      "card_id": "wn:corpus.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:209": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 209,
+      "card_id": "wn:cerebral_cortex.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:210": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 210,
+      "card_id": "wn:cortex.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:211": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 211,
+      "card_id": "wn:lens_cortex.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:212": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 212,
+      "card_id": "wn:hippocampus.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:213": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 213,
+      "card_id": "wn:hippocampus.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:214": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 214,
+      "card_id": "wn:myelin.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:215": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 215,
+      "card_id": "wn:axon.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:216": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 216,
+      "card_id": "wn:dendrite.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:217": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 217,
+      "card_id": "wn:oscillator.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:218": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 218,
+      "card_id": "wn:reservoir.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:219": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 219,
+      "card_id": "wn:reservoir.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:220": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 220,
+      "card_id": "wn:reservoir.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:221": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 221,
+      "card_id": "wn:information.n.05",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:222": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 222,
+      "card_id": "wn:randomness.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:223": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 223,
+      "card_id": "wn:perplexity.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:224": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 224,
+      "card_id": "wn:mitochondrion.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:225": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 225,
+      "card_id": "wn:mitochondrion.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:226": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 226,
+      "card_id": "wn:nerve_cell.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:227": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 227,
+      "card_id": "wn:algorithm.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:228": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 228,
+      "card_id": "wn:algorithm.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:229": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 229,
+      "card_id": "wn:commonwealth.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:230": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 230,
+      "card_id": "wn:state.n.04",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:231": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 231,
+      "card_id": "wn:commonwealth.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:232": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 232,
+      "card_id": "wn:majority_rule.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:233": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 233,
+      "card_id": "wn:fundamental_law.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:234": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 234,
+      "card_id": "wn:fundamental_law.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:235": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 235,
+      "card_id": "wn:constitution.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:236": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 236,
+      "card_id": "wn:institution.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:237": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 237,
+      "card_id": "wn:administration.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:238": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 238,
+      "card_id": "wn:formation.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:239": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 239,
+      "card_id": "wn:formation.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:240": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 240,
+      "card_id": "wn:constitution.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:241": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 241,
+      "card_id": "wn:organization.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:242": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 242,
+      "card_id": "wn:arrangement.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:243": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 243,
+      "card_id": "wn:administration.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:244": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 244,
+      "card_id": "wn:united_states_constitution.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:245": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 245,
+      "card_id": "wn:united_states_constitution.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:246": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 246,
+      "card_id": "wn:united_states_constitution.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:247": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 247,
+      "card_id": "wn:gravity.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:248": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 248,
+      "card_id": "wn:gravitation.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:249": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 249,
+      "card_id": "wn:gravitation.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:250": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 250,
+      "card_id": "wn:gravity.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:251": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 251,
+      "card_id": "wn:gravity.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:252": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 252,
+      "card_id": "wn:graveness.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:253": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 253,
+      "card_id": "wn:soberness.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:254": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 254,
+      "card_id": "wn:sobriety.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:255": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 255,
+      "card_id": "wn:graveness.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:256": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 256,
+      "card_id": "wn:soberness.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:257": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 257,
+      "card_id": "wn:graveness.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:258": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 258,
+      "card_id": "wn:sedateness.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:259": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 259,
+      "card_id": "wn:gravity.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:260": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 260,
+      "card_id": "wn:speed.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:261": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 261,
+      "card_id": "wn:speed.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:262": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 262,
+      "card_id": "wn:speed.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:263": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 263,
+      "card_id": "wn:atom.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:264": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 264,
+      "card_id": "wn:particle.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:265": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 265,
+      "card_id": "wn:particle.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:266": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 266,
+      "card_id": "wn:atom.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:267": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 267,
+      "card_id": "wn:blood_cell.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:268": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 268,
+      "card_id": "wn:cell.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:269": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 269,
+      "card_id": "wn:development.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:270": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 270,
+      "card_id": "wn:development.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:271": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 271,
+      "card_id": "wn:growth.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:272": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 272,
+      "card_id": "wn:evolution.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:273": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 273,
+      "card_id": "wn:evolution.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:274": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 274,
+      "card_id": "wn:evolution.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:275": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 275,
+      "card_id": "wn:possibility.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:276": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 276,
+      "card_id": "wn:possibility.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:277": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 277,
+      "card_id": "wn:hypothesis.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:278": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 278,
+      "card_id": "wn:theory.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:279": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 279,
+      "card_id": "wn:hypothesis.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:280": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 280,
+      "card_id": "wn:theory.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:281": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 281,
+      "card_id": "wn:guess.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:282": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 282,
+      "card_id": "wn:guess.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:283": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 283,
+      "card_id": "wn:think.v.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:284": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 284,
+      "card_id": "wn:speculation.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:285": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 285,
+      "card_id": "wn:guess.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:286": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 286,
+      "card_id": "wn:conjecture.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:287": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 287,
+      "card_id": "wn:guess.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:288": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 288,
+      "card_id": "wn:assumption.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:289": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 289,
+      "card_id": "wn:supposition.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:290": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 290,
+      "card_id": "wn:guess.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:291": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 291,
+      "card_id": "wn:surmise.v.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:292": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 292,
+      "card_id": "wn:suspect.v.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:293": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 293,
+      "card_id": "wn:variable.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:294": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 294,
+      "card_id": "wn:variable_star.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:295": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 295,
+      "card_id": "wn:integer.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:296": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 296,
+      "card_id": "wn:derived_function.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:297": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 297,
+      "card_id": "wn:derived_function.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:298": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 298,
+      "card_id": "wn:derived_function.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:299": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 299,
+      "card_id": "wn:differential.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:300": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 300,
+      "card_id": "wn:differential_gear.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:301": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 301,
+      "card_id": "wn:derivative_instrument.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:302": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 302,
+      "card_id": "wn:built-in.s.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:303": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 303,
+      "card_id": "wn:constitutional.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:304": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 304,
+      "card_id": "wn:constitutional.a.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:305": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 305,
+      "card_id": "wn:constitutional.a.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:306": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 306,
+      "card_id": "wn:built-in.s.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:307": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 307,
+      "card_id": "wn:built-in.s.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:308": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 308,
+      "card_id": "wn:implicit_in.s.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:309": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 309,
+      "card_id": "wn:stallion.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:310": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 310,
+      "card_id": "wn:entire.s.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:311": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 311,
+      "card_id": "wn:integral.s.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:312": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 312,
+      "card_id": "wn:integral.s.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:313": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 313,
+      "card_id": "wn:intact.s.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:314": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 314,
+      "card_id": "wn:entire.s.04",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:315": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 315,
+      "card_id": "wn:circuit.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:316": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 316,
+      "card_id": "wn:circuit.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:317": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 317,
+      "card_id": "wn:tour.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:318": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 318,
+      "card_id": "wn:go.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:319": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 319,
+      "card_id": "wn:enlistment.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:320": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 320,
+      "card_id": "wn:voltage.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:321": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 321,
+      "card_id": "wn:voltage.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:322": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 322,
+      "card_id": "wn:electric_potential.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:323": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 323,
+      "card_id": "wn:potential.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:324": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 324,
+      "card_id": "wn:electric_potential.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:325": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 325,
+      "card_id": "wn:potential.a.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:326": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 326,
+      "card_id": "wn:electric_potential.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:327": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 327,
+      "card_id": "wn:electric_potential.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:328": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 328,
+      "card_id": "wn:current.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:329": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 329,
+      "card_id": "wn:stream.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:330": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 330,
+      "card_id": "wn:stream.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:331": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 331,
+      "card_id": "wn:flow.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:332": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 332,
+      "card_id": "wn:flow.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:333": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 333,
+      "card_id": "wn:flow.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:334": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 334,
+      "card_id": "wn:flow.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:335": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 335,
+      "card_id": "wn:resistance.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:336": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 336,
+      "card_id": "wn:opposition.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:337": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 337,
+      "card_id": "wn:confrontation.n.04",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:338": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 338,
+      "card_id": "wn:electric_resistance.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:339": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 339,
+      "card_id": "wn:electric_resistance.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:340": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 340,
+      "card_id": "wn:electric_resistance.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:341": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 341,
+      "card_id": "wn:capital.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:342": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 342,
+      "card_id": "wn:empire.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:343": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 343,
+      "card_id": "wn:imperium.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:344": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 344,
+      "card_id": "wn:treaty.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:345": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 345,
+      "card_id": "wn:agreement.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:346": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 346,
+      "card_id": "wn:accord.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:347": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 347,
+      "card_id": "wn:treaty.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:348": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 348,
+      "card_id": "wn:orbit.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:349": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 349,
+      "card_id": "wn:sphere.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:350": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 350,
+      "card_id": "wn:sphere.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:351": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 351,
+      "card_id": "wn:sphere.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:352": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 352,
+      "card_id": "wn:sphere.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:353": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 353,
+      "card_id": "wn:domain.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:354": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 354,
+      "card_id": "wn:domain.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:355": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 355,
+      "card_id": "wn:area.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:356": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 356,
+      "card_id": "wn:area.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:357": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 357,
+      "card_id": "wn:area.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:358": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 358,
+      "card_id": "wn:scope.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:359": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 359,
+      "card_id": "wn:setting.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:360": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 360,
+      "card_id": "wn:telescope.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:361": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 361,
+      "card_id": "wn:scope.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:362": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 362,
+      "card_id": "wn:range.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:363": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 363,
+      "card_id": "wn:range.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:364": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 364,
+      "card_id": "wn:range.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:365": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 365,
+      "card_id": "wn:scope.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:366": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 366,
+      "card_id": "wn:reach.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:367": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 367,
+      "card_id": "wn:planet.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:368": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 368,
+      "card_id": "wn:satellite.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:369": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 369,
+      "card_id": "wn:satellite.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:370": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 370,
+      "card_id": "wn:satellite.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:371": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 371,
+      "card_id": "wn:galax.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:372": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 372,
+      "card_id": "wn:wandflower.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:373": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 373,
+      "card_id": "wn:galax.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:374": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 374,
+      "card_id": "wn:galax.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:375": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 375,
+      "card_id": "wn:galaxy.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:376": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 376,
+      "card_id": "wn:virus.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:377": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 377,
+      "card_id": "wn:bacteria.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:378": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 378,
+      "card_id": "wn:dissemination.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:379": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 379,
+      "card_id": "wn:dissemination.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:380": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 380,
+      "card_id": "wn:dispersion.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:381": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 381,
+      "card_id": "wn:accelerator.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:382": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 382,
+      "card_id": "wn:accelerator.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:383": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 383,
+      "card_id": "wn:catalyst.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:384": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 384,
+      "card_id": "wn:compound.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:385": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 385,
+      "card_id": "wn:component.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:386": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 386,
+      "card_id": "wn:part.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:387": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 387,
+      "card_id": "wn:component.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:388": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 388,
+      "card_id": "wn:component.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:389": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 389,
+      "card_id": "wn:constituent.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:390": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 390,
+      "card_id": "wn:part.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:391": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 391,
+      "card_id": "wn:factor.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:392": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 392,
+      "card_id": "wn:component.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:393": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 393,
+      "card_id": "wn:divisor.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:394": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 394,
+      "card_id": "wn:chemical_element.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:395": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 395,
+      "card_id": "wn:sarcasm.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:396": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 396,
+      "card_id": "wn:sarcasm.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:397": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 397,
+      "card_id": "wn:sarcasm.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:398": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 398,
+      "card_id": "wn:fabrication.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:399": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 399,
+      "card_id": "wn:fable.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:400": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 400,
+      "card_id": "wn:legend.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:401": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 401,
+      "card_id": "wn:fable.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:402": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 402,
+      "card_id": "wn:parable.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:403": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 403,
+      "card_id": "wn:fable.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:404": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 404,
+      "card_id": "wn:emblem.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:405": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 405,
+      "card_id": "wn:emblem.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:406": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 406,
+      "card_id": "wn:calamity.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:407": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 407,
+      "card_id": "wn:calamity.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:408": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 408,
+      "card_id": "wn:catastrophe.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:409": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 409,
+      "card_id": "wn:catastrophe.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:410": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 410,
+      "card_id": "wn:catastrophe.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:411": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 411,
+      "card_id": "wn:calamity.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:412": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 412,
+      "card_id": "wn:disaster.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:413": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 413,
+      "card_id": "wn:renaissance.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:414": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 414,
+      "card_id": "wn:reincarnation.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:415": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 415,
+      "card_id": "wn:rebirth.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:416": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 416,
+      "card_id": "wn:metempsychosis.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:417": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 417,
+      "card_id": "wn:reincarnation.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:418": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 418,
+      "card_id": "wn:rebirth.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:419": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 419,
+      "card_id": "wn:rotation.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:420": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 420,
+      "card_id": "wn:rotation.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:421": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 421,
+      "card_id": "wn:rotation.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:422": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 422,
+      "card_id": "wn:rotation.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:423": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 423,
+      "card_id": "wn:gyration.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:424": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 424,
+      "card_id": "wn:colony.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:425": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 425,
+      "card_id": "wn:village.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:426": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 426,
+      "card_id": "wn:settlement.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:427": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 427,
+      "card_id": "wn:alliance.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:428": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 428,
+      "card_id": "wn:confederation.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:429": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 429,
+      "card_id": "wn:confederation.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:430": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 430,
+      "card_id": "wn:confederacy.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:431": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 431,
+      "card_id": "wn:confederation.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:432": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 432,
+      "card_id": "wn:conspiracy.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:433": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 433,
+      "card_id": "wn:encoding.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:434": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 434,
+      "card_id": "wn:encode.v.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:435": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 435,
+      "card_id": "wn:protocol.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:436": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 436,
+      "card_id": "wn:rotational_latency.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:437": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 437,
+      "card_id": "wn:reaction_time.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:438": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 438,
+      "card_id": "wn:reaction_time.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:439": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 439,
+      "card_id": "wn:reaction_time.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:440": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 440,
+      "card_id": "wn:latent_period.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:441": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 441,
+      "card_id": "wn:attention.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:442": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 442,
+      "card_id": "wn:attendance.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:443": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 443,
+      "card_id": "wn:attend.v.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:444": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 444,
+      "card_id": "wn:care.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:445": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 445,
+      "card_id": "wn:caution.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:446": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 446,
+      "card_id": "wn:concern.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:447": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 447,
+      "card_id": "wn:aid.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:448": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 448,
+      "card_id": "wn:aid.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:449": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 449,
+      "card_id": "wn:aid.n.03",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:450": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 450,
+      "card_id": "wn:care.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:451": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 451,
+      "card_id": "wn:tend.v.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:452": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 452,
+      "card_id": "wn:tend.v.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:453": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 453,
+      "card_id": "wn:implant.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:454": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 454,
+      "card_id": "wn:implant.v.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:455": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 455,
+      "card_id": "wn:implant.v.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:456": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 456,
+      "card_id": "wn:graft.v.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:457": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 457,
+      "card_id": "wn:implant.v.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:458": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 458,
+      "card_id": "wn:implant.v.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:459": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 459,
+      "card_id": "wn:embed.v.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:460": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 460,
+      "card_id": "wn:implant.v.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:461": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 461,
+      "card_id": "wn:slope.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:462": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 462,
+      "card_id": "wn:gradient.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:463": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 463,
+      "card_id": "wn:slope.v.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:464": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 464,
+      "card_id": "wn:principal.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:465": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 465,
+      "card_id": "wn:principal.n.02",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:466": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 466,
+      "card_id": "wn:star.n.04",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:467": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 467,
+      "card_id": "wn:principal.n.04",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:468": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 468,
+      "card_id": "wn:cerebral_cortex.n.01",
+      "source": "wordnet"
+    },
+    "uploaded_facts.jsonl:469": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/uploaded_facts.jsonl",
+      "line": 469,
+      "card_id": "wn:cerebral_cortex.n.01",
+      "source": "wordnet"
+    },
+    "jarvis_notes.jsonl:1": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+      "line": 1,
+      "card_id": "jn_n4_cwr",
+      "source": "jarvis_notes"
+    },
+    "jarvis_notes.jsonl:2": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+      "line": 2,
+      "card_id": "jn_n4_vs_exact",
+      "source": "jarvis_notes"
+    },
+    "jarvis_notes.jsonl:3": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+      "line": 3,
+      "card_id": "jn_n4_labels",
+      "source": "jarvis_notes"
+    },
+    "jarvis_notes.jsonl:4": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+      "line": 4,
+      "card_id": "jn_n5",
+      "source": "jarvis_notes"
+    },
+    "jarvis_notes.jsonl:5": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+      "line": 5,
+      "card_id": "jn_qms",
+      "source": "jarvis_notes"
+    },
+    "jarvis_notes.jsonl:6": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+      "line": 6,
+      "card_id": "jn_tutor",
+      "source": "jarvis_notes"
+    },
+    "jarvis_notes.jsonl:7": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+      "line": 7,
+      "card_id": "jn_chat_hybrid",
+      "source": "jarvis_notes"
+    },
+    "jarvis_notes.jsonl:8": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+      "line": 8,
+      "card_id": "jn_chat_gen",
+      "source": "jarvis_notes"
+    },
+    "jarvis_notes.jsonl:9": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+      "line": 9,
+      "card_id": "jn_chat_cad",
+      "source": "jarvis_notes"
+    },
+    "jarvis_notes.jsonl:10": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+      "line": 10,
+      "card_id": "jn_chat_ret",
+      "source": "jarvis_notes"
+    },
+    "jarvis_notes.jsonl:11": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+      "line": 11,
+      "card_id": "jn_hypo",
+      "source": "jarvis_notes"
+    },
+    "jarvis_notes.jsonl:12": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+      "line": 12,
+      "card_id": "jn_callosum",
+      "source": "jarvis_notes"
+    },
+    "jarvis_notes.jsonl:13": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+      "line": 13,
+      "card_id": "jn_stp",
+      "source": "jarvis_notes"
+    },
+    "jarvis_notes.jsonl:14": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+      "line": 14,
+      "card_id": "jn_probe_kappa_a",
+      "source": "jarvis_notes"
+    },
+    "jarvis_notes.jsonl:15": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+      "line": 15,
+      "card_id": "jn_probe_kappa_b",
+      "source": "jarvis_notes"
+    },
+    "jarvis_notes.jsonl:16": {
+      "path": "/workspace/jarvis/chat_rag/knowledge/jarvis_notes.jsonl",
+      "line": 16,
+      "card_id": "jn_probe_lambda",
+      "source": "jarvis_notes"
+    }
+  }
+}

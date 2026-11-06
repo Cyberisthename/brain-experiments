@@ -71,15 +71,18 @@ Finished **2026-11-03 13:18:16 ET**, wall **1388.9s**, ckpt `medium_v3/best.pt` 
 | `model_soup.py` | Discover + uniform-average compatible medium ckpts |
 | `dictionary_lookup.py` | WordNet define path + definition cards |
 | `run_full_eval.py` | ~30Q full suite (this report’s numbers) |
+| `run_default_check.py` | Re-check default pipeline scores (~30Q) |
 | `run_router_soft_test.py` | Earlier router + soft decode subset |
-| `chat.py` | Modes + `/define <word>` |
+| `chat.py` | **Default:** pack router + CAD hybrid + auto `/define`; old via `--mode greedy --retrieval global` |
 
 ```bash
+# DEFAULT (pack router + CAD hybrid + auto-dict)
+nice -n 19 python3 chat.py --once "What does neuron mean?"
+nice -n 19 python3 chat.py --once "What is the capital of Atlantis?"
+# old modes
+nice -n 19 python3 chat.py --mode greedy --retrieval global --once "Who wrote Dracula?"
 nice -n 19 python3 chat.py --mode cad --once "What is the capital of Atlantis?"
-nice -n 19 python3 chat.py --mode soft_exclusion --once "Who invented the Gleeb capacitor?"
-nice -n 19 python3 chat.py --mode knn --once "What is the capital of Zorblax?"
-nice -n 19 python3 chat.py --mode dict --once "What does synapse mean?"
-# or: /define synapse
+nice -n 19 python3 run_default_check.py
 ```
 
 ---

@@ -7,7 +7,7 @@ from __future__ import annotations
 import re
 import sys
 from pathlib import Path
-from typing import List, Optional
+from typing import Callable, List, Optional
 
 sys.path.insert(0, str(Path("/workspace/jarvis_kaggle")))
 from model.memory_rag import tokenize  # noqa: E402
@@ -74,8 +74,12 @@ def best_extractive(
     question: str,
     hits: List[dict],
     min_score: float = 1.5,
+    span_filter: Optional[Callable[[str], bool]] = None,
 ) -> Optional[dict]:
-    """Return best {span, sentence, source, score, passage_score} or None."""
+    """Return best span or None. Optional filter constrains a known query slot.
+
+    Default is unfiltered, preserving all existing hybrid/CAD behavior.
+    """
     q_terms = _query_terms(question)
     if not hits or not q_terms:
         return None
@@ -88,6 +92,8 @@ def best_extractive(
             if sum(1 for t in q_terms if t in sent_t) < 1:
                 continue
             for span in _candidate_spans(sent, question):
+                if span_filter is not None and not span_filter(span):
+                    continue
                 sc = score_span(span, sent, q_terms, pscore)
                 if best is None or sc > best["score"]:
                     best = {

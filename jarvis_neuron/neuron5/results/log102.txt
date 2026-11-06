@@ -1,0 +1,1 @@
+seed 102 n=37 b=0.25 tau=0.1 sa_agree=12/12 t=22s

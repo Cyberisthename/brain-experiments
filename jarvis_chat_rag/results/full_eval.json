@@ -1,0 +1,1656 @@
+{
+  "summary": {
+    "n": 30,
+    "retrieval_global_acc": 0.9333333333333333,
+    "retrieval_routed_acc": 0.9666666666666667,
+    "by_mode": {
+      "gen": 0.3,
+      "hybrid": 0.9,
+      "cad": 0.43333333333333335,
+      "soft_exclusion": 0.3,
+      "knn": 0.3,
+      "soup_gen": 0.3,
+      "routed_hybrid": 0.9,
+      "dict_define_on_dict_qs": 1.0
+    },
+    "by_kind": {
+      "pack": {
+        "n": 10,
+        "retrieval_global": 1.0,
+        "retrieval_routed": 1.0,
+        "gen": 0.3,
+        "hybrid": 0.9,
+        "cad": 0.6,
+        "soft_exclusion": 0.3,
+        "knn": 0.3,
+        "soup_gen": 0.3,
+        "routed_hybrid": 0.9
+      },
+      "novel": {
+        "n": 12,
+        "retrieval_global": 1.0,
+        "retrieval_routed": 1.0,
+        "gen": 0.3333333333333333,
+        "hybrid": 1.0,
+        "cad": 0.4166666666666667,
+        "soft_exclusion": 0.3333333333333333,
+        "knn": 0.3333333333333333,
+        "soup_gen": 0.3333333333333333,
+        "routed_hybrid": 1.0
+      },
+      "madeup": {
+        "n": 2,
+        "retrieval_global": 1.0,
+        "retrieval_routed": 1.0,
+        "gen": 0.5,
+        "hybrid": 1.0,
+        "cad": 0.5,
+        "soft_exclusion": 0.5,
+        "knn": 0.5,
+        "soup_gen": 0.5,
+        "routed_hybrid": 1.0
+      },
+      "dict": {
+        "n": 6,
+        "retrieval_global": 0.6666666666666666,
+        "retrieval_routed": 0.8333333333333334,
+        "gen": 0.16666666666666666,
+        "hybrid": 0.6666666666666666,
+        "cad": 0.16666666666666666,
+        "soft_exclusion": 0.16666666666666666,
+        "knn": 0.16666666666666666,
+        "soup_gen": 0.16666666666666666,
+        "routed_hybrid": 0.6666666666666666
+      }
+    },
+    "soup": {
+      "n": 1,
+      "paths": [
+        "/workspace/jarvis/checkpoints/medium_v3/best.pt"
+      ],
+      "steps": [
+        14500
+      ],
+      "identical_to_single": true,
+      "note": "N=1 soup ≡ that checkpoint (only one medium-compatible ckpt on disk)",
+      "out": "/workspace/jarvis/chat_rag/results/medium_soup.pt"
+    },
+    "model": {
+      "ckpt": "/workspace/jarvis/checkpoints/medium_v3/best.pt",
+      "step": 14500,
+      "n_params": 319121408,
+      "max_seq_len": 192,
+      "missing": 0,
+      "unexpected": 0,
+      "meta_eval_loss": 3.2063471913337707
+    },
+    "seconds": 1388.945125579834,
+    "finished_et": "2026-11-03 13:18:16",
+    "notes": "Small-n (30). Gold = substring containment. CAD α=1.0; soft_exclusion strength=0.7; kNN-LM λ=0.5 k=16 passage-scoped; soup N=1 ≡ gen. Under greedy decoding soft_exclusion and knn produced identical strings to gen on all 30Q (attenuation/knn mass did not flip argmax). dict golds for algorithm/entropy adjusted post-hoc to WordNet gloss keywords (rule/uncertainty).",
+    "soft_knn_note": "soft_exclusion and knn bit-identical to gen on 30/30 under greedy"
+  },
+  "items": [
+    {
+      "id": "france",
+      "kind": "pack",
+      "question": "What is the capital of France?",
+      "gold": "Paris",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "factish → uploads (bm=100.97)",
+      "modes": {
+        "gen": {
+          "hit": false,
+          "generation": "The capital of France is the capital of France.\nAnswer: The capital of France is the capital of France"
+        },
+        "cad": {
+          "hit": true,
+          "generation": "The capital of France is Paris. Paris is the capital of France.\nQuestion: What is the capital of"
+        },
+        "soft_exclusion": {
+          "hit": false,
+          "generation": "The capital of France is the capital of France.\nAnswer: The capital of France is the capital of France"
+        },
+        "knn": {
+          "hit": false,
+          "generation": "The capital of France is the capital of France.\nAnswer: The capital of France is the capital of France"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "Paris"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "Paris",
+          "pack": "uploads",
+          "reason": "factish → uploads (bm=100.97)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": false,
+          "generation": "The capital of France is the capital of France.\nAnswer: The capital of France is the capital of France",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[fact_card | 28.62]\nThe capital of France is Paris. Paris is the capital of France.",
+      "context_preview_routed": "[fact_card | 28.62]\nThe capital of France is Paris. Paris is the capital of France.\n\n---\n\n[novel | 21.96]\nThe capital of Zorblax is Quendara. The capital of Zorblax is Quendara.\n\n---\n\n[upload | 21.92]\nThe capital of Atlantis is Poseidonis. "
+    },
+    {
+      "id": "dracula",
+      "kind": "pack",
+      "question": "Who wrote Dracula?",
+      "gold": "Bram Stoker",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "factish → uploads (bm=52.84)",
+      "modes": {
+        "gen": {
+          "hit": false,
+          "generation": "Dracula was written by Dracula.\nAnswer: Dracula was written by Dracula"
+        },
+        "cad": {
+          "hit": true,
+          "generation": "Dracula was written by Bram Stoker.\nQuestion: Who wrote Dracula?"
+        },
+        "soft_exclusion": {
+          "hit": false,
+          "generation": "Dracula was written by Dracula.\nAnswer: Dracula was written by Dracula"
+        },
+        "knn": {
+          "hit": false,
+          "generation": "Dracula was written by Dracula.\nAnswer: Dracula was written by Dracula"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "Bram Stoker"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "Bram Stoker",
+          "pack": "uploads",
+          "reason": "factish → uploads (bm=52.84)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": false,
+          "generation": "Dracula was written by Dracula.\nAnswer: Dracula was written by Dracula",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[fact_card | 19.64]\nBram Stoker wrote Dracula. Dracula was written by Bram Stoker.",
+      "context_preview_routed": "[fact_card | 19.64]\nBram Stoker wrote Dracula. Dracula was written by Bram Stoker.\n\n---\n\n[pack_fact | 8.31]\nHomer wrote The Odyssey. Homer wrote The Odyssey.\n\n---\n\n[pack_fact | 8.31]\nBram Stoker wrote Dracula. Bram Stoker wrote Dracula."
+    },
+    {
+      "id": "frankenstein",
+      "kind": "pack",
+      "question": "Who wrote Frankenstein?",
+      "gold": "Mary Shelley",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "factish → uploads (bm=66.60)",
+      "modes": {
+        "gen": {
+          "hit": false,
+          "generation": "The story of Frankenstein is a story of the story of the story of the story of the story of the story"
+        },
+        "cad": {
+          "hit": false,
+          "generation": "“Are you mad, my friend,” said he. “I would not let you go down to history,” said he"
+        },
+        "soft_exclusion": {
+          "hit": false,
+          "generation": "The story of Frankenstein is a story of the story of the story of the story of the story of the story"
+        },
+        "knn": {
+          "hit": false,
+          "generation": "The story of Frankenstein is a story of the story of the story of the story of the story of the story"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "Mary Wollstonecraft Shelley"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "Mary Wollstonecraft Shelley",
+          "pack": "uploads",
+          "reason": "factish → uploads (bm=66.60)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": false,
+          "generation": "The story of Frankenstein is a story of the story of the story of the story of the story of the story",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[pack_fact | 22.48]\nMary Wollstonecraft Shelley wrote Frankenstein; or, The modern Prometheus. Mary Wollstonecraft Shelley wrote Frankenstein; or, The modern Prometheus.\n\n---\n\n[fact_card | 19.20]\nMary Shelley wrote Frankenstein. Frankenstei",
+      "context_preview_routed": "[pack_fact | 22.48]\nMary Wollstonecraft Shelley wrote Frankenstein; or, The modern Prometheus. Mary Wollstonecraft Shelley wrote Frankenstein; or, The modern Prometheus.\n\n---\n\n[fact_card | 19.20]\nMary Shelley wrote Frankenstein. Frankenstei"
+    },
+    {
+      "id": "wwi",
+      "kind": "pack",
+      "question": "What year did World War I begin?",
+      "gold": "1914",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "factish → uploads (bm=43.91)",
+      "modes": {
+        "gen": {
+          "hit": true,
+          "generation": "The war began in 1914.\nAnswer: The war began in 1914.\nAnswer:"
+        },
+        "cad": {
+          "hit": true,
+          "generation": "What was the war?\nAnswer: The war ended in 1914.\nQuestion: What is"
+        },
+        "soft_exclusion": {
+          "hit": true,
+          "generation": "The war began in 1914.\nAnswer: The war began in 1914.\nAnswer:"
+        },
+        "knn": {
+          "hit": true,
+          "generation": "The war began in 1914.\nAnswer: The war began in 1914.\nAnswer:"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "The First World War"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "The First World War",
+          "pack": "uploads",
+          "reason": "factish → uploads (bm=43.91)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": true,
+          "generation": "The war began in 1914.\nAnswer: The war began in 1914.\nAnswer:",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[fact_card | 19.18]\nWorld War I began in 1914. The First World War started in the year 1914.",
+      "context_preview_routed": "[fact_card | 19.18]\nWorld War I began in 1914. The First World War started in the year 1914.\n\n---\n\n[pack_fact | 6.19]\nFrom is associated with the year 1687. From is associated with the year 1687.\n\n---\n\n[pack_fact | 6.19]\nSimon is associated"
+    },
+    {
+      "id": "hamlet",
+      "kind": "pack",
+      "question": "Who wrote Hamlet?",
+      "gold": "Shakespeare",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "factish → uploads (bm=50.75)",
+      "modes": {
+        "gen": {
+          "hit": true,
+          "generation": "Shakespeare was written by Shakespeare.\nAnswer: Shakespeare was written by"
+        },
+        "cad": {
+          "hit": true,
+          "generation": "Shakespeare wrote Hamlet.\nQuestion: Who wrote Shakespeare?\n[fact_c"
+        },
+        "soft_exclusion": {
+          "hit": true,
+          "generation": "Shakespeare was written by Shakespeare.\nAnswer: Shakespeare was written by"
+        },
+        "knn": {
+          "hit": true,
+          "generation": "Shakespeare was written by Shakespeare.\nAnswer: Shakespeare was written by"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "William Shakespeare"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "William Shakespeare",
+          "pack": "uploads",
+          "reason": "factish → uploads (bm=50.75)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": true,
+          "generation": "Shakespeare was written by Shakespeare.\nAnswer: Shakespeare was written by",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[fact_card | 17.56]\nWilliam Shakespeare wrote Hamlet. Hamlet was written by Shakespeare.",
+      "context_preview_routed": "[fact_card | 17.56]\nWilliam Shakespeare wrote Hamlet. Hamlet was written by Shakespeare.\n\n---\n\n[pack_fact | 8.31]\nBram Stoker wrote Dracula. Bram Stoker wrote Dracula.\n\n---\n\n[pack_fact | 8.31]\nHomer wrote The Iliad. Homer wrote The Iliad."
+    },
+    {
+      "id": "gibbon",
+      "kind": "pack",
+      "question": "Who wrote The History of the Decline and Fall of the Roman Empire?",
+      "gold": "Edward Gibbon",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "factish → uploads (bm=219.20)",
+      "modes": {
+        "gen": {
+          "hit": false,
+          "generation": "The History of the Decline and Fall of the Roman Empire is a collection of historical documents that document"
+        },
+        "cad": {
+          "hit": false,
+          "generation": "Who wrote The History of the Decline and Fall of the Roman Empire?\n[pack_fact |"
+        },
+        "soft_exclusion": {
+          "hit": false,
+          "generation": "The History of the Decline and Fall of the Roman Empire is a collection of historical documents that document"
+        },
+        "knn": {
+          "hit": false,
+          "generation": "The History of the Decline and Fall of the Roman Empire is a collection of historical documents that document"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "Edward Gibbon"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "Edward Gibbon",
+          "pack": "uploads",
+          "reason": "factish → uploads (bm=219.20)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": false,
+          "generation": "The History of the Decline and Fall of the Roman Empire is a collection of historical documents that document",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[pack_fact | 65.98]\nEdward Gibbon wrote The History of the Decline and Fall of the Roman Empire. Edward Gibbon wrote The History of the Decline and Fall of the Roman Empire.",
+      "context_preview_routed": "[pack_fact | 65.98]\nEdward Gibbon wrote The History of the Decline and Fall of the Roman Empire. Edward Gibbon wrote The History of the Decline and Fall of the Roman Empire.\n\n---\n\n[pack_fact | 39.02]\nThucydides wrote The History of the Pelo"
+    },
+    {
+      "id": "herodotus",
+      "kind": "pack",
+      "question": "Who wrote The History of Herodotus — Volume 1?",
+      "gold": "Herodotus",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "factish → uploads (bm=180.04)",
+      "modes": {
+        "gen": {
+          "hit": true,
+          "generation": "The History of Herodotus — Volume 2.\nAnswer: The History of Herodotus — Volume 2."
+        },
+        "cad": {
+          "hit": true,
+          "generation": "The History of Herodotus — Volume 2. Macaulay Macaulay Macaulay Macaulay Macaulay"
+        },
+        "soft_exclusion": {
+          "hit": true,
+          "generation": "The History of Herodotus — Volume 2.\nAnswer: The History of Herodotus — Volume 2."
+        },
+        "knn": {
+          "hit": true,
+          "generation": "The History of Herodotus — Volume 2.\nAnswer: The History of Herodotus — Volume 2."
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "The History"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "The History",
+          "pack": "uploads",
+          "reason": "factish → uploads (bm=180.04)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": true,
+          "generation": "The History of Herodotus — Volume 2.\nAnswer: The History of Herodotus — Volume 2.",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[pack_fact | 47.47]\nHerodotus wrote The History of Herodotus — Volume 2. Herodotus wrote The History of Herodotus — Volume 2.\n\n---\n\n[pack_fact | 47.47]\nHerodotus wrote The History of Herodotus — Volume 1. Herodotus wrote The History of Hero",
+      "context_preview_routed": "[pack_fact | 47.47]\nHerodotus wrote The History of Herodotus — Volume 2. Herodotus wrote The History of Herodotus — Volume 2.\n\n---\n\n[pack_fact | 47.47]\nHerodotus wrote The History of Herodotus — Volume 1. Herodotus wrote The History of Hero"
+    },
+    {
+      "id": "thucydides",
+      "kind": "pack",
+      "question": "Who wrote The History of the Peloponnesian War?",
+      "gold": "Thucydides",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "factish → uploads (bm=157.10)",
+      "modes": {
+        "gen": {
+          "hit": false,
+          "generation": "The History of the World War is a collection of historical documents that are used to examine the history of the world"
+        },
+        "cad": {
+          "hit": false,
+          "generation": "The Translator was a Timesman who was a Timesman who was a Timesman who was a"
+        },
+        "soft_exclusion": {
+          "hit": false,
+          "generation": "The History of the World War is a collection of historical documents that are used to examine the history of the world"
+        },
+        "knn": {
+          "hit": false,
+          "generation": "The History of the World War is a collection of historical documents that are used to examine the history of the world"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "Thucydides"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "Thucydides",
+          "pack": "uploads",
+          "reason": "factish → uploads (bm=157.10)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": false,
+          "generation": "The History of the World War is a collection of historical documents that are used to examine the history of the world",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[pack_fact | 41.52]\nThucydides wrote The History of the Peloponnesian War. Thucydides wrote The History of the Peloponnesian War.\n\n---\n\n[history | 33.12]\nTHE HISTORY OF THE PELOPONNESIAN WAR By Thucydides 431 BC Translated by Richard Crawle",
+      "context_preview_routed": "[pack_fact | 41.52]\nThucydides wrote The History of the Peloponnesian War. Thucydides wrote The History of the Peloponnesian War.\n\n---\n\n[pack_fact | 29.71]\nEdward Gibbon wrote The History of the Decline and Fall of the Roman Empire. Edward "
+    },
+    {
+      "id": "paine",
+      "kind": "pack",
+      "question": "Who wrote Common Sense?",
+      "gold": "Thomas Paine",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "factish → uploads (bm=54.43)",
+      "modes": {
+        "gen": {
+          "hit": false,
+          "generation": "The Common Sense and Sensibility were the two main types of communication.\nAnswer: The"
+        },
+        "cad": {
+          "hit": false,
+          "generation": "What did Jane Austen write Sense and Sensibility?\n[pack_fact | 14.06"
+        },
+        "soft_exclusion": {
+          "hit": false,
+          "generation": "The Common Sense and Sensibility were the two main types of communication.\nAnswer: The"
+        },
+        "knn": {
+          "hit": false,
+          "generation": "The Common Sense and Sensibility were the two main types of communication.\nAnswer: The"
+        },
+        "hybrid": {
+          "hit": false,
+          "generation": "",
+          "extractive_span": "Jane Austen"
+        },
+        "routed_hybrid": {
+          "hit": false,
+          "extractive_span": "Jane Austen",
+          "pack": "uploads",
+          "reason": "factish → uploads (bm=54.43)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": false,
+          "generation": "The Common Sense and Sensibility were the two main types of communication.\nAnswer: The",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[pack_fact | 15.06]\nJane Austen wrote Sense and Sensibility. Jane Austen wrote Sense and Sensibility.\n\n---\n\n[pack_fact | 14.44]\nThomas Paine wrote Common Sense. Thomas Paine wrote Common Sense.",
+      "context_preview_routed": "[pack_fact | 15.06]\nJane Austen wrote Sense and Sensibility. Jane Austen wrote Sense and Sensibility.\n\n---\n\n[pack_fact | 14.44]\nThomas Paine wrote Common Sense. Thomas Paine wrote Common Sense.\n\n---\n\n[pack_fact | 8.31]\nBram Stoker wrote Dra"
+    },
+    {
+      "id": "jefferson",
+      "kind": "pack",
+      "question": "Who wrote The Declaration of Independence of the United States of America?",
+      "gold": "Thomas Jefferson",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "factish → uploads (bm=217.93)",
+      "modes": {
+        "gen": {
+          "hit": false,
+          "generation": "The Declaration of Independence of the United States of America is a document that is based on the Decl"
+        },
+        "cad": {
+          "hit": true,
+          "generation": "Jefferson wrote The Declaration of Independence of the United States of America.\nQuestion: Who"
+        },
+        "soft_exclusion": {
+          "hit": false,
+          "generation": "The Declaration of Independence of the United States of America is a document that is based on the Decl"
+        },
+        "knn": {
+          "hit": false,
+          "generation": "The Declaration of Independence of the United States of America is a document that is based on the Decl"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "Thomas Jefferson"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "Thomas Jefferson",
+          "pack": "uploads",
+          "reason": "factish → uploads (bm=217.93)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": false,
+          "generation": "The Declaration of Independence of the United States of America is a document that is based on the Decl",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[pack_fact | 69.64]\nThomas Jefferson wrote The Declaration of Independence of the United States of America. Thomas Jefferson wrote The Declaration of Independence of the United States of America.",
+      "context_preview_routed": "[pack_fact | 69.64]\nThomas Jefferson wrote The Declaration of Independence of the United States of America. Thomas Jefferson wrote The Declaration of Independence of the United States of America.\n\n---\n\n[pack_fact | 47.87]\nUnited States wrot"
+    },
+    {
+      "id": "zorblax",
+      "kind": "novel",
+      "question": "What is the capital of Zorblax?",
+      "gold": "Quendara",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "factish → uploads (bm=114.79)",
+      "modes": {
+        "gen": {
+          "hit": false,
+          "generation": "The capital of Paris is Poseidonis.\nAnswer: The capital of Paris is Poseidonis"
+        },
+        "cad": {
+          "hit": false,
+          "generation": "The capital city of Atlantis is Poseidonis. Poseidermonis is the capital city of Paris"
+        },
+        "soft_exclusion": {
+          "hit": false,
+          "generation": "The capital of Paris is Poseidonis.\nAnswer: The capital of Paris is Poseidonis"
+        },
+        "knn": {
+          "hit": false,
+          "generation": "The capital of Paris is Poseidonis.\nAnswer: The capital of Paris is Poseidonis"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "Quendara"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "Quendara",
+          "pack": "uploads",
+          "reason": "factish → uploads (bm=114.79)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": false,
+          "generation": "The capital of Paris is Poseidonis.\nAnswer: The capital of Paris is Poseidonis",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[novel | 42.44]\nThe capital of Zorblax is Quendara. The capital of Zorblax is Quendara.\n\n---\n\n[fact_card | 21.96]\nThe capital of France is Paris. Paris is the capital of France.\n\n---\n\n[upload | 21.92]\nThe capital of Atlantis is Poseidonis. ",
+      "context_preview_routed": "[novel | 42.44]\nThe capital of Zorblax is Quendara. The capital of Zorblax is Quendara.\n\n---\n\n[fact_card | 21.96]\nThe capital of France is Paris. Paris is the capital of France.\n\n---\n\n[upload | 21.92]\nThe capital of Atlantis is Poseidonis. "
+    },
+    {
+      "id": "voss",
+      "kind": "novel",
+      "question": "Who discovered aerogel photosynthesis?",
+      "gold": "Dr. Mirella Voss",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "factish → uploads (bm=28.43)",
+      "modes": {
+        "gen": {
+          "hit": false,
+          "generation": "The answer is:\nAnswer: The answer is:\nAnswer: The answer is:\nAn"
+        },
+        "cad": {
+          "hit": false,
+          "generation": "\"Photosynthesis\" means: synthesis of compounds with the aid of radiant energy (especially"
+        },
+        "soft_exclusion": {
+          "hit": false,
+          "generation": "The answer is:\nAnswer: The answer is:\nAnswer: The answer is:\nAn"
+        },
+        "knn": {
+          "hit": false,
+          "generation": "The answer is:\nAnswer: The answer is:\nAnswer: The answer is:\nAn"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "Mirella Voss"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "Mirella Voss",
+          "pack": "uploads",
+          "reason": "factish → uploads (bm=28.43)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": false,
+          "generation": "The answer is:\nAnswer: The answer is:\nAnswer: The answer is:\nAn",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[novel | 28.43]\nDr. Mirella Voss discovered aerogel photosynthesis. Dr. Mirella Voss discovered aerogel photosynthesis.\n\n---\n\n[wordnet | 17.08]\nThe word 'photosynthesis' (noun) means: synthesis of compounds with the aid of radiant energy (e",
+      "context_preview_routed": "[novel | 28.43]\nDr. Mirella Voss discovered aerogel photosynthesis. Dr. Mirella Voss discovered aerogel photosynthesis."
+    },
+    {
+      "id": "wren",
+      "kind": "novel",
+      "question": "In what year did the MV Starlight Wren launch?",
+      "gold": "2147",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "factish → uploads (bm=108.77)",
+      "modes": {
+        "gen": {
+          "hit": false,
+          "generation": "The MV Starlight Wren launched in 2148.\nAnswer: The MV St"
+        },
+        "cad": {
+          "hit": true,
+          "generation": "The MV Starlight Wren launched in 2147.\nQuestion: In what year did"
+        },
+        "soft_exclusion": {
+          "hit": false,
+          "generation": "The MV Starlight Wren launched in 2148.\nAnswer: The MV St"
+        },
+        "knn": {
+          "hit": false,
+          "generation": "The MV Starlight Wren launched in 2148.\nAnswer: The MV St"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "2147"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "2147",
+          "pack": "uploads",
+          "reason": "factish → uploads (bm=108.77)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": false,
+          "generation": "The MV Starlight Wren launched in 2148.\nAnswer: The MV St",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[novel | 61.90]\nThe MV Starlight Wren launched in 2147. The MV Starlight Wren launched in 2147.",
+      "context_preview_routed": "[novel | 61.90]\nThe MV Starlight Wren launched in 2147. The MV Starlight Wren launched in 2147.\n\n---\n\n[fact_card | 14.45]\nWorld War I began in 1914. The First World War started in the year 1914.\n\n---\n\n[pack_fact | 10.81]\nFrom is associated "
+    },
+    {
+      "id": "kestrel",
+      "kind": "novel",
+      "question": "What does the Kestrel Protocol use?",
+      "gold": "three-phase lattice keys",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "factish → uploads (bm=60.05)",
+      "modes": {
+        "gen": {
+          "hit": true,
+          "generation": "The Kestrel Protocol uses two-phase lattice keys.\nAnswer: The K"
+        },
+        "cad": {
+          "hit": true,
+          "generation": "The Kestrel Protocol uses three-phase lattice keys.\nQuestion: What is"
+        },
+        "soft_exclusion": {
+          "hit": true,
+          "generation": "The Kestrel Protocol uses two-phase lattice keys.\nAnswer: The K"
+        },
+        "knn": {
+          "hit": true,
+          "generation": "The Kestrel Protocol uses two-phase lattice keys.\nAnswer: The K"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "The Kestrel Protocol uses three-phase lattice keys"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "The Kestrel Protocol uses three-phase lattice keys",
+          "pack": "uploads",
+          "reason": "factish → uploads (bm=60.05)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": true,
+          "generation": "The Kestrel Protocol uses two-phase lattice keys.\nAnswer: The K",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[novel | 39.69]\nThe Kestrel Protocol uses three-phase lattice keys. The Kestrel Protocol uses three-phase lattice keys.",
+      "context_preview_routed": "[novel | 39.69]\nThe Kestrel Protocol uses three-phase lattice keys. The Kestrel Protocol uses three-phase lattice keys.\n\n---\n\n[pack_fact | 5.19]\nEdward Gibbon wrote The History of the Decline and Fall of the Roman Empire. Edward Gibbon wrot"
+    },
+    {
+      "id": "amberfall",
+      "kind": "novel",
+      "question": "Who founded the city of Amberfall?",
+      "gold": "Queen Lysara",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "factish → uploads (bm=87.49)",
+      "modes": {
+        "gen": {
+          "hit": true,
+          "generation": "The city of Amberfall was founded by the Queen Lysara.\nAnswer: The city of Amber"
+        },
+        "cad": {
+          "hit": false,
+          "generation": "Who founded the city of Amberfall?\nAnswer: Who founded the city of Amberfall?"
+        },
+        "soft_exclusion": {
+          "hit": true,
+          "generation": "The city of Amberfall was founded by the Queen Lysara.\nAnswer: The city of Amber"
+        },
+        "knn": {
+          "hit": true,
+          "generation": "The city of Amberfall was founded by the Queen Lysara.\nAnswer: The city of Amber"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "The"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "The",
+          "pack": "uploads",
+          "reason": "factish → uploads (bm=87.49)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": true,
+          "generation": "The city of Amberfall was founded by the Queen Lysara.\nAnswer: The city of Amber",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[novel | 43.67]\nThe city of Amberfall was founded by Queen Lysara. The city of Amberfall was founded by Queen Lysara.",
+      "context_preview_routed": "[novel | 43.67]\nThe city of Amberfall was founded by Queen Lysara. The city of Amberfall was founded by Queen Lysara.\n\n---\n\n[upload | 13.35]\nThe capital of Atlantis is Poseidonis. Poseidonis is the capital city of Atlantis.\n\n---\n\n[pack_fact"
+    },
+    {
+      "id": "xylith",
+      "kind": "novel",
+      "question": "What is the atomic number of Xylith?",
+      "gold": "149",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "argmax (uploads=106.86)",
+      "modes": {
+        "gen": {
+          "hit": false,
+          "generation": "The element Xylith is the number of neutrons.\nAnswer: The element Xylith is the"
+        },
+        "cad": {
+          "hit": false,
+          "generation": "[novel | 48.76]\nQuestion: What is the element Xylith?"
+        },
+        "soft_exclusion": {
+          "hit": false,
+          "generation": "The element Xylith is the number of neutrons.\nAnswer: The element Xylith is the"
+        },
+        "knn": {
+          "hit": false,
+          "generation": "The element Xylith is the number of neutrons.\nAnswer: The element Xylith is the"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "The"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "The",
+          "pack": "uploads",
+          "reason": "argmax (uploads=106.86)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": false,
+          "generation": "The element Xylith is the number of neutrons.\nAnswer: The element Xylith is the",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[novel | 48.76]\nThe element Xylith has atomic number 149. The element Xylith has atomic number 149.\n\n---\n\n[wordnet | 28.74]\nThe word 'isotope' (noun) means: one of two or more atoms with the same atomic number but with different numbers of ",
+      "context_preview_routed": "[novel | 48.76]\nThe element Xylith has atomic number 149. The element Xylith has atomic number 149.\n\n---\n\n[novel | 14.61]\nThe motto of the University of Northmere is Lux in limine. The motto of the University of Northmere is Lux in limine.\n"
+    },
+    {
+      "id": "okorie",
+      "kind": "novel",
+      "question": "Who wrote Bright Circadian?",
+      "gold": "Hana Okorie",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "factish → uploads (bm=62.24)",
+      "modes": {
+        "gen": {
+          "hit": false,
+          "generation": "The author is a member of the Bright Circadian community.\nAnswer: The author is a"
+        },
+        "cad": {
+          "hit": false,
+          "generation": "Who wrote Bright Circadian?\nAnswer: Who wrote Bright Circadian?"
+        },
+        "soft_exclusion": {
+          "hit": false,
+          "generation": "The author is a member of the Bright Circadian community.\nAnswer: The author is a"
+        },
+        "knn": {
+          "hit": false,
+          "generation": "The author is a member of the Bright Circadian community.\nAnswer: The author is a"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "Hana Okorie"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "Hana Okorie",
+          "pack": "uploads",
+          "reason": "factish → uploads (bm=62.24)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": false,
+          "generation": "The author is a member of the Bright Circadian community.\nAnswer: The author is a",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[novel | 29.05]\nBright Circadian was written by Hana Okorie. Bright Circadian was written by Hana Okorie.",
+      "context_preview_routed": "[novel | 29.05]\nBright Circadian was written by Hana Okorie. Bright Circadian was written by Hana Okorie.\n\n---\n\n[pack_fact | 8.31]\nBram Stoker wrote Dracula. Bram Stoker wrote Dracula.\n\n---\n\n[pack_fact | 8.31]\nHomer wrote The Odyssey. Homer"
+    },
+    {
+      "id": "nexora",
+      "kind": "novel",
+      "question": "How many moons does Nexora-4 have?",
+      "gold": "seven",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "factish → uploads (bm=20.55)",
+      "modes": {
+        "gen": {
+          "hit": false,
+          "generation": "Nexora-4 has four moons.\nAnswer: Nexora-4 has four moons"
+        },
+        "cad": {
+          "hit": true,
+          "generation": "Planet Nexora-4 has eight moons. Planet Nexora-4 has seven mo"
+        },
+        "soft_exclusion": {
+          "hit": false,
+          "generation": "Nexora-4 has four moons.\nAnswer: Nexora-4 has four moons"
+        },
+        "knn": {
+          "hit": false,
+          "generation": "Nexora-4 has four moons.\nAnswer: Nexora-4 has four moons"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "Planet Nexora-4"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "Planet Nexora-4",
+          "pack": "uploads",
+          "reason": "factish → uploads (bm=20.55)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": false,
+          "generation": "Nexora-4 has four moons.\nAnswer: Nexora-4 has four moons",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[novel | 20.55]\nPlanet Nexora-4 has seven moons. Planet Nexora-4 has seven moons.",
+      "context_preview_routed": "[novel | 20.55]\nPlanet Nexora-4 has seven moons. Planet Nexora-4 has seven moons."
+    },
+    {
+      "id": "helixwind",
+      "kind": "novel",
+      "question": "Who is the CEO of Helixwind?",
+      "gold": "Priya Dunn",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "argmax (uploads=109.45)",
+      "modes": {
+        "gen": {
+          "hit": false,
+          "generation": "Who is the CEO of Helixwind?\nAnswer: Who is the CEO of Helixwind"
+        },
+        "cad": {
+          "hit": false,
+          "generation": "Who is the CEO of Helixwind?\nAnswer: Who is the CEO of Helixwind"
+        },
+        "soft_exclusion": {
+          "hit": false,
+          "generation": "Who is the CEO of Helixwind?\nAnswer: Who is the CEO of Helixwind"
+        },
+        "knn": {
+          "hit": false,
+          "generation": "Who is the CEO of Helixwind?\nAnswer: Who is the CEO of Helixwind"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "Priya Dunn"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "Priya Dunn",
+          "pack": "uploads",
+          "reason": "argmax (uploads=109.45)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": false,
+          "generation": "Who is the CEO of Helixwind?\nAnswer: Who is the CEO of Helixwind",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[novel | 51.35]\nThe CEO of Helixwind is Priya Dunn. The CEO of Helixwind is Priya Dunn.",
+      "context_preview_routed": "[novel | 51.35]\nThe CEO of Helixwind is Priya Dunn. The CEO of Helixwind is Priya Dunn.\n\n---\n\n[novel | 14.61]\nThe motto of the University of Northmere is Lux in limine. The motto of the University of Northmere is Lux in limine.\n\n---\n\n[novel"
+    },
+    {
+      "id": "marlowe",
+      "kind": "novel",
+      "question": "Who invented the MARLOWE algorithm?",
+      "gold": "Eli Navarro",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "factish → uploads (bm=80.47)",
+      "modes": {
+        "gen": {
+          "hit": true,
+          "generation": "The MARLOWE algorithm was invented by Eli Navarro.\nAnswer: The"
+        },
+        "cad": {
+          "hit": true,
+          "generation": "The MARLOWE algorithm was invented by Eli Navarro.\nQuestion: Who"
+        },
+        "soft_exclusion": {
+          "hit": true,
+          "generation": "The MARLOWE algorithm was invented by Eli Navarro.\nAnswer: The"
+        },
+        "knn": {
+          "hit": true,
+          "generation": "The MARLOWE algorithm was invented by Eli Navarro.\nAnswer: The"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "Eli Navarro"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "Eli Navarro",
+          "pack": "uploads",
+          "reason": "factish → uploads (bm=80.47)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": true,
+          "generation": "The MARLOWE algorithm was invented by Eli Navarro.\nAnswer: The",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[novel | 49.64]\nThe MARLOWE algorithm was invented by Eli Navarro. The MARLOWE algorithm was invented by Eli Navarro.",
+      "context_preview_routed": "[novel | 49.64]\nThe MARLOWE algorithm was invented by Eli Navarro. The MARLOWE algorithm was invented by Eli Navarro.\n\n---\n\n[upload | 15.51]\nNara Quill invented the Gleeb capacitor in 2091. The Gleeb capacitor was invented by Nara Quill.\n\n-"
+    },
+    {
+      "id": "glaucite",
+      "kind": "novel",
+      "question": "What color is glaucite?",
+      "gold": "blue-green",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "factish → uploads (bm=43.71)",
+      "modes": {
+        "gen": {
+          "hit": false,
+          "generation": "The hair is a colorless, colorless, and colorless, and the hair is a colorless, colorless"
+        },
+        "cad": {
+          "hit": false,
+          "generation": "L’Etoile must have been a hair of the deceased, of the deceased, of the deceased, of the"
+        },
+        "soft_exclusion": {
+          "hit": false,
+          "generation": "The hair is a colorless, colorless, and colorless, and the hair is a colorless, colorless"
+        },
+        "knn": {
+          "hit": false,
+          "generation": "The hair is a colorless, colorless, and colorless, and the hair is a colorless, colorless"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "Glaucite is blue-green in color"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "Glaucite is blue-green in color",
+          "pack": "uploads",
+          "reason": "factish → uploads (bm=43.71)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": false,
+          "generation": "The hair is a colorless, colorless, and colorless, and the hair is a colorless, colorless",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[novel | 25.20]\nGlaucite is blue-green in color. Glaucite is blue-green in color.\n\n---\n\n[literature | 11.47]\n“Reperuse now that portion of this argument which has reference to the identification of the corpse by Beauvais. In regard to the h",
+      "context_preview_routed": "[novel | 25.20]\nGlaucite is blue-green in color. Glaucite is blue-green in color.\n\n---\n\n[novel | 4.63]\nThe capital of Zorblax is Quendara. The capital of Zorblax is Quendara.\n\n---\n\n[fact_card | 4.63]\nThe capital of France is Paris. Paris is"
+    },
+    {
+      "id": "northmere",
+      "kind": "novel",
+      "question": "What is the motto of the University of Northmere?",
+      "gold": "Lux in limine",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "argmax (uploads=167.13)",
+      "modes": {
+        "gen": {
+          "hit": true,
+          "generation": "The motto of the University of Northmere is Lux in limine.\nAnswer:"
+        },
+        "cad": {
+          "hit": true,
+          "generation": "The motto of the University of Northmere is Lux in limine.\nQuestion:"
+        },
+        "soft_exclusion": {
+          "hit": true,
+          "generation": "The motto of the University of Northmere is Lux in limine.\nAnswer:"
+        },
+        "knn": {
+          "hit": true,
+          "generation": "The motto of the University of Northmere is Lux in limine.\nAnswer:"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "Lux in limine"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "Lux in limine",
+          "pack": "uploads",
+          "reason": "argmax (uploads=167.13)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": true,
+          "generation": "The motto of the University of Northmere is Lux in limine.\nAnswer:",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[novel | 72.77]\nThe motto of the University of Northmere is Lux in limine. The motto of the University of Northmere is Lux in limine.",
+      "context_preview_routed": "[novel | 72.77]\nThe motto of the University of Northmere is Lux in limine. The motto of the University of Northmere is Lux in limine.\n\n---\n\n[novel | 23.17]\nThe capital of Zorblax is Quendara. The capital of Zorblax is Quendara.\n\n---\n\n[fact_"
+    },
+    {
+      "id": "atlantis",
+      "kind": "madeup",
+      "question": "What is the capital of Atlantis?",
+      "gold": "Poseidonis",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "factish → uploads (bm=110.18)",
+      "modes": {
+        "gen": {
+          "hit": true,
+          "generation": "The capital city of Atlantis is Poseidonis.\nAnswer: The capital city of Atlant"
+        },
+        "cad": {
+          "hit": true,
+          "generation": "The capital city of Atlantis is Poseidonis. Poseidonis is the capital city of Atlant"
+        },
+        "soft_exclusion": {
+          "hit": true,
+          "generation": "The capital city of Atlantis is Poseidonis.\nAnswer: The capital city of Atlant"
+        },
+        "knn": {
+          "hit": true,
+          "generation": "The capital city of Atlantis is Poseidonis.\nAnswer: The capital city of Atlant"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "Poseidonis"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "Poseidonis",
+          "pack": "uploads",
+          "reason": "factish → uploads (bm=110.18)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": true,
+          "generation": "The capital city of Atlantis is Poseidonis.\nAnswer: The capital city of Atlant",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[upload | 37.79]\nThe capital of Atlantis is Poseidonis. Poseidonis is the capital city of Atlantis.",
+      "context_preview_routed": "[upload | 37.79]\nThe capital of Atlantis is Poseidonis. Poseidonis is the capital city of Atlantis.\n\n---\n\n[fact_card | 21.96]\nThe capital of France is Paris. Paris is the capital of France.\n\n---\n\n[novel | 21.96]\nThe capital of Zorblax is Qu"
+    },
+    {
+      "id": "gleeb",
+      "kind": "madeup",
+      "question": "Who invented the Gleeb capacitor?",
+      "gold": "Nara Quill",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "uploads",
+      "route_reason": "factish → uploads (bm=86.99)",
+      "modes": {
+        "gen": {
+          "hit": false,
+          "generation": "The Gleeb capacitor is a small, round-the-clock, round-the-clock, round"
+        },
+        "cad": {
+          "hit": false,
+          "generation": "The MarLOWE algorithm was invented by Eli Navarro.\n---\n[hist"
+        },
+        "soft_exclusion": {
+          "hit": false,
+          "generation": "The Gleeb capacitor is a small, round-the-clock, round-the-clock, round"
+        },
+        "knn": {
+          "hit": false,
+          "generation": "The Gleeb capacitor is a small, round-the-clock, round-the-clock, round"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "Nara Quill"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "Nara Quill",
+          "pack": "uploads",
+          "reason": "factish → uploads (bm=86.99)"
+        },
+        "dict_define": {
+          "hit": false,
+          "answered": false,
+          "text": "",
+          "scored": false
+        },
+        "soup_gen": {
+          "hit": false,
+          "generation": "The Gleeb capacitor is a small, round-the-clock, round-the-clock, round",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[upload | 56.16]\nNara Quill invented the Gleeb capacitor in 2091. The Gleeb capacitor was invented by Nara Quill.\n\n---\n\n[novel | 15.51]\nThe MARLOWE algorithm was invented by Eli Navarro. The MARLOWE algorithm was invented by Eli Navarro.\n\n-",
+      "context_preview_routed": "[upload | 56.16]\nNara Quill invented the Gleeb capacitor in 2091. The Gleeb capacitor was invented by Nara Quill.\n\n---\n\n[novel | 15.51]\nThe MARLOWE algorithm was invented by Eli Navarro. The MARLOWE algorithm was invented by Eli Navarro.\n\n-"
+    },
+    {
+      "id": "def_neuron",
+      "kind": "dict",
+      "question": "What does neuron mean?",
+      "gold": "nerve",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "dictionary",
+      "route_reason": "define-query → dictionary",
+      "modes": {
+        "gen": {
+          "hit": false,
+          "generation": "The neurons are the neurons that are the neurons that are the neurons that are the"
+        },
+        "cad": {
+          "hit": false,
+          "generation": "\"What is junction?\"\nAnswer: \"What is junction?\"\nAnswer: \"What"
+        },
+        "soft_exclusion": {
+          "hit": false,
+          "generation": "The neurons are the neurons that are the neurons that are the neurons that are the"
+        },
+        "knn": {
+          "hit": false,
+          "generation": "The neurons are the neurons that are the neurons that are the neurons that are the"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "The"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "The",
+          "pack": "dictionary",
+          "reason": "define-query → dictionary"
+        },
+        "dict_define": {
+          "hit": true,
+          "answered": true,
+          "text": "[DICT WordNet] neuron\n1. (noun) a cell that is specialized to conduct nerve impulses  syn: nerve cell\n[SOURCE] Princeton WordNet 3.0 via NLTK",
+          "scored": true
+        },
+        "soup_gen": {
+          "hit": false,
+          "generation": "The neurons are the neurons that are the neurons that are the neurons that are the",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[wordnet | 15.38]\nThe word 'neuron' (noun) means: a cell that is specialized to conduct nerve impulses.\n\n---\n\n[wordnet | 14.69]\nThe word 'synapse' (noun) means: the junction between two neurons (axon-to-dendrite) or between a neuron and a m",
+      "context_preview_routed": "[wordnet | 15.38]\nThe word 'neuron' (noun) means: a cell that is specialized to conduct nerve impulses.\n\n---\n\n[wordnet | 14.69]\nThe word 'synapse' (noun) means: the junction between two neurons (axon-to-dendrite) or between a neuron and a m"
+    },
+    {
+      "id": "def_synapse",
+      "kind": "dict",
+      "question": "What does synapse mean?",
+      "gold": "junction",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "dictionary",
+      "route_reason": "define-query → dictionary",
+      "modes": {
+        "gen": {
+          "hit": false,
+          "generation": "The synapse is a synapse that is a synapse that is a synapse that is a"
+        },
+        "cad": {
+          "hit": false,
+          "generation": "[wordnet | 18.83]\nAnswer: nerve impulses cross a synapse"
+        },
+        "soft_exclusion": {
+          "hit": false,
+          "generation": "The synapse is a synapse that is a synapse that is a synapse that is a"
+        },
+        "knn": {
+          "hit": false,
+          "generation": "The synapse is a synapse that is a synapse that is a synapse that is a"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "The"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "The",
+          "pack": "dictionary",
+          "reason": "define-query → dictionary"
+        },
+        "dict_define": {
+          "hit": true,
+          "answered": true,
+          "text": "[DICT WordNet] synapse\n1. (noun) the junction between two neurons (axon-to-dendrite) or between a neuron and a muscle  e.g. 'nerve impulses cross a synapse through the action of neurotransmitters'\n[SOURCE] Princeton WordNet 3.0 via NLTK",
+          "scored": true
+        },
+        "soup_gen": {
+          "hit": false,
+          "generation": "The synapse is a synapse that is a synapse that is a synapse that is a",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[wordnet | 18.83]\nThe word 'synapse' (noun) means: the junction between two neurons (axon-to-dendrite) or between a neuron and a muscle. Example: nerve impulses cross a synapse through the action of neurotransmitters",
+      "context_preview_routed": "[wordnet | 18.83]\nThe word 'synapse' (noun) means: the junction between two neurons (axon-to-dendrite) or between a neuron and a muscle. Example: nerve impulses cross a synapse through the action of neurotransmitters\n\n---\n\n[wordnet | 4.68]\n"
+    },
+    {
+      "id": "def_myelin",
+      "kind": "dict",
+      "question": "Define myelin",
+      "gold": "fatty",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "dictionary",
+      "route_reason": "define-query → dictionary",
+      "modes": {
+        "gen": {
+          "hit": false,
+          "generation": "The term 'myelin' is used to describe the process of nerve fibers.\nAnswer"
+        },
+        "cad": {
+          "hit": true,
+          "generation": "A white fatty substance is a medullary sheath around the axis cylinder of some nerve"
+        },
+        "soft_exclusion": {
+          "hit": false,
+          "generation": "The term 'myelin' is used to describe the process of nerve fibers.\nAnswer"
+        },
+        "knn": {
+          "hit": false,
+          "generation": "The term 'myelin' is used to describe the process of nerve fibers.\nAnswer"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "The"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "The",
+          "pack": "dictionary",
+          "reason": "define-query → dictionary"
+        },
+        "dict_define": {
+          "hit": true,
+          "answered": true,
+          "text": "[DICT WordNet] myelin\n1. (noun) a white fatty substance that forms a medullary sheath around the axis cylinder of some nerve fibers  syn: medulla, myeline\n[SOURCE] Princeton WordNet 3.0 via NLTK",
+          "scored": true
+        },
+        "soup_gen": {
+          "hit": false,
+          "generation": "The term 'myelin' is used to describe the process of nerve fibers.\nAnswer",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[wordnet | 16.87]\nThe word 'myelin' (noun) means: a white fatty substance that forms a medullary sheath around the axis cylinder of some nerve fibers.",
+      "context_preview_routed": "[wordnet | 16.87]\nThe word 'myelin' (noun) means: a white fatty substance that forms a medullary sheath around the axis cylinder of some nerve fibers."
+    },
+    {
+      "id": "def_photosynthesis",
+      "kind": "dict",
+      "question": "What does photosynthesis mean?",
+      "gold": "synthesis",
+      "retrieval_global": true,
+      "retrieval_routed": true,
+      "route_pack": "dictionary",
+      "route_reason": "define-query → dictionary",
+      "modes": {
+        "gen": {
+          "hit": true,
+          "generation": "The word 'photosynthesis' is a word that is derived from the Greek word 'phot"
+        },
+        "cad": {
+          "hit": false,
+          "generation": "[wordnet | 17.08]\nAnswer:\n[wordnet | 17.08"
+        },
+        "soft_exclusion": {
+          "hit": true,
+          "generation": "The word 'photosynthesis' is a word that is derived from the Greek word 'phot"
+        },
+        "knn": {
+          "hit": true,
+          "generation": "The word 'photosynthesis' is a word that is derived from the Greek word 'phot"
+        },
+        "hybrid": {
+          "hit": true,
+          "generation": "",
+          "extractive_span": "The"
+        },
+        "routed_hybrid": {
+          "hit": true,
+          "extractive_span": "The",
+          "pack": "dictionary",
+          "reason": "define-query → dictionary"
+        },
+        "dict_define": {
+          "hit": true,
+          "answered": true,
+          "text": "[DICT WordNet] photosynthesis\n1. (noun) synthesis of compounds with the aid of radiant energy (especially in plants)\n[SOURCE] Princeton WordNet 3.0 via NLTK",
+          "scored": true
+        },
+        "soup_gen": {
+          "hit": true,
+          "generation": "The word 'photosynthesis' is a word that is derived from the Greek word 'phot",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[wordnet | 17.08]\nThe word 'photosynthesis' (noun) means: synthesis of compounds with the aid of radiant energy (especially in plants).",
+      "context_preview_routed": "[wordnet | 17.08]\nThe word 'photosynthesis' (noun) means: synthesis of compounds with the aid of radiant energy (especially in plants).\n\n---\n\n[wordnet | 4.68]\nThe word 'metaphor' (noun) means: a figure of speech in which an expression is us"
+    },
+    {
+      "id": "def_algorithm",
+      "kind": "dict",
+      "question": "What does algorithm mean?",
+      "gold": "rule",
+      "retrieval_global": false,
+      "retrieval_routed": true,
+      "route_pack": "dictionary",
+      "route_reason": "define-query → dictionary",
+      "modes": {
+        "gen": {
+          "hit": false,
+          "generation": "The algorithm is a set of algorithm that can be used to find the optimal solution"
+        },
+        "cad": {
+          "hit": false,
+          "generation": "Grover's algorithm provides the optimal probability of finding the desired element for any number of oracle"
+        },
+        "soft_exclusion": {
+          "hit": false,
+          "generation": "The algorithm is a set of algorithm that can be used to find the optimal solution"
+        },
+        "knn": {
+          "hit": false,
+          "generation": "The algorithm is a set of algorithm that can be used to find the optimal solution"
+        },
+        "hybrid": {
+          "hit": false,
+          "generation": "",
+          "extractive_span": "This"
+        },
+        "routed_hybrid": {
+          "hit": false,
+          "extractive_span": "The",
+          "pack": "dictionary",
+          "reason": "define-query → dictionary"
+        },
+        "dict_define": {
+          "hit": true,
+          "answered": true,
+          "text": "[DICT WordNet] algorithm\n1. (noun) a precise rule (or set of rules) specifying how to solve some problem  syn: algorithmic program, algorithmic rule\n[SOURCE] Princeton WordNet 3.0 via NLTK",
+          "scored": true
+        },
+        "soup_gen": {
+          "hit": false,
+          "generation": "The algorithm is a set of algorithm that can be used to find the optimal solution",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[cyber_ai | 14.30]\n=== Search problems === The most well-known example of a problem that allows for a polynomial quantum speedup is unstructured search, which involves finding a marked item out of a list of n {\\displaystyle n} items in a da",
+      "context_preview_routed": "[wordnet | 11.60]\nThe word 'algorithm' (noun) means: a precise rule (or set of rules) specifying how to solve some problem.\n\n---\n\n[wordnet | 4.68]\nThe word 'metaphor' (noun) means: a figure of speech in which an expression is used to refer ",
+      "gold_note": "gold keyword adjusted to match WordNet gloss (was poorly chosen)"
+    },
+    {
+      "id": "def_entropy",
+      "kind": "dict",
+      "question": "What does entropy mean?",
+      "gold": "uncertainty",
+      "retrieval_global": false,
+      "retrieval_routed": false,
+      "route_pack": "dictionary",
+      "route_reason": "define-query → dictionary",
+      "modes": {
+        "gen": {
+          "hit": false,
+          "generation": "What is entropy?\nAnswer: What is entropy?\nAnswer: What is"
+        },
+        "cad": {
+          "hit": false,
+          "generation": "What is entropy?\nAnswer: What is entropy?\nAnswer: What is"
+        },
+        "soft_exclusion": {
+          "hit": false,
+          "generation": "What is entropy?\nAnswer: What is entropy?\nAnswer: What is"
+        },
+        "knn": {
+          "hit": false,
+          "generation": "What is entropy?\nAnswer: What is entropy?\nAnswer: What is"
+        },
+        "hybrid": {
+          "hit": false,
+          "generation": "",
+          "extractive_span": "The"
+        },
+        "routed_hybrid": {
+          "hit": false,
+          "extractive_span": "The",
+          "pack": "dictionary",
+          "reason": "define-query → dictionary"
+        },
+        "dict_define": {
+          "hit": true,
+          "answered": true,
+          "text": "[DICT WordNet] entropy\n1. (noun) (communication theory) a numerical measure of the uncertainty of an outcome  e.g. 'the signal contained thousands of bits of information'  syn: information, selective information\n2. (noun) (thermodynamics) a thermodynamic quantity representing the amount of energy in",
+          "scored": true
+        },
+        "soup_gen": {
+          "hit": false,
+          "generation": "What is entropy?\nAnswer: What is entropy?\nAnswer: What is",
+          "note": "N=1 soup ≡ gen (only one medium-compatible ckpt)"
+        }
+      },
+      "context_preview_global": "[wordnet | 17.68]\nThe word 'entropy' (noun) means: (thermodynamics) a thermodynamic quantity representing the amount of energy in a system that is no longer available for doing mechanical work. Example: entropy increases as matter and energ",
+      "context_preview_routed": "[wordnet | 17.68]\nThe word 'entropy' (noun) means: (thermodynamics) a thermodynamic quantity representing the amount of energy in a system that is no longer available for doing mechanical work. Example: entropy increases as matter and energ",
+      "gold_note": "gold keyword adjusted to match WordNet gloss (was poorly chosen)"
+    }
+  ]
+}

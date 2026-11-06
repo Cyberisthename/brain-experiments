@@ -1,0 +1,2487 @@
+{
+  "version": "reason-sort-v1",
+  "finished_et": "2026-11-06 07:37:31 ET",
+  "default": "cad_hybrid (unchanged; reason is opt-in)",
+  "full_eval_30q": {
+    "summary": {
+      "n": 30,
+      "correct": 25,
+      "accuracy": 0.8333333333333334,
+      "answered": 25,
+      "coverage": 0.8333333333333334,
+      "confident_wrong_among_answered": 0.0,
+      "wrong_answered": 0
+    },
+    "live_extractive_wordnet_baseline": {
+      "n": 30,
+      "correct": 22,
+      "accuracy": 0.7333333333333333,
+      "answered": 30,
+      "coverage": 1.0,
+      "confident_wrong_among_answered": 0.26666666666666666,
+      "wrong_answered": 8
+    },
+    "live_retrieval": {
+      "n": 30,
+      "hit_rate": 1.0
+    },
+    "items": [
+      {
+        "id": "france",
+        "kind": "pack",
+        "question": "What is the capital of France?",
+        "gold": "Paris",
+        "reason_answer": "Paris",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used card_france [uploads, query overlap 100%]: The capital of France is Paris.",
+          "Grouped 2 related statement(s); no parsed same-slot conflict found.",
+          "Skipped novel_00: weak/off-topic query overlap (50%).",
+          "Skipped madeup_atlantis: weak/off-topic query overlap (50%)."
+        ],
+        "support": "The capital of France is Paris.",
+        "groups": [
+          {
+            "slot": [
+              "copula",
+              [
+                "capital",
+                "france"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "card_france",
+                "source": "fact_card",
+                "sentence": "The capital of France is Paris.",
+                "value": "Paris",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "slot": [
+              "copula",
+              [
+                "paris"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "card_france",
+                "source": "fact_card",
+                "sentence": "Paris is the capital of France.",
+                "value": "the capital of France",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "Paris",
+        "baseline_abstain": false,
+        "baseline_correct": true,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "card_france",
+          "novel_00",
+          "madeup_atlantis"
+        ]
+      },
+      {
+        "id": "dracula",
+        "kind": "pack",
+        "question": "Who wrote Dracula?",
+        "gold": "Bram Stoker",
+        "reason_answer": "Bram Stoker",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used card_dracula [uploads, query overlap 100%]: Bram Stoker wrote Dracula.",
+          "Grouped 3 related statement(s); no parsed same-slot conflict found.",
+          "Skipped who_literature_10: weak/off-topic query overlap (50%)."
+        ],
+        "support": "Bram Stoker wrote Dracula.",
+        "groups": [
+          {
+            "slot": [
+              "author",
+              [
+                "dracula"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "card_dracula",
+                "source": "fact_card",
+                "sentence": "Bram Stoker wrote Dracula.",
+                "value": "Bram Stoker",
+                "coverage": 1.0,
+                "uncertain": false
+              },
+              {
+                "id": "card_dracula",
+                "source": "fact_card",
+                "sentence": "Dracula was written by Bram Stoker.",
+                "value": "Bram Stoker",
+                "coverage": 1.0,
+                "uncertain": false
+              },
+              {
+                "id": "who_literature_85",
+                "source": "pack_fact",
+                "sentence": "Bram Stoker wrote Dracula.",
+                "value": "Bram Stoker",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "Bram Stoker",
+        "baseline_abstain": false,
+        "baseline_correct": true,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "card_dracula",
+          "who_literature_85",
+          "who_literature_10"
+        ]
+      },
+      {
+        "id": "frankenstein",
+        "kind": "pack",
+        "question": "Who wrote Frankenstein?",
+        "gold": "Mary Shelley",
+        "reason_answer": "Mary Shelley",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used card_frankenstein [uploads, query overlap 100%]: Mary Shelley wrote Frankenstein.",
+          "Grouped 3 related statement(s); no parsed same-slot conflict found.",
+          "Skipped who_literature_10: weak/off-topic query overlap (50%)."
+        ],
+        "support": "Mary Shelley wrote Frankenstein.",
+        "groups": [
+          {
+            "slot": [
+              "author",
+              [
+                "frankenstein"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "card_frankenstein",
+                "source": "fact_card",
+                "sentence": "Mary Shelley wrote Frankenstein.",
+                "value": "Mary Shelley",
+                "coverage": 1.0,
+                "uncertain": false
+              },
+              {
+                "id": "card_frankenstein",
+                "source": "fact_card",
+                "sentence": "Frankenstein was written by Mary Shelley (Mary Wollstonecraft Shelley).",
+                "value": "Mary Shelley (Mary Wollstonecraft Shelley)",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "slot": [
+              "author",
+              [
+                "frankenstein",
+                "modern",
+                "prometheus"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "who_literature_50",
+                "source": "pack_fact",
+                "sentence": "Mary Wollstonecraft Shelley wrote Frankenstein; or, The modern Prometheus.",
+                "value": "Mary Wollstonecraft Shelley",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "Mary Wollstonecraft Shelley",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "who_literature_50",
+          "card_frankenstein",
+          "who_literature_10"
+        ]
+      },
+      {
+        "id": "wwi",
+        "kind": "pack",
+        "question": "What year did World War I begin?",
+        "gold": "1914",
+        "reason_answer": "1914",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used card_wwi [uploads, query overlap 100%]: The First World War started in the year 1914.",
+          "Grouped 1 related statement(s); no parsed same-slot conflict found.",
+          "Skipped year_208: weak/off-topic query overlap (25%).",
+          "Skipped year_207: weak/off-topic query overlap (25%).",
+          "Skipped other relevant statements: different slot or lower relevance."
+        ],
+        "support": "The First World War started in the year 1914.",
+        "groups": [
+          {
+            "slot": [
+              "overlap",
+              [
+                "begin",
+                "war",
+                "world",
+                "year"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "card_wwi",
+                "source": "fact_card",
+                "sentence": "The First World War started in the year 1914.",
+                "value": null,
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "slot": [
+              "overlap",
+              [
+                "begin",
+                "war",
+                "world"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "card_wwi",
+                "source": "fact_card",
+                "sentence": "World War I began in 1914.",
+                "value": null,
+                "coverage": 0.75,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "The First World War",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "card_wwi",
+          "year_207",
+          "year_208"
+        ]
+      },
+      {
+        "id": "hamlet",
+        "kind": "pack",
+        "question": "Who wrote Hamlet?",
+        "gold": "Shakespeare",
+        "reason_answer": "William Shakespeare",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used card_hamlet [uploads, query overlap 100%]: William Shakespeare wrote Hamlet.",
+          "Grouped 2 related statement(s); no parsed same-slot conflict found.",
+          "Skipped who_literature_5: weak/off-topic query overlap (50%).",
+          "Skipped who_literature_85: weak/off-topic query overlap (50%)."
+        ],
+        "support": "William Shakespeare wrote Hamlet.",
+        "groups": [
+          {
+            "slot": [
+              "author",
+              [
+                "hamlet"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "card_hamlet",
+                "source": "fact_card",
+                "sentence": "William Shakespeare wrote Hamlet.",
+                "value": "William Shakespeare",
+                "coverage": 1.0,
+                "uncertain": false
+              },
+              {
+                "id": "card_hamlet",
+                "source": "fact_card",
+                "sentence": "Hamlet was written by Shakespeare.",
+                "value": "Shakespeare",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "William Shakespeare",
+        "baseline_abstain": false,
+        "baseline_correct": true,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "card_hamlet",
+          "who_literature_85",
+          "who_literature_5"
+        ]
+      },
+      {
+        "id": "gibbon",
+        "kind": "pack",
+        "question": "Who wrote The History of the Decline and Fall of the Roman Empire?",
+        "gold": "Edward Gibbon",
+        "reason_answer": "Edward Gibbon",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used who_history_110 [uploads, query overlap 100%]: Edward Gibbon wrote The History of the Decline and Fall of the Roman Empire.",
+          "Grouped 1 related statement(s); no parsed same-slot conflict found.",
+          "Skipped who_history_125: weak/off-topic query overlap (33%).",
+          "Skipped who_history_163: weak/off-topic query overlap (33%)."
+        ],
+        "support": "Edward Gibbon wrote The History of the Decline and Fall of the Roman Empire.",
+        "groups": [
+          {
+            "slot": [
+              "author",
+              [
+                "decline",
+                "empire",
+                "fall",
+                "history",
+                "roman"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "who_history_110",
+                "source": "pack_fact",
+                "sentence": "Edward Gibbon wrote The History of the Decline and Fall of the Roman Empire.",
+                "value": "Edward Gibbon",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "Edward Gibbon",
+        "baseline_abstain": false,
+        "baseline_correct": true,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "who_history_110",
+          "who_history_125",
+          "who_history_163"
+        ]
+      },
+      {
+        "id": "herodotus",
+        "kind": "pack",
+        "question": "Who wrote The History of Herodotus \u2014 Volume 1?",
+        "gold": "Herodotus",
+        "reason_answer": "",
+        "reason_abstain": true,
+        "decision": "weak",
+        "reason_correct": false,
+        "trace": [
+          "Relevant statement found, but no extractive span above threshold."
+        ],
+        "support": null,
+        "groups": [
+          {
+            "slot": [
+              "author",
+              [
+                "herodotus",
+                "history",
+                "volume"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "who_history_115",
+                "source": "pack_fact",
+                "sentence": "Herodotus wrote The History of Herodotus \u2014 Volume 1.",
+                "value": "Herodotus",
+                "coverage": 1.0,
+                "uncertain": false
+              },
+              {
+                "id": "who_history_120",
+                "source": "pack_fact",
+                "sentence": "Herodotus wrote The History of Herodotus \u2014 Volume 2.",
+                "value": "Herodotus",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "slot": [
+              "author",
+              [
+                "accession",
+                "england",
+                "history",
+                "ii",
+                "james",
+                "volume"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "who_history_163",
+                "source": "pack_fact",
+                "sentence": "Baron Thomas Babington Macaulay Macaulay wrote The History of England, from the Accession of James II \u2014 Volume 1.",
+                "value": "Baron Thomas Babington Macaulay Macaulay",
+                "coverage": 0.75,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "The History",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "who_history_115",
+          "who_history_120",
+          "who_history_163"
+        ]
+      },
+      {
+        "id": "thucydides",
+        "kind": "pack",
+        "question": "Who wrote The History of the Peloponnesian War?",
+        "gold": "Thucydides",
+        "reason_answer": "Thucydides",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used who_history_125 [uploads, query overlap 100%]: Thucydides wrote The History of the Peloponnesian War.",
+          "Grouped 1 related statement(s); no parsed same-slot conflict found.",
+          "Skipped who_history_110: weak/off-topic query overlap (50%).",
+          "Skipped who_history_163: weak/off-topic query overlap (50%)."
+        ],
+        "support": "Thucydides wrote The History of the Peloponnesian War.",
+        "groups": [
+          {
+            "slot": [
+              "author",
+              [
+                "history",
+                "peloponnesian",
+                "war"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "who_history_125",
+                "source": "pack_fact",
+                "sentence": "Thucydides wrote The History of the Peloponnesian War.",
+                "value": "Thucydides",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "Thucydides",
+        "baseline_abstain": false,
+        "baseline_correct": true,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "who_history_125",
+          "who_history_110",
+          "who_history_163"
+        ]
+      },
+      {
+        "id": "paine",
+        "kind": "pack",
+        "question": "Who wrote Common Sense?",
+        "gold": "Thomas Paine",
+        "reason_answer": "Thomas Paine",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used who_history_153 [uploads, query overlap 100%]: Thomas Paine wrote Common Sense.",
+          "Grouped 1 related statement(s); no parsed same-slot conflict found.",
+          "Skipped who_literature_10: weak/off-topic query overlap (33%).",
+          "Skipped other relevant statements: different slot or lower relevance."
+        ],
+        "support": "Thomas Paine wrote Common Sense.",
+        "groups": [
+          {
+            "slot": [
+              "author",
+              [
+                "common",
+                "sense"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "who_history_153",
+                "source": "pack_fact",
+                "sentence": "Thomas Paine wrote Common Sense.",
+                "value": "Thomas Paine",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "slot": [
+              "author",
+              [
+                "sense",
+                "sensibility"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "who_literature_20",
+                "source": "pack_fact",
+                "sentence": "Jane Austen wrote Sense and Sensibility.",
+                "value": "Jane Austen",
+                "coverage": 0.6666666666666666,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "Jane Austen",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "who_literature_20",
+          "who_history_153",
+          "who_literature_10"
+        ]
+      },
+      {
+        "id": "jefferson",
+        "kind": "pack",
+        "question": "Who wrote The Declaration of Independence of the United States of America?",
+        "gold": "Thomas Jefferson",
+        "reason_answer": "Thomas Jefferson",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used who_history_135 [uploads, query overlap 100%]: Thomas Jefferson wrote The Declaration of Independence of the United States of America.",
+          "Grouped 1 related statement(s); no parsed same-slot conflict found.",
+          "Skipped who_history_145: weak/off-topic query overlap (50%).",
+          "Skipped who_history_140: weak/off-topic query overlap (50%)."
+        ],
+        "support": "Thomas Jefferson wrote The Declaration of Independence of the United States of America.",
+        "groups": [
+          {
+            "slot": [
+              "author",
+              [
+                "america",
+                "declaration",
+                "independence",
+                "states",
+                "united"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "who_history_135",
+                "source": "pack_fact",
+                "sentence": "Thomas Jefferson wrote The Declaration of Independence of the United States of America.",
+                "value": "Thomas Jefferson",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "Thomas Jefferson",
+        "baseline_abstain": false,
+        "baseline_correct": true,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "who_history_135",
+          "who_history_145",
+          "who_history_140"
+        ]
+      },
+      {
+        "id": "zorblax",
+        "kind": "novel",
+        "question": "What is the capital of Zorblax?",
+        "gold": "Quendara",
+        "reason_answer": "Quendara",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used novel_00 [uploads, query overlap 100%]: The capital of Zorblax is Quendara.",
+          "Grouped 1 related statement(s); no parsed same-slot conflict found.",
+          "Skipped card_france: weak/off-topic query overlap (50%).",
+          "Skipped card_france: weak/off-topic query overlap (50%)."
+        ],
+        "support": "The capital of Zorblax is Quendara.",
+        "groups": [
+          {
+            "slot": [
+              "copula",
+              [
+                "capital",
+                "zorblax"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "novel_00",
+                "source": "novel",
+                "sentence": "The capital of Zorblax is Quendara.",
+                "value": "Quendara",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "Quendara",
+        "baseline_abstain": false,
+        "baseline_correct": true,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "novel_00",
+          "card_france",
+          "madeup_atlantis"
+        ]
+      },
+      {
+        "id": "voss",
+        "kind": "novel",
+        "question": "Who discovered aerogel photosynthesis?",
+        "gold": "Dr. Mirella Voss",
+        "reason_answer": "Dr. Mirella Voss",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used novel_01 [uploads, query overlap 100%]: Dr. Mirella Voss discovered aerogel photosynthesis.",
+          "Grouped 1 related statement(s); no parsed same-slot conflict found."
+        ],
+        "support": "Dr. Mirella Voss discovered aerogel photosynthesis.",
+        "groups": [
+          {
+            "slot": [
+              "discovered",
+              [
+                "aerogel",
+                "photosynthesis"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "novel_01",
+                "source": "novel",
+                "sentence": "Dr. Mirella Voss discovered aerogel photosynthesis.",
+                "value": "Dr. Mirella Voss",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "Mirella Voss",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "novel_01"
+        ]
+      },
+      {
+        "id": "wren",
+        "kind": "novel",
+        "question": "In what year did the MV Starlight Wren launch?",
+        "gold": "2147",
+        "reason_answer": "2147",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used novel_02 [uploads, query overlap 60%]: The MV Starlight Wren launched in 2147.",
+          "Grouped 1 related statement(s); no parsed same-slot conflict found.",
+          "Skipped card_wwi: weak/off-topic query overlap (20%).",
+          "Skipped year_210: weak/off-topic query overlap (20%)."
+        ],
+        "support": "The MV Starlight Wren launched in 2147.",
+        "groups": [
+          {
+            "slot": [
+              "overlap",
+              [
+                "mv",
+                "starlight",
+                "wren"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "novel_02",
+                "source": "novel",
+                "sentence": "The MV Starlight Wren launched in 2147.",
+                "value": null,
+                "coverage": 0.6,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "2147",
+        "baseline_abstain": false,
+        "baseline_correct": true,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "novel_02",
+          "card_wwi",
+          "year_210"
+        ]
+      },
+      {
+        "id": "kestrel",
+        "kind": "novel",
+        "question": "What does the Kestrel Protocol use?",
+        "gold": "three-phase lattice keys",
+        "reason_answer": "The Kestrel Protocol uses three-phase lattice keys",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used novel_03 [uploads, query overlap 67%]: The Kestrel Protocol uses three-phase lattice keys.",
+          "Grouped 1 related statement(s); no parsed same-slot conflict found.",
+          "Skipped who_history_125: weak/off-topic query overlap (0%).",
+          "Skipped who_history_110: weak/off-topic query overlap (0%)."
+        ],
+        "support": "The Kestrel Protocol uses three-phase lattice keys.",
+        "groups": [
+          {
+            "slot": [
+              "overlap",
+              [
+                "kestrel",
+                "protocol"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "novel_03",
+                "source": "novel",
+                "sentence": "The Kestrel Protocol uses three-phase lattice keys.",
+                "value": null,
+                "coverage": 0.6666666666666666,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "The Kestrel Protocol uses three-phase lattice keys",
+        "baseline_abstain": false,
+        "baseline_correct": true,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "novel_03",
+          "who_history_110",
+          "who_history_125"
+        ]
+      },
+      {
+        "id": "amberfall",
+        "kind": "novel",
+        "question": "Who founded the city of Amberfall?",
+        "gold": "Queen Lysara",
+        "reason_answer": "",
+        "reason_abstain": true,
+        "decision": "weak",
+        "reason_correct": false,
+        "trace": [
+          "Relevant statement found, but no extractive span above threshold.",
+          "Skipped madeup_atlantis: weak/off-topic query overlap (33%).",
+          "Skipped madeup_atlantis: weak/off-topic query overlap (0%)."
+        ],
+        "support": null,
+        "groups": [
+          {
+            "slot": [
+              "founded",
+              [
+                "lysara",
+                "queen"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "novel_04",
+                "source": "novel",
+                "sentence": "The city of Amberfall was founded by Queen Lysara.",
+                "value": "The city of Amberfall was",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "The",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "novel_04",
+          "madeup_atlantis",
+          "who_history_135"
+        ]
+      },
+      {
+        "id": "xylith",
+        "kind": "novel",
+        "question": "What is the atomic number of Xylith?",
+        "gold": "149",
+        "reason_answer": "149",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used novel_05 [uploads, query overlap 100%]: The element Xylith has atomic number 149.",
+          "Grouped 1 related statement(s); no parsed same-slot conflict found.",
+          "Skipped card_france: weak/off-topic query overlap (0%).",
+          "Skipped card_france: weak/off-topic query overlap (0%)."
+        ],
+        "support": "The element Xylith has atomic number 149.",
+        "groups": [
+          {
+            "slot": [
+              "overlap",
+              [
+                "atomic",
+                "number",
+                "xylith"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "novel_05",
+                "source": "novel",
+                "sentence": "The element Xylith has atomic number 149.",
+                "value": null,
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "The",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "novel_05",
+          "novel_17",
+          "card_france"
+        ]
+      },
+      {
+        "id": "okorie",
+        "kind": "novel",
+        "question": "Who wrote Bright Circadian?",
+        "gold": "Hana Okorie",
+        "reason_answer": "Hana Okorie",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used novel_06 [uploads, query overlap 100%]: Bright Circadian was written by Hana Okorie.",
+          "Grouped 1 related statement(s); no parsed same-slot conflict found.",
+          "Skipped who_literature_5: weak/off-topic query overlap (33%).",
+          "Skipped who_literature_10: weak/off-topic query overlap (33%)."
+        ],
+        "support": "Bright Circadian was written by Hana Okorie.",
+        "groups": [
+          {
+            "slot": [
+              "author",
+              [
+                "bright",
+                "circadian"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "novel_06",
+                "source": "novel",
+                "sentence": "Bright Circadian was written by Hana Okorie.",
+                "value": "Hana Okorie",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "Hana Okorie",
+        "baseline_abstain": false,
+        "baseline_correct": true,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "novel_06",
+          "who_literature_5",
+          "who_literature_10"
+        ]
+      },
+      {
+        "id": "nexora",
+        "kind": "novel",
+        "question": "How many moons does Nexora-4 have?",
+        "gold": "seven",
+        "reason_answer": "",
+        "reason_abstain": true,
+        "decision": "weak",
+        "reason_correct": false,
+        "trace": [
+          "No sufficiently relevant statement in retrieved hits.",
+          "Skipped novel_09: weak/off-topic query overlap (50%)."
+        ],
+        "support": null,
+        "groups": [],
+        "baseline_answer": "Planet Nexora-4",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "novel_09"
+        ]
+      },
+      {
+        "id": "helixwind",
+        "kind": "novel",
+        "question": "Who is the CEO of Helixwind?",
+        "gold": "Priya Dunn",
+        "reason_answer": "Priya Dunn",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used novel_10 [uploads, query overlap 100%]: The CEO of Helixwind is Priya Dunn.",
+          "Grouped 1 related statement(s); no parsed same-slot conflict found.",
+          "Skipped novel_00: weak/off-topic query overlap (0%).",
+          "Skipped novel_17: weak/off-topic query overlap (0%)."
+        ],
+        "support": "The CEO of Helixwind is Priya Dunn.",
+        "groups": [
+          {
+            "slot": [
+              "copula",
+              [
+                "ceo",
+                "helixwind"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "novel_10",
+                "source": "novel",
+                "sentence": "The CEO of Helixwind is Priya Dunn.",
+                "value": "Priya Dunn",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "Priya Dunn",
+        "baseline_abstain": false,
+        "baseline_correct": true,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "novel_10",
+          "novel_17",
+          "novel_00"
+        ]
+      },
+      {
+        "id": "marlowe",
+        "kind": "novel",
+        "question": "Who invented the MARLOWE algorithm?",
+        "gold": "Eli Navarro",
+        "reason_answer": "",
+        "reason_abstain": true,
+        "decision": "weak",
+        "reason_correct": false,
+        "trace": [
+          "Relevant statement found, but no extractive span above threshold.",
+          "Skipped madeup_gleeb: weak/off-topic query overlap (33%).",
+          "Skipped madeup_gleeb: weak/off-topic query overlap (33%)."
+        ],
+        "support": null,
+        "groups": [
+          {
+            "slot": [
+              "invented",
+              [
+                "eli",
+                "navarro"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "novel_13",
+                "source": "novel",
+                "sentence": "The MARLOWE algorithm was invented by Eli Navarro.",
+                "value": "The MARLOWE algorithm was",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "Eli Navarro",
+        "baseline_abstain": false,
+        "baseline_correct": true,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "novel_13",
+          "madeup_gleeb",
+          "who_history_110"
+        ]
+      },
+      {
+        "id": "glaucite",
+        "kind": "novel",
+        "question": "What color is glaucite?",
+        "gold": "blue-green",
+        "reason_answer": "Glaucite is blue-green in color",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used novel_15 [uploads, query overlap 100%]: Glaucite is blue-green in color.",
+          "Grouped 1 related statement(s); no parsed same-slot conflict found.",
+          "Skipped card_france: weak/off-topic query overlap (0%).",
+          "Skipped card_france: weak/off-topic query overlap (0%)."
+        ],
+        "support": "Glaucite is blue-green in color.",
+        "groups": [
+          {
+            "slot": [
+              "copula",
+              [
+                "glaucite"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "novel_15",
+                "source": "novel",
+                "sentence": "Glaucite is blue-green in color.",
+                "value": "blue-green in color",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "Glaucite is blue-green in color",
+        "baseline_abstain": false,
+        "baseline_correct": true,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "novel_15",
+          "novel_00",
+          "card_france"
+        ]
+      },
+      {
+        "id": "northmere",
+        "kind": "novel",
+        "question": "What is the motto of the University of Northmere?",
+        "gold": "Lux in limine",
+        "reason_answer": "Lux in limine",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used novel_17 [uploads, query overlap 100%]: The motto of the University of Northmere is Lux in limine.",
+          "Grouped 1 related statement(s); no parsed same-slot conflict found.",
+          "Skipped card_france: weak/off-topic query overlap (0%).",
+          "Skipped card_france: weak/off-topic query overlap (0%)."
+        ],
+        "support": "The motto of the University of Northmere is Lux in limine.",
+        "groups": [
+          {
+            "slot": [
+              "copula",
+              [
+                "motto",
+                "northmere",
+                "university"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "novel_17",
+                "source": "novel",
+                "sentence": "The motto of the University of Northmere is Lux in limine.",
+                "value": "Lux in limine",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "Lux in limine",
+        "baseline_abstain": false,
+        "baseline_correct": true,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "novel_17",
+          "card_france",
+          "novel_00"
+        ]
+      },
+      {
+        "id": "atlantis",
+        "kind": "madeup",
+        "question": "What is the capital of Atlantis?",
+        "gold": "Poseidonis",
+        "reason_answer": "Poseidonis",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used madeup_atlantis [uploads, query overlap 100%]: The capital of Atlantis is Poseidonis.",
+          "Grouped 2 related statement(s); no parsed same-slot conflict found.",
+          "Skipped card_france: weak/off-topic query overlap (50%).",
+          "Skipped card_france: weak/off-topic query overlap (50%)."
+        ],
+        "support": "The capital of Atlantis is Poseidonis.",
+        "groups": [
+          {
+            "slot": [
+              "copula",
+              [
+                "atlantis",
+                "capital"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "madeup_atlantis",
+                "source": "upload",
+                "sentence": "The capital of Atlantis is Poseidonis.",
+                "value": "Poseidonis",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "slot": [
+              "copula",
+              [
+                "poseidonis"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "madeup_atlantis",
+                "source": "upload",
+                "sentence": "Poseidonis is the capital city of Atlantis.",
+                "value": "the capital city of Atlantis",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "Poseidonis",
+        "baseline_abstain": false,
+        "baseline_correct": true,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "madeup_atlantis",
+          "novel_00",
+          "card_france"
+        ]
+      },
+      {
+        "id": "gleeb",
+        "kind": "madeup",
+        "question": "Who invented the Gleeb capacitor?",
+        "gold": "Nara Quill",
+        "reason_answer": "",
+        "reason_abstain": true,
+        "decision": "weak",
+        "reason_correct": false,
+        "trace": [
+          "Relevant statement found, but no extractive span above threshold.",
+          "Skipped novel_13: weak/off-topic query overlap (33%).",
+          "Skipped who_history_110: weak/off-topic query overlap (0%)."
+        ],
+        "support": null,
+        "groups": [
+          {
+            "slot": [
+              "invented",
+              [
+                "nara",
+                "quill"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "madeup_gleeb",
+                "source": "upload",
+                "sentence": "The Gleeb capacitor was invented by Nara Quill.",
+                "value": "The Gleeb capacitor was",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "slot": [
+              "invented",
+              [
+                "2091",
+                "capacitor",
+                "gleeb"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "madeup_gleeb",
+                "source": "upload",
+                "sentence": "Nara Quill invented the Gleeb capacitor in 2091.",
+                "value": "Nara Quill",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "Nara Quill",
+        "baseline_abstain": false,
+        "baseline_correct": true,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "madeup_gleeb",
+          "novel_13",
+          "who_history_110"
+        ]
+      },
+      {
+        "id": "def_neuron",
+        "kind": "dict",
+        "question": "What does neuron mean?",
+        "gold": "nerve",
+        "reason_answer": "[DICT WordNet] neuron\n1. (noun) a cell that is specialized to conduct nerve impulses  syn: nerve cell\n[SOURCE] Princeton WordNet 3.0 via NLTK",
+        "reason_abstain": false,
+        "decision": "dictionary",
+        "reason_correct": true,
+        "trace": [
+          "Used WordNet definition; passage reasoning bypassed."
+        ],
+        "support": null,
+        "groups": [],
+        "baseline_answer": "[DICT WordNet] neuron\n1. (noun) a cell that is specialized to conduct nerve impulses  syn: nerve cell\n[SOURCE] Princeton WordNet 3.0 via NLTK",
+        "baseline_abstain": false,
+        "baseline_correct": true,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "wn:nerve_cell.n.01",
+          "wn:synapse.n.01",
+          "wn:metaphor.n.01"
+        ]
+      },
+      {
+        "id": "def_synapse",
+        "kind": "dict",
+        "question": "What does synapse mean?",
+        "gold": "junction",
+        "reason_answer": "[DICT WordNet] synapse\n1. (noun) the junction between two neurons (axon-to-dendrite) or between a neuron and a muscle  e.g. 'nerve impulses cross a synapse through the action of neurotransmitters'\n[SOURCE] Princeton WordNet 3.0 via NLTK",
+        "reason_abstain": false,
+        "decision": "dictionary",
+        "reason_correct": true,
+        "trace": [
+          "Used WordNet definition; passage reasoning bypassed."
+        ],
+        "support": null,
+        "groups": [],
+        "baseline_answer": "[DICT WordNet] synapse\n1. (noun) the junction between two neurons (axon-to-dendrite) or between a neuron and a muscle  e.g. 'nerve impulses cross a synapse through the action of neurotransmitters'\n[SOURCE] Princeton WordNet 3.0 via NLTK",
+        "baseline_abstain": false,
+        "baseline_correct": true,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "wn:synapse.n.01",
+          "wn:metaphor.n.01",
+          "wn:irony.n.03"
+        ]
+      },
+      {
+        "id": "def_myelin",
+        "kind": "dict",
+        "question": "Define myelin",
+        "gold": "fatty",
+        "reason_answer": "[DICT WordNet] myelin\n1. (noun) a white fatty substance that forms a medullary sheath around the axis cylinder of some nerve fibers  syn: medulla, myeline\n[SOURCE] Princeton WordNet 3.0 via NLTK",
+        "reason_abstain": false,
+        "decision": "dictionary",
+        "reason_correct": true,
+        "trace": [
+          "Used WordNet definition; passage reasoning bypassed."
+        ],
+        "support": null,
+        "groups": [],
+        "baseline_answer": "[DICT WordNet] myelin\n1. (noun) a white fatty substance that forms a medullary sheath around the axis cylinder of some nerve fibers  syn: medulla, myeline\n[SOURCE] Princeton WordNet 3.0 via NLTK",
+        "baseline_abstain": false,
+        "baseline_correct": true,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "wn:myelin.n.01"
+        ]
+      },
+      {
+        "id": "def_photosynthesis",
+        "kind": "dict",
+        "question": "What does photosynthesis mean?",
+        "gold": "synthesis",
+        "reason_answer": "[DICT WordNet] photosynthesis\n1. (noun) synthesis of compounds with the aid of radiant energy (especially in plants)\n[SOURCE] Princeton WordNet 3.0 via NLTK",
+        "reason_abstain": false,
+        "decision": "dictionary",
+        "reason_correct": true,
+        "trace": [
+          "Used WordNet definition; passage reasoning bypassed."
+        ],
+        "support": null,
+        "groups": [],
+        "baseline_answer": "[DICT WordNet] photosynthesis\n1. (noun) synthesis of compounds with the aid of radiant energy (especially in plants)\n[SOURCE] Princeton WordNet 3.0 via NLTK",
+        "baseline_abstain": false,
+        "baseline_correct": true,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "wn:photosynthesis.n.01",
+          "wn:metaphor.n.01",
+          "wn:irony.n.03"
+        ]
+      },
+      {
+        "id": "def_algorithm",
+        "kind": "dict",
+        "question": "What does algorithm mean?",
+        "gold": "rule",
+        "reason_answer": "[DICT WordNet] algorithm\n1. (noun) a precise rule (or set of rules) specifying how to solve some problem  syn: algorithmic program, algorithmic rule\n[SOURCE] Princeton WordNet 3.0 via NLTK",
+        "reason_abstain": false,
+        "decision": "dictionary",
+        "reason_correct": true,
+        "trace": [
+          "Used WordNet definition; passage reasoning bypassed."
+        ],
+        "support": null,
+        "groups": [],
+        "baseline_answer": "[DICT WordNet] algorithm\n1. (noun) a precise rule (or set of rules) specifying how to solve some problem  syn: algorithmic program, algorithmic rule\n[SOURCE] Princeton WordNet 3.0 via NLTK",
+        "baseline_abstain": false,
+        "baseline_correct": true,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "wn:algorithm.n.01",
+          "wn:metaphor.n.01",
+          "wn:irony.n.03"
+        ]
+      },
+      {
+        "id": "def_entropy",
+        "kind": "dict",
+        "question": "What does entropy mean?",
+        "gold": "uncertainty",
+        "reason_answer": "[DICT WordNet] entropy\n1. (noun) (communication theory) a numerical measure of the uncertainty of an outcome  e.g. 'the signal contained thousands of bits of information'  syn: information, selective information\n2. (noun) (thermodynamics) a thermodynamic quantity representing the amount of energy in a system that is no longer available for doing mechanical work  e.g. 'entropy increases as matter and energy in the universe degrade to an ultimate state of inert uniformity'  syn: S, randomness\n[SOURCE] Princeton WordNet 3.0 via NLTK",
+        "reason_abstain": false,
+        "decision": "dictionary",
+        "reason_correct": true,
+        "trace": [
+          "Used WordNet definition; passage reasoning bypassed."
+        ],
+        "support": null,
+        "groups": [],
+        "baseline_answer": "[DICT WordNet] entropy\n1. (noun) (communication theory) a numerical measure of the uncertainty of an outcome  e.g. 'the signal contained thousands of bits of information'  syn: information, selective information\n2. (noun) (thermodynamics) a thermodynamic quantity representing the amount of energy in a system that is no longer available for doing mechanical work  e.g. 'entropy increases as matter and energy in the universe degrade to an ultimate state of inert uniformity'  syn: S, randomness\n[SOURCE] Princeton WordNet 3.0 via NLTK",
+        "baseline_abstain": false,
+        "baseline_correct": true,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "wn:randomness.n.01",
+          "wn:information.n.05",
+          "wn:metaphor.n.01"
+        ]
+      }
+    ]
+  },
+  "jarvis_notes": {
+    "summary": {
+      "n": 15,
+      "correct": 9,
+      "accuracy": 0.6,
+      "answered": 10,
+      "coverage": 0.6666666666666666,
+      "confident_wrong_among_answered": 0.3,
+      "wrong_answered": 3
+    },
+    "live_extractive_wordnet_baseline": {
+      "n": 15,
+      "correct": 0,
+      "accuracy": 0.0,
+      "answered": 15,
+      "coverage": 1.0,
+      "confident_wrong_among_answered": 1.0,
+      "wrong_answered": 15
+    },
+    "live_retrieval": {
+      "n": 13,
+      "hit_rate": 0.8461538461538461
+    },
+    "items": [
+      {
+        "id": "jn_n4_cwr",
+        "kind": "jarvis_notes",
+        "question": "What was NEURON-4 E-auto confident-wrong rate?",
+        "gold": "0.064",
+        "reason_answer": "0.064",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used jn_n4_cwr [jarvis_notes, query overlap 100%]: NEURON-4 E-auto confident-wrong rate was 0.064 on 1013 held-out-project questions.",
+          "Grouped 1 related statement(s); no parsed same-slot conflict found.",
+          "Skipped jn_n5: weak/off-topic query overlap (50%).",
+          "Skipped jn_n5: different numbered entity (50%).",
+          "Skipped other relevant statements: different slot or lower relevance."
+        ],
+        "support": "NEURON-4 E-auto confident-wrong rate was 0.064 on 1013 held-out-project questions.",
+        "groups": [
+          {
+            "slot": [
+              "copula",
+              [
+                "confident-wrong",
+                "e-auto",
+                "neuron-4",
+                "rate"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "jn_n4_cwr",
+                "source": "jarvis_notes",
+                "sentence": "NEURON-4 E-auto confident-wrong rate was 0.064 on 1013 held-out-project questions.",
+                "value": "0.064",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "slot": [
+              "beat",
+              [
+                "0.064",
+                "confident-wrong",
+                "corpus1",
+                "e-auto",
+                "neuron-4"
+              ],
+              [
+                "0.294",
+                "confident-wrong",
+                "exact",
+                "search"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "jn_n4_vs_exact",
+                "source": "jarvis_notes",
+                "sentence": "On NEURON-4 corpus1, E-auto confident-wrong 0.064 beat exact search confident-wrong 0.294.",
+                "value": "yes",
+                "coverage": 0.75,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "1013",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "jn_n4_cwr",
+          "jn_n4_vs_exact",
+          "jn_n5"
+        ]
+      },
+      {
+        "id": "jn_n4_vs_exact",
+        "kind": "jarvis_notes",
+        "question": "Did NEURON-4 E-auto beat exact search on confident-wrong?",
+        "gold": "yes",
+        "reason_answer": "yes",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used jn_n4_vs_exact [jarvis_notes, query overlap 100%]: On NEURON-4 corpus1, E-auto confident-wrong 0.064 beat exact search confident-wrong 0.294.",
+          "Grouped 1 related statement(s); no parsed same-slot conflict found.",
+          "Skipped jn_n4_cwr: weak/off-topic query overlap (50%).",
+          "Skipped jn_n4_cwr: weak/off-topic query overlap (50%)."
+        ],
+        "support": "On NEURON-4 corpus1, E-auto confident-wrong 0.064 beat exact search confident-wrong 0.294.",
+        "groups": [
+          {
+            "slot": [
+              "beat",
+              [
+                "0.064",
+                "confident-wrong",
+                "corpus1",
+                "e-auto",
+                "neuron-4"
+              ],
+              [
+                "0.294",
+                "confident-wrong",
+                "exact",
+                "search"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "jn_n4_vs_exact",
+                "source": "jarvis_notes",
+                "sentence": "On NEURON-4 corpus1, E-auto confident-wrong 0.064 beat exact search confident-wrong 0.294.",
+                "value": "yes",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "On NEURON-4",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": false,
+        "retrieved_ids": [
+          "jn_n4_vs_exact",
+          "jn_n4_cwr",
+          "jn_n5"
+        ]
+      },
+      {
+        "id": "jn_n4_labels",
+        "kind": "jarvis_notes",
+        "question": "Are NEURON-4 labels human judgments?",
+        "gold": "no",
+        "reason_answer": "no",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used jn_n4_labels [jarvis_notes, query overlap 100%]: NEURON-4 evaluation labels are text-pattern rules, not human judgment.",
+          "Grouped 1 related statement(s); no parsed same-slot conflict found.",
+          "Skipped jn_n4_cwr: weak/off-topic query overlap (25%).",
+          "Skipped jn_n4_vs_exact: weak/off-topic query overlap (25%).",
+          "Skipped other relevant statements: different slot or lower relevance."
+        ],
+        "support": "NEURON-4 evaluation labels are text-pattern rules, not human judgment.",
+        "groups": [
+          {
+            "slot": [
+              "copula",
+              [
+                "evaluation",
+                "label",
+                "neuron-4"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "jn_n4_labels",
+                "source": "jarvis_notes",
+                "sentence": "NEURON-4 evaluation labels are text-pattern rules, not human judgment.",
+                "value": "text-pattern rules, not human judgment",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "slot": [
+              "copula",
+              [
+                "label"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "jn_n4_cwr",
+                "source": "jarvis_notes",
+                "sentence": "Labels were text-pattern rules, not human judgment.",
+                "value": "text-pattern rules, not human judgment",
+                "coverage": 0.75,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "4",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "jn_n4_labels",
+          "jn_n4_cwr",
+          "jn_n4_vs_exact"
+        ]
+      },
+      {
+        "id": "jn_n5",
+        "kind": "jarvis_notes",
+        "question": "Did NEURON-5 beat E-auto on confident-wrong?",
+        "gold": "no",
+        "reason_answer": "no",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used jn_n5 [jarvis_notes, query overlap 100%]: NEURON-5 P_energy did not beat E-auto on confident-wrong: P_energy conf-wrong 0.094 versus E-auto 0.071.",
+          "Grouped 1 related statement(s); no parsed same-slot conflict found.",
+          "Skipped jn_n4_vs_exact: different numbered entity (75%).",
+          "Skipped jn_n5: weak/off-topic query overlap (50%)."
+        ],
+        "support": "NEURON-5 P_energy did not beat E-auto on confident-wrong: P_energy conf-wrong 0.094 versus E-auto 0.071.",
+        "groups": [
+          {
+            "slot": [
+              "beat",
+              [
+                "neuron-5",
+                "p_energy"
+              ],
+              [
+                "0.071",
+                "0.094",
+                "conf-wrong",
+                "confident-wrong",
+                "e-auto",
+                "p_energy",
+                "versus"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "jn_n5",
+                "source": "jarvis_notes",
+                "sentence": "NEURON-5 P_energy did not beat E-auto on confident-wrong: P_energy conf-wrong 0.094 versus E-auto 0.071.",
+                "value": "no",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "NEURON-5 P_energy",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "jn_n5",
+          "jn_n4_vs_exact",
+          "jn_n4_cwr"
+        ]
+      },
+      {
+        "id": "jn_qms",
+        "kind": "jarvis_notes",
+        "question": "Did QMS-1 find a better-than-default config worth hardware?",
+        "gold": "no",
+        "reason_answer": "",
+        "reason_abstain": true,
+        "decision": "weak",
+        "reason_correct": false,
+        "trace": [
+          "No sufficiently relevant statement in retrieved hits.",
+          "Skipped cyber_ai:378: weak/off-topic query overlap (20%).",
+          "Skipped cyber_ai:378: weak/off-topic query overlap (20%)."
+        ],
+        "support": null,
+        "groups": [],
+        "baseline_answer": "They",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "cyber_ai:210",
+          "cyber_ai:378",
+          "cyber_ai:100"
+        ]
+      },
+      {
+        "id": "jn_tutor",
+        "kind": "jarvis_notes",
+        "question": "How did the teacher tutor training go?",
+        "gold": "NOT SUPPORTED",
+        "reason_answer": "Knowledge",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": false,
+        "trace": [
+          "Used cyber_ai:268 [books, query overlap 100%]: === Knowledge distillation === Knowledge distillation is a method for training a smaller model, called a \"student\", to reproduce the output behavior of a larger \"teacher\" model.",
+          "Grouped 1 related statement(s); no parsed same-slot conflict found.",
+          "Skipped literature:6462: weak/off-topic query overlap (50%).",
+          "Skipped cyber_ai:268: weak/off-topic query overlap (50%).",
+          "Skipped other relevant statements: different slot or lower relevance."
+        ],
+        "support": "=== Knowledge distillation === Knowledge distillation is a method for training a smaller model, called a \"student\", to reproduce the output behavior of a larger \"teacher\" model.",
+        "groups": [
+          {
+            "slot": [
+              "copula",
+              [
+                "distillation",
+                "knowledge"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "cyber_ai:268",
+                "source": "cyber_ai",
+                "sentence": "=== Knowledge distillation === Knowledge distillation is a method for training a smaller model, called a \"student\", to reproduce the output behavior of a larger \"teacher\" model.",
+                "value": "a method for training a smaller model, called a \"student\", to reproduce the output behavior of a larger \"teacher\" model",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "slot": [
+              "overlap",
+              [
+                "train",
+                "tutor"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "cyber_ai:268",
+                "source": "cyber_ai",
+                "sentence": "In transformer models, the student can be trained using the teacher's output probability distribution, intermediate representations, or attention patterns in addition to the original training labels.",
+                "value": null,
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "Knowledge",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": false,
+        "retrieved_ids": [
+          "cyber_ai:268",
+          "literature:6462",
+          "cyber_ai:180"
+        ]
+      },
+      {
+        "id": "jn_chat_hybrid",
+        "kind": "jarvis_notes",
+        "question": "What was chat_rag hybrid accuracy on the 30Q eval?",
+        "gold": "0.900",
+        "reason_answer": "0.900",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used jn_chat_hybrid [jarvis_notes, query overlap 80%]: Training-free chat_rag full eval hybrid accuracy was 0.900 on 30 questions.",
+          "Grouped 1 related statement(s); no parsed same-slot conflict found.",
+          "Skipped jn_chat_cad: weak/off-topic query overlap (40%).",
+          "Skipped jn_chat_gen: weak/off-topic query overlap (40%)."
+        ],
+        "support": "Training-free chat_rag full eval hybrid accuracy was 0.900 on 30 questions.",
+        "groups": [
+          {
+            "slot": [
+              "copula",
+              [
+                "accuracy",
+                "chat_rag",
+                "eval",
+                "full",
+                "hybrid",
+                "training-free"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "jn_chat_hybrid",
+                "source": "jarvis_notes",
+                "sentence": "Training-free chat_rag full eval hybrid accuracy was 0.900 on 30 questions.",
+                "value": "0.900",
+                "coverage": 0.8,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "Training-free",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "jn_chat_hybrid",
+          "jn_chat_gen",
+          "jn_chat_cad"
+        ]
+      },
+      {
+        "id": "jn_chat_gen",
+        "kind": "jarvis_notes",
+        "question": "What was chat_rag gen accuracy on the 30Q eval?",
+        "gold": "0.300",
+        "reason_answer": "0.900",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": false,
+        "trace": [
+          "Used jn_chat_hybrid [jarvis_notes, query overlap 60%]: Training-free chat_rag full eval hybrid accuracy was 0.900 on 30 questions.",
+          "Grouped 2 related statement(s); no parsed same-slot conflict found.",
+          "Skipped jn_chat_cad: weak/off-topic query overlap (40%).",
+          "Skipped jn_chat_hybrid: weak/off-topic query overlap (20%)."
+        ],
+        "support": "Training-free chat_rag full eval hybrid accuracy was 0.900 on 30 questions.",
+        "groups": [
+          {
+            "slot": [
+              "copula",
+              [
+                "accuracy",
+                "chat_rag",
+                "eval",
+                "full",
+                "hybrid",
+                "training-free"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "jn_chat_hybrid",
+                "source": "jarvis_notes",
+                "sentence": "Training-free chat_rag full eval hybrid accuracy was 0.900 on 30 questions.",
+                "value": "0.900",
+                "coverage": 0.6,
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "slot": [
+              "copula",
+              [
+                "accuracy",
+                "chat_rag",
+                "gen",
+                "training-free"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "jn_chat_gen",
+                "source": "jarvis_notes",
+                "sentence": "Training-free chat_rag generation accuracy was 0.300 on 30 questions.",
+                "value": "0.300",
+                "coverage": 0.6,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "Training-free",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "jn_chat_hybrid",
+          "jn_chat_gen",
+          "jn_chat_cad"
+        ]
+      },
+      {
+        "id": "jn_chat_cad",
+        "kind": "jarvis_notes",
+        "question": "What was chat_rag CAD accuracy on the 30Q eval?",
+        "gold": "0.433",
+        "reason_answer": "0.900",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": false,
+        "trace": [
+          "Used jn_chat_hybrid [jarvis_notes, query overlap 60%]: Training-free chat_rag full eval hybrid accuracy was 0.900 on 30 questions.",
+          "Grouped 2 related statement(s); no parsed same-slot conflict found.",
+          "Skipped jn_chat_gen: weak/off-topic query overlap (40%).",
+          "Skipped jn_chat_hybrid: weak/off-topic query overlap (20%)."
+        ],
+        "support": "Training-free chat_rag full eval hybrid accuracy was 0.900 on 30 questions.",
+        "groups": [
+          {
+            "slot": [
+              "copula",
+              [
+                "accuracy",
+                "chat_rag",
+                "eval",
+                "full",
+                "hybrid",
+                "training-free"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "jn_chat_hybrid",
+                "source": "jarvis_notes",
+                "sentence": "Training-free chat_rag full eval hybrid accuracy was 0.900 on 30 questions.",
+                "value": "0.900",
+                "coverage": 0.6,
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "slot": [
+              "copula",
+              [
+                "accuracy",
+                "cad",
+                "chat_rag",
+                "training-free"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "jn_chat_cad",
+                "source": "jarvis_notes",
+                "sentence": "Training-free chat_rag CAD accuracy was 0.433 on 30 questions.",
+                "value": "0.433",
+                "coverage": 0.6,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "Training-free",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "jn_chat_hybrid",
+          "jn_chat_cad",
+          "jn_chat_gen"
+        ]
+      },
+      {
+        "id": "jn_chat_ret",
+        "kind": "jarvis_notes",
+        "question": "What was chat_rag routed retrieval accuracy on the 30Q eval?",
+        "gold": "0.967",
+        "reason_answer": "",
+        "reason_abstain": true,
+        "decision": "weak",
+        "reason_correct": false,
+        "trace": [
+          "No sufficiently relevant statement in retrieved hits.",
+          "Skipped jn_chat_hybrid: weak/off-topic query overlap (50%).",
+          "Skipped jn_chat_ret: weak/off-topic query overlap (50%)."
+        ],
+        "support": null,
+        "groups": [],
+        "baseline_answer": "Training-free",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "jn_chat_hybrid",
+          "jn_chat_ret",
+          "jn_chat_gen"
+        ]
+      },
+      {
+        "id": "jn_hypo",
+        "kind": "jarvis_notes",
+        "question": "Did the hypothalamus A/B/C tests hold up?",
+        "gold": "no",
+        "reason_answer": "",
+        "reason_abstain": true,
+        "decision": "weak",
+        "reason_correct": false,
+        "trace": [
+          "No sufficiently relevant statement in retrieved hits.",
+          "Skipped cyber_ai:202: weak/off-topic query overlap (33%).",
+          "Skipped cyber_ai:327: weak/off-topic query overlap (33%)."
+        ],
+        "support": null,
+        "groups": [],
+        "baseline_answer": "In",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "cyber_ai:97",
+          "cyber_ai:202",
+          "cyber_ai:327"
+        ]
+      },
+      {
+        "id": "jn_callosum",
+        "kind": "jarvis_notes",
+        "question": "Did the real callosum map beat degree shuffle on transfer?",
+        "gold": "no",
+        "reason_answer": "no",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used jn_callosum [jarvis_notes, query overlap 86%]: The real callosum map did not beat degree-matched shuffle on TRANSFER at N=1024.",
+          "Grouped 1 related statement(s); no parsed same-slot conflict found.",
+          "Skipped jn_callosum: weak/off-topic query overlap (29%).",
+          "Skipped jn_stp: weak/off-topic query overlap (29%)."
+        ],
+        "support": "The real callosum map did not beat degree-matched shuffle on TRANSFER at N=1024.",
+        "groups": [
+          {
+            "slot": [
+              "beat",
+              [
+                "callosum",
+                "map",
+                "real"
+              ],
+              [
+                "1024",
+                "degree-matched",
+                "shuffle",
+                "transfer"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "jn_callosum",
+                "source": "jarvis_notes",
+                "sentence": "The real callosum map did not beat degree-matched shuffle on TRANSFER at N=1024.",
+                "value": "no",
+                "coverage": 0.8571428571428571,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "The",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "jn_callosum",
+          "jn_stp",
+          "jn_n5"
+        ]
+      },
+      {
+        "id": "jn_stp",
+        "kind": "jarvis_notes",
+        "question": "Which engine_v3 ablation arm beat BASE on all four tasks?",
+        "gold": "STP",
+        "reason_answer": "STP",
+        "reason_abstain": false,
+        "decision": "answer",
+        "reason_correct": true,
+        "trace": [
+          "Used jn_stp [jarvis_notes, query overlap 83%]: In the engine_v3 STP ablation, STP was the only arm that beat BASE on CHAR, NARMA, TRANSFER, and XOR_HARD (exploratory; n=8).",
+          "Grouped 1 related statement(s); no parsed same-slot conflict found.",
+          "Qualification retained: this is a reported study outcome, not proof of a general claim.",
+          "Skipped jn_stp: weak/off-topic query overlap (17%).",
+          "Skipped jn_stp: weak/off-topic query overlap (0%)."
+        ],
+        "support": "In the engine_v3 STP ablation, STP was the only arm that beat BASE on CHAR, NARMA, TRANSFER, and XOR_HARD (exploratory; n=8).",
+        "groups": [
+          {
+            "slot": [
+              "beat",
+              [
+                "ablation",
+                "arm",
+                "engine_v3",
+                "only",
+                "stp"
+              ],
+              [
+                "base",
+                "char",
+                "exploratory",
+                "narma",
+                "transfer",
+                "xor_hard"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "jn_stp",
+                "source": "jarvis_notes",
+                "sentence": "In the engine_v3 STP ablation, STP was the only arm that beat BASE on CHAR, NARMA, TRANSFER, and XOR_HARD (exploratory; n=8).",
+                "value": "yes",
+                "coverage": 0.8333333333333334,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "In",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": true,
+        "retrieved_ids": [
+          "jn_stp",
+          "jn_hypo",
+          "jn_callosum"
+        ]
+      },
+      {
+        "id": "jn_probe_kappa_a",
+        "kind": "jarvis_notes",
+        "question": "What is shadow probe metric Kappa?",
+        "gold": "ABSTAIN",
+        "reason_answer": "",
+        "reason_abstain": true,
+        "decision": "conflict",
+        "reason_correct": true,
+        "trace": [
+          "Values disagree for the same subject/attribute: 0.91 (jn_probe_kappa_b); 0.42 (jn_probe_kappa_a).",
+          "Abstained; source rank/repetition cannot resolve disagreement.",
+          "Skipped jn_probe_kappa_b: weak/off-topic query overlap (25%).",
+          "Skipped jn_probe_kappa_b: weak/off-topic query overlap (25%)."
+        ],
+        "support": null,
+        "groups": [
+          {
+            "slot": [
+              "copula",
+              [
+                "kappa",
+                "metric",
+                "probe",
+                "shadow"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "jn_probe_kappa_b",
+                "source": "jarvis_notes",
+                "sentence": "Shadow probe metric Kappa is 0.91.",
+                "value": "0.91",
+                "coverage": 1.0,
+                "uncertain": false
+              },
+              {
+                "id": "jn_probe_kappa_a",
+                "source": "jarvis_notes",
+                "sentence": "Shadow probe metric Kappa is 0.42.",
+                "value": "0.42",
+                "coverage": 1.0,
+                "uncertain": false
+              }
+            ]
+          },
+          {
+            "slot": [
+              "copula",
+              [
+                "lambda",
+                "metric",
+                "probe",
+                "shadow"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "jn_probe_lambda",
+                "source": "jarvis_notes",
+                "sentence": "Shadow probe metric Lambda is ~0.55 (approx, unverified).",
+                "value": "~0.55",
+                "coverage": 0.75,
+                "uncertain": true
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "0.91",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": null,
+        "retrieved_ids": [
+          "jn_probe_kappa_b",
+          "jn_probe_kappa_a",
+          "jn_probe_lambda"
+        ]
+      },
+      {
+        "id": "jn_probe_lambda",
+        "kind": "jarvis_notes",
+        "question": "What is shadow probe metric Lambda?",
+        "gold": "ABSTAIN",
+        "reason_answer": "",
+        "reason_abstain": true,
+        "decision": "uncertain",
+        "reason_correct": true,
+        "trace": [
+          "Only uncertain top support: jn_probe_lambda: Shadow probe metric Lambda is ~0.55 (approx, unverified).",
+          "Abstained rather than turn an estimate into a verified value.",
+          "Skipped jn_probe_lambda: weak/off-topic query overlap (25%).",
+          "Skipped jn_probe_kappa_b: weak/off-topic query overlap (25%)."
+        ],
+        "support": null,
+        "groups": [
+          {
+            "slot": [
+              "copula",
+              [
+                "lambda",
+                "metric",
+                "probe",
+                "shadow"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "jn_probe_lambda",
+                "source": "jarvis_notes",
+                "sentence": "Shadow probe metric Lambda is ~0.55 (approx, unverified).",
+                "value": "~0.55",
+                "coverage": 1.0,
+                "uncertain": true
+              }
+            ]
+          },
+          {
+            "slot": [
+              "copula",
+              [
+                "kappa",
+                "metric",
+                "probe",
+                "shadow"
+              ]
+            ],
+            "facts": [
+              {
+                "id": "jn_probe_kappa_b",
+                "source": "jarvis_notes",
+                "sentence": "Shadow probe metric Kappa is 0.91.",
+                "value": "0.91",
+                "coverage": 0.75,
+                "uncertain": false
+              },
+              {
+                "id": "jn_probe_kappa_a",
+                "source": "jarvis_notes",
+                "sentence": "Shadow probe metric Kappa is 0.42.",
+                "value": "0.42",
+                "coverage": 0.75,
+                "uncertain": false
+              }
+            ]
+          }
+        ],
+        "baseline_answer": "0.55",
+        "baseline_abstain": false,
+        "baseline_correct": false,
+        "retrieval_hit": null,
+        "retrieved_ids": [
+          "jn_probe_lambda",
+          "jn_probe_kappa_b",
+          "jn_probe_kappa_a"
+        ]
+      }
+    ]
+  },
+  "published_baselines_not_rerun": {
+    "full_eval_30q": {
+      "n": 30,
+      "retrieval_global_acc": 0.9333333333333333,
+      "retrieval_routed_acc": 0.9666666666666667,
+      "by_mode": {
+        "gen": 0.3,
+        "hybrid": 0.9,
+        "cad": 0.43333333333333335,
+        "soft_exclusion": 0.3,
+        "knn": 0.3,
+        "soup_gen": 0.3,
+        "routed_hybrid": 0.9,
+        "dict_define_on_dict_qs": 1.0
+      },
+      "by_kind": {
+        "pack": {
+          "n": 10,
+          "retrieval_global": 1.0,
+          "retrieval_routed": 1.0,
+          "gen": 0.3,
+          "hybrid": 0.9,
+          "cad": 0.6,
+          "soft_exclusion": 0.3,
+          "knn": 0.3,
+          "soup_gen": 0.3,
+          "routed_hybrid": 0.9
+        },
+        "novel": {
+          "n": 12,
+          "retrieval_global": 1.0,
+          "retrieval_routed": 1.0,
+          "gen": 0.3333333333333333,
+          "hybrid": 1.0,
+          "cad": 0.4166666666666667,
+          "soft_exclusion": 0.3333333333333333,
+          "knn": 0.3333333333333333,
+          "soup_gen": 0.3333333333333333,
+          "routed_hybrid": 1.0
+        },
+        "madeup": {
+          "n": 2,
+          "retrieval_global": 1.0,
+          "retrieval_routed": 1.0,
+          "gen": 0.5,
+          "hybrid": 1.0,
+          "cad": 0.5,
+          "soft_exclusion": 0.5,
+          "knn": 0.5,
+          "soup_gen": 0.5,
+          "routed_hybrid": 1.0
+        },
+        "dict": {
+          "n": 6,
+          "retrieval_global": 0.6666666666666666,
+          "retrieval_routed": 0.8333333333333334,
+          "gen": 0.16666666666666666,
+          "hybrid": 0.6666666666666666,
+          "cad": 0.16666666666666666,
+          "soft_exclusion": 0.16666666666666666,
+          "knn": 0.16666666666666666,
+          "soup_gen": 0.16666666666666666,
+          "routed_hybrid": 0.6666666666666666
+        }
+      },
+      "soup": {
+        "n": 1,
+        "paths": [
+          "/workspace/jarvis/checkpoints/medium_v3/best.pt"
+        ],
+        "steps": [
+          14500
+        ],
+        "identical_to_single": true,
+        "note": "N=1 soup \u2261 that checkpoint (only one medium-compatible ckpt on disk)",
+        "out": "/workspace/jarvis/chat_rag/results/medium_soup.pt"
+      },
+      "model": {
+        "ckpt": "/workspace/jarvis/checkpoints/medium_v3/best.pt",
+        "step": 14500,
+        "n_params": 319121408,
+        "max_seq_len": 192,
+        "missing": 0,
+        "unexpected": 0,
+        "meta_eval_loss": 3.2063471913337707
+      },
+      "seconds": 1388.945125579834,
+      "finished_et": "2026-11-03 13:18:16",
+      "notes": "Small-n (30). Gold = substring containment. CAD \u03b1=1.0; soft_exclusion strength=0.7; kNN-LM \u03bb=0.5 k=16 passage-scoped; soup N=1 \u2261 gen. Under greedy decoding soft_exclusion and knn produced identical strings to gen on all 30Q (attenuation/knn mass did not flip argmax). dict golds for algorithm/entropy adjusted post-hoc to WordNet gloss keywords (rule/uncertainty).",
+      "soft_knn_note": "soft_exclusion and knn bit-identical to gen on 30/30 under greedy"
+    },
+    "eauto_30q": {
+      "name": "full_eval_30q",
+      "n": 30,
+      "eauto_accuracy": 0.7333,
+      "eauto_coverage": 0.8,
+      "eauto_abstain": 6,
+      "eauto_correct": 22,
+      "eauto_wrong_answered": 2,
+      "eauto_selective_accuracy": 0.9167,
+      "eauto_confident_wrong_among_answered": 0.0833,
+      "retrieval_acc": 0.9667,
+      "hybrid_acc": 0.9,
+      "retrieval_n": 30,
+      "hybrid_n": 30
+    },
+    "eauto_jarvis_notes": {
+      "name": "jarvis_notes",
+      "n": 15,
+      "eauto_accuracy": 1.0,
+      "eauto_coverage": 0.8667,
+      "eauto_abstain": 2,
+      "eauto_correct": 15,
+      "eauto_wrong_answered": 0,
+      "eauto_selective_accuracy": 1.0,
+      "eauto_confident_wrong_among_answered": 0.0,
+      "retrieval_acc": 0.9231,
+      "hybrid_acc": 0.9231,
+      "retrieval_n": 13,
+      "hybrid_n": 13
+    }
+  },
+  "scoring": "Gold substring in answer ONLY (not support or trace). ABSTAIN requires explicit abstention. Any nonabstain wrong answer counts as confident-wrong; not calibrated confidence.",
+  "caveats": [
+    "Small existing development sets, not independent validation; no significance claim.",
+    "WordNet remains enabled; historical hybrid .900 did not use all automatic WordNet answers. Fresh extractive+WordNet baseline is shown to avoid attributing dictionary improvements to reasoning.",
+    "Prior shadow_eval jarvis_notes hybrid_acc is an optimistic retrieval-or-span surrogate; do not call it answer accuracy. This run reports actual span-only baseline.",
+    "Same synthetic notes supplied question/golds; no independent source validation.",
+    "Only supplied top-3 hits checked. Conflicts outside retrieval, paraphrased slots, negation scope, multi-hop reasoning, and numeric comparisons may be missed.",
+    "NOT SUPPORTED is a reported negative verdict, not automatically an uncertain number; exploratory/PARTIAL statements retain caveats in supporting evidence.",
+    "This sorts/checks retrieved text, not general intelligence, consciousness, or learning."
+  ],
+  "safety": {
+    "no_qpu": true,
+    "no_training": true,
+    "no_model_load": true,
+    "no_kaggle_upload": true,
+    "no_institutional_books_indexed": true,
+    "neuron4_all_files_unchanged": true,
+    "neuron4_files_hashed": 69
+  },
+  "seconds": 12.209
+}

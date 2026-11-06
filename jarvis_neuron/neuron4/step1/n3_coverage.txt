@@ -1,0 +1,63 @@
+ALL n= 1171
+sys            cov   selacc overall abst  cwrong apprAbs AURC(answered) risk@25/50% #confLevels
+0_exact_zstd   0.573 0.577 0.432 0.427 0.243 0.297 0.399 0.442/0.349 10
+0_rag          0.272 0.545 0.372 0.728 0.124 0.655 0.490 0.421/  -   8
+A_normal       0.707 0.662 0.639 0.293 0.239 0.500 0.282 0.277/0.284 2
+B_random       0.816 0.540 0.497 0.184 0.375 0.165 0.350 0.329/0.333 9
+C_wronglabel   0.703 0.577 0.506 0.297 0.297 0.295 0.339 0.332/0.333 7
+D_weighted     0.447 0.962 0.763 0.553 0.017 0.978 0.020 0.017/  -   2
+E_boundary     0.593 0.991 0.924 0.407 0.005 0.985 0.012 0.017/0.009 3
+
+ conflict n= 200
+0_exact_zstd   cov 0.445 selacc 0.000 correct 0.555 cwrong 0.445 apprAbs 0.555
+0_rag          cov 0.130 selacc 0.000 correct 0.870 cwrong 0.130 apprAbs 0.870
+A_normal       cov 0.040 selacc 0.000 correct 0.960 cwrong 0.040 apprAbs 0.960
+B_random       cov 0.685 selacc 0.000 correct 0.315 cwrong 0.685 apprAbs 0.315
+C_wronglabel   cov 0.445 selacc 0.000 correct 0.555 cwrong 0.445 apprAbs 0.555
+D_weighted     cov 0.035 selacc 0.000 correct 0.965 cwrong 0.035 apprAbs 0.965
+E_boundary     cov 0.030 selacc 0.000 correct 0.970 cwrong 0.030 apprAbs 0.970
+
+ distractor n= 179
+0_exact_zstd   cov 0.754 selacc 1.000 correct 0.754 cwrong 0.000 apprAbs   -  
+0_rag          cov 0.447 selacc 0.950 correct 0.425 cwrong 0.022 apprAbs   -  
+A_normal       cov 0.520 selacc 0.484 correct 0.251 cwrong 0.268 apprAbs   -  
+B_random       cov 0.665 selacc 0.597 correct 0.397 cwrong 0.268 apprAbs   -  
+C_wronglabel   cov 0.497 selacc 0.607 correct 0.302 cwrong 0.196 apprAbs   -  
+D_weighted     cov 0.000 selacc 0.000 correct 0.000 cwrong 0.000 apprAbs   -  
+E_boundary     cov 1.000 selacc 1.000 correct 1.000 cwrong 0.000 apprAbs   -  
+
+ exact n= 200
+0_exact_zstd   cov 0.665 selacc 1.000 correct 0.665 cwrong 0.000 apprAbs   -  
+0_rag          cov 0.390 selacc 1.000 correct 0.390 cwrong 0.000 apprAbs   -  
+A_normal       cov 1.000 selacc 1.000 correct 1.000 cwrong 0.000 apprAbs   -  
+B_random       cov 1.000 selacc 1.000 correct 1.000 cwrong 0.000 apprAbs   -  
+C_wronglabel   cov 1.000 selacc 1.000 correct 1.000 cwrong 0.000 apprAbs   -  
+D_weighted     cov 1.000 selacc 1.000 correct 1.000 cwrong 0.000 apprAbs   -  
+E_boundary     cov 1.000 selacc 1.000 correct 1.000 cwrong 0.000 apprAbs   -  
+
+ latest n= 192
+0_exact_zstd   cov 0.245 selacc 0.936 correct 0.229 cwrong 0.016 apprAbs   -  
+0_rag          cov 0.073 selacc 0.786 correct 0.057 cwrong 0.016 apprAbs   -  
+A_normal       cov 0.771 selacc 0.784 correct 0.604 cwrong 0.167 apprAbs   -  
+B_random       cov 0.578 selacc 0.486 correct 0.281 cwrong 0.297 apprAbs   -  
+C_wronglabel   cov 0.323 selacc 0.500 correct 0.161 cwrong 0.161 apprAbs   -  
+D_weighted     cov 0.661 selacc 0.913 correct 0.604 cwrong 0.057 apprAbs   -  
+E_boundary     cov 0.604 selacc 1.000 correct 0.604 cwrong 0.000 apprAbs   -  
+
+ multi_hop_3 n= 200
+0_exact_zstd   cov 0.375 selacc 1.000 correct 0.375 cwrong 0.000 apprAbs   -  
+0_rag          cov 0.045 selacc 1.000 correct 0.045 cwrong 0.000 apprAbs   -  
+A_normal       cov 0.935 selacc 1.000 correct 0.935 cwrong 0.000 apprAbs   -  
+B_random       cov 0.955 selacc 1.000 correct 0.955 cwrong 0.000 apprAbs   -  
+C_wronglabel   cov 0.950 selacc 1.000 correct 0.950 cwrong 0.000 apprAbs   -  
+D_weighted     cov 0.935 selacc 1.000 correct 0.935 cwrong 0.000 apprAbs   -  
+E_boundary     cov 0.965 selacc 1.000 correct 0.965 cwrong 0.000 apprAbs   -  
+
+ uncertain n= 200
+0_exact_zstd   cov 0.960 selacc 0.000 correct 0.040 cwrong 0.960 apprAbs 0.040
+0_rag          cov 0.560 selacc 0.000 correct 0.440 cwrong 0.560 apprAbs 0.440
+A_normal       cov 0.960 selacc 0.000 correct 0.040 cwrong 0.960 apprAbs 0.040
+B_random       cov 0.985 selacc 0.000 correct 0.015 cwrong 0.985 apprAbs 0.015
+C_wronglabel   cov 0.965 selacc 0.000 correct 0.035 cwrong 0.965 apprAbs 0.035
+D_weighted     cov 0.010 selacc 0.000 correct 0.990 cwrong 0.010 apprAbs 0.990
+E_boundary     cov 0.000 selacc 0.000 correct 1.000 cwrong 0.000 apprAbs 1.000

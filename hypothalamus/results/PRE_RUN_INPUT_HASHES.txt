@@ -1,0 +1,3 @@
+50f361cc381ceffa861ffeef4f6167dc991d1008e3c8709abb58df134d65287e  /workspace/flybrain/hypothalamus/PREREG_ABC.md
+a5d2a0f84ff156ba780e57f0d6ceeb5a7365e171fccee993f9a70b3d3de36fab  /workspace/flybrain/hypothalamus/RESEARCH.md
+59a22c3217712c96a0f347dd0e534d7ee9c6ab0a200e67b43b5543e495ec21fe  /workspace/flybrain/engine_v3/out/ablation_runs.jsonl

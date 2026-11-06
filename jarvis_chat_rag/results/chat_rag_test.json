@@ -1,0 +1,255 @@
+{
+  "summary": {
+    "n": 10,
+    "retrieval_acc": 1.0,
+    "gen_acc": 0.3,
+    "extractive_acc": 1.0,
+    "hybrid_acc": 1.0,
+    "by_kind": {
+      "pack": {
+        "n": 6,
+        "retrieval": 1.0,
+        "gen": 0.3333333333333333,
+        "extractive": 1.0,
+        "hybrid": 1.0
+      },
+      "novel": {
+        "n": 2,
+        "retrieval": 1.0,
+        "gen": 0.0,
+        "extractive": 1.0,
+        "hybrid": 1.0
+      },
+      "madeup": {
+        "n": 2,
+        "retrieval": 1.0,
+        "gen": 0.5,
+        "extractive": 1.0,
+        "hybrid": 1.0
+      }
+    },
+    "model": {
+      "ckpt": "/workspace/jarvis/checkpoints/medium_v3/best.pt",
+      "step": 14500,
+      "n_params": 319121408,
+      "max_seq_len": 192,
+      "missing": 0,
+      "unexpected": 0,
+      "meta_eval_loss": 3.2063471913337707
+    },
+    "seconds": 116.47654438018799,
+    "finished_et": "2026-11-02 18:24:39"
+  },
+  "items": [
+    {
+      "id": "france",
+      "kind": "pack",
+      "question": "What is the capital of France?",
+      "gold": "Paris",
+      "retrieval_contains_gold": true,
+      "gen_contains_gold": false,
+      "extractive_contains_gold": true,
+      "hybrid_contains_gold": true,
+      "extractive": {
+        "span": "Paris",
+        "sentence": "The capital of France is Paris.",
+        "source": "fact_card",
+        "chunk_id": "card_france",
+        "score": 28.579983393660342,
+        "passage_score": 28.579983393660342
+      },
+      "generation": "The capital of France is the capital of France.\nAnswer: The capital of France is the capital of France.\nAnswer: The capital",
+      "hybrid_display": "[EXTRACTIVE from fact_card|score=28.58]\nParis\n\n[SUPPORTING SENTENCE]\nThe capital of France is Paris.\n\n[MODEL CONTINUATION]\nThe capital of France is the capital of France.\nAnswer: The capital of France is the capital of France.\nAnswer: The capital\n\n[MODE] hybrid",
+      "context_preview": "[fact_card | 28.58]\nThe capital of France is Paris. Paris is the capital of France."
+    },
+    {
+      "id": "dracula",
+      "kind": "pack",
+      "question": "Who wrote Dracula?",
+      "gold": "Bram Stoker",
+      "retrieval_contains_gold": true,
+      "gen_contains_gold": false,
+      "extractive_contains_gold": true,
+      "hybrid_contains_gold": true,
+      "extractive": {
+        "span": "Bram Stoker",
+        "sentence": "Bram Stoker wrote Dracula.",
+        "source": "fact_card",
+        "chunk_id": "card_dracula",
+        "score": 13.233825147473471,
+        "passage_score": 19.605666885145883
+      },
+      "generation": "Dracula is a book about the history of the world.\nAnswer: Dracula is a book about the history of the world.",
+      "hybrid_display": "[EXTRACTIVE from fact_card|score=13.23]\nBram Stoker\n\n[SUPPORTING SENTENCE]\nBram Stoker wrote Dracula.\n\n[MODEL CONTINUATION]\nDracula is a book about the history of the world.\nAnswer: Dracula is a book about the history of the world.\n\n[MODE] hybrid",
+      "context_preview": "[fact_card | 19.61]\nBram Stoker wrote Dracula. Dracula was written by Bram Stoker."
+    },
+    {
+      "id": "frankenstein",
+      "kind": "pack",
+      "question": "Who wrote Frankenstein?",
+      "gold": "Mary Shelley",
+      "retrieval_contains_gold": true,
+      "gen_contains_gold": false,
+      "extractive_contains_gold": true,
+      "hybrid_contains_gold": true,
+      "extractive": {
+        "span": "Mary Wollstonecraft Shelley",
+        "sentence": "Mary Wollstonecraft Shelley wrote Frankenstein; or, The modern Prometheus.",
+        "source": "pack_fact",
+        "chunk_id": "who_literature_50",
+        "score": 22.435911291264826,
+        "passage_score": 22.435911291264826
+      },
+      "generation": "The story of Frankenstein is a story of the story of the story of the story of the story of the story of the story of the story of the",
+      "hybrid_display": "[EXTRACTIVE from pack_fact|score=22.44]\nMary Wollstonecraft Shelley\n\n[SUPPORTING SENTENCE]\nMary Wollstonecraft Shelley wrote Frankenstein; or, The modern Prometheus.\n\n[MODEL CONTINUATION]\nThe story of Frankenstein is a story of the story of the story of the story of the story of the story of the story of the story of the\n\n[MODE] hybrid",
+      "context_preview": "[pack_fact | 22.44]\nMary Wollstonecraft Shelley wrote Frankenstein; or, The modern Prometheus. Mary Wollstonecraft Shelley wrote Frankenstein; or, The modern Prometheus.\n\n---\n\n[fact_card | 19.16]\nMary Shelley wrote Frankenstein. Frankenstein was written by Mary Shelley (Mary Wollstonecraft Shelley).\n\n---\n\n[literature | 9.65]\n“Are you mad, my friend?” said he. “Or whither does your senseless curios"
+    },
+    {
+      "id": "wwi",
+      "kind": "pack",
+      "question": "What year did World War I begin?",
+      "gold": "1914",
+      "retrieval_contains_gold": true,
+      "gen_contains_gold": true,
+      "extractive_contains_gold": true,
+      "hybrid_contains_gold": true,
+      "extractive": {
+        "span": "The First World War",
+        "sentence": "The First World War started in the year 1914.",
+        "source": "fact_card",
+        "chunk_id": "card_wwi",
+        "score": 16.01064545385914,
+        "passage_score": 19.117188601622853
+      },
+      "generation": "The war began in 1914.\nAnswer: The war began in 1914.\nAnswer: The war began in 1914.",
+      "hybrid_display": "[EXTRACTIVE from fact_card|score=16.01]\nThe First World War\n\n[SUPPORTING SENTENCE]\nThe First World War started in the year 1914.\n\n[MODEL CONTINUATION]\nThe war began in 1914.\nAnswer: The war began in 1914.\nAnswer: The war began in 1914.\n\n[MODE] hybrid",
+      "context_preview": "[fact_card | 19.12]\nWorld War I began in 1914. The First World War started in the year 1914."
+    },
+    {
+      "id": "hamlet",
+      "kind": "pack",
+      "question": "Who wrote Hamlet?",
+      "gold": "Shakespeare",
+      "retrieval_contains_gold": true,
+      "gen_contains_gold": true,
+      "extractive_contains_gold": true,
+      "hybrid_contains_gold": true,
+      "extractive": {
+        "span": "William Shakespeare",
+        "sentence": "William Shakespeare wrote Hamlet.",
+        "source": "fact_card",
+        "chunk_id": "card_hamlet",
+        "score": 11.825363537685867,
+        "passage_score": 17.51905709286795
+      },
+      "generation": "Shakespeare was written by Shakespeare.\nAnswer: Shakespeare was written by Shakespeare.\nAns",
+      "hybrid_display": "[EXTRACTIVE from fact_card|score=11.83]\nWilliam Shakespeare\n\n[SUPPORTING SENTENCE]\nWilliam Shakespeare wrote Hamlet.\n\n[MODEL CONTINUATION]\nShakespeare was written by Shakespeare.\nAnswer: Shakespeare was written by Shakespeare.\nAns\n\n[MODE] hybrid",
+      "context_preview": "[fact_card | 17.52]\nWilliam Shakespeare wrote Hamlet. Hamlet was written by Shakespeare."
+    },
+    {
+      "id": "gibbon",
+      "kind": "pack",
+      "question": "Who wrote The History of the Decline and Fall of the Roman Empire?",
+      "gold": "Edward Gibbon",
+      "retrieval_contains_gold": true,
+      "gen_contains_gold": false,
+      "extractive_contains_gold": true,
+      "hybrid_contains_gold": true,
+      "extractive": {
+        "span": "Edward Gibbon",
+        "sentence": "Edward Gibbon wrote The History of the Decline and Fall of the Roman Empire.",
+        "source": "pack_fact",
+        "chunk_id": "who_history_110",
+        "score": 58.717370182768235,
+        "passage_score": 65.85125627974007
+      },
+      "generation": "The History of the Decline and Fall of the Roman Empire is a collection of historical documents that document the history of the Roman Empire.",
+      "hybrid_display": "[EXTRACTIVE from pack_fact|score=58.72]\nEdward Gibbon\n\n[SUPPORTING SENTENCE]\nEdward Gibbon wrote The History of the Decline and Fall of the Roman Empire.\n\n[MODEL CONTINUATION]\nThe History of the Decline and Fall of the Roman Empire is a collection of historical documents that document the history of the Roman Empire.\n\n[MODE] hybrid",
+      "context_preview": "[pack_fact | 65.85]\nEdward Gibbon wrote The History of the Decline and Fall of the Roman Empire. Edward Gibbon wrote The History of the Decline and Fall of the Roman Empire."
+    },
+    {
+      "id": "zorblax",
+      "kind": "novel",
+      "question": "What is the capital of Zorblax?",
+      "gold": "Quendara",
+      "retrieval_contains_gold": true,
+      "gen_contains_gold": false,
+      "extractive_contains_gold": true,
+      "hybrid_contains_gold": true,
+      "extractive": {
+        "span": "Quendara",
+        "sentence": "The capital of Zorblax is Quendara.",
+        "source": "novel",
+        "chunk_id": "novel_00",
+        "score": 42.395198551558764,
+        "passage_score": 42.395198551558764
+      },
+      "generation": "The capital of Paris is Poseidonis.\nAnswer: The capital of Paris is Poseidonis.\nAnswer: The capital",
+      "hybrid_display": "[EXTRACTIVE from novel|score=42.40]\nQuendara\n\n[SUPPORTING SENTENCE]\nThe capital of Zorblax is Quendara.\n\n[MODEL CONTINUATION]\nThe capital of Paris is Poseidonis.\nAnswer: The capital of Paris is Poseidonis.\nAnswer: The capital\n\n[MODE] hybrid",
+      "context_preview": "[novel | 42.40]\nThe capital of Zorblax is Quendara. The capital of Zorblax is Quendara.\n\n---\n\n[fact_card | 21.94]\nThe capital of France is Paris. Paris is the capital of France.\n\n---\n\n[upload | 21.90]\nThe capital of Atlantis is Poseidonis. Poseidonis is the capital city of Atlantis."
+    },
+    {
+      "id": "voss",
+      "kind": "novel",
+      "question": "Who discovered aerogel photosynthesis?",
+      "gold": "Dr. Mirella Voss",
+      "retrieval_contains_gold": true,
+      "gen_contains_gold": false,
+      "extractive_contains_gold": true,
+      "hybrid_contains_gold": true,
+      "extractive": {
+        "span": "Mirella Voss",
+        "sentence": "Mirella Voss discovered aerogel photosynthesis.",
+        "source": "novel",
+        "chunk_id": "novel_01",
+        "score": 22.236223200599547,
+        "passage_score": 28.386667915658997
+      },
+      "generation": "The answer is no.\nAnswer: The answer is no.\nAnswer: The answer is no.\nAnswer: The answer",
+      "hybrid_display": "[EXTRACTIVE from novel|score=22.24]\nMirella Voss\n\n[SUPPORTING SENTENCE]\nMirella Voss discovered aerogel photosynthesis.\n\n[MODEL CONTINUATION]\nThe answer is no.\nAnswer: The answer is no.\nAnswer: The answer is no.\nAnswer: The answer\n\n[MODE] hybrid",
+      "context_preview": "[novel | 28.39]\nDr. Mirella Voss discovered aerogel photosynthesis. Dr. Mirella Voss discovered aerogel photosynthesis."
+    },
+    {
+      "id": "atlantis",
+      "kind": "madeup",
+      "question": "What is the capital of Atlantis?",
+      "gold": "Poseidonis",
+      "retrieval_contains_gold": true,
+      "gen_contains_gold": true,
+      "extractive_contains_gold": true,
+      "hybrid_contains_gold": true,
+      "extractive": {
+        "span": "Poseidonis",
+        "sentence": "The capital of Atlantis is Poseidonis.",
+        "source": "upload",
+        "chunk_id": "madeup_atlantis",
+        "score": 37.75527643981287,
+        "passage_score": 37.75527643981287
+      },
+      "generation": "The capital city of Atlantis is Poseidonis.\nAnswer: The capital city of Atlantis is Poseidonis.",
+      "hybrid_display": "[EXTRACTIVE from upload|score=37.76]\nPoseidonis\n\n[SUPPORTING SENTENCE]\nThe capital of Atlantis is Poseidonis.\n\n[MODEL CONTINUATION]\nThe capital city of Atlantis is Poseidonis.\nAnswer: The capital city of Atlantis is Poseidonis.\n\n[MODE] hybrid",
+      "context_preview": "[upload | 37.76]\nThe capital of Atlantis is Poseidonis. Poseidonis is the capital city of Atlantis."
+    },
+    {
+      "id": "gleeb",
+      "kind": "madeup",
+      "question": "Who invented the Gleeb capacitor?",
+      "gold": "Nara Quill",
+      "retrieval_contains_gold": true,
+      "gen_contains_gold": false,
+      "extractive_contains_gold": true,
+      "hybrid_contains_gold": true,
+      "extractive": {
+        "span": "Nara Quill",
+        "sentence": "Nara Quill invented the Gleeb capacitor in 2091.",
+        "source": "upload",
+        "chunk_id": "madeup_gleeb",
+        "score": 56.09308795610058,
+        "passage_score": 56.09308795610058
+      },
+      "generation": "The Gleeb capacitor is a small, round-the-clock, round-the-clock, round-the-clock, round-the",
+      "hybrid_display": "[EXTRACTIVE from upload|score=56.09]\nNara Quill\n\n[SUPPORTING SENTENCE]\nNara Quill invented the Gleeb capacitor in 2091.\n\n[MODEL CONTINUATION]\nThe Gleeb capacitor is a small, round-the-clock, round-the-clock, round-the-clock, round-the\n\n[MODE] hybrid",
+      "context_preview": "[upload | 56.09]\nNara Quill invented the Gleeb capacitor in 2091. The Gleeb capacitor was invented by Nara Quill.\n\n---\n\n[novel | 15.48]\nThe MARLOWE algorithm was invented by Eli Navarro. The MARLOWE algorithm was invented by Eli Navarro.\n\n---\n\n[history | 13.38]\n10 (return) [ Under the commonwealth, a triumph could only be claimed by the general, who was authorized to take the Auspices in the name "
+    }
+  ]
+}

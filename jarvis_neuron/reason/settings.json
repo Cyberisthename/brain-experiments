@@ -1,0 +1,19 @@
+{
+  "candidate_cards": 12,
+  "hops": 3,
+  "decay": 0.7,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "edge_shuffle": "uniform permutation of undirected endpoint stubs; multigraph/self-loops retained",
+  "label_shuffle": "uniform permutation of all typed labels; fixed endpoints",
+  "normalization": "casefold, whitespace, strip punctuation; numeric Decimal-equivalence",
+  "bag_hops": "local seed-card span extraction only, not global entity-table join"
+}

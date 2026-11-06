@@ -1,0 +1,1 @@
+seed 111 n=60 b=0.25 tau=0.1 sa_agree=15/15 t=25s

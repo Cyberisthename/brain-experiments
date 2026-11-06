@@ -1,0 +1,20 @@
+{
+  "frozen_at_et": "2026-11-06 07:58:48 EST",
+  "status": "locked_before_first_prediction",
+  "sha256": {
+    "PREREG.md": "288e3eff908982f05bd59951f3041ef997cb7690ce61c87837b74e2888428e53",
+    "RESEARCH.md": "cac9f5bb013238fe82abc913c2a1c2d4066a14fd2c48b48275a1670cf36ab8b4",
+    "IMPLEMENTATION.md": "9319a42a3d4e229da31a42b56159ec4a07cf26c64af5eeee6a2105d3827e8b57",
+    "system.py": "79b5647a344dbd989aec67cf11fb283d951f89e80f11c1389e6c5adc1c3995d8",
+    "prepare.py": "f3db588997da13df8cd73fcc51859bbe82fcafb5a784bcbd35c615764a48453a",
+    "make_questions.py": "48f7c5e0c59e1761c22512b7118fabf746c36ece3defb242989c109a5f104895",
+    "test_system.py": "171b22046fb25f7baddf8ccd718282aef86ab3e458dab1782746aa0267d67cdf",
+    "run_experiment.py": "535b8d9a6d6a23a0aacdb33ba1cd4d0abe92d7299e737a50b86504fff287a317",
+    "cards.json": "92306295cd704945e523904da0c72386fcac089617494dd25a834893e2654148",
+    "facts.json": "2cf78475819f280ba36aac199a9aed3586cd70e61e6aeaf1a5b95ed5963f0eff",
+    "questions.json": "ccb147022ae928a3c33946185611e9d378069bf22e77be01afd102d8172b4ea0",
+    "settings.json": "61ef96bb53658500661337227fd48546b90195d4e6eaf552a20256e01cf4a711",
+    "source_manifest.json": "e118b562a1f3040ba1f45ec5fc8a42fd12401b2646ddf6a6369242288442e96c",
+    "dataset_audit.json": "4116a47674e55504cab276ba5847cabcac0f0d295cd68c762220819e094e09ad"
+  }
+}

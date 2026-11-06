@@ -1,0 +1,16 @@
+{
+  "status": "preregistered_not_run",
+  "reason": "Required CloudAgent coding handoff is unavailable in this executor tool catalog; implementation and outcome evaluation not performed.",
+  "hypotheses": {
+    "H1": "untested",
+    "H2": "untested",
+    "H3": "untested"
+  },
+  "metrics": null,
+  "seeds_run": 0,
+  "neuron4_unchanged": true,
+  "neuron4_files": 69,
+  "default_answers_changed": false,
+  "qpu_used": false,
+  "uploads": false
+}
